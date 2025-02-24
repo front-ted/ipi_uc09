@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Inserir o tíutlo do conhecimento na tag title -->
+    <title>Tecnologias de servidor web: conceitos e princípios de funcionamento</title>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fa/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <!-- hover.css https://ianlunn.github.io/Hover/ -->
+    <link rel="stylesheet" href="../assets/css/hover-min.css" />
+    <!--Splide - slideshow-->
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
+    <!-- Preloader -->
+    <link rel="stylesheet" href="../assets/css/preloader.css">
+    <!-- Áudio customizado -->
+    <link rel="stylesheet" href="../assets/css/player.css">
+    <!-- Estilos do template -->
+    <link rel="stylesheet" href="../assets/css/cores.css">
+    <link rel="stylesheet" href="../print/print/print.css">
+    <link rel="stylesheet" href="../assets/css/template.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body class="bg-claro">
+    <!-- Preloader OBRIGATÓRIO -->
+    <div class="preloader">
+        <div class="anim"></div>
+        <p>Aguarde enquanto o conteúdo é carregado.</p>
+    </div>
+    <!-- Marca d'água OBRIGATÓRIA -->
+    <img src="../assets/images/logo_senac_colorido.png" id="marcadaguaLogo">
+
+    <header id="topo">
+        <div class="topo-logo">
+            <div class="container">
+                <h1 id="nome-curso" class="only-print">Informática para Internet</h1>
+                <div id="toggleButton" class="btn-tema_pagina no-print" onclick="toggleBackgroundImage()"
+                    aria-hidden="true"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Section principal #booklet OBRIGATÓRIO para funcionamento do print -->
+    <section id="booklet">
+        <div class="layer-preta no-print"></div>
+        <!-- Section .paginas OBRIGATÓRIA para funcionamento da paginação e do print -->
+        <section class="paginas">
+            <div class="pagina">
+                <div class="container">
+                    <h2>Tecnologias de servidor <i>web</i>: conceitos e princípios de funcionamento</h2>
+                    <p>
+                        Os servidores <i>web</i> são componentes fundamentais para o funcionamento de aplicativos,
+                        <i>websites</i> e
+                        serviços digitais que dependem da comunicação com a internet. Por meio deles, é possível
+                        hospedar e
+                        distribuir dados, proporcionando uma experiência integrada para os usuários. Os sistemas de
+                        servidor
+                        têm evoluído para atender as necessidades de empresas e usuários, facilitando o acesso a
+                        conteúdo em
+                        qualquer lugar e a qualquer momento.
+                    </p>
+                    <p>
+                        Na figura a seguir, é possível ver um registro histórico: Tim Berners-Lee, conhecido como o pai
+                        da
+                        <i>world wide web</i> (o famoso WWW), ao lado de uma página <i>web</i> hospedada no primeiro
+                        servidor <i>web</i> da
+                        história.
+                    </p>
+                    <figure class="my-5">
+                        <div class="figure-img mb-4">
+                            <img class="img-fluid d-block ilustracao mx-auto" src="img/img1.jpg">
+                        </div>
+                        <figcaption class="figure-caption text-center">
+                            Tim Berners-Lee e o primeiro servidor <i>web</i> da história <br>
+                            Fonte: Souza (2018)
+                        </figcaption>
+                    </figure>
+                    <p class="acessivel visually-hidden no-print">
+                        Fotografia de um homem na casa dos 40 anos ao lado de um monitor CRT com uma página utilizando a
+                        world wide web (www).
+                    </p>
+                    <p>
+                        Neste material, serão exploradas as tecnologias de servidores <i>web</i>, apresentando os
+                        conceitos básicos
+                        e os princípios de funcionamento. Serão abordadas também as diferenças entre servidores Linux e
+                        Windows, duas plataformas amplamente utilizadas, com foco em suas características, vantagens e
+                        desvantagens. Por fim, você verá um comparativo com exemplos práticos de empresas globais
+                        consolidadas que utilizam esses servidores, incluindo estudos de caso específicos.
+                    </p>
+                    <div class="divisoria" aria-hidden="true">
+                        <img src="img/div.png" class="no-print img-fluid d-block mx-auto mt-5 mb-5">
+                    </div>
+                    <h3>Conceitos e princípios das tecnologias de servidor <i>web</i></h3>
+                    <p>
+                        Os servidores <i>web</i> são fundamentais para a internet, gerenciando solicitações, processando
+                        dados
+                        e
+                        entregando conteúdo. O primeiro servidor HTTP (<i>hypertext transfer protocol</i>) e WWW, criado
+                        no
+                        CERN
+                        (Organização Europeia para a Pesquisa Nuclear), trazia no gabinete o aviso: “<i>This machine is
+                            a
+                            server. DO NOT POWER DOWN</i>” (em tradução livre: “Esta máquina é um servidor. NÃO
+                        DESLIGUE”),
+                        simbolizando sua importância para a nascente WWW. Esses sistemas continuam sendo a base de
+                        projetos
+                        digitais, unindo desempenho, segurança e escalabilidade.
+                    </p>
+                    <figure class="my-5">
+                        <img src="img/img2.jpg"
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print ilustracao"
+                            alt="Imagem">
+                        <a href="img/img2.jpg" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                            <img src="img/img2.jpg"
+                                class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                alt="Imagem">
+                        </a>
+                        <figcaption class="figure-caption text-center mb-5">
+                            Primeiro servidor usando HTTP e WWW do mundo <br>
+                            Fonte: Almenara (2021)
+                        </figcaption>
+                    </figure>
+                    <p class="acessivel visually-hidden no-print">
+                        Na fotografia, é possível ver o primeiro servidor web, um monitor CRT preto e um gabinete em
+                        formato de cubo preto. No gabinete, há o adesivo onde se pode ler: “This machine is a server. DO
+                        NOT POWER DOWN”, que, em uma tradução livre, quer dizer: “Esta máquina é um servidor, NÃO
+                        DESLIGUE”.
+                    </p>
+                    <p>
+                        Servidores <i>web</i> são sistemas computacionais que armazenam, processam e distribuem conteúdo
+                        e serviços
+                        para usuários que os acessam por meio da internet. A principal função de um servidor <i>web</i>
+                        é responder
+                        a solicitações de um navegador (cliente) usando o protocolo HTTP ou HTTPS (<i>hypertext transfer
+                            protocol secure</i>). A resposta pode conter dados, como páginas HTML (hypertext markup
+                        language),
+                        arquivos de imagem, documentos ou até mesmo respostas complexas de APIs (<i>application
+                            programming
+                            interface</i>).
+                    </p>
+                    <p>O funcionamento de um servidor <i>web</i> envolve três principais elementos:</p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <b><i>Hardware</i></b>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>É a máquina física que armazena dados e processa solicitações. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Sistema operacional (SO)
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Gerencia os recursos de <i>hardware</i> e permite a execução do <i>software</i>
+                                        servidor. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="mr-3"><b><i>Software</i></b> </span><span class="mr-3">de</span> <span
+                                        class="mr-3">servidor</span> <b><i>web</i></b>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Trata as requisições HTTP, interpreta <i>scripts</i>, como PHP (<i>hypertext
+                                            preprocessor</i>),
+                                        e retorna o conteúdo solicitado. Exemplos populares de <i>software</i> incluem o
+                                        Apache, o Nginx e o Microsoft IIS (Internet Information Services). </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisoria" aria-hidden="true">
+                        <img src="img/div.png" class="no-print img-fluid d-block mx-auto mt-5 mb-5">
+                    </div>
+                    <h3>Servidores Linux e Windows: princípios e comparativo</h3>
+                    <p>
+                        Os sistemas operacionais Linux e Windows Server são amplamente utilizados em ambientes de
+                        servidores. Cada um deles oferece características distintas em termos de arquitetura,
+                        flexibilidade,
+                        segurança e custo. Compreender essas diferenças é essencial para escolher a solução que atende
+                        melhor às necessidades específicas de uma organização.
+                    </p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                    <div class="painel-sistemas no-print">
+                        <button type="button" class="btn-linux" data-bs-toggle="modal" data-bs-target="#modal1">
+                        </button>
+                        <button type="button" class="btn-windows" data-bs-toggle="modal" data-bs-target="#modal2">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Linux</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Este sistema é amplamente adotado por sua natureza de código aberto, o que
+                                        possibilita que os administradores personalizem o sistema conforme necessário. O
+                                        Linux se destaca pela estabilidade e robustez em ambientes de alta demanda. Por
+                                        ser gratuito e ter suporte para diversos servidores <i>web</i> (Apache, Nginx),
+                                        é a
+                                        escolha ideal para empresas que procuram flexibilidade e redução de custos. Além
+                                        disso, a segurança do Linux é um dos fatores que o tornam popular em grandes
+                                        empresas e ambientes corporativos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Windows Server</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Desenvolvido pela Microsoft, o Windows Server oferece uma interface gráfica
+                                        intuitiva, além de suporte nativo ao IIS. Sua facilidade de integração com
+                                        outros produtos da Microsoft, como o Active Directory e o SQL Server, torna-o
+                                        vantajoso para empresas que já utilizam esses produtos em sua infraestrutura.
+                                        Embora o Windows Server seja um sistema licenciado, o suporte técnico
+                                        especializado e a integração com o ecossistema Microsoft o tornam ideal para
+                                        organizações que priorizam esse tipo de compatibilidade.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Para hospedar uma aplicação, alugar um servidor é uma solução comum e escalável. Esse processo
+                        envolve escolher entre um servidor Linux ou Windows e definir as configurações que se adequam
+                        melhor
+                        às necessidades do projeto. A seguir, veja os principais passos para alugar um servidor, em
+                        plataformas Linux ou Windows:
+                    </p>
+                    <ol>
+                        <li><b>Escolha do provedor de hospedagem</b></li>
+                        <p>
+                            Existem diversos provedores de hospedagem no mercado, como Amazon Web Services (AWS),
+                            GoDaddy,
+                            Microsoft Azure e DigitalOcean. Cada provedor oferece planos variados, desde opções de VPS
+                            (<i>virtual private server</i>) até servidores dedicados.
+                        </p>
+                        <li><b>Seleção do sistema operacional</b></li>
+                        <p>
+                            Existem diversos tipos de servidores disponíveis, cada um adequado para diferentes
+                            necessidades
+                            e tecnologias, como servidores Linux, Windows, MacOS, BSD (Berkeley Software Distribution),
+                            Solaris, AIX e HP-UX. Esses tantos outros não são tão utilizados, portanto o foco serão os
+                            servidores Windows e Linux, que dominam o mercado.
+                        </p>
+                        <p>
+                            De acordo com dados recentes obtidos pela W3Techs, (c2024a; c2024b), a distribuição de
+                            servidores <i>web</i> no mundo é dominada principalmente por Linux e Windows.
+                        </p>
+                        <div class="grafismo">
+                            <div class="destaque gradiente">
+                                <p>
+                                    <b>Linux:</b> aproximadamente <b>70 a 80%</b> dos servidores <i>web</i> globais
+                                    utilizam Linux. Isso se deve
+                                    à sua estabilidade, segurança e flexibilidade.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="grafismo">
+                            <div class="destaque gradiente">
+                                <p>
+                                    <b>Windows:</b> cerca de <b>20 a 30%</b> dos servidores <i>web</i> utilizam o
+                                    Windows. Embora seja menos
+                                    comum que o Linux, o Windows ainda é uma escolha popular para muitas organizações.
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            Esses números podem variar um pouco dependendo da fonte e do ano, mas a tendência geral
+                            mostra
+                            uma clara preferência por Linux para servidores <i>web</i>. Podem ser destacados os
+                            seguintes pontos de
+                            diferenciação entre os servidores:
+                        </p>
+                        <div class="grafismo">
+                            <div class="destaque gradiente">
+                                <p>
+                                    <b>Servidor Linux:</b> é ideal para aplicações que utilizam tecnologias
+                                    <i>open-source</i> (como
+                                    PHP, MySQL e Python). Requer conhecimentos de comandos Linux para configuração e
+                                    manutenção, embora muitos provedores ofereçam painéis de controle (como cPanel ou
+                                    Plesk) para facilitar a administração.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="grafismo">
+                            <div class="destaque gradiente">
+                                <p>
+                                    <b>Servidor Windows:</b> é recomendado para quem utiliza tecnologias Microsoft, como
+                                    ASP.NET e SQL Server. O servidor Windows oferece uma interface gráfica e é mais
+                                    simples para usuários que já têm experiência com o sistema Windows, facilitando a
+                                    configuração de servidores.
+                                </p>
+                            </div>
+                        </div>
+                        <li><b>Escolha do tipo de hospedagem</b> </li>
+                        <p>
+                            Ao hospedar um sistema <i>web</i>, é fundamental escolher as funcionalidades e os recursos
+                            mais
+                            adequados às necessidades da aplicação. Essa escolha impacta diretamente a otimização dos
+                            recursos, especialmente em relação ao custo de manutenção e ao tipo de hospedagem. A seguir,
+                            destacam-se as principais opções disponíveis para hospedagem de sistemas <i>web</i>,
+                            considerando
+                            diferentes perfis de uso e demandas:
+                        </p>
+                        <ul class="marcador-seta">
+                            <li><b>VPS:</b> combina a estabilidade de um servidor dedicado com o custo mais acessível de
+                                uma
+                                solução compartilhada, sendo adequado para <i>sites</i> de médio porte ou aplicativos
+                                com
+                                tráfego moderado.
+                            </li>
+                            <li>
+                                <b>Servidor dedicado:</b> oferece recursos exclusivos para um único usuário. É ideal
+                                para <i>sites</i> de
+                                grande porte ou aplicações que necessitam de alto desempenho.
+                            </li>
+                            <li>
+                                <b>Nuvem (<i>cloud hosting</i>):</b> permite escalabilidade automática com servidores
+                                que trabalham em
+                                rede, ideal para aplicações dinâmicas e que exigem alta disponibilidade.
+                            </li>
+                            <li>
+                                <b>Servidor compartilhado:</b> vários <i>sites</i> compartilham os mesmos recursos do
+                                servidor. É a opção
+                                mais econômica, indicada para <i>sites</i> menores ou com menor volume de tráfego, mas
+                                pode ter
+                                limitações de desempenho em razão da partilha de recursos.
+                            </li>
+                        </ul>
+                    </ol>
+                    <div class="divisoria" aria-hidden="true">
+                        <img src="img/img1.png" class="no-print img-fluid d-block mx-auto mt-5 mb-5">
+                    </div>
+                    <h3>Exemplos comparativos de empresas que utilizam servidores <i>web</i> e suas tecnologias</h3>
+                    <p>
+                        Empresas globais utilizam diferentes servidores <i>web</i> e tecnologias com base em suas
+                        necessidades
+                        específicas e vantagens técnicas. A Netflix, por exemplo, usa principalmente servidores Linux,
+                        como
+                        Ubuntu e FreeBSD, e tecnologias como Nginx para balanceamento de carga, permitindo
+                        escalabilidade e
+                        customização ideais para <i>streaming</i>.
+                    </p>
+                    <p>
+                        Já a Microsoft emprega o Windows Server com IIS, aproveitando a integração com seu ecossistema
+                        de
+                        produtos, como .NET e SQL Server, para simplificar a gestão interna.
+                    </p>
+                    <p>
+                        A Wikipédia, por sua vez, escolhe Linux (CentOS e Ubuntu) com Apache e MariaDB, em razão do
+                        baixo
+                        custo, da alta confiabilidade e do suporte comunitário robusto.
+                    </p>
+                    <p>Veja uma lista com essas e mais algumas empresas globais e as tecnologias <i>web</i> por elas
+                        utilizadas:
+                    </p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                    <div class="painel-empresas no-print">
+                        <button type="button" class="botao-3 botao" data-bs-toggle="modal" data-bs-target="#modal3">
+                        </button>
+                        <button type="button" class="botao-4 botao" data-bs-toggle="modal" data-bs-target="#modal4">
+                        </button>
+                        <button type="button" class="botao-5 botao" data-bs-toggle="modal" data-bs-target="#modal5">
+                        </button>
+                        <button type="button" class="botao-6 botao" data-bs-toggle="modal" data-bs-target="#modal6">
+                        </button>
+                        <button type="button" class="botao-7 botao" data-bs-toggle="modal" data-bs-target="#modal7">
+                        </button>
+                        <button type="button" class="botao-8 botao" data-bs-toggle="modal" data-bs-target="#modal8">
+                        </button>
+                        <button type="button" class="botao-9 botao" data-bs-toggle="modal" data-bs-target="#modal9">
+                        </button>
+                        <button type="button" class="botao-10 botao" data-bs-toggle="modal" data-bs-target="#modal10">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Netflix </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> principalmente Linux, especificamente Ubuntu e FreeBSD.
+                                        </li>
+                                        <li><b>Tecnologias:</b> utiliza Nginx para balanceamento de carga e entrega de
+                                            conteúdo.</li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> Linux permite alta escalabilidade e customização
+                                            para
+                                            demandas
+                                            intensivas de <i>streaming</i>.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Microsoft</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> Windows Server com IIS.</li>
+                                        <li><b>Tecnologias:</b> IIS, integrando-se ao ecossistema Microsoft, como .NET e
+                                            SQL
+                                            Server.</li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> a integração com produtos Microsoft simplifica a
+                                            gestão e
+                                            otimização dos sistemas internos.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Wikipédia </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> Linux, com foco em CentOS e Ubuntu.</li>
+                                        <li><b>Tecnologias:</b> Apache e MariaDB, com MediaWiki.</li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> o Linux, de baixo custo e de alta confiabilidade,
+                                            é suportado por
+                                            uma comunidade ativa.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">DHL</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> Windows Server com IIS.</li>
+                                        <li>
+                                            <b>Tecnologias:</b> IIS e SQL Server para gerenciamento de dados de
+                                            logística e
+                                            rastreamento.
+                                        </li>
+                                        <li>
+                                            <b>Motivo da Escolha:</b> a integração com SQL Server oferece um
+                                            gerenciamento
+                                            eficiente de dados.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Airbnb </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> Linux, combinando Ubuntu e Debian.</li>
+                                        <li><b>Tecnologias:</b> Nginx e Kubernetes para balanceamento e orquestração de
+                                            <i>containers</i>.
+                                        </li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> Linux oferece escalabilidade e controle para lidar
+                                            com
+                                            reservas globais.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Ford Motor Company </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> mistura de Linux e Windows Server.</li>
+                                        <li>
+                                            <b>Tecnologias:</b> Windows Server com IIS para aplicativos internos e Linux
+                                            para produção na nuvem.
+                                        </li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> a combinação permite flexibilidade e
+                                            compatibilidade
+                                            para diferentes necessidades.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">GoDaddy</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li><b>Servidor:</b> oferece tanto Linux quanto Windows para hospedagem de
+                                            clientes.</li>
+                                        <li><b>Tecnologias:</b> Apache e Nginx em Linux e IIS em Windows.</li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> como uma das maiores provedoras de hospedagem, a
+                                            GoDaddy
+                                            oferece ambas as opções para atender às diferentes necessidades dos
+                                            clientes,
+                                            oferecendo versatilidade entre ambientes de desenvolvimento e hospedagem.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Amazon</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="marcador-padrao">
+                                        <li>
+                                            <b>Servidor:</b> Linux, amplamente usado na Amazon Web Services (AWS) com
+                                            distros como
+                                            Amazon Linux e Ubuntu.
+                                        </li>
+                                        <li>
+                                            <b>Tecnologias:</b> Nginx e Apache para balanceamento de carga, além de
+                                            serviços
+                                            personalizados como o Elastic Load Balancing.
+                                        </li>
+                                        <li>
+                                            <b>Motivo da escolha:</b> a Amazon utiliza Linux para oferecer alta
+                                            flexibilidade,
+                                            estabilidade e controle de custos. Como a base de sua infraestrutura é em
+                                            nuvem,
+                                            o Linux facilita a personalização e a escalabilidade para atender às
+                                            necessidades de milhões de clientes no AWS, seu principal serviço de nuvem.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisoria div-encerramento" aria-hidden="true">
+                        <img src="img/div.png" class="no-print img-fluid d-block mx-auto">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6  col-xs-12">
+                            <h3>Encerramento</h3>
+                            <p>
+                                Os servidores <i>web</i> desempenham um papel crucial no acesso à informação e no funcionamento de
+                                <i>sites</i> e
+                                aplicativos, e a escolha entre Linux e Windows pode influenciar diretamente o desempenho, a
+                                segurança e o custo operacional de um projeto. A decisão entre essas duas plataformas depende
+                                das
+                                necessidades de cada empresa e dos recursos de <i>software</i> exigidos pelo projeto.
+                            </p>
+                            <p>
+                                Em resumo, o Linux é preferido por sua flexibilidade e seu baixo custo, enquanto o Windows
+                                Server
+                                oferece uma experiência integrada para empresas com infraestrutura baseada em tecnologias
+                                Microsoft.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12">
+                            <img src="img/img2.png" class="no-print img-fluid d-block mx-auto img-encerramento">
+                        </div>
+                    </div>
+                    <a href="#" class="voltar-topo no-print" aria-hidden="true"><img
+                            src="../assets/images/bt_topo.svg"></a>
+                </div>
+            </div>
+        </section>
+        <!-- Paginação-->
+        <!-- <footer class="text-center no-print d-flex justify-content-center mx-auto">
+                <ul class="pagination">
+    
+                </ul>
+            </footer>    -->
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <!--Jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!--Áudio customizado-->
+    <script src="../assets/js/audio-player.js"></script>
+    <!--Splide - slideshow-->
+    <script src="../assets/js/splide.min.js"></script>
+    <!--Prog'n'roll - barra de progresso conforme rola a página-->
+    <script src="../assets/js/prognroll.min.js"></script>
+    <script src="../print/print/template.config.js"></script>
+    <!--Scripts gerais-->
+    <script src="../assets/js/geral.js"></script>
+
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'slide',
+            perPage: 2,
+            trimSpace: false,
+            focus: 'center'
+        });
+
+        splide.mount();
+
+        $(function () {
+            $("body").prognroll();
+        });
+    </script>
+
+    <!-- Handtalk -->
+    <script>
+        var scriptElem = document.createElement("script");
+        scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+            scriptElem.charset = "UTF-8",
+            scriptElem.onload = function () {
+                window.ht = new HT({
+                    token: "bf5b7efb148a829a126a0e0c9fd533bf",
+                    align: "top",
+                    videoEnabled: true,
+                    ytEmbedReplace: true,
+                    mobileConfig: {
+                        align: "right",
+                        actionsAlign: "top",
+                        customButtonStyle: {
+                            borderRadius: "6px",
+                            size: "38px",
+                            horizontalMargin: "13px",
+                            bottomMargin: "140px",
+                            rightMargin: "40px"
+                        }
+                    }
+                });
+                $('.ht-skip').attr("aria-hidden", "true")
+            },
+            document.body.appendChild(scriptElem);
+
+    </script>
+</body>
+
+</html>

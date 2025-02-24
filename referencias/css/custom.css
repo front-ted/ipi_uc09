@@ -1,0 +1,17 @@
+.pagina {
+    word-wrap: break-word !important;
+    overflow-x: unset !important;
+}
+
+@media screen and (min-width: 820px) and (max-width: 820px) {
+    .br-mob {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:375px) {
+    .br-mob {
+        display: none;
+    }
+}
