@@ -4,6 +4,27 @@
   font-family: 'Libre Franklin Regular';
 }
 
+.pt-5 {
+  padding-top: unset !important;
+}
+
+.mb-5 {
+  margin-bottom: unset !important;
+}
+
+.destaque1 {
+  min-height: unset !important;
+}
+
+.pagina .citacao {
+  padding-left: 20%;
+}
+
+.pagina .transcricao {
+  margin-top: 20px;
+  border: 2px solid black;
+}
+
 /* SUPER RESET */
 .pagina *{
   all: unset;
@@ -53,9 +74,9 @@
   display: block;
   margin-left: 40px;	
 }
-/* .pagina div	{
+ .pagina div	{
   display: block;
-}	 */
+}	 
 .pagina dl	{
   display: block;
   margin-top: 1em;
@@ -203,6 +224,27 @@
   margin-right: 0;
   padding-left: 40px;	
 }
+
+.pagina ul {
+  display: block;
+  list-style-type: circle;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.pagina .marcador-numeral{
+  display: block;
+  list-style-type:decimal !important;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
 .pagina p{
   display: block;
   margin-top: 1em;
@@ -504,6 +546,11 @@ button, a {
   display: none !important;
 }
 
+.texto-borda {
+  border: #969494 2px solid !important;
+  padding: 10px;
+}
+
 @media print{
   .bg-topo-print{
     display: none;
@@ -678,6 +725,11 @@ iframe, iframe.youtube-pl{
   margin: 20px auto;
   padding: 10px;
 }
+
+.pagina .modal-dialog {
+  margin: unset !important;
+}
+
 .destaque.gradiente{background: transparent;}
 /* código para tabela não desconfigurar na versão impressa */
 table.text-left.align-middle {
