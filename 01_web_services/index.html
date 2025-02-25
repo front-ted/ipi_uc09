@@ -315,17 +315,185 @@
                     <!-- ver se aqui vai ser tooltip -->
                     <h3>Como funcionam os <i>web services</i></h3>
                     <p>
-                        <i>Web services</i> operam por meio de mensagens HTTP, ou <i>hypertext transfer protocol</i> (como <b>GET</b>, <b>POST</b>, <b>PUT</b>
-                        e <b>DELETE</b>), utilizando formatos de dados como XML ou JSON. Eles são muito importantes em sistemas
-                        modernos, especialmente em aplicativos móveis, nos quais parte das funcionalidades ocorre localmente
-                        no dispositivo, mas muitas operações dependem de chamadas na <i>web</i> e são processadas em servidores. É
+                        <i>Web services</i> operam por meio de mensagens HTTP, ou <i>hypertext transfer protocol</i>
+                        (como <b>GET</b>, <b>POST</b>, <b>PUT</b>
+                        e <b>DELETE</b>), utilizando formatos de dados como XML ou JSON. Eles são muito importantes em
+                        sistemas
+                        modernos, especialmente em aplicativos móveis, nos quais parte das funcionalidades ocorre
+                        localmente
+                        no dispositivo, mas muitas operações dependem de chamadas na <i>web</i> e são processadas em
+                        servidores. É
                         possível citar como exemplos os aplicativos de transporte, as redes sociais e os serviços de
                         <i>delivery</i>.
                     </p>
                     <p>Pode-se compreender melhor o uso de <i>web service</i> pensando no seu fluxo típico:</p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Descoberta do serviço
+                                    <img src="img/icon_descoberta_servico.svg" alt="Ícone" width="25" height="25"
+                                        class="ms-2 no-print">
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>O cliente localiza o serviço no UDDI (<i>universal description, discovery and
+                                            integration</i>), que funciona como um diretório de serviços disponíveis na
+                                        <i>web</i>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Obtenção dos detalhes
+                                    <img src="img/icon_obtencao_detalhes.svg" alt="Ícone" width="25" height="25"
+                                        class="ms-2 no-print">
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>O cliente consulta o WSDL (web services description language) do serviço. Esse
+                                        arquivo fornece os detalhes técnicos necessários, como os métodos disponíveis,
+                                        os parâmetros aceitos e o formato das mensagens. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Envio da requisição
+                                    <img src="img/icon_envio_requisicao.svg" alt="Ícone" width="25" height="25"
+                                        class="ms-2 no-print">
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>O cliente monta uma mensagem SOAP em XML, estruturando os dados necessários para
+                                        a operação desejada. Essa mensagem é enviada ao servidor por meio de um
+                                        protocolo, geralmente HTTP. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    Processamento e resposta
+                                    <img src="img/icon_processamento_resposta.svg" alt="Ícone" width="25" height="25"
+                                        class="ms-2 no-print">
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>O servidor processa a mensagem recebida, executa a lógica necessária e retorna
+                                        uma resposta no mesmo formato (SOAP/XML). Essa resposta é então processada pelo
+                                        cliente. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-5">
+                        Esse fluxo pode ser adaptado para REST (<i>representational state transfer</i>), em que os dados
+                        são
+                        transmitidos em formatos mais leves, como JSON, e as mensagens são enviadas diretamente pelo
+                        protocolo HTTP.
+                    </p>
+                    <h3>Microsserviços e sua importância</h3>
+                    <p>
+                        Microsserviços são uma abordagem arquitetural em que o sistema é dividido em componentes
+                        independentes, cada um responsável por uma funcionalidade específica. Essa separação facilita a
+                        manutenção e a escalabilidade, além de permitir que diferentes tecnologias sejam usadas para
+                        desenvolver cada serviço. Essa flexibilidade torna os microsserviços uma ótima opção para
+                        arquiteturas modernas, nas quais a agilidade e a adaptabilidade são fundamentais.
+                    </p>
+                    <div class="infografico no-print">
+                        <img src="img/infog2_microserviços.png" class="mx-auto d-block img-fluid img-info">
+                        <span class="texto1 text-center">Microsserviços e sua <br>importância</span>
+                        <span class="texto2 text-end">Agilidade e <br> Adaptabilidade</span>
+                        <span class="texto3 text-end">Funcionalidades <br> Independentes</span>
+                        <span class="texto4 text-start">Manutenção e <br>Escalabilidade</span>
+                        <span class="texto5 text-start">Flexibilidade <br> Tecnológica</span>
+                    </div>
+                    <div class="print visually-hidden" aria-hidden="true">
+                        <img src="img/print-micros.png" class="mx-auto d-block img-fluid">
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
+                            <img class="img-fluid mx-auto d-block no-print" src="img/">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
+                            <p class="mt-5">
+                                <b>Um exemplo de implementação de microsserviços</b> é a AWS (Amazon Web Services). A
+                                AWS
+                                organiza suas soluções em serviços independentes e especializados, cobrindo áreas como
+                                desenvolvimento de <i>software</i>, <i>marketing</i>, finanças e tecnologia de jogos.
+                                Essa abordagem
+                                permite que os usuários escolham e integrem apenas os serviços necessários, aproveitando
+                                uma estrutura escalável que atende a diferentes setores.
+                            </p>
+                        </div>
+                    </div>
+                    <h3><i>Web services</i> vs. aplicações <i>web</i></h3>
+                    <p>
+                        Embora um <i>web service</i> seja tecnicamente um tipo de aplicação <i>web</i>, existem algumas
+                        diferenças
+                        importantes:
+                    </p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                    <div class="painel-servicos no-print">
+                        <div class="conteudo-botao">
+                            <button type="button" class="botao botao-3" data-bs-toggle="modal" data-bs-target="#modal5">
+                            </button>
+                            <span class="texto-botao"><b>Serviços <i>web</i></b> <br> Foco na comunicação entre <br> sistemas</span>
+                        </div>
+                        <img src="img/icon_vs.png" class="img-fluid">
+                        <div class="conteudo-botao">
+                        <button type="button" class="botao botao-4" data-bs-toggle="modal" data-bs-target="#modal5">
+                        </button>
+                        <span class="texto-botao"><b>Aplicações <i>web</i></b> <br> Foco na interação do <br> usuário</span>
+                        </div>
+                    </div>
 
 
-pg7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="painel-servicos no-print">
+                        <button type="button" class="botao botao-3" data-bs-toggle="modal" data-bs-target="#modal5">
+                        </button>
+                        <span class="texto-botao">Serviços web <br> Foco na comunicação entre sistemas</span>
+                        <img src="img/icon_vs.png" class="img-fluid">
+                        <button type="button" class="botao botao-4" data-bs-toggle="modal" data-bs-target="#modal5">
+                        </button>
+                    </div> -->
+
+
+
+
 
 
 

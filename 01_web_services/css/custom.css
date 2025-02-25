@@ -25,20 +25,86 @@ body {
     transform: scale(1.1);
 }
 
+.texto1{
+    position: absolute;
+    margin-top: -30%;
+    margin-left: 36%;
+}
+
+.texto2 {
+    position: absolute;
+    margin-top: -23%;
+    margin-left: 11%;
+}
+
+.texto3 {
+    position: absolute;
+    margin-top: -12%;
+    margin-left: 11%;
+}
+
+.texto4 {
+    position: absolute;
+    margin-top: -17%;
+    margin-left: 69%;
+}
+
+.texto5 {
+    position: absolute;
+    margin-top: -7%;
+    margin-left: 69%;
+}
 
 
+.img-info{
+    margin-top: 12%;
+}
+
+.painel-servicos{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+}
+
+.botao-3{
+    background: url('../img/bt_servicos_web.png');
+    width: 111px;
+    height: 111px;
+    border: none;
+}
+
+.botao-3:hover{
+    background: url('../img/bt_servicos_web_hv.png');
+    border: none;
+}
+
+.botao-4{
+    background: url('../img/bt_aplicacoesweb.png');
+    width: 111px;
+    height: 111px;
+    border: none;
+}
+
+.botao-4:hover{
+    background: url('../img/bt_aplicacoesweb_hv.png');
+    border: none;
+}
 
 
+.conteudo-botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;  
+    margin-top: 10px;    
+}
 
-
-
-
-
-
-
-
-
-
+.texto-botao {
+    margin-top: 8px;
+    font-size: 17px; 
+    color: #333; 
+}
 
 
 
