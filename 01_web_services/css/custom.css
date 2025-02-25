@@ -14,18 +14,18 @@ body {
     filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
 }
 
-.painel-web{
+.painel-web {
     background: url('../img/infog1.png');
     width: 280px;
     height: 521px;
     margin: auto;
 }
 
-.botao-1:hover{
+.botao-1:hover {
     transform: scale(1.1);
 }
 
-.texto1{
+.texto1 {
     position: absolute;
     margin-top: -30%;
     margin-left: 36%;
@@ -56,37 +56,37 @@ body {
 }
 
 
-.img-info{
+.img-info {
     margin-top: 12%;
 }
 
-.painel-servicos{
+.painel-servicos {
     display: flex;
     justify-content: space-evenly;
     margin: auto;
     align-items: center;
 }
 
-.botao-3{
+.botao-3 {
     background: url('../img/bt_servicos_web.png');
     width: 111px;
     height: 111px;
     border: none;
 }
 
-.botao-3:hover{
+.botao-3:hover {
     background: url('../img/bt_servicos_web_hv.png');
     border: none;
 }
 
-.botao-4{
+.botao-4 {
     background: url('../img/bt_aplicacoesweb.png');
     width: 111px;
     height: 111px;
     border: none;
 }
 
-.botao-4:hover{
+.botao-4:hover {
     background: url('../img/bt_aplicacoesweb_hv.png');
     border: none;
 }
@@ -95,15 +95,15 @@ body {
 .conteudo-botao {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    text-align: center;  
-    margin-top: 10px;    
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .texto-botao {
     margin-top: 8px;
-    font-size: 17px; 
-    color: #333; 
+    font-size: 17px;
+    color: #333;
 }
 
 
@@ -132,20 +132,23 @@ body {
     color: #000;
 }
 
-
-
-
-@media screen and (max-width:1440px) {
-
+.bg-escuro .texto1,
+.bg-escuro .texto2,
+.bg-escuro .texto3,
+.bg-escuro .texto4,
+.bg-escuro .texto5{
+    color: #fff;
 }
 
-@media screen and (max-width:1400px) {
-
+.bg-escuro .texto-botao{
+    color: #fff;
 }
 
-@media screen and (max-width:1366px) {
+@media screen and (max-width:1440px) {}
 
-}
+@media screen and (max-width:1400px) {}
+
+@media screen and (max-width:1366px) {}
 
 @media screen and (max-width:1024px) {
     body {
@@ -167,6 +170,46 @@ body {
     .tab-pane {
         font-size: .8em;
     }
+
+    .texto1 {
+        position: absolute;
+        margin-top: -34%;
+        margin-left: 36%;
+        font-size: .8em;
+    }
+
+    .texto2 {
+        position: absolute;
+        margin-top: -26%;
+        margin-left: 7%;
+        font-size: .8em;
+    }
+
+    .texto3 {
+        position: absolute;
+        margin-top: -13%;
+        margin-left: 7%;
+        font-size: .8em;
+    }
+
+    .texto4 {
+        position: absolute;
+        margin-top: -19%;
+        margin-left: 72%;
+        font-size: .8em;
+    }
+
+    .texto5 {
+        position: absolute;
+        margin-top: -7%;
+        margin-left: 72%;
+        font-size: .8em;
+    }
+
+
+
+
+
 }
 
 
@@ -174,7 +217,97 @@ body {
 @media screen and (max-width:768px) {}
 
 
-@media screen and (max-width:500px) {}
+@media screen and (max-width:500px) {
+
+    .painel-servicos {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .infografico {
+        transform: scale(0.6)
+    }
+
+    .texto1 {
+        position: absolute;
+        margin-top: -74%;
+        margin-left: 26%;
+    }
+
+    .texto2 {
+        position: absolute;
+        margin-top: -53%;
+        margin-left: -38%;
+    }
+
+    .texto3 {
+        position: absolute;
+        margin-top: -29%;
+        margin-left: -40%;
+    }
+
+    .texto4 {
+        position: absolute;
+        margin-top: -42%;
+        margin-left: 102%;
+        width: 40%;
+    }
+
+    .texto5 {
+        position: absolute;
+        margin-top: -17%;
+        margin-left: 102%;
+    }
+
+}
 
 
-@media screen and (max-width:375px) {}
+@media screen and (max-width:375px) {
+    .infografico {
+        transform: scale(0.55)
+    }
+
+    .texto1 {
+        position: absolute;
+        margin-top: -74%;
+        margin-left: 26%;
+    }
+
+    .texto2 {
+        position: absolute;
+        margin-top: -56%;
+        margin-left: -45%;
+    }
+
+    .texto3 {
+        position: absolute;
+        margin-top: -31%;
+        margin-left: -47%;
+    }
+
+    .texto4 {
+        position: absolute;
+        margin-top: -44%;
+        margin-left: 102%;
+        width: 42%;
+    }
+
+    .texto5 {
+        position: absolute;
+        margin-top: -16%;
+        margin-left: 102%;
+    }
+
+
+
+
+
+
+
+
+
+}
