@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Inserir o tíutlo do conhecimento na tag title -->
+    <title>Tecnologias de servidor web: conceitos e princípios de funcionamento</title>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fa/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <!-- hover.css https://ianlunn.github.io/Hover/ -->
+    <link rel="stylesheet" href="../assets/css/hover-min.css" />
+    <!--Splide - slideshow-->
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
+    <!-- Preloader -->
+    <link rel="stylesheet" href="../assets/css/preloader.css">
+    <!-- Áudio customizado -->
+    <link rel="stylesheet" href="../assets/css/player.css">
+    <!-- Estilos do template -->
+    <link rel="stylesheet" href="../assets/css/cores.css">
+    <link rel="stylesheet" href="../print/print/print.css">
+    <link rel="stylesheet" href="../assets/css/template.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body class="bg-claro">
+    <!-- Preloader OBRIGATÓRIO -->
+    <div class="preloader">
+        <div class="anim"></div>
+        <p>Aguarde enquanto o conteúdo é carregado.</p>
+    </div>
+    <!-- Marca d'água OBRIGATÓRIA -->
+    <img src="../assets/images/logo_senac_colorido.png" id="marcadaguaLogo">
+
+    <header id="topo">
+        <div class="topo-logo">
+            <div class="container">
+                <h1 id="nome-curso" class="only-print">Informática para Internet</h1>
+                <div id="toggleButton" class="btn-tema_pagina no-print" onclick="toggleBackgroundImage()"
+                    aria-hidden="true"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Section principal #booklet OBRIGATÓRIO para funcionamento do print -->
+    <section id="booklet">
+        <div class="layer-preta no-print"></div>
+        <!-- Section .paginas OBRIGATÓRIA para funcionamento da paginação e do print -->
+        <section class="paginas">
+            <div class="pagina">
+                <div class="container">
+                    <h2>
+                        Programação orientada a serviços: objetivos, benefícios, contratos, acoplamento, abstração,
+                        capacidade de reuso, autonomia, independência de estado, visibilidade e composição de serviços
+                    </h2>
+                    <p>
+                        Ao longo de seus estudos, você tem visto sistemas únicos, independentes e que não se comunicam
+                        com
+                        outros sistemas, o que torna os projetos mais complexos e difíceis de gerenciar quando se pensa
+                        nessa estruturação aplicada em maior escala. Com a evolução da tecnologia, surgiu a necessidade
+                        de
+                        uma nova maneira de organizar os sistemas, tornando-os mais leves, eficientes e com maior
+                        potencial
+                        de crescimento.
+                    </p>
+                    <p>
+                        Essa nova abordagem refere-se à <i>service-oriented architecture</i> (SOA), ou, em português,
+                        arquitetura
+                        orientada a serviços. É importante destacar que esse termo se refere à estrutura, organização e
+                        estratégia do projeto, enquanto a programação de sistemas orientado a serviços consiste na
+                        prática
+                        de criar e desenvolver o sistema com base nessa estrutura. Sendo assim, você explorará, a
+                        seguir, os
+                        conceitos básicos, os princípios e as aplicações dessa arquitetura.
+                    </p>
+                    <h3>Arquitetura orientada a serviços e princípios fundamentais da SOA</h3>
+                    <p>
+                        Os princípios fundamentais da SOA são diretrizes essenciais que orientam a criação, a implementação
+                        e a interação dos serviços dentro de uma arquitetura orientada a serviços. Esses princípios visam
+                        garantir que os serviços sejam eficientes, reutilizáveis e escaláveis, além de facilitar a
+                        integração e a manutenção do sistema ao longo do tempo.
+                    </p>
+                    <p>
+                        Acompanhe, a seguir, os princípios que sustentam a aplicação bem-sucedida da SOA, proporcionando uma
+                        base sólida para o desenvolvimento de sistemas flexíveis e de alto desempenho.
+                    </p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+
+modal 90%
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
+            </div>
+        </section>
+        <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
+        <!-- Paginação-->
+        <!-- <footer class="text-center no-print d-flex justify-content-center mx-auto">
+                <ul class="pagination">
+    
+                </ul>
+            </footer>    -->
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <!--Jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!--Áudio customizado-->
+    <script src="../assets/js/audio-player.js"></script>
+    <!--Splide - slideshow-->
+    <script src="../assets/js/splide.min.js"></script>
+    <!--Prog'n'roll - barra de progresso conforme rola a página-->
+    <script src="../assets/js/prognroll.min.js"></script>
+    <script src="../print/print/template.config.js"></script>
+    <!--Scripts gerais-->
+    <script src="../assets/js/geral.js"></script>
+
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'slide',
+            perPage: 2,
+            trimSpace: false,
+            focus: 'center'
+        });
+
+        splide.mount();
+
+        $(function () {
+            $("body").prognroll();
+        });
+    </script>
+
+    <!-- Handtalk -->
+    <script>
+        var scriptElem = document.createElement("script");
+        scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+            scriptElem.charset = "UTF-8",
+            scriptElem.onload = function () {
+                window.ht = new HT({
+                    token: "bf5b7efb148a829a126a0e0c9fd533bf",
+                    align: "top",
+                    videoEnabled: true,
+                    ytEmbedReplace: true,
+                    mobileConfig: {
+                        align: "right",
+                        actionsAlign: "top",
+                        customButtonStyle: {
+                            borderRadius: "6px",
+                            size: "38px",
+                            horizontalMargin: "13px",
+                            bottomMargin: "140px",
+                            rightMargin: "40px"
+                        }
+                    }
+                });
+                $('.ht-skip').attr("aria-hidden", "true")
+            },
+            document.body.appendChild(scriptElem);
+
+    </script>
+</body>
+
+</html>
