@@ -106,10 +106,50 @@ body {
     color: #333;
 }
 
+.painel-uddi {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    margin-left: -13%;
+    height: 370px;
+}
 
+.botao-7 {
+    background: url('../img/bt_wsdl.png');
+    width: 159px;
+    height: 347px;
+    position: absolute;
+    border: none;
+}
 
+.botao-7:hover {
+    background: url('../img/bt_wsdl_hv.png');
+    width: 159px;
+    height: 347px;
+    position: absolute;
+    border: none;
+}
 
+.botao-8 {
+    background: url('../img/bt_uddi.png');
+    width: 159px;
+    height: 384px;
+    position: absolute;
+    border: none;
+    margin-left: 32%;
+    margin-top: 0%;
+}
 
+.botao-8:hover {
+    background: url('../img/bt_uddi_hv.png');
+    width: 159px;
+    height: 384px;
+    position: absolute;
+    border: none;
+    margin-left: 31.8%;
+}
 
 
 
@@ -136,11 +176,11 @@ body {
 .bg-escuro .texto2,
 .bg-escuro .texto3,
 .bg-escuro .texto4,
-.bg-escuro .texto5{
+.bg-escuro .texto5 {
     color: #fff;
 }
 
-.bg-escuro .texto-botao{
+.bg-escuro .texto-botao {
     color: #fff;
 }
 
@@ -155,6 +195,9 @@ body {
         background: none;
     }
 
+    .painel-uddi {
+        margin-left: -18%;
+    }
 }
 
 
@@ -206,15 +249,33 @@ body {
         font-size: .8em;
     }
 
+    .botao-7{
+        margin-left: -5.5%;
+    }
+    .botao-7:hover{
+        margin-left: -5.5%;
+    }
 
-
-
+    .botao-8:hover{
+        margin-left: 32%;
+    }
 
 }
 
 
 
-@media screen and (max-width:768px) {}
+@media screen and (max-width:768px) {
+    .botao-7{
+        margin-left: -7.5%;
+    }
+    .botao-7:hover{
+        margin-left: -7.5%;
+    }
+
+    .botao-8:hover{
+        margin-left: 32%;
+    }
+}
 
 
 @media screen and (max-width:500px) {
@@ -263,8 +324,42 @@ body {
         margin-left: 102%;
     }
 
+    .botao-7 {
+        margin-left: -40%;
+    }
+
+    .botao-7:hover {
+        margin-left: -40%;
+    }
+
+    .botao-8:hover {
+        margin-left: 32%;
+    }
+
 }
 
+
+@media screen and (max-width:414px) {
+    .botao-8:hover {
+        margin-left: 31.8%;
+    }
+
+    .botao-8 {
+        margin-left: 32%;
+    }
+
+    .painel-uddi {
+        margin-left: 5%;
+    }
+
+    .botao-7 {
+        margin-left: -42%;
+    }
+
+    .botao-7:hover {
+        margin-left: -42%;
+    }
+}
 
 @media screen and (max-width:375px) {
     .infografico {
@@ -302,7 +397,25 @@ body {
         margin-left: 102%;
     }
 
+    .botao-8:hover {
+        margin-left: 33.9%;
+    }
 
+    .botao-8 {
+        margin-left: 34%;
+    }
+
+    .painel-uddi {
+        margin-left: 5%;
+    }
+
+    .botao-7 {
+        margin-left: -48%;
+    }
+
+    .botao-7:hover {
+        margin-left: -48%;
+    }
 
 
 
