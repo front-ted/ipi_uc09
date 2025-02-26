@@ -1,12 +1,13 @@
 body {
     background:
-        url('../img/bg_top.png') no-repeat top,
-        url('../img/bg_elem2.png') no-repeat 0% 25%,
+        url('../img/bg_gradiente.png') no-repeat;
+        background-size: cover;
+        /* url('../img/bg_elem2.png') no-repeat 0% 25%,
         url('../img/bg_elem3.png') no-repeat 100% 24%,
         url('../img/BG_elem5.png') no-repeat 100% 65%,
         url('../img/BG_elem4.png') no-repeat 0% 71%,
-        url('../img/BG_bottom.png') no-repeat bottom;
-    background-size: 100%, 25%, 18%, 20%, 20%, auto;
+        url('../img/BG_bottom.png') no-repeat bottom; 
+    background-size: 100%, 25%, 18%, 20%, 20%, auto;*/
 }
 
 .ilustracao {
@@ -151,8 +152,17 @@ body {
     margin-left: 31.8%;
 }
 
+.netflix {
+    margin-top: 22%;
+}
 
+.trello{
+    margin-top: 20%;
+}
 
+.slack{
+    margin-top: 5%;
+}
 
 
 
@@ -198,6 +208,14 @@ body {
     .painel-uddi {
         margin-left: -18%;
     }
+
+    .netflix {
+        margin-top: 22%;
+    }
+
+
+
+
 }
 
 
@@ -249,15 +267,20 @@ body {
         font-size: .8em;
     }
 
-    .botao-7{
-        margin-left: -5.5%;
-    }
-    .botao-7:hover{
+    .botao-7 {
         margin-left: -5.5%;
     }
 
-    .botao-8:hover{
+    .botao-7:hover {
+        margin-left: -5.5%;
+    }
+
+    .botao-8:hover {
         margin-left: 32%;
+    }
+
+    .trello {
+        margin-top: 12%;
     }
 
 }
@@ -265,14 +288,15 @@ body {
 
 
 @media screen and (max-width:768px) {
-    .botao-7{
-        margin-left: -7.5%;
-    }
-    .botao-7:hover{
+    .botao-7 {
         margin-left: -7.5%;
     }
 
-    .botao-8:hover{
+    .botao-7:hover {
+        margin-left: -7.5%;
+    }
+
+    .botao-8:hover {
         margin-left: 32%;
     }
 }
@@ -335,6 +359,15 @@ body {
     .botao-8:hover {
         margin-left: 32%;
     }
+
+    .netflix, .trello, .slack{
+        margin-top: 5%;
+    }
+
+    .texto-trello, .texto-slack, .texto-erp{
+        margin-top: 12%;
+    }
+
 
 }
 

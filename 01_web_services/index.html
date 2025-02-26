@@ -586,28 +586,152 @@
                     <p class="mt-5">Veja como funciona na prática: </p>
                     <figure class="my-5 no-print">
                         <div class="figure-img mb-4">
-                            <img class="img-fluid d-block borda-colorida mx-auto" src="">
+                            <img class="img-fluid d-block mx-auto" src="">
                         </div>
                     </figure>
                     <div class="acessivel visually-hidden print">
+                        <p>Branco – O que é UDDI?</p>
+                        <p>
+                            Rosa – O UDDI (universal description, discovery and integration) é um diretório que lista
+                            serviços disponíveis.
+                        </p>
+                        <p>Branco – O que é WSDL?</p>
+                        <p>
+                            Rosa – O WSDL (web services description language) é uma linguagem que descreve e fornece os
+                            detalhes de como acessar o serviço.
+                        </p>
+                        <p>Branco – Como o cliente envia dados ao servidor?</p>
+                        <p>
+                            Rosa – O cliente monta uma mensagem SOAP em XML, uma linguagem-padrão para estruturar dados,
+                            e
+                            com os dados necessários a envia ao servidor.
+                        </p>
+                        <p>Branco – O que acontece após o servidor receber a mensagem?</p>
+                        <p>Rosa – O servidor processa a mensagem e retorna a resposta no mesmo formato.</p>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <p>
+                        Imagine um serviço de rastreamento de encomendas. O cliente consulta o UDDI para encontrar o
+                        serviço
+                        de rastreamento, utiliza o WSDL para saber quais informações enviar (como número de rastreio) e
+                        recebe, via SOAP, dados atualizados sobre a entrega. Esse modelo foi muito utilizado antes da
+                        popularização de tecnologias como REST e JSON, que oferecem maior simplicidade e flexibilidade.
+                    </p>
+                    <div class="grafismo">
+                        <div class="destaque borda-colorida icone importante">
+                            <p>
+                                O protocolo SOAP, embora tenha se tornado popular em seu surgimento, com a chegada da
+                                arquitetura REST e dos arquivos JSON, que apresentam uma estruturação mais rápida e
+                                leve,
+                                tem sido abandonando, sendo utilizado com maior frequência em projetos mais antigos ou
+                                que
+                                necessitem de características específicas que só podem ser encontradas no XML.
+                            </p>
+                        </div>
+                    </div>
+                    <h3>SaaS</h3>
+                    <p>
+                        SaaS (<i>software as a service</i>, ou <i>software</i> como serviço) é um modelo de
+                        <i>software</i> baseado em nuvem que
+                        disponibiliza aplicações aos usuários por meio de um navegador da internet. Nessas
+                        circunstâncias, o
+                        serviço é hospedado de forma que seja possível realizar acesso na aplicação sob demanda, sem
+                        necessidade de instalações nem qualquer outra possível configuração nos computadores dos
+                        clientes.
+                        Para o usuário final, a utilização de um SaaS é atrativa, pois não é necessário se preocupar
+                        sobre
+                        como o serviço é mantido ou como a infraestrutura é gerenciada. O foco principal será como usar
+                        o
+                        <i>software</i>. Aplicações como essa fazem uso de web services e APIs REST.
+                    </p>
+                    <p>
+                        Outro aspecto característico que pode ser atribuído ao modelo SaaS é a cobrança por uso do
+                        <i>software</i>,
+                        e não por sua compra. O usuário não tem posse do <i>software</i>, apenas tem direito de usá-lo
+                        (alguns,
+                        inclusive, são gratuitos), podendo investir mais em recursos extras, caso seja de interesse.
+                        Trata-se de um modelo que tem se popularizado.
+                    </p>
+                    <p>Veja alguns exemplos populares de SaaS que você provavelmente conhece, mas sem saber que é um
+                        SaaS:</p>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
+                            <p>
+                                <b> Netflix</b>: é um serviço de <i>streaming</i> que tem se tornado cada vez mais
+                                popular atualmente e
+                                é muito similar a diversos outros que você já deve ter ouvido falar (Amazon Prime,
+                                Disney+, HBO Max etc.). Você pode utilizar em qualquer computador, em qualquer lugar, e
+                                as atualizações do catálogo são constantes. Para que os aplicativos de celular ou TV
+                                tenham acesso aos dados, são usados diversos <i>web services</i> para autenticar
+                                usuário,
+                                recuperar listas, entre outras funções.
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
+                            <img class="img-fluid mx-auto d-block no-print netflix" src="img/logo_netflix.png">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 order-2 order-md-1">
+                            <img class="img-fluid mx-auto d-block no-print trello" src="img/logo_trello.png">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7 order-1 order-md-2">
+                            <p class="texto-trello">
+                                <b>Trello</b>: é uma ferramenta popular voltada para o gerenciamento de projetos, tanto
+                                pessoais quanto profissionais. Tem diversos planos para aprimorar suas funcionalidades e
+                                acrescentar ainda mais benefícios. Disponibiliza ainda um API <i>web</i> em que é
+                                possível
+                                integrar um sistema ao Trello, automatizando algumas ações.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
+                            <p class="texto-slack">
+                                <b>Slack</b>: é uma ferramenta com base em <i>chats</i> para realizar comunicação ágil
+                                entre áreas de
+                                uma empresa. É utilizado para organizar times de forma colaborativa dentro do ambiente
+                                de trabalho. Embora o acesso inicial seja gratuito, com sua assinatura é possível
+                                desbloquear diversas vantagens de organização de times, fluxo de trabalho e, até mesmo,
+                                conexão com outras empresas.
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
+                            <img class="img-fluid mx-auto d-block no-print slack" src="img/logo_slack.png">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 order-2 order-md-1">
+                            <img class="img-fluid mx-auto d-block no-print erp" src="img/logo_erp.png">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7 order-1 order-md-2">
+                            <p class="texto-erp">
+                                <b>ERPs</b>: existem também sistemas empresariais, conhecidos como ERP (planejamento de
+                                recursos empresariais) sob modelo SaaS. Os sistemas ERP trabalham com gerenciamento de
+                                funções diárias e automatização de processos, gestão de finanças, contabilidade etc.
+                                Entre os exemplos de ERP SaaS, destacam-se o TOTVS ERP Cloud, Sankhya Cloud e Oracle
+                                Cloud ERP.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="mt-5">
+                        É importante diferenciar um SaaS de <i>softwares</i> com licença. Em um SaaS, não existe uma
+                        licença para
+                        ser vendida, e sim um pagamento decorrente de seu uso. Já a venda de uma licença caracteriza-se
+                        como
+                        a venda de um produto. Com o crescimento do uso de SaaS, muitos sistemas têm sido
+                        disponibilizados
+                        nessa forma de tecnologia, sendo uma forma mais prática de uso e divulgação desses úteis
+                        sistemas.
+                    </p>
+                    <h3>Encerramento</h3>
+                    <p>
+                        Com os conceitos bem consolidados, você será capaz de compreender melhor a estruturação dos
+                        códigos
+                        e a lógica de comunicação, juntamente com sua importância no mercado atual e os benefícios da
+                        comunicação entre diferentes sistemas. Alguns termos abordados neste material serão explorados
+                        mais
+                        detalhadamente em outros conteúdos.
+                    </p>
                 </div>
                 <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
