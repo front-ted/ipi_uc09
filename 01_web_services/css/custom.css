@@ -1,8 +1,24 @@
 body {
     background:
+
+        url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
+        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
+        url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
+        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
+
+        url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
+        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
+        url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
+        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
+
+        url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
+        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
+        url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
+
         url('../img/bg_gradiente.png') no-repeat;
-        background-size: cover;
-        /* url('../img/bg_elem2.png') no-repeat 0% 25%,
+
+    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
+    /* 
         url('../img/bg_elem3.png') no-repeat 100% 24%,
         url('../img/BG_elem5.png') no-repeat 100% 65%,
         url('../img/BG_elem4.png') no-repeat 0% 71%,
@@ -156,11 +172,11 @@ body {
     margin-top: 22%;
 }
 
-.trello{
+.trello {
     margin-top: 20%;
 }
 
-.slack{
+.slack {
     margin-top: 5%;
 }
 
@@ -194,7 +210,34 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width:1440px) {}
+@media screen and (max-width:1440px) {
+
+    body {
+        background:
+
+            url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
+            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
+            url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
+            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
+
+            url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
+            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
+            url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
+            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
+
+            url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
+            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
+            url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
+
+            url('../img/bg_gradiente.png') no-repeat;
+
+        background-size: 15%, 15%, auto, 15%, 15%, 15%, auto, 15%, 15%, 15%, auto, cover;
+
+
+
+    }
+
+}
 
 @media screen and (max-width:1400px) {}
 
@@ -213,7 +256,10 @@ body {
         margin-top: 22%;
     }
 
-
+    body {
+        background: url('../img/bg_gradiente.png') no-repeat;
+        background-size: cover;
+    }
 
 
 }
@@ -360,11 +406,15 @@ body {
         margin-left: 32%;
     }
 
-    .netflix, .trello, .slack{
+    .netflix,
+    .trello,
+    .slack {
         margin-top: 5%;
     }
 
-    .texto-trello, .texto-slack, .texto-erp{
+    .texto-trello,
+    .texto-slack,
+    .texto-erp {
         margin-top: 12%;
     }
 
