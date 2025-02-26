@@ -31,12 +31,76 @@ body {
     filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
 }
 
+
 .painel-web {
     background: url('../img/infog1.png');
+    position: relative;
     width: 280px;
     height: 521px;
     margin: auto;
 }
+
+.botao-1990 {
+    background: url('../img/bt_1990.png');
+    width: 94px;
+    height: 42px;
+    position: absolute;
+    border: none;
+    margin-top: 20%;
+    margin-left: 57%;
+}
+
+.botao-1990:hover {
+    transform: scale(1.2);
+}
+
+.botao-2000 {
+    background: url('../img/bt_2000.png');
+    width: 94px;
+    height: 43px;
+    position: absolute;
+    border: none;
+    margin-top: 64%;
+    margin-left: 9%;
+}
+
+.botao-2000:hover {
+    transform: scale(1.2);
+}
+
+.botao-2004 {
+    background: url('../img/bt_2004.png');
+    width: 94px;
+    height: 42px;
+    position: absolute;
+    border: none;
+    margin-top: 107%;
+    margin-left: 57%;
+}
+
+.botao-2004:hover {
+    transform: scale(1.2);
+}
+
+.botao-atualmente {
+    background: url('../img/bt_atualmente.png');
+    width: 133px;
+    height: 43px;
+    position: absolute;
+    border: none;
+    margin-top: 151%;
+    margin-left: -5%;
+}
+
+.botao-atualmente:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
 
 .botao-1:hover {
     transform: scale(1.1);
@@ -233,8 +297,6 @@ body {
 
         background-size: 15%, 15%, auto, 15%, 15%, 15%, auto, 15%, 15%, 15%, auto, cover;
 
-
-
     }
 
 }
@@ -417,7 +479,9 @@ body {
     .texto-erp {
         margin-top: 12%;
     }
-
+    .texto-intro{
+        margin-top: 5%;
+    }
 
 }
 
