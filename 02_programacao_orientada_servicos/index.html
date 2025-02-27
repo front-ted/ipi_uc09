@@ -80,18 +80,241 @@
                     </p>
                     <h3>Arquitetura orientada a serviços e princípios fundamentais da SOA</h3>
                     <p>
-                        Os princípios fundamentais da SOA são diretrizes essenciais que orientam a criação, a implementação
-                        e a interação dos serviços dentro de uma arquitetura orientada a serviços. Esses princípios visam
+                        Os princípios fundamentais da SOA são diretrizes essenciais que orientam a criação, a
+                        implementação
+                        e a interação dos serviços dentro de uma arquitetura orientada a serviços. Esses princípios
+                        visam
                         garantir que os serviços sejam eficientes, reutilizáveis e escaláveis, além de facilitar a
                         integração e a manutenção do sistema ao longo do tempo.
                     </p>
                     <p>
-                        Acompanhe, a seguir, os princípios que sustentam a aplicação bem-sucedida da SOA, proporcionando uma
+                        Acompanhe, a seguir, os princípios que sustentam a aplicação bem-sucedida da SOA, proporcionando
+                        uma
                         base sólida para o desenvolvimento de sistemas flexíveis e de alto desempenho.
                     </p>
                     <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                    <div class="painel-soa no-print">
+                        <button type="button" class="botao botao-definicao" data-bs-toggle="modal"
+                            data-bs-target="#modal1">
+                        </button>
+                        <button type="button" class="botao botao-beneficio" data-bs-toggle="modal"
+                            data-bs-target="#modal2">
+                        </button>
+                        <button type="button" class="botao botao-2004" data-bs-toggle="modal" data-bs-target="#modal3">
+                        </button>
+                        <button type="button" class="botao botao-atualmente" data-bs-toggle="modal"
+                            data-bs-target="#modal4">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Definição e objetivos </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <p>
+                                            No início do desenvolvimento de <i>softwares</i>, os sistemas eram
+                                            desenvolvidos como
+                                            um projeto único, em que todas as funcionalidades (como interface de
+                                            usuário,
+                                            lógica de negócios e acesso a dados) eram integradas em uma única aplicação,
+                                            em
+                                            uma única plataforma. Essa estruturação mencionada é o que você tem
+                                            aprendido
+                                            até o momento, sendo conhecida como “monólito” ou “sistema monolítico”.
+                                        </p>
+                                        <p>
+                                            O uso da estruturação monolítica implica em alguns desafios específicos:
+                                            qualquer mudança ou atualização afeta todo o sistema, tornando o
+                                            desenvolvimento, a manutenção e a escalabilidade – capacidade de expansão de
+                                            um
+                                            projeto – mais difíceis. Além disso, como todas as partes do sistema estão
+                                            relacionadas entre si, em um único projeto, ele fica mais vulnerável a
+                                            falhas e
+                                            tem uma maior dificuldade para se adaptar a novos requisitos ou tecnologias.
+                                        </p>
+                                        <p>
+                                            Objetivando evitar a repetição de códigos, reduzir o tamanho dos projetos,
+                                            facilitar a implementação de soluções em múltiplos clientes e permitir a
+                                            aplicação de novas tecnologias, surgiu a arquitetura orientada a serviços. A
+                                            lógica principal dessa arquitetura é a divisão dos sistemas em partes
+                                            menores
+                                            chamadas serviços, que são módulos independentes (cada serviço com uma
+                                            funcionalidade específica e suas respectivas regras de negócio) que podem
+                                            ser
+                                            reutilizados por meio de requisições entre os serviços.
+                                        </p>
+                                        <p>
+                                            Considere que um serviço pode depender de outro serviço para atingir seus
+                                            objetivos. Essas requisições são normalmente realizadas por meio de um
+                                            <i>enterprise service bus</i> (EBS), ou barramento de serviço empresarial,
+                                            que se trata
+                                            de uma solução que conecta diferentes aplicativos dentro de uma empresa. Ele
+                                            funciona como um “ponto central” que ajuda esses aplicativos a se
+                                            comunicarem
+                                            entre si, fazendo ajustes nos dados, organizando as mensagens, direcionando
+                                            as
+                                            informações para os lugares certos, trocando os tipos de comunicação ou até
+                                            mesmo combinando várias solicitações em uma só. Embora seja uma abordagem
+                                            bastante comum para realizar requisições, seu uso não é obrigatório e
+                                            existem
+                                            alternativas que podem se encaixar melhor conforme o contexto, no entanto
+                                            não é
+                                            necessário se aprofundar nesse ponto agora.
+                                        </p>
+                                        <p>
+                                            Outra característica importante que pode ser observada é que as
+                                            funcionalidades
+                                            presentes em cada serviço podem ser desenvolvidas em qualquer linguagem,
+                                            pois é
+                                            criada uma interface que permite a comunicação entre os serviços, sem que
+                                            eles
+                                            dependam da linguagem usada para sua criação.
+                                        </p>
+                                        <p>
+                                            É possível pensar no seguinte exemplo: uma empresa de serviços financeiros é
+                                            composta de diversos processos e gerenciamentos que fazem parte de sua
+                                            operação,
+                                            como acesso ao sistema de contas-correntes, solicitação de empréstimos e
+                                            gestão
+                                            de investimentos. Todos esses processos exigem a autenticação de usuários.
+                                            Em
+                                            vez de reescrever o código de autenticação para cada um desses processos, a
+                                            empresa pode criar um único serviço de autenticação e reutilizá-lo em todas
+                                            as
+                                            aplicações que necessitam dessa funcionalidade, garantindo mais segurança e
+                                            eficiência no sistema como um todo.
+                                        </p>
+                                        <p>Veja uma representação visual de como esse processo funciona:</p>
+                                        <figure class="my-5 no-print">
+                                            <img src="img/"
+                                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                                                alt="Imagem">
+                                            <a href="img/" target="_blank"
+                                                class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                                <img src="img/"
+                                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                    alt="Imagem">
+                                            </a>
+                                            <figcaption class="figure-caption text-center">Exemplo de aplicação de um
+                                                serviço a um sistema <br>
+                                                Fonte: Adaptado de Guedes (2017) </figcaption>
+                                        </figure>
+                                        <div class="acessivel visually-hidden no-print">
+                                            A imagem mostra um diagrama de arquitetura de sistemas baseada em SOA
+                                            (arquitetura orientada a serviços). No centro da imagem, há um serviço web
+                                            chamado AutenticarUsuario, que interage com uma Base de Dados. O serviço
+                                            AutenticarUsuario contém regras de negócio e é acessado por três sistemas
+                                            diferentes: Software 1 (da Empresa 1), Software 2 (da Empresa 2) e Software
+                                            3 (da Empresa 3). A comunicação entre os sistemas e o serviço ocorre por
+                                            meio de um barramento de serviços, indicado por linhas pontilhadas. O
+                                            diagrama destaca a integração entre os sistemas de diferentes empresas, com
+                                            o serviço centralizando a autenticação de usuários.
+                                        </div>
+                                        <p>
+                                            Também é importante destacar que, no contexto de uso de serviços, caso seja
+                                            necessário realizar manutenção, não será preciso modificar todos os
+                                            sistemas,
+                                            apenas o serviço de autenticação de usuário, o que torna as atualizações
+                                            mais
+                                            ágeis e práticas.
+                                        </p>
+                                        <div class="grafismo">
+                                            <div class="destaque borda-colorida icone dica">
+                                                <p>
+                                                    Quando se fala em SOA, é muito comum que aconteça uma confusão em
+                                                    relação a microsserviços. Embora sejam ideias semelhantes, têm
+                                                    diferenças em relação a sua aplicabilidade e seus princípios. A SOA
+                                                    é um estilo de <i>design</i> em que aplicações são divididas em
+                                                    serviços
+                                                    independentes que se comunicam por meio de interfaces. Já os
+                                                    microsserviços são uma evolução da SOA, com serviços menores, mais
+                                                    especializados e independentes, facilitando escalabilidade e
+                                                    manutenção.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="botao hvr-sweep-to-right"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-modal 90%
+                    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Benefícios</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <p>
+                                            Com o tempo, essa abordagem começou a se destacar, sendo amplamente implementada
+                                            e aprimorada conforme demandas do mercado, trazendo vários benefícios com sua
+                                            aplicação. Confira alguns desses aspectos positivos:
+                                        </p>
+                                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                                        pg 6 painel abas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="botao hvr-sweep-to-right"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Definição e objetivos </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="botao hvr-sweep-to-right"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
 
 

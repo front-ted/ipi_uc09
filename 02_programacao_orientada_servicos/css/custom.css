@@ -40,209 +40,6 @@ body {
     margin: auto;
 }
 
-.botao-1990 {
-    background: url('../img/bt_1990.png');
-    width: 94px;
-    height: 42px;
-    position: absolute;
-    border: none;
-    margin-top: 20%;
-    margin-left: 57%;
-}
-
-.botao-1990:hover {
-    transform: scale(1.2);
-}
-
-.botao-2000 {
-    background: url('../img/bt_2000.png');
-    width: 94px;
-    height: 43px;
-    position: absolute;
-    border: none;
-    margin-top: 64%;
-    margin-left: 9%;
-}
-
-.botao-2000:hover {
-    transform: scale(1.2);
-}
-
-.botao-2004 {
-    background: url('../img/bt_2004.png');
-    width: 94px;
-    height: 42px;
-    position: absolute;
-    border: none;
-    margin-top: 107%;
-    margin-left: 57%;
-}
-
-.botao-2004:hover {
-    transform: scale(1.2);
-}
-
-.botao-atualmente {
-    background: url('../img/bt_atualmente.png');
-    width: 133px;
-    height: 43px;
-    position: absolute;
-    border: none;
-    margin-top: 151%;
-    margin-left: -5%;
-}
-
-.botao-atualmente:hover {
-    transform: scale(1.2);
-}
-
-
-
-
-
-
-
-.botao-1:hover {
-    transform: scale(1.1);
-}
-
-.texto1 {
-    position: absolute;
-    margin-top: -30%;
-    margin-left: 36%;
-}
-
-.texto2 {
-    position: absolute;
-    margin-top: -23%;
-    margin-left: 11%;
-}
-
-.texto3 {
-    position: absolute;
-    margin-top: -12%;
-    margin-left: 11%;
-}
-
-.texto4 {
-    position: absolute;
-    margin-top: -17%;
-    margin-left: 69%;
-}
-
-.texto5 {
-    position: absolute;
-    margin-top: -7%;
-    margin-left: 69%;
-}
-
-
-.img-info {
-    margin-top: 12%;
-}
-
-.painel-servicos {
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto;
-    align-items: center;
-}
-
-.botao-3 {
-    background: url('../img/bt_servicos_web.png');
-    width: 111px;
-    height: 111px;
-    border: none;
-}
-
-.botao-3:hover {
-    background: url('../img/bt_servicos_web_hv.png');
-    border: none;
-}
-
-.botao-4 {
-    background: url('../img/bt_aplicacoesweb.png');
-    width: 111px;
-    height: 111px;
-    border: none;
-}
-
-.botao-4:hover {
-    background: url('../img/bt_aplicacoesweb_hv.png');
-    border: none;
-}
-
-
-.conteudo-botao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.texto-botao {
-    margin-top: 8px;
-    font-size: 17px;
-    color: #333;
-}
-
-.painel-uddi {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-around;
-    margin-left: -13%;
-    height: 370px;
-}
-
-.botao-7 {
-    background: url('../img/bt_wsdl.png');
-    width: 159px;
-    height: 347px;
-    position: absolute;
-    border: none;
-}
-
-.botao-7:hover {
-    background: url('../img/bt_wsdl_hv.png');
-    width: 159px;
-    height: 347px;
-    position: absolute;
-    border: none;
-}
-
-.botao-8 {
-    background: url('../img/bt_uddi.png');
-    width: 159px;
-    height: 384px;
-    position: absolute;
-    border: none;
-    margin-left: 32%;
-    margin-top: 0%;
-}
-
-.botao-8:hover {
-    background: url('../img/bt_uddi_hv.png');
-    width: 159px;
-    height: 384px;
-    position: absolute;
-    border: none;
-    margin-left: 31.8%;
-}
-
-.netflix {
-    margin-top: 22%;
-}
-
-.trello {
-    margin-top: 20%;
-}
-
-.slack {
-    margin-top: 5%;
-}
 
 
 
@@ -274,49 +71,15 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width:1440px) {}
 
-    body {
-        background:
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: 15%, 15%, auto, 15%, 15%, 15%, auto, 15%, 15%, 15%, auto, cover;
-
-    }
-
-}
 
 @media screen and (max-width:1400px) {}
 
 @media screen and (max-width:1366px) {}
 
 @media screen and (max-width:1024px) {
-    body {
-        background: none;
-    }
 
-    .painel-uddi {
-        margin-left: -18%;
-    }
-
-    .netflix {
-        margin-top: 22%;
-    }
 
     body {
         background: url('../img/bg_gradiente.png') no-repeat;
@@ -340,55 +103,9 @@ body {
         font-size: .8em;
     }
 
-    .texto1 {
-        position: absolute;
-        margin-top: -34%;
-        margin-left: 36%;
-        font-size: .8em;
-    }
-
-    .texto2 {
-        position: absolute;
-        margin-top: -26%;
-        margin-left: 7%;
-        font-size: .8em;
-    }
-
-    .texto3 {
-        position: absolute;
-        margin-top: -13%;
-        margin-left: 7%;
-        font-size: .8em;
-    }
-
-    .texto4 {
-        position: absolute;
-        margin-top: -19%;
-        margin-left: 72%;
-        font-size: .8em;
-    }
-
-    .texto5 {
-        position: absolute;
-        margin-top: -7%;
-        margin-left: 72%;
-        font-size: .8em;
-    }
-
-    .botao-7 {
-        margin-left: -5.5%;
-    }
-
-    .botao-7:hover {
-        margin-left: -5.5%;
-    }
-
-    .botao-8:hover {
-        margin-left: 32%;
-    }
-
-    .trello {
-        margin-top: 12%;
+    .modal-dialog {
+        max-width: 650px;
+        margin: 1.75rem auto;
     }
 
 }
@@ -396,173 +113,22 @@ body {
 
 
 @media screen and (max-width:768px) {
-    .botao-7 {
-        margin-left: -7.5%;
-    }
-
-    .botao-7:hover {
-        margin-left: -7.5%;
-    }
-
-    .botao-8:hover {
-        margin-left: 32%;
+    .modal-dialog {
+        max-width: 650px;
+        margin: 1.75rem auto;
     }
 }
 
 
 @media screen and (max-width:500px) {
 
-    .painel-servicos {
-        display: flex;
-        justify-content: space-evenly;
-        margin: auto;
-        align-items: center;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .infografico {
-        transform: scale(0.6)
-    }
-
-    .texto1 {
-        position: absolute;
-        margin-top: -74%;
-        margin-left: 26%;
-    }
-
-    .texto2 {
-        position: absolute;
-        margin-top: -53%;
-        margin-left: -38%;
-    }
-
-    .texto3 {
-        position: absolute;
-        margin-top: -29%;
-        margin-left: -40%;
-    }
-
-    .texto4 {
-        position: absolute;
-        margin-top: -42%;
-        margin-left: 102%;
-        width: 40%;
-    }
-
-    .texto5 {
-        position: absolute;
-        margin-top: -17%;
-        margin-left: 102%;
-    }
-
-    .botao-7 {
-        margin-left: -40%;
-    }
-
-    .botao-7:hover {
-        margin-left: -40%;
-    }
-
-    .botao-8:hover {
-        margin-left: 32%;
-    }
-
-    .netflix,
-    .trello,
-    .slack {
-        margin-top: 5%;
-    }
-
-    .texto-trello,
-    .texto-slack,
-    .texto-erp {
-        margin-top: 12%;
-    }
-    .texto-intro{
-        margin-top: 5%;
-    }
+   
 
 }
 
-
-@media screen and (max-width:414px) {
-    .botao-8:hover {
-        margin-left: 31.8%;
-    }
-
-    .botao-8 {
-        margin-left: 32%;
-    }
-
-    .painel-uddi {
-        margin-left: 5%;
-    }
-
-    .botao-7 {
-        margin-left: -42%;
-    }
-
-    .botao-7:hover {
-        margin-left: -42%;
-    }
-}
 
 @media screen and (max-width:375px) {
-    .infografico {
-        transform: scale(0.55)
-    }
-
-    .texto1 {
-        position: absolute;
-        margin-top: -74%;
-        margin-left: 26%;
-    }
-
-    .texto2 {
-        position: absolute;
-        margin-top: -56%;
-        margin-left: -45%;
-    }
-
-    .texto3 {
-        position: absolute;
-        margin-top: -31%;
-        margin-left: -47%;
-    }
-
-    .texto4 {
-        position: absolute;
-        margin-top: -44%;
-        margin-left: 102%;
-        width: 42%;
-    }
-
-    .texto5 {
-        position: absolute;
-        margin-top: -16%;
-        margin-left: 102%;
-    }
-
-    .botao-8:hover {
-        margin-left: 33.9%;
-    }
-
-    .botao-8 {
-        margin-left: 34%;
-    }
-
-    .painel-uddi {
-        margin-left: 5%;
-    }
-
-    .botao-7 {
-        margin-left: -48%;
-    }
-
-    .botao-7:hover {
-        margin-left: -48%;
-    }
+   
 
 
 
