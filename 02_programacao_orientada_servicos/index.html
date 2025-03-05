@@ -105,6 +105,24 @@
                         <button type="button" class="botao botao-atualmente" data-bs-toggle="modal"
                             data-bs-target="#modal4">
                         </button>
+                        <button type="button" class="botao botao-abstracao" data-bs-toggle="modal"
+                            data-bs-target="#modal5">
+                        </button>
+                        <button type="button" class="botao botao-capacidade" data-bs-toggle="modal"
+                            data-bs-target="#modal6">
+                        </button>
+                        <button type="button" class="botao botao-autonomia" data-bs-toggle="modal"
+                            data-bs-target="#modal7">
+                        </button>
+                        <button type="button" class="botao botao-servico" data-bs-toggle="modal"
+                            data-bs-target="#modal8">
+                        </button>
+                        <button type="button" class="botao botao-descoberta" data-bs-toggle="modal"
+                            data-bs-target="#modal9">
+                        </button>
+                        <button type="button" class="botao botao-composicao" data-bs-toggle="modal"
+                            data-bs-target="#modal10">
+                        </button>
                     </div>
                     <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -709,23 +727,184 @@
                             </div>
                         </div>
                     </div>
-                    <p>
+                    <p class="mt-5">
                         Agora que você tem uma compreensão básica dos princípios da SOA e de alguns termos comumente
-                        utilizados nesse contexto, compreenda como funciona o processo de uso de serviços nessa arquitetura.
+                        utilizados nesse contexto, compreenda como funciona o processo de uso de serviços nessa
+                        arquitetura.
                     </p>
                     <p>
-                        É possível começar com o paradigma encontrar-vincular-executar (<i>find-bind-execute</i>), que é a base
+                        É possível começar com o paradigma encontrar-vincular-executar (<i>find-bind-execute</i>), que é
+                        a base
                         desse processo. Veja:
                     </p>
-
-img pg 11
-
-
-
-
-
-
-
+                    <figure class="my-5 no-print">
+                        <img src=""
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                            alt="Imagem">
+                        <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                            <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                alt="Imagem">
+                        </a>
+                        <figcaption class="figure-caption text-center">Diagrama representando o paradigma
+                            <i>find-bind-execute</i> <br>
+                            Fonte: Adaptado de Mahmoud (2005)
+                        </figcaption>
+                    </figure>
+                    <div class="acessivel no-print">
+                        <p>
+                            A imagem apresenta um diagrama com três elementos principais: Solicitante de serviços,
+                            Registro
+                            de serviços e Provedor de serviços. O diagrama ilustra o fluxo de interações entre eles. O
+                            Solicitante de serviços é a parte que tem a ação de busca de serviços. Ele se conecta ao
+                            Registro de serviços, onde os serviços estão cadastrados. O Provedor de serviços é o
+                            responsável
+                            por oferecer os serviços, e ele se conecta tanto ao Registro de serviços, onde registra seus
+                            sistemas disponíveis, quanto ao Solicitante de serviços, com quem estabelece um contrato,
+                            realiza o vínculo com o contratante e fornece o serviço para realizar execuções de
+                            requisições.
+                            O processo é circular, com cada elemento interagindo de maneira contínua para permitir a
+                            execução do serviço.
+                        </p>
+                    </div>
+                    <p>Com maior detalhamento, veja a seguir como a relação dos elementos desse diagrama acontece. </p>
+                    <h3>Provedor de serviços e registro de serviços</h3>
+                    <p>
+                        O provedor de serviços é a entidade que oferecerá os serviços para outras empresas utilizarem,
+                        enquanto o registro de serviços armazena as informações sobre esses serviços, facilitando a
+                        descoberta e a integração por outros sistemas.
+                    </p>
+                    <p>
+                        O provedor registra seu serviço em um diretório público para que os consumidores possam
+                        localizá-lo
+                        e utilizá-lo, podendo ser por meio de <i>sites</i> ou ferramentas específicas para busca de
+                        serviços. Esse
+                        registro armazena informações básicas, como a descrição funcional – o que o serviço faz –, a
+                        interface – como o serviço pode ser acessado, incluindo detalhes técnicos como contratos em WSDL
+                        (<i>web services description language</i>) ou APIs (<i>application programming interface</i>) –
+                        e o <i>endpoint</i> –
+                        endereço onde o serviço pode ser acessado para requisições –, conforme o princípio da descoberta
+                        de
+                        serviço. A partir disso, é possível prosseguir para o processo <i>find-bind-execute</i>.
+                    </p>
+                    <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                    <div class="painel-modelo no-print">
+                        <button type="button" class="botao botao-descoberta" data-bs-toggle="modal"
+                            data-bs-target="#modal11">
+                        </button>
+                        <button type="button" class="botao botao-vinculacao" data-bs-toggle="modal"
+                            data-bs-target="#modal12">
+                        </button>
+                        <button type="button" class="botao botao-consumo" data-bs-toggle="modal"
+                            data-bs-target="#modal3">
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Descoberta do serviço (<i>find</i> –
+                                        encontrar) </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Em um primeiro momento, na fase inicial de integração de um sistema a um serviço,
+                                        o solicitante realizará a busca pelos serviços disponíveis (por meio do provedor
+                                        de serviços) que mais se adequam a sua necessidade. Ao selecionar um serviço que
+                                        deseja vincular ao seu projeto, será informado sobre detalhes do contrato do
+                                        serviço (conforme o princípio do contrato de serviço padronizado) e
+                                        <i>endpoint</i>,
+                                        informações que serão utilizadas para definições e configurações iniciais.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal12" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Vinculação do serviço (<i>bind</i> –
+                                        vincular) </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Após a descoberta inicial, o consumidor de serviços conecta seu sistema
+                                        diretamente ao <i>endpoint</i> (usando as informações obtidas no registro) para
+                                        poder
+                                        realizar as requisições. Assim, os detalhes do serviço, como o <i>endpoint</i> e
+                                        as
+                                        especificações, são armazenados localmente no sistema consumidor, eliminando a
+                                        necessidade de buscar o serviço novamente, sendo possível acessá-lo diretamente
+                                        pelo <i>endpoint</i>. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modal13" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Consumo do serviço (<i>execute</i> –
+                                        executar) </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Após todas as etapas anteriores, o consumidor pode começar a realizar as
+                                        requisições
+                                        ao serviço. Para cada requisição, será enviada uma solicitação diretamente para
+                                        o
+                                        <i>endpoint</i> do serviço, sem precisar repetir a consulta ao provedor de
+                                        serviços em
+                                        razão dos passos anteriores de vinculação.
+                                    </p>
+                                    <p>
+                                        A requisição verificará se existe um serviço que corresponda aos critérios
+                                        definidos
+                                        pelo consumidor (como formato dos dados, <i>endpoint</i>, parâmetros de
+                                        segurança, versão
+                                        da API, entre outros). Caso seja confirmado, o serviço processará a solicitação
+                                        e
+                                        retornará resultados ou executará as ações necessárias.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        O modelo <b><i>find-bind-execute</i></b> resume o funcionamento de sistemas baseados em
+                        serviços: um cliente
+                        localiza (<i>find</i>) o serviço necessário, estabelece uma conexão (<i>bind</i>) com ele e,
+                        então, realiza a
+                        execução (<i>execute</i>) da funcionalidade oferecida. Esse processo organiza a interação entre
+                        consumidores e provedores de serviços, promovendo flexibilidade, reutilização e clareza nas
+                        operações.
+                    </p>
+                    <h3>Encerramento</h3>
+                    <p>
+                        A SOA surgiu como uma abordagem inovadora para integrar sistemas distribuídos, permitindo maior
+                        flexibilidade e reutilização. Ela foi projetada para atender à crescente complexidade dos ambientes
+                        corporativos, com foco em princípios como modularidade, interoperabilidade e desacoplamento. Isso
+                        tornou os sistemas mais escaláveis e eficientes, permitindo que diferentes aplicativos se
+                        conectassem e compartilhassem dados de maneira mais ágil.
+                    </p>
+                    <p>
+                        Com o tempo, a SOA evoluiu para arquiteturas mais granulares, dividindo os sistemas em componentes
+                        menores, como os microsserviços. Essa evolução aprimorou ainda mais a autonomia e a escalabilidade,
+                        permitindo que cada componente fosse desenvolvido, implantado e escalado de forma independente.
+                    </p>
+                    <p>
+                        Em razão do rápido avanço das tecnologias, é essencial continuar acompanhando as evoluções
+                        tecnológicas dessa área. A arquitetura de <i>software</i> está em constante mudança, e entender essas
+                        tendências é fundamental para garantir soluções eficientes e alinhadas com as novas demandas do
+                        mercado, sendo atualmente um ponto de conhecimento imprescindível para o mercado de trabalho.
+                    </p>
                 </div>
                 <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
