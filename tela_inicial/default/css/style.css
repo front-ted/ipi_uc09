@@ -730,3 +730,33 @@ ul {
   }
   .grupo .drag-column{overflow-y: hidden;}
 }
+
+
+@media screen and (max-width:440px) {
+  .dropdown-menu {
+    max-width: 390px;
+    transform: translate3d(0px, 56px, 0px) !important;
+
+  }
+
+  .dropdown-item {
+    word-wrap: break-word !important;
+    white-space: unset;
+  }
+
+  .logo-senac {
+    margin-left: -871%;
+  }
+
+  .container.grupos {
+    width: 95%;
+  }
+
+  .btMenuPrint {
+    margin-left: -5%;
+  }
+
+  .body {
+    overflow-x: hidden !important;
+  }
+}
