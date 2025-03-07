@@ -20,16 +20,7 @@ body {
 
 }
 
-body .container {
-    background: linear-gradient(to bottom, #e3d4f5, #fff, #d8edf8);
-    margin-top: -5%;
-    padding-top: 8%;
-    padding-bottom: 4%;
-}
 
-.titulo {
-    padding: 2%;
-}
 
 .img-inicio {
     margin-top: 5%;
