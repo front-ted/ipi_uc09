@@ -3,9 +3,11 @@
 
 <head>
     <!-- Inserir o tíutlo do conhecimento na tag title -->
-    <title>Protocolo HTTP: conceitos, requisições e respost as, operações (GET, POST, PUT, DELETE), informações de
-        cabeçalhos, códigos de status da resposta; representações de dados: texto plano, JavaScript object notation
-        (JSON), extensible markup language (XML)</title>
+    <title>Padrão <i>representational state transfer</i> – REST: conceitos, tipos de requisições, interpretação
+        das
+        operações, parâmetros, processamento e resposta; ferramentas de linguagem de programação
+        <i>back-end</i> para
+        programação de serviços REST</title>
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -157,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="acessivel print">
+                <div class="acessivel print visually-hidden">
                     <h4>Envio</h4>
                     <p><b>Envio de requisições</b>: teste métodos HTTP como <b>GET</b>, <b>POST</b>, <b>PUT</b> e
                         <b>DELETE</b>.
@@ -204,19 +206,348 @@
                     <b>POST</b>, <b>PUT</b>, <b>DELETE</b>)
                     definem a operação a ser realizada.
                 </p>
-
-tabela pg 5
-
-
-
-
-
-
-
-
-
-                <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
-            </div>
+                <div class="table-responsive table">
+                    <table class="text-left align-middle">
+                        <tbody>
+                            <tr>
+                                <td class="w-50">
+                                    <span class="numero-item">1.</span> Para testar sua API, ela deve estar rodando.
+                                    Então, abra a pasta da API criada no
+                                    conteúdo de programação de serviços e levante com o comando:
+                                </td>
+                                <td class="w-50">
+                                    <pre>
+                                    <code class="hljs">
+    node index.js 
+                                    </code>
+                                </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="numero-item">2.</span> Abra o Postman e clique em <b>Create a New
+                                        Collection</b> ou no botão <b>+</b> para criar uma nova aba. </td>
+                                <td>
+                                    <figure class="my-5">
+                                        <img src=""
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
+                                            alt="Imagem">
+                                        <a href="" target="_blank"
+                                            class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                            <img src=""
+                                                class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                alt="Imagem">
+                                        </a>
+                                        <figcaption class="figure-caption text-center">
+                                            Tela de criação de uma nova coleção no Postman <br>
+                                            Fonte: Senac EAD (2025)
+                                        </figcaption>
+                                    </figure>
+                                    <div class="acessivel visually-hidden no-print">
+                                        <p>
+                                            Tela de criação de uma nova coleção no Postman com o botão + clicado e o
+                                            cursor
+                                            sobre REST API basics.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="numero-item3">3.</span> Escolha o método HTTP apropriado (<b>GET</b>,
+                                    <b>POST</b>, <b>PUT</b>, <b>DELETE</b>).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="numero-item">4.</span> Insira a URL do <i>endpoint</i> no campo de URL:
+                                </td>
+                                <td>
+                                    http://localhost:3000/noticias
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                <h4>Adicionando cabeçalhos à requisição</h4>
+                <p>
+                    Os cabeçalhos são partes fundamentais de uma requisição HTTP. Eles adicionam informações
+                    complementares
+                    que ajudam o servidor a processar as solicitações de forma adequada. Anteriormente, você viu como
+                    cabeçalhos como <b>Content-Type</b> influenciam a interpretação dos dados enviados e recebidos.
+                </p>
+                <div class="grafismo">
+                    <div class="destaque gradiente">
+                        <p>No Postman:</p>
+                        <ol>
+                            <li>Clique na aba Headers. </li>
+                            <li>Insira pares de chave e valor, como: </li>
+                            - <b>Content-Type</b>: indica o formato dos dados enviados (exemplo:
+                            <b>application</b>/<b>json</b>).
+                        </ol>
+                    </div>
+                </div>
+                <h4>Enviando dados no corpo da requisição</h4>
+                <p>
+                    Requisições que utilizam métodos como POST ou <b>PUT</b> frequentemente exigem o envio de dados no
+                    corpo
+                    (<i>body</i>). É no <i>body</i> que são especificadas as informações que se quer armazenar ou
+                    atualizar no servidor.
+                    Esse conceito foi introduzido nos tópicos de manipulação de dados em APIs.
+                </p>
+                <div class="grafismo">
+                    <div class="destaque gradiente">
+                        <p> Para enviar dados no Postman:</p>
+                        <ol>
+                            <li>Clique na aba Body.</li>
+                            <li>Selecione a opção raw e escolha o formato JSON.</li>
+                            <li>Digite o conteúdo que será enviado. Por exemplo:</li>
+                            <pre>
+                                <code class="hljs">
+    ``` 
+    { 
+        "titulo": <span class="hljs-regexp">"Evento local atrai milhares de visitantes"</span>, 
+        "conteudo": <span class="hljs-regexp">"A festa da cidade reuniu mais de 10 mil pessoas neste fim de semana."</span> 
+    } 
+    ``` 
+                                </code>
+                            </pre>
+                        </ol>
+                    </div>
+                </div>
+                <h4>Enviando a requisição</h4>
+                <p>
+                    Agora que você configurou os detalhes da requisição, o próximo passo é enviá-la. Esse processo ativa
+                    a
+                    comunicação com o servidor e retorna os resultados para análise. Em outros conteúdos, discutiu-se o
+                    conceito de respostas HTTP e como interpretar os códigos de <i>status</i>, como <b>200 OK</b> ou
+                    <b>404 Not Found</b>.
+                </p>
+                <div class="grafismo">
+                    <div class="destaque gradiente">
+                        <p>Quando estiver pronto, clique no botão <b>Send</b>. O Postman mostrará: </p>
+                        <ul class="marcador-padrao">
+                            <li><b><i>Status</i> da resposta:</b> exemplo: 200 OK (sucesso) ou 404 Not Found (erro).
+                            </li>
+                            <li><b>Cabeçalhos da resposta:</b> metadados enviados pelo servidor.</li>
+                            <li><b>Corpo da resposta:</b> dados retornados pelo servidor.</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 id="titulo4">Exemplos práticos no Postman: operações em uma API REST de notícias</h3>
+                <p>
+                    A seguir, veja exemplos de operações básicas realizadas em uma API REST que gerencia notícias. Essas
+                    operações simulam cenários reais de trabalho com APIs e consolidam o aprendizado sobre os métodos
+                    HTTP
+                    abordados anteriormente.
+                </p>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Criando uma notícia (POST)
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="marcador-padrao">
+                                    <li><b>Método: POST</b></li>
+                                    <li><b>URL:</b> http://localhost:3000/noticias</li>
+                                    <li><b>Corpo:</b></li>
+                                </ul>
+                                <pre>
+                                        <code class="hljs">
+    ``` 
+    { 
+        "titulo": <span class="hljs-regexp">"Nova biblioteca é inaugurada na cidade"</span>, 
+        "conteudo": <span class="hljs-regexp">"O espaço conta com mais de 20 mil livros e área de leitura para crianças." 
+        </span> 
+    } 
+    ``` 
+                                        </code>
+                                    </pre>
+                                <figure class="my-5">
+                                    <img src=""
+                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
+                                        alt="Imagem">
+                                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                        <img src=""
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                            alt="Imagem">
+                                    </a>
+                                    <figcaption class="figure-caption text-center">
+                                        Tela de resultados <b>POST</b><br>
+                                        Fonte: Senac EAD (2025)
+                                    </figcaption>
+                                </figure>
+                                <div class="acessivel visually-hidden no-print">
+                                    <p>
+                                        Tela de envio de uma nova requisição POST no Postman com as informações
+                                        preenchidas corretamente de acordo com o exemplo e resultado bem sucedido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Buscando uma notícia (GET)
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="marcador-padrao">
+                                    <li>Método: GET</li>
+                                    <li>URL: http://localhost:3000/noticias/1</li>
+                                    <li>Resposta esperada:</li>
+                                </ul>
+                                <pre>
+                                    <code class="hljs">
+    ``` 
+    { 
+        "id": <span class="hljs-regexp">1</span>,
+        "titulo": <span class="hljs-regexp">"Nova biblioteca é inaugurada na cidade"</span>, 
+        "conteudo": <span class="hljs-regexp">"O espaço conta com mais de 20 mil livros e área de leitura para crianças." 
+        </span> 
+    } 
+    ``` 
+                                    </code>
+                                </pre>
+                                <figure class="my-5">
+                                    <img src=""
+                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
+                                        alt="Imagem">
+                                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                        <img src=""
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                            alt="Imagem">
+                                    </a>
+                                    <figcaption class="figure-caption text-center">
+                                        Tela de resultados <b>GET</b><br>
+                                        Fonte: Senac EAD (2025)
+                                    </figcaption>
+                                </figure>
+                                <div class="acessivel visually-hidden no-print">
+                                    <p>
+                                        Tela de envio de uma nova requisição GET no Postman com as informações
+                                        preenchidas
+                                        corretamente de acordo com o exemplo e resultado bem sucedido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Atualizando uma notícia (PUT)
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="marcador-padrao">
+                                    <li>Método: PUT</li>
+                                    <li>URL: http://localhost:3000/noticias/1</li>
+                                    <li>Corpo:</li>
+                                </ul>
+                                <pre>
+                                    <code class="hljs">
+    ``` 
+    { 
+        "titulo": <span class="hljs-regexp">"Biblioteca recebe novos livros"</span>, 
+        "conteudo": <span class="hljs-regexp">"Mais de 5 mil novos títulos foram adicionados ao acervo da biblioteca."
+        </span> 
+    } 
+    ``` 
+                                    </code>
+                                </pre>
+                                <figure class="my-5">
+                                    <img src=""
+                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
+                                        alt="Imagem">
+                                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                        <img src=""
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                            alt="Imagem">
+                                    </a>
+                                    <figcaption class="figure-caption text-center">
+                                        Tela de resultados <b>PUT</b><br>
+                                        Fonte: Senac EAD (2025)
+                                    </figcaption>
+                                </figure>
+                                <div class="acessivel visually-hidden no-print">
+                                    <p>
+                                        Tela de envio de uma nova requisição PUT no Postman com as informações
+                                        preenchidas
+                                        corretamente de acordo com o exemplo e resultado bem sucedido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Deletando uma notícia (DELETE)
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="marcador-padrao">
+                                    <li>Método: DELETE</li>
+                                    <li>URL: http://localhost:3000/noticias/1</li>
+                                </ul>
+                                <p>
+                                    Após a exclusão, o servidor pode retornar uma mensagem de confirmação ou apenas o
+                                    código
+                                    de <i>status</i> <b>200 OK</b> ou <b>204 No Content</b>.
+                                </p>
+                                <figure class="my-5">
+                                    <img src=""
+                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
+                                        alt="Imagem">
+                                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                        <img src=""
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                            alt="Imagem">
+                                    </a>
+                                    <figcaption class="figure-caption text-center">
+                                        Tela de resultados <b>DELETE</b><br>
+                                        Fonte: Senac EAD (2025)
+                                    </figcaption>
+                                </figure>
+                                <div class="acessivel visually-hidden no-print">
+                                    <p>
+                                        Tela de envio de uma nova requisição PUT no Postman com as informações
+                                        preenchidas
+                                        corretamente de acordo com o exemplo e resultado bem sucedido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 id="titulo5">Encerramento</h3>
+                    <p>
+                        Os serviços REST são a base da comunicação moderna entre sistemas. Compreender como implementá-los e
+                        testá-los com o Postman é essencial para desenvolvedores. A cada requisição realizada, você aprimora
+                        suas habilidades em diagnóstico e depuração, garantindo que suas APIs atendam aos requisitos
+                        funcionais e de desempenho.
+                    </p>
+                    <p>
+                        Em outros conteúdos, você avançará para a etapa de consumir essas APIs utilizando jQuery. Você
+                        aprenderá como integrar o <i>front-end</i> com os serviços testados neste guia, criando aplicações mais
+                        completas e dinâmicas.
+                    </p>
+                    <a href="#" class="voltar-topo no-print" aria-hidden="true"><img
+                            src="../assets/images/bt_topo.svg"></a>
+                </div>
         </section>
         <!-- Paginação-->
         <footer class="text-center no-print d-flex justify-content-center mx-auto">

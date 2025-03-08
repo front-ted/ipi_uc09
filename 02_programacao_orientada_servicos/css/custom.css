@@ -1,30 +1,29 @@
 body {
     background:
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
-
-        url('../img/bg_gradiente.png') no-repeat;
-
-    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-    /* 
-        url('../img/bg_elem3.png') no-repeat 100% 24%,
-        url('../img/BG_elem5.png') no-repeat 100% 65%,
-        url('../img/BG_elem4.png') no-repeat 0% 71%,
-        url('../img/BG_bottom.png') no-repeat bottom; 
-    background-size: 100%, 25%, 18%, 20%, 20%, auto;*/
+        url('../img/destaque_bg_esq.png') no-repeat 5% 23%,
+        url('../img/destaque_bg_dir.png') no-repeat 95% 23%,
+        linear-gradient(to right, #b6bfcd, #a89dad);
+    background-attachment: fixed, fixed, fixed;
+    background-size: auto, auto, cover;
 }
+
+
+
+
+
+
+/* body {
+    background:
+        linear-gradient(to right #b6bfcd, #a89dad),
+        url('../img/destaque_bg_esq.png') no-repeat left,
+        url('../img/destaque_bg_dir.png') no-repeat right;
+    background-attachment: fixed, fixed, fixed;
+
+} */
+
+
+
+
 
 .ilustracao {
     border-radius: 20px;
@@ -40,8 +39,241 @@ body {
     margin: auto;
 }
 
+.pagina .container {
+    background-color: #f1ecf9;
+    margin-top: 0%;
+    padding-top: 1%;
+    padding-bottom: 4%;
+}
+
+.modal-body .container {
+    background: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+}
+
+.titulo {
+    padding: 2%;
+}
+
+.painel-soa {
+    background: url('../img/bg_painel.png') no-repeat;
+    width: 754px;
+    height: 453px;
+    margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    justify-items: center;
+    align-items: center;
+    align-content: space-evenly;
+    padding-left: 22%;
+    padding-top: 5%;
+}
 
 
+.botao-definicao {
+    background: url('../img/bt_definicao.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-definicao:hover {
+    background: url('../img/bt_definicao_hv.png');
+    border: none;
+}
+
+.botao-beneficio {
+    background: url('../img/bt_beneficios.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-beneficio:hover {
+    background: url('../img/bt_beneficios_hv.png');
+    border: none;
+}
+
+.botao-contrato {
+    background: url('../img/bt_contratos.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-contrato:hover {
+    background: url('../img/bt_contratos_hv.png');
+    border: none;
+}
+
+.botao-baixo {
+    background: url('../img/bt_acoplamento.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-baixo:hover {
+    background: url('../img/bt_acoplamento_hv.png');
+    border: none;
+}
+
+.botao-abstracao {
+    background: url('../img/bt_abstracao.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-abstracao:hover {
+    background: url('../img/bt_abstracao_hv.png');
+    border: none;
+}
+
+/* é isso mesmo?  Reusabilidade de serviço */
+.botao-reusabilidade {
+    background: url('../img/bt_capacidade.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-reusabilidade:hover {
+    background: url('../img/bt_capacidade_hav.png');
+    border: none;
+}
+
+/* é isso mesmo? */
+
+.botao-autonomia {
+    background: url('../img/bt_autonomia.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-autonomia:hover {
+    background: url('../img/bt_autonomia_hv.png');
+    border: none;
+}
+
+/* é isso mesmo? Serviço sem estado */
+
+.botao-servico {
+    background: url('../img/bt_ind_estado.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-servico:hover {
+    background: url('../img/bt_ind_estado_hv.png');
+    border: none;
+}
+
+/* é isso mesmo? Serviço sem estado */
+
+/* é isso mesmo? Descoberta de serviço */
+
+.botao-descoberta {
+    background: url('../img/bt_visibilidade.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-descoberta:hover {
+    background: url('../img/bt_visibilidade_hv.png');
+    border: none;
+}
+
+/* é isso mesmo? Descoberta de serviço */
+
+.botao-composicao {
+    background: url('../img/bt_composicao.png') no-repeat;
+    width: 219px;
+    height: 66px;
+    border: none;
+}
+
+.botao-composicao:hover {
+    background: url('../img/bt_composicao_hv.png');
+    border: none;
+}
+
+.painel-modelo{
+    background: url('../img/bg_painel_2.png');
+    width: 532px;
+    height: 424px;
+    margin: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 20%;
+    padding-top: 3%;
+    margin-bottom: 5%;
+}
+
+.botao-descoberta-serv{
+    background: url('../img/bt_find.png') no-repeat;
+    width: 323px;
+    height: 66px;
+    border: none;
+}
+
+.botao-descoberta-serv:hover{
+    background: url('../img/bt_find_hv.png') no-repeat;
+    border: none;
+}
+
+.botao-vinculacao-serv{
+    background: url('../img/bt_bind.png') no-repeat;
+    width: 323px;
+    height: 66px;
+    border: none;
+}
+
+.botao-vinculacao-serv:hover{
+    background: url('../img/bt_bind_hv.png') no-repeat;
+    border: none;
+}
+
+.botao-consumo-serv{
+    background: url('../img/bt_execute.png') no-repeat;
+    width: 323px;
+    height: 66px;
+    border: none;
+}
+
+.botao-consumo-serv:hover{
+    background: url('../img/bt_execute_hv.png') no-repeat;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg-escuro .container {
+    background: transparent;
+}
 
 .bg-escuro .accordion-body p {
     color: #000;
@@ -71,7 +303,16 @@ body {
     color: #fff;
 }
 
-@media screen and (max-width:1440px) {}
+@media screen and (max-width:1440px) {
+    body{
+        background:
+        url('../img/destaque_bg_esq.png') no-repeat 2% 44%,
+        url('../img/destaque_bg_dir.png') no-repeat 98% 44%,
+        linear-gradient(to right, #b6bfcd, #a89dad);
+        background-attachment: fixed, fixed, fixed;
+        background-size: 14%, 14%, cover;
+    }
+}
 
 
 @media screen and (max-width:1400px) {}
@@ -108,6 +349,14 @@ body {
         margin: 1.75rem auto;
     }
 
+    .painel-modelo{
+        padding-left: 24%;
+    }
+
+    .painel-soa{
+        padding-left: 25%;
+    }
+
 }
 
 
@@ -117,23 +366,31 @@ body {
         max-width: 650px;
         margin: 1.75rem auto;
     }
+
+    .painel-soa {
+        background: url('../img/bg_paine768l.png') no-repeat;
+        width: 720px;
+        height: 433px;
+        margin-left: -3%;
+        padding-left: 26%;
+    }
+
+    .painel-modelo {
+        padding-left: 26%;
+    }
 }
 
 
 @media screen and (max-width:500px) {
-
-   
-
+    .painel-soa, .painel-modelo{
+        background: unset;
+        grid-template-columns: 1fr;
+        width: auto;
+        height: auto;
+        padding-left: 0px;
+        gap: 25px;
+    }
 }
 
 
-@media screen and (max-width:375px) {
-   
-
-
-
-
-
-
-
-}
+@media screen and (max-width:375px) {}

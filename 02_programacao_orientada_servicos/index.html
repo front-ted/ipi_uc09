@@ -55,7 +55,7 @@
         <section class="paginas">
             <div class="pagina">
                 <div class="container">
-                    <h2>
+                    <h2 class="titulo">
                         Programação orientada a serviços: objetivos, benefícios, contratos, acoplamento, abstração,
                         capacidade de reuso, autonomia, independência de estado, visibilidade e composição de serviços
                     </h2>
@@ -95,34 +95,26 @@
                     </p>
                     <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
                     <div class="painel-soa no-print">
-                        <button type="button" class="botao botao-definicao" data-bs-toggle="modal"
-                            data-bs-target="#modal1">
+                        <button type="button" class="botao-definicao" data-bs-toggle="modal" data-bs-target="#modal1">
                         </button>
-                        <button type="button" class="botao botao-beneficio" data-bs-toggle="modal"
-                            data-bs-target="#modal2">
+                        <button type="button" class="botao-beneficio" data-bs-toggle="modal" data-bs-target="#modal2">
                         </button>
-                        <button type="button" class="botao botao-2004" data-bs-toggle="modal" data-bs-target="#modal3">
+                        <button type="button" class="botao-contrato" data-bs-toggle="modal" data-bs-target="#modal3">
                         </button>
-                        <button type="button" class="botao botao-atualmente" data-bs-toggle="modal"
-                            data-bs-target="#modal4">
+                        <button type="button" class="botao-baixo" data-bs-toggle="modal" data-bs-target="#modal4">
                         </button>
-                        <button type="button" class="botao botao-abstracao" data-bs-toggle="modal"
-                            data-bs-target="#modal5">
+                        <button type="button" class="botao-abstracao" data-bs-toggle="modal" data-bs-target="#modal5">
                         </button>
-                        <button type="button" class="botao botao-capacidade" data-bs-toggle="modal"
+                        <button type="button" class="botao-reusabilidade" data-bs-toggle="modal"
                             data-bs-target="#modal6">
                         </button>
-                        <button type="button" class="botao botao-autonomia" data-bs-toggle="modal"
-                            data-bs-target="#modal7">
+                        <button type="button" class="botao-autonomia" data-bs-toggle="modal" data-bs-target="#modal7">
                         </button>
-                        <button type="button" class="botao botao-servico" data-bs-toggle="modal"
-                            data-bs-target="#modal8">
+                        <button type="button" class="botao-servico" data-bs-toggle="modal" data-bs-target="#modal8">
                         </button>
-                        <button type="button" class="botao botao-descoberta" data-bs-toggle="modal"
-                            data-bs-target="#modal9">
+                        <button type="button" class="botao-descoberta" data-bs-toggle="modal" data-bs-target="#modal9">
                         </button>
-                        <button type="button" class="botao botao-composicao" data-bs-toggle="modal"
-                            data-bs-target="#modal10">
+                        <button type="button" class="botao-composicao" data-bs-toggle="modal" data-bs-target="#modal10">
                         </button>
                     </div>
                     <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -210,13 +202,13 @@
                                             eficiência no sistema como um todo.
                                         </p>
                                         <p>Veja uma representação visual de como esse processo funciona:</p>
-                                        <figure class="my-5 no-print">
-                                            <img src="img/"
-                                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                                        <figure class="my-5">
+                                            <img src="img/fig1_exemplo_aplicacao.png"
+                                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
                                                 alt="Imagem">
-                                            <a href="img/" target="_blank"
+                                            <a href="img/fig1_exemplo_aplicacao.png" target="_blank"
                                                 class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                                                <img src="img/"
+                                                <img src="img/fig1_exemplo_aplicacao.png"
                                                     class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
                                                     alt="Imagem">
                                             </a>
@@ -533,7 +525,6 @@
                         </div>
                     </div>
 
-
                     <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-xl">
@@ -738,12 +729,12 @@
                         a base
                         desse processo. Veja:
                     </p>
-                    <figure class="my-5 no-print">
-                        <img src=""
-                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                    <figure class="my-5">
+                        <img src="img/fig2_diagrama.png"
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius print"
                             alt="Imagem">
-                        <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                            <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                        <a href="img/fig2_diagrama.png" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                            <img src="img/fig2_diagrama.png" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
                                 alt="Imagem">
                         </a>
                         <figcaption class="figure-caption text-center">Diagrama representando o paradigma
@@ -789,14 +780,14 @@
                     </p>
                     <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
                     <div class="painel-modelo no-print">
-                        <button type="button" class="botao botao-descoberta" data-bs-toggle="modal"
+                        <button type="button" class="botao-descoberta-serv" data-bs-toggle="modal"
                             data-bs-target="#modal11">
                         </button>
-                        <button type="button" class="botao botao-vinculacao" data-bs-toggle="modal"
+                        <button type="button" class="botao-vinculacao-serv" data-bs-toggle="modal"
                             data-bs-target="#modal12">
                         </button>
-                        <button type="button" class="botao botao-consumo" data-bs-toggle="modal"
-                            data-bs-target="#modal3">
+                        <button type="button" class="botao-consumo-serv" data-bs-toggle="modal"
+                            data-bs-target="#modal13">
                         </button>
                     </div>
                     <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -890,19 +881,24 @@
                     <h3>Encerramento</h3>
                     <p>
                         A SOA surgiu como uma abordagem inovadora para integrar sistemas distribuídos, permitindo maior
-                        flexibilidade e reutilização. Ela foi projetada para atender à crescente complexidade dos ambientes
-                        corporativos, com foco em princípios como modularidade, interoperabilidade e desacoplamento. Isso
+                        flexibilidade e reutilização. Ela foi projetada para atender à crescente complexidade dos
+                        ambientes
+                        corporativos, com foco em princípios como modularidade, interoperabilidade e desacoplamento.
+                        Isso
                         tornou os sistemas mais escaláveis e eficientes, permitindo que diferentes aplicativos se
                         conectassem e compartilhassem dados de maneira mais ágil.
                     </p>
                     <p>
-                        Com o tempo, a SOA evoluiu para arquiteturas mais granulares, dividindo os sistemas em componentes
-                        menores, como os microsserviços. Essa evolução aprimorou ainda mais a autonomia e a escalabilidade,
+                        Com o tempo, a SOA evoluiu para arquiteturas mais granulares, dividindo os sistemas em
+                        componentes
+                        menores, como os microsserviços. Essa evolução aprimorou ainda mais a autonomia e a
+                        escalabilidade,
                         permitindo que cada componente fosse desenvolvido, implantado e escalado de forma independente.
                     </p>
                     <p>
                         Em razão do rápido avanço das tecnologias, é essencial continuar acompanhando as evoluções
-                        tecnológicas dessa área. A arquitetura de <i>software</i> está em constante mudança, e entender essas
+                        tecnológicas dessa área. A arquitetura de <i>software</i> está em constante mudança, e entender
+                        essas
                         tendências é fundamental para garantir soluções eficientes e alinhadas com as novas demandas do
                         mercado, sendo atualmente um ponto de conhecimento imprescindível para o mercado de trabalho.
                     </p>

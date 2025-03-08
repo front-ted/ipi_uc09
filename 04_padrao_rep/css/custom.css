@@ -1,229 +1,24 @@
 body {
     background:
-        url('../img/destaque1_bg.png') no-repeat 5% 4%,
-        url('../img/destaque1_bg2.png') no-repeat 94% 12%,
-        url('../img/destaque2_bg.png') no-repeat 12% 24%,
-        url('../img/destaque1_bg.png') no-repeat 90% 27%,
-
-        url('../img/destaque3_bg.png') no-repeat 4% 37%,
-        url('../img/destaque2_bg.png') no-repeat 95% 49%,
-        url('../img/destaque1_bg.png') no-repeat 5% 57%,
-        url('../img/destaque1_bg2.png') no-repeat 97% 67%,
-
-        url('../img/destaque1_bg.png') no-repeat 2% 85%,
-        url('../img/destaque1_bg2.png') no-repeat 95% 87%,
-        url('../img/destaque3_bg.png') no-repeat 5% 97%,
-
-        url('../img/bg_gradiente.png') no-repeat;
-
-    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
+        url('../img/destaque_bg_esq.png') repeat-y left,
+        url('../img/destaque_bg_direita.png') repeat-y right;
+    background-size: auto, auto;
 }
 
-
-
-.img-inicio {
-    margin-top: 5%;
+.numero-item {
+    margin-left: -4%;
 }
 
-.numero2 {
-    margin-left: -6%;
+.numero-item3 {
+    margin-left: -4%;
 }
 
-.modal-body .container {
-    background: unset;
+.grafismo .destaque ol {
+    color: #fff;
 }
 
-.painel-rr {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.botao-request {
-    background: url('../img/bt_request.png');
-    width: 266px;
-    height: 306px;
-    border: none;
-}
-
-.botao-request:hover {
-    background: url('../img/bt_request_hv.png');
-    width: 258px;
-    height: 305px;
-    border: none;
-}
-
-.botao-response {
-    background: url('../img/bt_response.png');
-    width: 243px;
-    height: 290px;
-    border: none;
-}
-
-.botao-response:hover {
-    background: url('../img/bt_response_hv.png');
-    width: 243px;
-    height: 291px;
-    border: none;
-}
-
-.painel-requisicao-botoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-top: -2%;
-}
-
-.painel-requisicao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%;
-}
-
-.botao-post {
-    background: url('../img/bt_post.png');
-    width: 133px;
-    height: 93px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-post:hover {
-    background: url('../img/bt_post_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-get {
-    background: url('../img/bt_get.png');
-    width: 133px;
-    height: 93px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-get:hover {
-    background: url('../img/bt_get_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-put {
-    background: url('../img/bt_put.png');
-    width: 133px;
-    height: 93px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-put:hover {
-    background: url('../img/bt_put_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-patch {
-    background: url('../img/bt_patch.png');
-    width: 134px;
-    height: 93px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-patch:hover {
-    background: url('../img/bt_patch_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-delete {
-    background: url('../img/bt_delete.png');
-    width: 134px;
-    height: 93px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-delete:hover {
-    background: url('../img/bt_delete_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.img-flor {
-    margin-top: -43%;
-}
-
-.imagem-lupa {
-    margin-right: 2%;
-}
-
-
-
-
-.painel-rest-botoes {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: -2%;
-}
-
-.painel-rest {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%;
-}
-
-.botao-rest {
-    background: url('../img/bt_rest.png');
-    width: 126px;
-    height: 88px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-rest:hover {
-    background: url('../img/bt_rest_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-json {
-    background: url('../img/bt_json.png');
-    width: 126px;
-    height: 88px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-json:hover {
-    background: url('../img/bt_json_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.botao-xml {
-    background: url('../img/bt_xml.png');
-    width: 126px;
-    height: 88px;
-    border: none;
-    border-radius: none;
-}
-
-.botao-xml:hover {
-    background: url('../img/bt_xml_hv.png');
-    border: none;
-    border-radius: none;
-}
-
-.imagem-boneco {
-    margin-right: 2%;
+.grafismo .destaque ul {
+    color: #fff;
 }
 
 .bg-escuro .accordion-body p {
@@ -258,12 +53,30 @@ body {
 /* codigos */
 pre code.hljs {
     display: block;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 1em;
+    font-size: 1.2em;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 code.hljs {
-    padding: 3px 5px
+    padding: 3px 5px;
+    font-size: 0.7em;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 0.7em;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 pre {
@@ -356,85 +169,10 @@ pre {
     font-weight: 700;
 }
 
-
-
 @media screen and (max-width:1440px) {
-
     body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 3% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 12%,
-            url('../img/destaque2_bg.png') no-repeat 3% 24%,
-            url('../img/destaque1_bg.png') no-repeat 97% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 3% 37%,
-            url('../img/destaque2_bg.png') no-repeat 97% 49%,
-            url('../img/destaque1_bg.png') no-repeat 3% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 3% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 87%,
-            url('../img/destaque3_bg.png') no-repeat 3% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
+        background-size: 17%, 17%;
     }
-
-}
-
-@media screen and (max-width:1400px) {
-
-    body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 0.5% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 12%,
-            url('../img/destaque2_bg.png') no-repeat 0.5% 24%,
-            url('../img/destaque1_bg.png') no-repeat 99.5% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 0.5% 37%,
-            url('../img/destaque2_bg.png') no-repeat 99.5% 49%,
-            url('../img/destaque1_bg.png') no-repeat 0.5% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 0.5% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 87%,
-            url('../img/destaque3_bg.png') no-repeat 0.5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
-    }
-
-}
-
-
-@media screen and (max-width:1366px) {
-
-    body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 0.5% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 12%,
-            url('../img/destaque2_bg.png') no-repeat 0.5% 24%,
-            url('../img/destaque1_bg.png') no-repeat 99.5% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 0.5% 37%,
-            url('../img/destaque2_bg.png') no-repeat 99.5% 49%,
-            url('../img/destaque1_bg.png') no-repeat 0.5% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 0.5% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 87%,
-            url('../img/destaque3_bg.png') no-repeat 0.5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
-    }
-
 }
 
 
@@ -451,47 +189,8 @@ pre {
         top: 62px !important;
     }
 
-    .img-inicio {
-        margin-top: 8%;
-    }
-}
-
-
-@media screen and (max-width:768px) {
-    .img-inicio {
-        margin-top: 5%;
-    }
-}
-
-@media screen and (max-width:500px) {
-    .painel-rr {
-        gap: 35px;
+    .numero-item3 {
+        margin-left: -2%;
     }
 
-    .painel-requisicao,
-    .painel-rest {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .painel-requisicao-botoes,
-    .painel-rest-botoes {
-        grid-template-columns: 1fr;
-    }
-
-    .imagem-lupa {
-        display: none;
-    }
-
-    .img-flor {
-        display: none;
-    }
-
-    .imagem-boneco {
-        display: none;
-    }
-
-    .img-inicio {
-        display: none;
-    }
 }

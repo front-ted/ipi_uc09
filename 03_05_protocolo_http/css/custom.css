@@ -20,11 +20,15 @@ body {
 
 }
 
-body .container {
+.pagina.container {
     background: linear-gradient(to bottom, #e3d4f5, #fff, #d8edf8);
-    margin-top: -5%;
-    padding-top: 8%;
+    margin-top: 0%;
+    padding-top: 1%;
     padding-bottom: 4%;
+}
+
+.modal-body .container{
+    background: unset;
 }
 
 .titulo {
@@ -41,6 +45,8 @@ body .container {
 
 .modal-body .container {
     background: unset;
+    padding-top: unset;
+    padding-bottom: unset;
 }
 
 .painel-rr {
@@ -234,6 +240,11 @@ body .container {
 .imagem-boneco {
     margin-right: 2%;
 }
+
+.bg-escuro .container {
+    background: transparent;
+}
+
 
 .bg-escuro .accordion-body p {
     color: #000;
