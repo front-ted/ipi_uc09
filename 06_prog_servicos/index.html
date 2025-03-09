@@ -3,7 +3,7 @@
 
 <head>
     <!-- Inserir o tíutlo do conhecimento na tag title -->
-    <title>Web services: histórico e conceito</title>
+    <title>Programação de serviços: implementação e instalação</title>
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,677 +54,277 @@
         <section class="paginas">
             <div class="pagina">
                 <div class="container">
-                    <h2><i>Web services</i>: histórico e conceito</h2>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
-                            <img class="img-fluid mx-auto d-block no-print" src="img/img1.png">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
-                            <p class="texto-intro">
-                                Este material visa auxiliar você a compreender o que são APIs (<i>application
-                                    programming
-                                    interface</i>) e <i>web services</i>. Para começar o aprendizado, imagine o seguinte
-                                cenário: um
-                                aplicativo de entrega de comida. Quando você escolhe um restaurante, o sistema precisa
-                                consultar o cardápio, calcular o frete e realizar o pagamento. Esses processos envolvem
-                                a comunicação entre APIs e <i>web services</i>, que permitem ao aplicativo buscar
-                                informações
-                                em servidores externos e integrá-las em tempo real. Na área de programação, o uso de
-                                APIs e <i>web services</i> é muito discutido, e essas tecnologias tornaram-se
-                                fundamentais para
-                                o desenvolvimento da maioria dos sistemas modernos, especialmente em <i>softwares
-                                    web</i> e
-                                <i>mobile</i>.
-                            </p>
-                        </div>
-                    </div>
+                    <h2>Programação de serviços: implementação e instalação</h2>
+                    <p>
+                        A programação de serviços no <i>back-end</i> desempenha um papel essencial na arquitetura de
+                        sistemas,
+                        sendo responsável pela implementação da lógica de negócio de forma centralizada, organizada e
+                        reutilizável. Essa camada transforma os requisitos do projeto em funcionalidades concretas,
+                        integrando dados, regras de negócio e interações com outras camadas do sistema, como
+                        controladores e
+                        repositórios.
+                    </p>
+                    <p>
+                        O principal objetivo dessa camada é isolar a lógica de negócio de outras partes do sistema, como
+                        a
+                        de apresentação do <i>front-end</i> e a de persistência com banco de dados. As interações entre
+                        cliente e
+                        servidor ocorrem frequentemente seguindo o padrão de solicitação e resposta, o que reforça a
+                        importância de uma separação clara de responsabilidades. Conforme visto no material sobre
+                        protocolo
+                        HTTP e representação de dados, esse processo é realizado por meio de solicitações HTTP
+                        (<i>hypertext
+                            transfer protocol</i>), como <b>GET</b>, <b>POST</b>, <b>PUT</b> e <b>DELETE</b>,
+                        facilitando a manutenção, a escalabilidade e a
+                        evolução do sistema.
+                    </p>
+                    <p>
+                        Na criação de estruturas de código para serviços <i>web</i>, são utilizadas diferentes
+                        linguagens de
+                        <i>back-end</i>, como Java, Python, PHP e Node.js, dependendo da tecnologia mais apropriada para
+                        o projeto.
+                        Neste conteúdo, será dado enfoque à instalação do Node.js e do <i>framework</i> Express.js e à
+                        persistência
+                        de dados em arquivos JSON (<i>JavaScript object notation</i>). Além disso, será implementada uma
+                        API
+                        (<i>application programming interface</i>) de notícias que será utilizada no decorrer do curso.
+                    </p>
                     <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                    <div class="painel-web no-print">
-                        <button type="button" class="botao botao-1990" data-bs-toggle="modal" data-bs-target="#modal1">
+                    <div class="painel-inst no-print">
+                        <button type="button" class="botao-instalacao" data-bs-toggle="modal" data-bs-target="#modal1">
                         </button>
-                        <button type="button" class="botao botao-2000" data-bs-toggle="modal" data-bs-target="#modal2">
-                        </button>
-                        <button type="button" class="botao botao-2004" data-bs-toggle="modal" data-bs-target="#modal3">
-                        </button>
-                        <button type="button" class="botao botao-atualmente" data-bs-toggle="modal"
-                            data-bs-target="#modal4">
+                        <button type="button" class="botao-implementacao" data-bs-toggle="modal"
+                            data-bs-target="#modal2">
                         </button>
                     </div>
                     <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">1990</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Instalação</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Nos anos 1990, com o crescimento da internet, surgiu a necessidade de que
-                                        sistemas diferentes pudessem se comunicar de forma eficiente. Durante esse
-                                        período, começaram a surgir soluções proprietárias para integração de dados, mas
-                                        ainda faltava um padrão universal que facilitasse essa comunicação.
-                                    </p>
+                                    <div class="container">
+                                        <p>
+                                            Optou-se por utilizar<b> Node.js</b> na construção da camada de serviços,
+                                            pois ele
+                                            atende perfeitamente às necessidades de eficiência e escalabilidade. Sua
+                                            arquitetura leve e modular facilita a implementação de <b>APIs RESTful</b>,
+                                            essenciais
+                                            para oferecer flexibilidade e acompanhar o crescimento do sistema, conforme
+                                            já
+                                            abordado. O Node.js também se destaca pelo alto desempenho, pela ampla
+                                            comunidade de suporte e por seu ecossistema rico, fatores que contribuem
+                                            diretamente para o sucesso do projeto.
+                                        </p>
+                                        <p>
+                                            Para a criação dos <i>endpoints</i>, será utilizado o <b>Express.js</b>, um
+                                            <i>microframework</i> que
+                                            alia simplicidade e praticidade, sendo ideal tanto para iniciantes quanto
+                                            para
+                                            desenvolvedores experientes. O Express.js possibilita o desenvolvimento ágil
+                                            e
+                                            organizado, facilitando a estruturação da camada de serviços de maneira
+                                            clara e
+                                            eficiente.
+                                        </p>
+                                        <p>
+                                            O Express.js é um <i>framework</i> minimalista para aplicativos <i>web</i>
+                                            construído sobre o
+                                            Node.js, projetado para criar aplicativos escaláveis. Ele é uma escolha
+                                            ideal
+                                            para desenvolvedores que desejam controle total sobre a estrutura de seus
+                                            aplicativos, permitindo a criação eficiente de serviço <i>web</i>. Entre
+                                            seus
+                                            principais recursos estão o roteamento e a flexibilidade, que aprimoram
+                                            significativamente o desenvolvimento de <i>back-end</i>.
+                                        </p>
+                                        <p><b>Instalando o NPM e Node.js:</b></p>
+                                        <p>
+                                            Para começar a usar o Node.js e o Express.js, é necessário que você tenha
+                                            inicialmente instalado o <b>NPM</b> (Node Package Manager), que é um
+                                            gerenciador de
+                                            pacotes do Node.js.
+                                        </p>
+                                        <p>
+                                            Com o NPM, você pode gerenciar dependências do seu projeto, acessar o
+                                            repositório do NPM e ter acesso a diversas bibliotecas e <i>frameworks</i>
+                                            JavaScript,
+                                            permitindo que sejam instalados/desinstalados.
+                                        </p>
+                                        <div class="table-responsive table">
+                                            <table class="text-left align-middle" width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="larg-50">
+                                                            O NPM está incluído no Node.js. Prossiga estas etapas para
+                                                            instalar o NPM:
+                                                            <ul class="marcador-padrao">
+                                                                <li>Acesse o <i>site</i> oficial do Node.js.</li>
+                                                                <li>
+                                                                    Conforme mostra a figura, o <i>site</i> reconhece o
+                                                                    sistema
+                                                                    operacional automaticamente (Windows neste caso) e
+                                                                    sugere a versão para <i>download</i> (LTS neste
+                                                                    caso). Priorize
+                                                                    sempre o <i>download</i> de versões LTS, que são as
+                                                                    versões
+                                                                    mais estáveis com mais suporte.
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td class="larg-50">
+                                                            <figure class="my-5 no-print">
+                                                                <img src=""
+                                                                    class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                                                                    alt="Imagem">
+                                                                <a href="" target="_blank"
+                                                                    class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                                                    <img src=""
+                                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                                        alt="Imagem">
+                                                                </a>
+                                                                <figcaption class="figure-caption text-center">
+                                                                    Instalando NPM – Node.js <br>
+                                                                    Fonte: Senac EAD (2025)
+                                                                </figcaption>
+                                                            </figure>
+                                                            <div class="acessivel visually-hidden no-print">
+                                                                <p>
+                                                                    Imagem do navegador de internet que exibe ao lado
+                                                                    esquerdo da tela a opção para download na versão
+                                                                    LTS.
+                                                                </p>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <ul class="marcador-padrao">
+                                                                <li>
+                                                                    Após a instalação do Node.js, você pode verificar
+                                                                    tanto
+                                                                    a versão do Node.js quanto a versão do NPM instalada
+                                                                    e
+                                                                    executando os comandos <b>node -v</b> e <b>npm
+                                                                        -v</b>.
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <pre>
+                                                                <code class="hljs largura">
+        node -v 
+        v22.13.0 
+         
+        npm -v 
+        10.9.2 
+                                                                </code>
+                                                            </pre>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="botao hvr-sweep-to-right"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">2000 </h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Implementação</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>No ano 2000, o protocolo SOAP (<i>simple object access protocol</i>) foi
-                                        introduzido
-                                        como uma solução padronizada para a troca de dados entre sistemas. Utilizando
-                                        XML (<i>extensible markup language</i>) para estruturar as mensagens, o SOAP
-                                        tornou-se
-                                        muito adotado em sistemas empresariais, atendendo à necessidade de padronização
-                                        da época.
-                                    </p>
+                                    <div class="container">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
+                                            nisl,
+                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
+                                            ornare
+                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
+                                            Phasellus
+                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
+                                            sem
+                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
+                                            ultrices
+                                            ornare. Donec gravida pharetra odio et ultrices.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
+                                            nisl,
+                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
+                                            ornare
+                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
+                                            Phasellus
+                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
+                                            sem
+                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
+                                            ultrices
+                                            ornare. Donec gravida pharetra odio et ultrices.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
+                                            nisl,
+                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
+                                            ornare
+                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
+                                            Phasellus
+                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
+                                            sem
+                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
+                                            ultrices
+                                            ornare. Donec gravida pharetra odio et ultrices.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="botao hvr-sweep-to-right"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">2004</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>A partir de 2004, a arquitetura REST (<i>representational state transfer</i>)
-                                        começou a
-                                        ganhar destaque em razão de sua leveza e simplicidade em comparação ao SOAP.
-                                        Nesse contexto, o formato JSON (<i>JavaScript object notation</i>) emergiu como
-                                        o
-                                        padrão preferido para transferência de dados, substituindo gradualmente o XML em
-                                        diversas aplicações.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Atualmente </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Atualmente, APIs e <i>web services</i> estão presentes em praticamente todas as
-                                        áreas,
-                                        desde aplicativos móveis até plataformas de <i>e-commerce</i>. Tecnologias covmo
-                                        REST e
-                                        ferramentas como o Postman facilitaram significativamente o uso e o teste de
-                                        APIs, tornando-os mais acessíveis para os desenvolvedores.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mt-3">
-                        Nos próximos tópicos, esses conceitos serão explorados em maior profundidade, mostrando como o
-                        REST
-                        e o JSON transformaram a comunicação entre sistemas e o impacto deles no desenvolvimento
-                        moderno.
-                    </p>
-                    <h3>O que é uma API?</h3>
-                    <p>
-                        API, ou interface de programação de aplicações, é uma ferramenta que permite a comunicação entre
-                        dois sistemas diferentes. Basicamente, uma API é composta de um conjunto de rotinas e padrões
-                        que
-                        permitem que um sistema acesse funcionalidades ou informações de outro.
-                    </p>
-                    <p class="no-print">Veja, no vídeo, como a API funciona:</p>
-                    <div class="ratio ratio-16x9">
-                        <iframe src=" " title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="acessivel visually-hidden print">
-                        <p>
-                            Para entender melhor o conceito de API, imagine-se em um restaurante. Você está sentado à
-                            mesa
-                            (Sistema A) e quer fazer um pedido à cozinha (Sistema B, o servidor). Para isso, você
-                            comunica
-                            seu pedido ao garçom, que leva a solicitação para a cozinha, especificando todos os detalhes
-                            do
-                            prato escolhido. Quando a comida está pronta, o garçom traz o pedido de volta à sua mesa. Se
-                            você decidir pedir mais bebidas, o mesmo processo ocorre: o garçom se encarrega de comunicar
-                            a
-                            nova solicitação à cozinha e traz a resposta (o pedido) de volta.
-                        </p>
-                        <p>
-                            Nesse contexto, o garçom representa a API. Ele é responsável por toda a comunicação entre
-                            você
-                            (Sistema A) e a cozinha (Sistema B). O ponto importante é que você, sentado à mesa, não
-                            precisa
-                            saber como o garçom se comunica com a cozinha nem como a cozinha prepara os pedidos. Você só
-                            precisa saber como fazer o pedido e confiar que o garçom o entregará corretamente.
-                        </p>
-                        <p>
-                            As APIs simplificam a integração entre diferentes sistemas, permitindo que eles colaborem
-                            sem a
-                            necessidade de expor detalhes internos de funcionamento. Essa abordagem facilita o
-                            desenvolvimento de aplicações, conectando diversas plataformas, como serviços de pagamento,
-                            mapas, redes sociais e muito mais.
-                        </p>
-                        <figure class="my-5">
-                            <div class="figure-img mb-4">
-                                <img class="img-fluid d-block borda-colorida mx-auto" src="">
-                            </div>
-                            <figcaption class="figure-caption text-center">Analogia entre uma API e um restaurante <br>
-                                Fonte: Senac EAD (2024) </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>
-                                Ilustração comparativa mostrando o funcionamento de um sistema web e sua analogia com um
-                                restaurante. Na parte esquerda, o diagrama descreve a interação entre o front-end, a API
-                                e o
-                                back-end. Uma mão segurando um smartphone representa o front-end, que envia uma
-                                requisição
-                                para a API. A API é mostrada como um símbolo de engrenagem, conectando o front-end ao
-                                back-end, representado por servidores. O back-end processa a solicitação e envia uma
-                                resposta de volta ao front-end, finalizando o ciclo. Na parte direita, a analogia com um
-                                restaurante está representada em três etapas: 1. O front-end é simbolizado por um casal
-                                sentado em uma mesa de jantar. Eles solicitam o menu e fazem um pedido de refeição. 2. O
-                                garçom, representado por um atendente com uma bandeja, leva o pedido do casal até a
-                                cozinha.
-                                3. A cozinha, ilustrada por um chef segurando um prato, prepara a refeição e devolve o
-                                pedido ao garçom, que entrega a comida ao casal. Setas mostram o fluxo contínuo de
-                                comunicação entre as partes em ambos os cenários, destacando como cada elemento
-                                desempenha
-                                uma função específica para atender à solicitação inicial.
-                            </p>
-                        </div>
-                        <p>
-                            Pode-se dizer que as APIs são ferramentas projetadas para simplificar o desenvolvimento de
-                            programas e aplicações. Elas fazem isso ao abstrair muitos dos elementos complexos de um
-                            <i>software</i>, permitindo que os desenvolvedores foquem o que realmente precisam: como
-                            utilizar os
-                            serviços oferecidos pela API em seus próprios projetos. A grande vantagem é que o
-                            desenvolvedor
-                            não precisa entender como a API executa suas operações internas, apenas como interagir com
-                            ela
-                            de acordo com sua documentação. É por isso que a documentação da API é importante. Embora
-                            existam padrões gerais, cada API tem as próprias regras e os próprios guias de uso. Por
-                            isso, é
-                            essencial consultar a documentação oficial sempre que for utilizar uma API. Nela, você
-                            encontrará orientações detalhadas, formas de integração e exemplos de como enviar e receber
-                            dados.
-                        </p>
-                    </div>
-                    <h3>Diferenças entre APIs e <i>web service</i>s</h3>
-                    <p>
-                        O conceito de um <i>web service</i> é muito parecido com o de uma API, pois ambos têm o mesmo
-                        propósito:
-                        permitir a comunicação entre diferentes sistemas. A diferença está na forma como essa
-                        comunicação
-                        ocorre:
-                    </p>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                            <img class="img-fluid mx-auto d-block no-print" src="img/img_webservices.png">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6	col-xl-6 col-xxl-6">
-                            <img class="img-fluid mx-auto d-block no-print" src="img/img_api.png">
-                        </div>
-                        <figcaption class="figure-caption text-center mt-3">Comparação entre requisições por meio de
-                            <i>web</i>
-                            <i>services</i> e APIs <br>
-                            Fonte: Pilli (2024)
-                        </figcaption>
-                        <div class="acessivel visually-hidden no-print">
-                            Comparação visual entre web services e APIs: à esquerda, web services com três etapas –
-                            sistema
-                            interno, envio de requisição XML/JSON/HTTP pela nuvem e cliente; à direita, APIs com trêsz
-                            etapas – servidor ou fonte de dados, troca de requisições e respostas da API e dispositivo
-                            do
-                            usuário.
-                        </div>
-                    </div>
-                    <!-- ver se aqui vai ser tooltip -->
-                    <h4><i>Web service</i></h4>
-                    <p>Suas requisições são feitas obrigatoriamente por meio de uma rede, como a internet.</p>
-                    <h4>API</h4>
-                    <p>
-                        Nem toda API precisa usar uma rede para funcionar. No entanto, se uma API utiliza a rede para
-                        realizar suas requisições, ela é considerada um web service. Em resumo, todo web service é uma
-                        API,
-                        mas nem toda API é um web service.
-                    </p>
-                    <!-- ver se aqui vai ser tooltip -->
-                    <h3>Como funcionam os <i>web services</i></h3>
-                    <p>
-                        <i>Web services</i> operam por meio de mensagens HTTP, ou <i>hypertext transfer protocol</i>
-                        (como <b>GET</b>, <b>POST</b>, <b>PUT</b>
-                        e <b>DELETE</b>), utilizando formatos de dados como XML ou JSON. Eles são muito importantes em
-                        sistemas
-                        modernos, especialmente em aplicativos móveis, nos quais parte das funcionalidades ocorre
-                        localmente
-                        no dispositivo, mas muitas operações dependem de chamadas na <i>web</i> e são processadas em
-                        servidores. É
-                        possível citar como exemplos os aplicativos de transporte, as redes sociais e os serviços de
-                        <i>delivery</i>.
-                    </p>
-                    <p>Pode-se compreender melhor o uso de <i>web service</i> pensando no seu fluxo típico:</p>
-                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Descoberta do serviço
-                                    <img src="img/icon_descoberta_servico.svg" alt="Ícone" width="25" height="25"
-                                        class="ms-2 no-print">
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>O cliente localiza o serviço no UDDI (<i>universal description, discovery and
-                                            integration</i>), que funciona como um diretório de serviços disponíveis na
-                                        <i>web</i>.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Obtenção dos detalhes
-                                    <img src="img/icon_obtencao_detalhes.svg" alt="Ícone" width="25" height="25"
-                                        class="ms-2 no-print">
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>O cliente consulta o WSDL (web services description language) do serviço. Esse
-                                        arquivo fornece os detalhes técnicos necessários, como os métodos disponíveis,
-                                        os parâmetros aceitos e o formato das mensagens. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Envio da requisição
-                                    <img src="img/icon_envio_requisicao.svg" alt="Ícone" width="25" height="25"
-                                        class="ms-2 no-print">
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>O cliente monta uma mensagem SOAP em XML, estruturando os dados necessários para
-                                        a operação desejada. Essa mensagem é enviada ao servidor por meio de um
-                                        protocolo, geralmente HTTP. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    Processamento e resposta
-                                    <img src="img/icon_processamento_resposta.svg" alt="Ícone" width="25" height="25"
-                                        class="ms-2 no-print">
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <p>O servidor processa a mensagem recebida, executa a lógica necessária e retorna
-                                        uma resposta no mesmo formato (SOAP/XML). Essa resposta é então processada pelo
-                                        cliente. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mt-5">
-                        Esse fluxo pode ser adaptado para REST (<i>representational state transfer</i>), em que os dados
-                        são
-                        transmitidos em formatos mais leves, como JSON, e as mensagens são enviadas diretamente pelo
-                        protocolo HTTP.
-                    </p>
-                    <h3>Microsserviços e sua importância</h3>
-                    <p>
-                        Microsserviços são uma abordagem arquitetural em que o sistema é dividido em componentes
-                        independentes, cada um responsável por uma funcionalidade específica. Essa separação facilita a
-                        manutenção e a escalabilidade, além de permitir que diferentes tecnologias sejam usadas para
-                        desenvolver cada serviço. Essa flexibilidade torna os microsserviços uma ótima opção para
-                        arquiteturas modernas, nas quais a agilidade e a adaptabilidade são fundamentais.
-                    </p>
-                    <div class="infografico no-print">
-                        <img src="img/infog2_microserviços.png" class="mx-auto d-block img-fluid img-info">
-                        <span class="texto1 text-center">Microsserviços e sua <br>importância</span>
-                        <span class="texto2 text-end">Agilidade e <br> Adaptabilidade</span>
-                        <span class="texto3 text-end">Funcionalidades <br> Independentes</span>
-                        <span class="texto4 text-start">Manutenção e <br> Escalabilidade</span>
-                        <span class="texto5 text-start">Flexibilidade <br> Tecnológica</span>
-                    </div>
-                    <div class="print visually-hidden" aria-hidden="true">
-                        <img src="img/print-micros.png" class="mx-auto d-block img-fluid">
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
-                            <img class="img-fluid mx-auto d-block no-print" src="img/">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
-                            <p class="mt-5">
-                                <b>Um exemplo de implementação de microsserviços</b> é a AWS (Amazon Web Services). A
-                                AWS
-                                organiza suas soluções em serviços independentes e especializados, cobrindo áreas como
-                                desenvolvimento de <i>software</i>, <i>marketing</i>, finanças e tecnologia de jogos.
-                                Essa abordagem
-                                permite que os usuários escolham e integrem apenas os serviços necessários, aproveitando
-                                uma estrutura escalável que atende a diferentes setores.
-                            </p>
-                        </div>
-                    </div>
-                    <h3><i>Web services</i> vs. aplicações <i>web</i></h3>
-                    <p>
-                        Embora um <i>web service</i> seja tecnicamente um tipo de aplicação <i>web</i>, existem algumas
-                        diferenças
-                        importantes:
-                    </p>
-                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                    <div class="painel-servicos no-print">
-                        <div class="conteudo-botao">
-                            <button type="button" class="botao botao-3" data-bs-toggle="modal" data-bs-target="#modal5">
-                            </button>
-                            <span class="texto-botao"><b>Serviços <i>web</i></b> <br> Foco na comunicação entre <br>
-                                sistemas</span>
-                        </div>
-                        <img src="img/icon_vs.png" class="img-fluid">
-                        <div class="conteudo-botao">
-                            <button type="button" class="botao botao-4" data-bs-toggle="modal" data-bs-target="#modal6">
-                            </button>
-                            <span class="texto-botao"><b>Aplicações <i>web</i></b> <br> Foco na interação do <br>
-                                usuário</span>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Serviços <i>web</i> </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <ul class="marcador-padrao">
-                                        <li>
-                                            <i>Web services</i> podem ser acessados por qualquer linguagem de
-                                            programação, enquanto
-                                            aplicações <i>web</i> geralmente têm uma linguagem de <i>back-end</i>
-                                            específica.
-                                        </li>
-                                        <li>
-                                            <i>Web services</i> operam com métodos HTTP, enquanto aplicações <i>web</i>
-                                            incluem elementos
-                                            interativos, como botões e formulários.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Aplicações <i>web</i></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <ul class="marcador-padrao">
-                                        <li>
-                                            Aplicações <i>web</i> são voltadas para usuários e incluem interface
-                                            gráfica,
-                                            enquanto <i>web services</i> conectam sistemas e não têm interface visual.
-                                        </li>
-                                        <li>
-                                            Aplicações <i>web</i> são sistemas completos, enquanto <i>web services</i>
-                                            focam a troca
-                                            de dados entre sistemas.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mt-5">
-                        Com <i>frameworks</i> como Spring MVC, é possível criar tanto aplicações <i>web</i> completas
-                        (com <i>front-end</i> e
-                        <i>back-end</i>) quanto <i>web services</i> mais enxutos, voltados apenas para a comunicação
-                        entre sistemas.
-                    </p>
-                    <h3>Protocolo SOAP: comunicação padronizada entre sistemas</h3>
-                    <p>
-                        Quando sistemas cliente e servidor utilizam linguagens de programação diferentes, é necessário
-                        um
-                        protocolo que padronize a troca de informações. Um dos primeiros criados para essa função foi o
-                        SOAP, recomendado pela W3C em 2000.
-                    </p>
-                    <p>
-                        O SOAP utiliza XML como formato-padrão para enviar e receber dados. Isso garante que a
-                        comunicação
-                        seja compreendida por diferentes sistemas, independentemente de suas tecnologias.
-                    </p>
-                    <p>Componentes principais do SOAP:</p>
-                    <p class="no-print"> Clique ou toque para visualizar o conteúdo. </p>
-                    <div class="painel-uddi">
-                        <button type="button" class="botao botao-7" data-bs-toggle="modal" data-bs-target="#modal7">
-                        </button>
-                        <button type="button" class="botao botao-8" data-bs-toggle="modal" data-bs-target="#modal8">
-                        </button>
                     </div>
 
-                    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">WSDL </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        Arquivo que descreve o <i>web service</i>, informando como utilizar, quais dados
-                                        fornecer e
-                                        o que esperar como resposta.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">UDDI</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        “Catálogo” em que <i>web services</i> podem ser registrados ou encontrados. Ele
-                                        facilita a descoberta de serviços disponíveis na internet.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="mt-5">Veja como funciona na prática: </p>
-                    <figure class="my-5 no-print">
-                        <div class="figure-img mb-4">
-                            <img class="img-fluid d-block mx-auto" src="img/img_mensagem.png">
-                        </div>
-                    </figure>
-                    <div class="acessivel visually-hidden print">
-                        <p>Azul – O que é UDDI?</p>
-                        <p>
-                            Rosa – O UDDI (universal description, discovery and integration) é um diretório que lista
-                            serviços disponíveis.
-                        </p>
-                        <p>Azul – O que é WSDL?</p>
-                        <p>
-                            Rosa – O WSDL (web services description language) é uma linguagem que descreve e fornece os
-                            detalhes de como acessar o serviço.
-                        </p>
-                        <p>Azul – Como o cliente envia dados ao servidor?</p>
-                        <p>
-                            Rosa – O cliente monta uma mensagem SOAP em XML, uma linguagem-padrão para estruturar dados,
-                            e
-                            com os dados necessários a envia ao servidor.
-                        </p>
-                        <p>Azul – O que acontece após o servidor receber a mensagem?</p>
-                        <p>Rosa – O servidor processa a mensagem e retorna a resposta no mesmo formato.</p>
-                    </div>
-                    <p>
-                        Imagine um serviço de rastreamento de encomendas. O cliente consulta o UDDI para encontrar o
-                        serviço
-                        de rastreamento, utiliza o WSDL para saber quais informações enviar (como número de rastreio) e
-                        recebe, via SOAP, dados atualizados sobre a entrega. Esse modelo foi muito utilizado antes da
-                        popularização de tecnologias como REST e JSON, que oferecem maior simplicidade e flexibilidade.
-                    </p>
-                    <div class="grafismo">
-                        <div class="destaque borda-colorida icone importante">
-                            <p>
-                                O protocolo SOAP, embora tenha se tornado popular em seu surgimento, com a chegada da
-                                arquitetura REST e dos arquivos JSON, que apresentam uma estruturação mais rápida e
-                                leve,
-                                tem sido abandonando, sendo utilizado com maior frequência em projetos mais antigos ou
-                                que
-                                necessitem de características específicas que só podem ser encontradas no XML.
-                            </p>
-                        </div>
-                    </div>
-                    <h3>SaaS</h3>
-                    <p>
-                        SaaS (<i>software as a service</i>, ou <i>software</i> como serviço) é um modelo de
-                        <i>software</i> baseado em nuvem que
-                        disponibiliza aplicações aos usuários por meio de um navegador da internet. Nessas
-                        circunstâncias, o
-                        serviço é hospedado de forma que seja possível realizar acesso na aplicação sob demanda, sem
-                        necessidade de instalações nem qualquer outra possível configuração nos computadores dos
-                        clientes.
-                        Para o usuário final, a utilização de um SaaS é atrativa, pois não é necessário se preocupar
-                        sobre
-                        como o serviço é mantido ou como a infraestrutura é gerenciada. O foco principal será como usar
-                        o
-                        <i>software</i>. Aplicações como essa fazem uso de web services e APIs REST.
-                    </p>
-                    <p>
-                        Outro aspecto característico que pode ser atribuído ao modelo SaaS é a cobrança por uso do
-                        <i>software</i>,
-                        e não por sua compra. O usuário não tem posse do <i>software</i>, apenas tem direito de usá-lo
-                        (alguns,
-                        inclusive, são gratuitos), podendo investir mais em recursos extras, caso seja de interesse.
-                        Trata-se de um modelo que tem se popularizado.
-                    </p>
-                    <p>Veja alguns exemplos populares de SaaS que você provavelmente conhece, mas sem saber que é um
-                        SaaS:</p>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
-                            <p>
-                                <b> Netflix</b>: é um serviço de <i>streaming</i> que tem se tornado cada vez mais
-                                popular atualmente e
-                                é muito similar a diversos outros que você já deve ter ouvido falar (Amazon Prime,
-                                Disney+, HBO Max etc.). Você pode utilizar em qualquer computador, em qualquer lugar, e
-                                as atualizações do catálogo são constantes. Para que os aplicativos de celular ou TV
-                                tenham acesso aos dados, são usados diversos <i>web services</i> para autenticar
-                                usuário,
-                                recuperar listas, entre outras funções.
-                            </p>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
-                            <img class="img-fluid mx-auto d-block no-print netflix" src="img/logo_netflix.png">
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 order-2 order-md-1">
-                            <img class="img-fluid mx-auto d-block no-print trello" src="img/logo_trello.png">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7 order-1 order-md-2">
-                            <p class="texto-trello">
-                                <b>Trello</b>: é uma ferramenta popular voltada para o gerenciamento de projetos, tanto
-                                pessoais quanto profissionais. Tem diversos planos para aprimorar suas funcionalidades e
-                                acrescentar ainda mais benefícios. Disponibiliza ainda um API <i>web</i> em que é
-                                possível
-                                integrar um sistema ao Trello, automatizando algumas ações.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
-                            <p class="texto-slack">
-                                <b>Slack</b>: é uma ferramenta com base em <i>chats</i> para realizar comunicação ágil
-                                entre áreas de
-                                uma empresa. É utilizado para organizar times de forma colaborativa dentro do ambiente
-                                de trabalho. Embora o acesso inicial seja gratuito, com sua assinatura é possível
-                                desbloquear diversas vantagens de organização de times, fluxo de trabalho e, até mesmo,
-                                conexão com outras empresas.
-                            </p>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5">
-                            <img class="img-fluid mx-auto d-block no-print slack" src="img/logo_slack.png">
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 order-2 order-md-1">
-                            <img class="img-fluid mx-auto d-block no-print erp" src="img/logo_erp.png">
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7 order-1 order-md-2">
-                            <p class="texto-erp">
-                                <b>ERPs</b>: existem também sistemas empresariais, conhecidos como ERP (planejamento de
-                                recursos empresariais) sob modelo SaaS. Os sistemas ERP trabalham com gerenciamento de
-                                funções diárias e automatização de processos, gestão de finanças, contabilidade etc.
-                                Entre os exemplos de ERP SaaS, destacam-se o TOTVS ERP Cloud, Sankhya Cloud e Oracle
-                                Cloud ERP.
-                            </p>
-                        </div>
-                    </div>
-                    <p class="mt-5">
-                        É importante diferenciar um SaaS de <i>softwares</i> com licença. Em um SaaS, não existe uma
-                        licença para
-                        ser vendida, e sim um pagamento decorrente de seu uso. Já a venda de uma licença caracteriza-se
-                        como
-                        a venda de um produto. Com o crescimento do uso de SaaS, muitos sistemas têm sido
-                        disponibilizados
-                        nessa forma de tecnologia, sendo uma forma mais prática de uso e divulgação desses úteis
-                        sistemas.
-                    </p>
-                    <h3>Encerramento</h3>
-                    <p>
-                        Com os conceitos bem consolidados, você será capaz de compreender melhor a estruturação dos
-                        códigos
-                        e a lógica de comunicação, juntamente com sua importância no mercado atual e os benefícios da
-                        comunicação entre diferentes sistemas. Alguns termos abordados neste material serão explorados
-                        mais
-                        detalhadamente em outros conteúdos.
-                    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
                 <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
