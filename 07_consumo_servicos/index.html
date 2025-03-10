@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Inserir o tíutlo do conhecimento na tag title -->
+    <title>Protocolo HTTP: conceitos, requisições e respost as, operações (GET, POST, PUT, DELETE), informações de
+        cabeçalhos, códigos de status da resposta; representações de dados: texto plano, JavaScript object notation
+        (JSON), extensible markup language (XML)</title>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fa/css/all.min.css">
+    <link href="../assets/css/devibeans.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <!-- hover.css https://ianlunn.github.io/Hover/ -->
+    <link rel="stylesheet" href="../assets/css/hover-min.css" />
+    <!--Splide - slideshow-->
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
+    <!-- Preloader -->
+    <link rel="stylesheet" href="../assets/css/preloader.css">
+    <!-- Áudio customizado -->
+    <link rel="stylesheet" href="../assets/css/player.css">
+    <!-- Estilos do template -->
+    <link rel="stylesheet" href="../assets/css/cores.css">
+    <link rel="stylesheet" href="../print/print/print.css">
+    <link rel="stylesheet" href="../assets/css/template.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body class="bg-claro">
+    <!-- Preloader OBRIGATÓRIO -->
+    <div class="preloader">
+        <div class="anim"></div>
+        <p>Aguarde enquanto o conteúdo é carregado.</p>
+    </div>
+    <!-- Marca d'água OBRIGATÓRIA -->
+    <img src="../assets/images/logo_senac_colorido.png" id="marcadaguaLogo">
+
+    <header id="topo">
+        <div class="topo-logo">
+            <div class="container">
+                <h1 id="nome-curso" class="only-print">Informática para Internet</h1>
+                <div id="toggleButton" class="btn-tema_pagina no-print" onclick="toggleBackgroundImage()"
+                    aria-hidden="true"></div>
+            </div>
+        </div>
+    </header>
+    <!--Menu lateral-->
+    <button class="bt-hamburguer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
+        aria-controls="offcanvasWithBackdrop">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
+        aria-labelledby="offcanvasWithBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Informática para Internet</h5>
+            <button type="button" class="bt-fecharmenu text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav id="nav-offcanvas" class="offcanvas-body">
+            <ul>
+                <li><a href="#titulo1">Introdução</a></li>
+                <li><a href="#titulo2">Protocolo HTTP</a></li>
+                <li><a href="#titulo3">Estrutura de requisição e resposta no HTTP </a></li>
+                <li><a href="#titulo4"><i>Request</i> e <i>response</i></a></li>
+                <li><a href="#titulo5">Códigos de status HTTP</a></li>
+                <li><a href="#titulo6">Métodos de tratamento de requisições </a></li>
+                <li><a href="#titulo7">Dados retornados em uma resposta </a></li>
+                <li><a href="#titulo8">REST, JSON e XML</a></li>
+                <li><a href="#titulo9">Encerramento</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Section principal #booklet OBRIGATÓRIO para funcionamento do print -->
+    <section id="booklet">
+        <div class="layer-preta no-print"></div>
+        <!-- Section .paginas OBRIGATÓRIA para funcionamento da paginação e do print -->
+        <section class="paginas">
+            <div class="container pagina">
+                <h2 class="titulo">
+                    Protocolo HTTP: conceitos, requisições e respost as, operações (GET, POST, PUT, DELETE), informações
+                    de
+                    cabeçalhos, códigos de <i>status</i> da resposta; representações de dados: texto plano,
+                    <i>JavaScript object
+                        notation</i> (JSON), <i>extensible markup language</i> (XML)
+                </h2>
+                <h3 id="titulo1">Introdução</h3>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-5 img-inicio">
+                        <img class="img-fluid mx-auto d-block no-print img-inicio" src="img/img1.png">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-7	col-xl-7 col-xxl-7">
+                        <p>
+                            Vive-se em uma era em que a internet é parte essencial do dia a dia, conectando pessoas,
+                            sistemas e
+                            informações de maneira quase instantânea. Para que isso aconteça, tecnologias como o
+                            protocolo HTTP
+                            (<i>hypertext transfer protocol</i>) e formatos de dados como JSON (<i>JavaScript object
+                                notation</i>) e XML
+                            (<i>extensible markup language</i>) desempenham papéis fundamentais. O HTTP é o responsável
+                            por
+                            possibilitar a
+                            comunicação entre computadores na web, enquanto JSON e XML organizam e facilitam a troca de
+                            informações
+                            entre sistemas de forma clara e eficiente.
+                        </p>
+
+                    </div>
+                </div>
+                <p>
+                    Este material foi pensado para apresentar esses dois universos, mostrando como eles se
+                    complementam
+                    na
+                    construção de sistemas modernos. Ao longo deste conteúdo, você encontrará conceitos básicos,
+                    exemplos
+                    práticos e explicações acessíveis que ajudarão a entender melhor como essas ferramentas
+                    transformam
+                    ideias em aplicações funcionais.
+                </p>
+                <h3 id="titulo2">Protocolo HTTP</h3>
+                <p>
+                    O protocolo HTTP é o responsável pela comunicação entre duas máquinas na <i>web</i>, uma máquina
+                    cliente e
+                    outra servidor (na qual está armazenado determinado <i>site</i>). Ou seja, é por meio do
+                    protocolo
+                    HTTP que se
+                    comunica a camada de <i>front-end</i> com a camada de <i>back-end</i>.
+                </p>
+                <div class="table-responsive table">
+                    <table class="text-left align-middle">
+                        <tbody>
+                            <tr>
+                                <td class="w-50">
+                                    Essa comunicação ocorre da seguinte maneira:
+                                    <ol>
+                                        <li>O cliente faz uma requisição para o servidor (<i>request</i>), com os
+                                            dados
+                                            dessa requisição. </li>
+                                    </ol>
+                                </td>
+                                <td class="w-50">gif</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ol>
+                                        <span class="numero2">2.</span> O servidor então apresenta uma resposta ao
+                                        cliente (response) de acordo com o
+                                        solicitado.
+                                    </ol>
+                                    Esse ciclo de requisição e resposta é o que possibilita a navegação e o
+                                    funcionamento dos sites usados diariamente
+                                </td>
+                                <td>gif </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 id="titulo3">Estrutura de requisição e resposta no HTTP </h3>
+                <figure class="my-5">
+                    <div class="figure-img mb-4">
+                        <img class="img-fluid d-block mx-auto" src="img/conversa1.png">
+                    </div>
+                </figure>
+                <h3 id="titulo4"><i>Request</i> e <i>response</i></h3>
+                <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                <div class="painel-rr no-print">
+                    <button type="button" class="botao botao-request" data-bs-toggle="modal" data-bs-target="#modal1">
+                    </button>
+                    <button type="button" class="botao botao-response" data-bs-toggle="modal" data-bs-target="#modal2">
+                    </button>
+                </div>
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> <i>Request</i> </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        Em tradução direta, a <i>request</i> significa requisição, ou seja, é um
+                                        pedido
+                                        que o
+                                        cliente realiza ao servidor. Nesse pedido, encontram-se todos os dados
+                                        necessários
+                                        para atender à solicitação dREo cliente, podendo ser desde dados estáticos
+                                        (já
+                                        presentes na página) até dados de formulários (digitados pelo próprio
+                                        cliente).
+                                    </p>
+                                    <p>
+                                        O <i>request</i> acontece a cada interação com uma página. Por exemplo: ao
+                                        clicar em uma
+                                        categoria de filmes de uma plataforma <i>streaming</i>, você está fazendo
+                                        uma
+                                        requisição ao
+                                        servidor, que devolve os dados da página solicitada (<i>response</i>). Isso
+                                        também acontece
+                                        ao cadastrar um novo determinado recurso. Nessa situação, é enviada a
+                                        requisição
+                                        juntamente com os dados do formulário. Vale destacar que toda informação em
+                                        HTTP
+                                        é
+                                        transportada como texto.
+                                    </p>
+                                    <p>
+                                        O protocolo ainda define verbos ou métodos, que são modos de interpretar
+                                        essas
+                                        requisições. Os mais comuns são <b>GET</b> e <b>POST</b>.
+                                    </p>
+                                    <ul class="marcador-padrao">
+                                        <li>
+                                            <b>GET</b> – Neste verbo, os parâmetros são enviados por meio do
+                                            cabeçalho
+                                            da
+                                            requisição, ficando visíveis os dados transmitidos pela URL (<i>uniform
+                                                resource
+                                                locator</i>).
+                                        </li>
+                                        <li>
+                                            <b>POST</b> – Neste verbo, os dados são enviados no corpo da requisição.
+                                            Assim, esses
+                                            parâmetros não estão visíveis para o usuário explicitamente no primeiro
+                                            momento,
+                                            porém podem ser facilmente acessados utilizando recursos básicos.
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Além desses verbos, ainda existem outros, como <b>PUT</b>, <b>DELETE</b> e
+                                        <b>PATCH</b>, normalmente
+                                        utilizados com serviços<i> web</i>.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><i>Response</i></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        Como visto anteriormente, <i>request</i> é uma requisição feita ao servidor
+                                        com
+                                        dados que o
+                                        cliente deseja receber do servidor. A partir do processamento em servidor, é
+                                        enviada
+                                        a resposta – ou <i>response</i> – contendo os dados solicitados. Por
+                                        exemplo, ao
+                                        solicitar
+                                        uma página como “www.ead.senac.br”, um <i>request</i> é enviado ao servidor,
+                                        que
+                                        fará
+                                        processamentos, e um <i>response</i> é enviado de volta pelo servidor com os
+                                        dados da
+                                        página – o próprio código HTML (<i>hypertext markup language</i>) dela.
+                                    </p>
+                                    <p>
+                                        Com os dados de resposta (o corpo da resposta), um código de <i>status</i> é
+                                        enviado.
+                                        Trata-se de um número entre 100 e 599, em que cada centena tem uma categoria
+                                        para os
+                                        <i>status</i>.
+                                    </p>
+                                    <p>
+                                        É importante saber que existe uma estrutura-padrão para requisições e
+                                        respostas
+                                        no
+                                        HTTP. Veja a divisão dessa estrutura:
+                                    </p>
+                                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                    aria-expanded="false" aria-controls="collapseOne">
+                                                    <i>Start line </i>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>É uma linha inicial que mostra o tipo de requisição pedido,
+                                                        além
+                                                        de poder mostrar também seus <i>status</i> de sucesso ou
+                                                        falha.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    <i>Headers</i>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>É um conjunto não obrigatório de cabeçalhos HTTP,
+                                                        demonstrando as
+                                                        peculiaridades da mensagem ou demonstrando os itens contidos
+                                                        no
+                                                        seu corpo. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    <i>Empty line</i>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>É uma linha em branco que destaca o fim do cabeçalho e o
+                                                        início
+                                                        do corpo da mensagem.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading4">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapse4"
+                                                    aria-expanded="false" aria-controls="collapse4">
+                                                    <i>Body</i>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse4" class="accordion-collapse collapse"
+                                                aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <p>É o corpo da mensagem, na última parte, que, no caso, não
+                                                        aparece
+                                                        em todas as mensagens. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Veja esses elementos na imagem:</p>
+                                    <figure class="my-5 no-print">
+                                        <img src="img/"
+                                            class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                                            alt="Imagem">
+                                        <a href="img/" target="_blank"
+                                            class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                            <img src="img/"
+                                                class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                alt="Imagem">
+                                        </a>
+                                        <figcaption class="figure-caption text-center">Exemplos de requisição e
+                                            resposta
+                                            no HTTP <br>
+                                            Fonte: Stack Overflow (2018) </figcaption>
+                                    </figure>
+                                    <div class="acessivel no-print">
+                                        <p>
+                                            A imagem apresenta os elementos da estrutura HTTP citados na lista
+                                            anterior,
+                                            divididos em duas colunas (Requests e Responses) com destaque para a
+                                            linha
+                                            inicial: POST / HTTP/1.1 (start line do request) e HTTP/1.1 403
+                                            Forbidden
+                                            (start
+                                            line do response).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="titulo5">Códigos de status HTTP</h3>
+                <p>
+                    A comunicação entre cliente e servidor ocorre por meio do protocolo HTTP, e sempre que o
+                    navegador
+                    (cliente) faz uma solicitação ao servidor, ele recebe um código composto de três números,
+                    informando
+                    se
+                    a solicitação foi bem-sucedida, se houve algum erro ou se é necessária uma autenticação prévia
+                    para
+                    envio da resposta.
+                </p>
+                <p>
+                    Entre os códigos de <i>status</i>, existem cinco categorias, e é necessário saber que o primeiro
+                    dígito desse
+                    código define a categoria a que ele pertence. Por exemplo, o código 403, que começa pelo número
+                    4,
+                    indica que é um erro do lado do cliente (usuário); já um erro de número 503, que começa pelo
+                    número
+                    5, é
+                    um erro do lado do servidor. Desse modo, é importante conhecer o que cada número de 1 a 5
+                    significa
+                    dentro do <i>status</i>. Com essas informações, é possível conhecer as principais categorias de
+                    <i>status</i>.
+                </p>
+                <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                <div class="accordion" id="accordionExample2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                a) Categoria 1XX
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                            data-bs-parent="#accordionExample2">
+                            <div class="accordion-body">
+                                <p>Inicia com o valor 1 e tem valores como 101, 102, 103 etc. Essa categoria é
+                                    utilizada
+                                    pelo servidor para informar ao cliente que uma solicitação/requisição está em
+                                    andamento. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                b) Categoria 2XX
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                            data-bs-parent="#accordionExample2">
+                            <div class="accordion-body">
+                                <p>Inicia com o valor 2 e tem valores como 201, 202, 203 etc. Essa categoria é
+                                    utilizada
+                                    pelo servidor para informar ao cliente que uma solicitação/requisição está
+                                    aceita
+                                    pelo servidor. É esse o tipo de requisição esperada ao fazer um pedido ao
+                                    servidor,
+                                    pois indica que está tudo certo e o processo continuará seu andamento. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                c) Categoria 3XX
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
+                            data-bs-parent="#accordionExample2">
+                            <div class="accordion-body">
+                                <p>Inicia com o valor 3 e tem valores como 301, 302, 303 etc. Essa categoria indica
+                                    que
+                                    é preciso um redirecionamento, ou seja, novos passos são necessários para que a
+                                    requisição seja aceita. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                d) Categoria 4XX (erro/cliente)
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
+                            data-bs-parent="#accordionExample2">
+                            <div class="accordion-body">
+                                <p>Inicia com o valor 4 e tem valores como 401, 402, 403 etc. Essa categoria é
+                                    utilizada
+                                    pelo servidor para informar erros do lado do cliente, ou seja, a requisição foi
+                                    recebida, mas não pôde ser continuada por uma falha que aconteceu do lado do
+                                    cliente. Obs.: os códigos das linhas 4XX e 5XX são os códigos de erro. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                e) Categoria 5XX (erro/servidor)
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
+                            data-bs-parent="#accordionExample2">
+                            <div class="accordion-body">
+                                <p>Inicia com o valor 5 e tem valores como 501, 502, 503 etc. Essa categoria é
+                                    utilizada
+                                    pelo servidor para informar ao cliente um erro que ocorreu do lado do servidor.
+                                    Obs.: os códigos das linhas 4XX e 5XX são os códigos de erro. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="titulo6">Códigos de erro HTTP</h3>
+                <p>
+                    Além das categorias dos principais status do HTTP, existem alguns erros mais constantes que
+                    precisam
+                    ser
+                    conhecidos. Veja os principais:
+                </p>
+                <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                <div class="accordion" id="accordionExample3">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                a) Código 200
+                            </button>
+                        </h2>
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
+                            data-bs-parent="#accordionExample3">
+                            <div class="accordion-body">
+                                <p>Este código de erro não significa um erro em si, mas é necessário conhecê-lo,
+                                    pois é
+                                    o código esperado como solução para qualquer erro anterior, ou seja, o código
+                                    200
+                                    indica que a solicitação foi bem-sucedida/aceita. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                b) Código 500
+                            </button>
+                        </h2>
+                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                            data-bs-parent="#accordionExample3">
+                            <div class="accordion-body">
+                                <p>Este é um erro interno do servidor e muito temido pelos usuários, pois indica que
+                                    o
+                                    servidor está passando por alguma instabilidade e não está conseguindo dar
+                                    andamento
+                                    à requisição do cliente. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                                c) Código 403 (<i>forbidden</i>)
+                            </button>
+                        </h2>
+                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                            data-bs-parent="#accordionExample3">
+                            <div class="accordion-body">
+                                <p>Este é o conhecido acesso proibido. É simplesmente uma negação do servidor à
+                                    requisição do cliente, ou seja, demonstra que o cliente não tem permissão de
+                                    acesso
+                                    ao conteúdo requisitado. Esse erro é comum de ser visto durante navegações pela
+                                    <i>web</i>,
+                                    pois ele é uma forma de proteger os dados de acessos indevidos, geralmente
+                                    solucionado por meio de autenticação. Deve-se deixar claro que a URL foi
+                                    encontrada,
+                                    diferentemente do erro 404, em que não é encontrada a URL requisitada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading13">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                                d) Código 503
+                            </button>
+                        </h2>
+                        <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                            data-bs-parent="#accordionExample3">
+                            <div class="accordion-body">
+                                <p>Esse é um dos códigos mais conhecidos do HTTP. Ele indica uma falha de
+                                    solicitação do
+                                    lado do servidor, normalmente um processo de manutenção, sobrecarga de dados ou
+                                    erro
+                                    de configuração interna do servidor. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading14">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                                e) Código 404
+                            </button>
+                        </h2>
+                        <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                            data-bs-parent="#accordionExample3">
+                            <div class="accordion-body">
+                                <p>Clássico erro indicando que a página requisitada não foi encontrada, normalmente
+                                    por
+                                    erro de digitação da URL ou porque a página está fora do ar. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="titulo6">Métodos de tratamento de requisições</h3>
+                <p>
+                    As requisições sempre contam com um método ou verbo que indica como os dados enviados ao
+                    servidor
+                    devem
+                    ser tratados. Por padrão, uma requisição utiliza o método <b>GET</b>. A seguir, veja o conceito
+                    de
+                    cada método
+                    separadamente.
+                </p>
+                <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                <div class="painel-requisicao">
+                    <div class="imagem-lupa">
+                        <img src="img/destaque1_painel1.png" class="img-fluid">
+                    </div>
+                    <div class="painel-requisicao-botoes">
+                        <button type="button" class="botao-post" data-bs-toggle="modal" data-bs-target="#modal3">
+                        </button>
+                        <button type="button" class="botao-get" data-bs-toggle="modal" data-bs-target="#modal4">
+                        </button>
+                        <button type="button" class="botao-put" data-bs-toggle="modal" data-bs-target="#modal5">
+                        </button>
+                        <button type="button" class="botao-patch" data-bs-toggle="modal" data-bs-target="#modal6">
+                        </button>
+                        <button type="button" class="botao-delete" data-bs-toggle="modal" data-bs-target="#modal7">
+                        </button>
+                        <img src="img/destaque2_painel1.png" class="img-fluid mx-auto img-flor">
+                    </div>
+                </div>
+                <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">POST</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este método é geralmente utilizado para enviar informações ao servidor, muitas
+                                    vezes
+                                    dentro de formulários, com as informações anexadas no corpo da mensagem. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">GET</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este método é geralmente utilizado para buscar informações do servidor, como o
+                                    acesso
+                                    a uma página específica, por exemplo. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">PUT </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este método é geralmente utilizado para atualizar todos os dados de um
+                                    determinado
+                                    produto, tendo como base normalmente o ID desse produto ou qualquer outra chave
+                                    primária. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">PATCH </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este método é geralmente utilizado para atualizar parte dos dados de um
+                                    determinado
+                                    produto, tendo como base normalmente o ID desse produto ou qualquer outra chave
+                                    primária. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">DELETE </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este método é geralmente utilizado para deletar informações do servidor. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-5">
+                    Os métodos <b>POST</b> e <b>GET</b> são padrão para aplicações <i>web</i>, enquanto <b>PUT</b>,
+                    <b>PATCH</b> e <b>DELETE</b> são mais
+                    especificamente utilizados em <i>web services</i>. Do lado do cliente, o <i>request</i> envia o
+                    verbo necessário; do
+                    lado do servidor, o <i>back-end</i> processa de acordo com esse verbo. Por exemplo, se o
+                    servidor
+                    receber
+                    requisição<b> POST</b>, a ideia é que também trate os dados recebidos e processe potencialmente,
+                    gravando-os em
+                    banco de dados, por exemplo. Já se receber <b>GET</b>, o processamento será no sentido de
+                    retornar
+                    uma página
+                    do sistema ou alguma informação processada pelo servidor.
+                </p>
+                <h3 id="titulo7">Dados retornados em uma resposta</h3>
+                <p>
+                    Dentro do próprio navegador Google Chrome, há uma ferramenta para visualizar as respostas do
+                    servidor
+                    perante qualquer requisição do cliente. Quando estiver navegando na internet, use o atalho
+                    <b>F12</b>, que dá
+                    acesso a DevTools ou ferramenta do desenvolvedor.
+                </p>
+                <p>a) Exemplo de <b>retorno</b> de requisição 200 de uma busca do Google:</p>
+                <figure class="my-5 no-print">
+                    <img src="img/"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="img/" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center">Ferramenta de desenvolvedor – <i>status</i> 200
+                        <br>
+                        Fonte: Senac EAD (2025)
+                    </figcaption>
+                </figure>
+                <div class="acessivel no-print">
+                    <p>
+                        A imagem apresenta um exemplo de retorno da requisição com status 200, apresentado no
+                        console do
+                        navegador, na aba rede, com destaque para método de solicitação GET e código de status 200.
+                    </p>
+                </div>
+                <p>
+                    Note que, em um exemplo real de uma pesquisa, quando a requisição é aceita pelo servidor, ele
+                    retorna o
+                    <i>status</i> 200, já estudado, que indica que a requisição foi aceita.
+                </p>
+                <p>
+                    A ferramenta do desenvolvedor pode estar em inglês, então é utilizado o item <b>Network</b> para
+                    acessar as
+                    requisições.
+                </p>
+                <p>A seguir, serão analisados alguns itens importantes.</p>
+                <p>b) Exemplo de <b>retorno</b> de requisição 404 de uma busca do Google:</p>
+                <figure class="my-5 no-print">
+                    <img src="img/"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="img/" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center">Ferramenta de desenvolvedor – <i>status</i> 404
+                        <br>
+                        Fonte: Senac EAD (2025)
+                    </figcaption>
+                </figure>
+                <div class="acessivel no-print">
+                    <p>
+                        A imagem apresenta um exemplo de retorno da requisição com status 200, apresentado no
+                        console do
+                        navegador, na aba rede, com destaque para método de solicitação GET e código de status 404.
+                    </p>
+                </div>
+                <p>
+                    Ao tentar acessar o endereço “http://www.google.com.br/cadastro”, que é um endereço inválido, é
+                    possível
+                    entender com exatidão o uso do retorno 404 para páginas inexistentes.
+                </p>
+                <figure class="my-5 no-print">
+                    <img src="img/"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="img/" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center"> Ferramenta de desenvolvedor – <i>status</i> 403
+                        <br>
+                        Fonte: Senac EAD (2025)
+                    </figcaption>
+                </figure>
+                <div class="acessivel no-print">
+                    <p>
+                        A imagem apresenta um exemplo de retorno da requisição com status 200, apresentado no
+                        console do
+                        navegador, na aba rede, com destaque para método de solicitação GET e código de status 403.
+                    </p>
+                </div>
+                <p>
+                    Ao tentar acessar indevidamente o endereço “http://www.senacead.com.br”, que é um endereço que
+                    necessita
+                    de autorização, é possível entender o uso do retorno 403 para páginas que necessitam de
+                    <i>login</i>
+                    prévio.
+                </p>
+                <h3 id="titulo8">REST, JSON e XML</h3>
+                <p class="no-print"> Clique ou toque para visualizar o conteúdo.</p>
+                <div class="painel-rest">
+                    <div class="imagem-boneco">
+                        <img src="img/destaque_painel2.png" class="img-fluid">
+                    </div>
+                    <div class="painel-rest-botoes">
+                        <button type="button" class="botao-rest" data-bs-toggle="modal" data-bs-target="#modal8">
+                        </button>
+                        <button type="button" class="botao-json" data-bs-toggle="modal" data-bs-target="#modal9">
+                        </button>
+                        <button type="button" class="botao-xml" data-bs-toggle="modal" data-bs-target="#modal10">
+                        </button>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">REST</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        O <i>representational state transfer</i> (REST) é um estilo arquitetural
+                                        muito
+                                        usado no
+                                        desenvolvimento de aplicações distribuídas, especialmente em sistemas
+                                        <i>web</i>. O REST é
+                                        baseado em um conjunto de restrições que ajudam a criar sistemas escaláveis,
+                                        simples
+                                        e interoperáveis. O REST não é exatamente um padrão ou protocolo rígido, mas
+                                        um
+                                        conjunto de princípios que orientam como projetar sistemas que utilizam o
+                                        protocolo
+                                        HTTP.
+                                    </p>
+                                    <p>
+                                        Um dos pilares do REST é o conceito de recurso. Recursos são como entidades
+                                        que
+                                        representam qualquer tipo de dado ou funcionalidade de um sistema, como um
+                                        usuário,
+                                        um produto ou um pedido. Cada recurso é identificado de forma única por meio
+                                        de
+                                        um
+                                        URI (<i>uniform resource identifier</i>). Para acessar e manipular esses
+                                        recursos, o REST
+                                        utiliza métodos-padrão do HTTP, como o <b>GET</b>, para buscar informações,
+                                        o
+                                        <b>POST</b>, para
+                                        criar recursos, o <b>PUT</b>, para atualizá-los, e o <b>DELETE</b>, para
+                                        removê-los.
+                                    </p>
+                                    <p>
+                                        Outro princípio essencial do REST é o de <i>statelessness</i>, ou seja, “sem
+                                        estado”. Isso
+                                        quer dizer que cada requisição feita pelo cliente ao servidor precisa conter
+                                        todas
+                                        as informações necessárias para que ela seja processada, sem depender de
+                                        informações
+                                        enviadas em requisições anteriores. Esse princípio torna o sistema mais
+                                        escalável,
+                                        já que permite que diferentes servidores processem as requisições de forma
+                                        independente, sem precisar compartilhar estados entre si.
+                                    </p>
+                                    <p>
+                                        O REST também incentiva o uso de uma interface uniforme, garantindo que as
+                                        interações entre cliente e servidor sigam padrões consistentes. Isso envolve
+                                        nomear
+                                        os recursos de maneira clara, usar os métodos HTTP adequados e estruturar as
+                                        mensagens de requisição e resposta de forma bem definida. Além disso, o REST
+                                        trabalha com representações para transferir o estado dos recursos. Essas
+                                        representações podem ser feitas em formatos como JSON, XML ou HTML,
+                                        proporcionando
+                                        flexibilidade e integração entre diferentes sistemas.
+                                    </p>
+                                    <p>
+                                        Por fim, o REST é uma abordagem arquitetural que se destaca por sua
+                                        simplicidade,
+                                        padronização e capacidade de integração. Ele é amplamente adotado no
+                                        desenvolvimento
+                                        de APIs (<i>application programming interface</i>) de serviços <i>web</i>,
+                                        graças à sua habilidade
+                                        de estruturar sistemas de forma eficiente e escalável, aproveitando as
+                                        funcionalidades já disponíveis no protocolo HTTP. Seguindo os princípios do
+                                        REST, os
+                                        desenvolvedores conseguem criar sistemas robustos, flexíveis e fáceis de
+                                        manter.
+                                    </p>
+                                    <p>
+                                        Você encontra uma abordagem prática sobre o REST no conteúdo <b>Padrão
+                                            <i>representational
+                                                state transfer</i> – REST: conceitos, tipos de requisições,
+                                            interpretação das operações,
+                                            parâmetros, processamento e resposta; ferramentas de linguagem de
+                                            programação
+                                            <i>back-end</i> para programação de serviços REST</b>.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">JSON</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        O JSON, que significa <i>JavaScript object notation</i>, é como uma
+                                        linguagem
+                                        universal
+                                        para troca de informações no mundo da tecnologia. Ele foi criado para ser
+                                        fácil
+                                        de
+                                        entender e simples de usar, tanto por programadores quanto pelas máquinas
+                                        que
+                                        processam os dados.
+                                    </p>
+                                    <p>
+                                        Uma forma de imaginar o JSON é pensar em uma maneira organizada de guardar
+                                        informações, como uma lista de compras bem arrumada ou um formulário de
+                                        cadastro.
+                                        Por exemplo, em vez de ter dados espalhados, o JSON organiza tudo de forma
+                                        clara:
+                                        você sabe o que cada dado representa e onde ele está.
+                                    </p>
+                                    <p>
+                                        Por ser leve e versátil, o JSON funciona em quase todas as linguagens de
+                                        programação
+                                        modernas e é usado em diversos contextos, como aplicativos de celular,
+                                        sistemas
+                                        <i>web</i>,
+                                        APIs (que são como pontes para sistemas conversarem) e até em bancos de
+                                        dados. É
+                                        uma
+                                        solução prática para que sistemas diferentes troquem informações de forma
+                                        rápida
+                                        e
+                                        eficiente.
+                                    </p>
+                                    <p>
+                                        Você encontra uma abordagem prática sobre o JSON, no conteúdo de
+                                        <b>Programação
+                                            de
+                                            serviços: implementação e instalação</b>.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">XML</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        O XML é uma linguagem usada para representar dados de maneira estruturada e
+                                        hierárquica. Ele funciona como uma espécie de “caixa organizadora” na qual
+                                        cada
+                                        dado
+                                        tem sua etiqueta (<i>tag</i>) que descreve o que ele é. Além de ser legível
+                                        por
+                                        humanos,
+                                        essa estrutura foi projetada para ser processada por máquinas, sendo
+                                        amplamente
+                                        utilizada em integração de sistemas, configuração de aplicativos e
+                                        armazenamento
+                                        de
+                                        informações.
+                                    </p>
+                                    <p>
+                                        O XML e o HTML têm muito em comum, pois ambos usam uma estrutura baseada em
+                                        marcação, ou seja, trabalham com elementos delimitados por <i>tags</i> para
+                                        organizar as
+                                        informações. A diferença principal está no propósito: o HTML foi criado para
+                                        estruturar e exibir conteúdo em páginas <i>web</i>, definindo elementos como
+                                        cabeçalhos,
+                                        parágrafos, <i>links</i>, imagens e tabelas. Já o XML é mais versátil,
+                                        funcionando como uma
+                                        “linguagem universal” para armazenar, organizar e compartilhar dados de
+                                        forma
+                                        estruturada entre sistemas diferentes.
+                                    </p>
+                                    <p>Exemplos de implementação:</p>
+                                    <pre>
+                                        <code class="hljs language-xml">
+    &lt;catalogo>  
+        &lt;produto id="101">  
+              &lt;nome>Celular&lt;/nome>  
+              &lt;categoria>Eletrônicos&lt;/categoria>  
+              &lt;preco moeda="BRL">1500.00&lt;/preco>  
+              &lt;estoque>  
+                &lt;quantidade>50&lt;/quantidade>  
+                &lt;fornecedor>  
+                  &lt;nome> Distribuidora X&lt;/nome>  
+                  &lt;contato email="contato@x.com">+55 11 9999-8888&lt;/contato> 
+                &lt;/fornecedor>  
+              &lt;/estoque>  
+        &lt;/produto>  
+        &lt;produto id="102">  
+              &lt;nome>Notebook&lt;/nome>  
+              &lt;categoria>Computadores&lt;/categoria>  
+              &lt;preco moeda="BRL">1200.00&lt;/preco>  
+              &lt;estoque>  
+                &lt;quantidade>20&lt;/quantidade>  
+                &lt;fornecedor>  
+                  &lt;nome> Importadora Y&lt;/nome>  
+                  &lt;contato email="vendas@y.com">+55 11 9999-9999&lt;/contato>  
+                &lt;/fornecedor>  
+              &lt;/estoque>  
+        &lt;/produto>  
+    &lt;/catalogo> 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        Esse exemplo XML representa um <b>catálogo de produtos</b>, organizado de
+                                        forma
+                                        clara e
+                                        hierárquica. Cada<b> &lt;produto></b> contém informações como:
+                                    </p>
+                                    <ul class="marcador-padrao">
+                                        <li><b>Identificação</b>: o atributo <b>id</b> diferencia os produtos.</li>
+                                        <li><b>Detalhes básicos</b>: <i>tags</i> como <b>&lt;nome></b> e
+                                            <b>&lt;categoria></b> descrevem o produto.
+                                        </li>
+                                        <li><b>Preço</b>: a <i>tag</i> <b>&lt;preco></b> inclui o valor e a moeda
+                                            (exemplo: BRL para reais).</li>
+                                        <li> <b>Estoque</b>: a <i>tag</i> <b>&lt;estoque></b> mostra a quantidade
+                                            disponível.</li>
+                                        <li>
+                                            <b>Fornecedor</b>: dentro do <b>&lt;fornecedor></b>, há nome e contato,
+                                            com
+                                            <i>e-mail</i> como atributo.
+                                        </li>
+                                    </ul>
+                                    <p> Exemplo do produto 101:</p>
+                                    <ul class="marcador-padrao">
+                                        <li>Nome: Celular</li>
+                                        <li>Categoria: Eletrônicos</li>
+                                        <li>Preço: R$ 1500,00</li>
+                                        <li>Quantidade: 50 unidades</li>
+                                        <li>Fornecedor: Distribuidora X, contato contato@x.com.</li>
+                                    </ul>
+                                    <p>
+                                        Esse XML organiza os dados para facilitar a integração entre sistemas, como
+                                        lojas
+                                        virtuais, sendo flexível e legível tanto por humanos quanto por máquinas.
+                                    </p>
+                                    <p>
+                                        No próximo exemplo, veja uma implementação para configurações, demonstrando
+                                        como
+                                        um
+                                        arquivo XML pode armazenar configurações de um sistema.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs language-xml">
+    &lt;configuracoes>  
+        &lt;sistema>  
+              &lt;nome>APP SENAC&lt;/nome>  
+              &lt;versao>1.4.3&lt;/versao>  
+        &lt;/sistema>  
+        &lt;usuario>  
+              &lt;tema>escuro&lt;/tema>  
+              &lt;idioma>pt-BR&lt;/idioma>  
+              &lt;notificacoes habilitadas="true">  
+                &lt;email>true&lt;/email>  
+                &lt;sms>false&lt;/sms>  
+                &lt;/notificacoes>  
+        &lt;/usuario>  
+        &lt;seguranca>  
+            &lt;autenticacao tipo="biometria">true&lt;/autenticacao>  
+            &lt;backup agendado="semanal">domingo&lt;/backup>  
+        &lt;/seguranca>    
+    &lt;/configuracoes> 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        Aqui, o XML organiza as preferências do usuário, informações do sistema e
+                                        configurações de segurança em uma hierarquia clara.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="titulo9">Encerramento</h3>
+                <p>
+                    Entender como funcionam as requisições HTTP e as respostas dos servidores é essencial para criar
+                    sistemas que funcionem de forma fluida e eficiente. Isso permite desenvolver soluções mais
+                    intuitivas,
+                    em que mensagens claras e ações simples ajudam os usuários a compreender o que está acontecendo,
+                    mesmo
+                    quando algo dá errado, evitando frustrações e melhorando a experiência.
+                </p>
+                <p>
+                    Além disso, formatos como JSON e XML são ferramentas indispensáveis no desenvolvimento de
+                    sistemas
+                    modernos. O JSON, por ser leve e fácil de usar, é perfeito para a troca rápida de informações,
+                    especialmente em aplicativos <i>web</i> e APIs. Já o XML, com sua estrutura organizada e
+                    flexível, é uma ótima
+                    opção para armazenar e compartilhar dados em sistemas mais robustos e complexos.
+                </p>
+                <p>
+                    Dominar esses conceitos não é apenas sobre criar sistemas mais seguros e estáveis, mas também
+                    sobre
+                    oferecer uma experiência melhor para quem os utiliza. Combinando HTTP, JSON e XML de forma
+                    estratégica,
+                    é possível desenvolver aplicações que sejam, ao mesmo tempo, eficientes, acessíveis e preparadas
+                    para
+                    atender às demandas da tecnologia atual.
+                </p>
+                <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
+            </div>
+        </section>
+        <!-- Paginação-->
+        <footer class="text-center no-print d-flex justify-content-center mx-auto">
+            <ul class="pagination">
+
+            </ul>
+        </footer>
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <!--Jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!--Áudio customizado-->
+    <script src="../assets/js/audio-player.js"></script>
+    <!--Splide - slideshow-->
+    <script src="../assets/js/splide.min.js"></script>
+    <!--Prog'n'roll - barra de progresso conforme rola a página-->
+    <script src="../assets/js/prognroll.min.js"></script>
+    <!--Scripts gerais-->
+    <script src="../assets/js/geral.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
+
+    <script>
+        $(function () {
+            $("body").prognroll();
+        });
+    </script>
+
+    <!-- Handtalk -->
+    <script>
+        var scriptElem = document.createElement("script");
+        scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+            scriptElem.charset = "UTF-8",
+            scriptElem.onload = function () {
+                window.ht = new HT({
+                    token: "bf5b7efb148a829a126a0e0c9fd533bf",
+                    align: "top",
+                    videoEnabled: true,
+                    ytEmbedReplace: true,
+                    mobileConfig: {
+                        align: "right",
+                        actionsAlign: "top",
+                        customButtonStyle: {
+                            borderRadius: "6px",
+                            size: "38px",
+                            horizontalMargin: "13px",
+                            bottomMargin: "140px",
+                            rightMargin: "40px"
+                        }
+                    }
+                });
+                $('.ht-skip').attr("aria-hidden", "true")
+            },
+            document.body.appendChild(scriptElem);
+
+    </script>
+</body>
+
+</html>
