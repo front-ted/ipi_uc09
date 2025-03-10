@@ -53,169 +53,195 @@
         <!-- Section .paginas OBRIGATÓRIA para funcionamento da paginação e do print -->
         <section class="paginas">
             <div class="pagina">
-                <div class="container">
-                    <h2>Programação de serviços: implementação e instalação</h2>
-                    <p>
-                        A programação de serviços no <i>back-end</i> desempenha um papel essencial na arquitetura de
-                        sistemas,
-                        sendo responsável pela implementação da lógica de negócio de forma centralizada, organizada e
-                        reutilizável. Essa camada transforma os requisitos do projeto em funcionalidades concretas,
-                        integrando dados, regras de negócio e interações com outras camadas do sistema, como
-                        controladores e
-                        repositórios.
-                    </p>
-                    <p>
-                        O principal objetivo dessa camada é isolar a lógica de negócio de outras partes do sistema, como
-                        a
-                        de apresentação do <i>front-end</i> e a de persistência com banco de dados. As interações entre
-                        cliente e
-                        servidor ocorrem frequentemente seguindo o padrão de solicitação e resposta, o que reforça a
-                        importância de uma separação clara de responsabilidades. Conforme visto no material sobre
-                        protocolo
-                        HTTP e representação de dados, esse processo é realizado por meio de solicitações HTTP
-                        (<i>hypertext
-                            transfer protocol</i>), como <b>GET</b>, <b>POST</b>, <b>PUT</b> e <b>DELETE</b>,
-                        facilitando a manutenção, a escalabilidade e a
-                        evolução do sistema.
-                    </p>
-                    <p>
-                        Na criação de estruturas de código para serviços <i>web</i>, são utilizadas diferentes
-                        linguagens de
-                        <i>back-end</i>, como Java, Python, PHP e Node.js, dependendo da tecnologia mais apropriada para
-                        o projeto.
-                        Neste conteúdo, será dado enfoque à instalação do Node.js e do <i>framework</i> Express.js e à
-                        persistência
-                        de dados em arquivos JSON (<i>JavaScript object notation</i>). Além disso, será implementada uma
-                        API
-                        (<i>application programming interface</i>) de notícias que será utilizada no decorrer do curso.
-                    </p>
-                    <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                    <div class="painel-inst no-print">
-                        <button type="button" class="botao-instalacao" data-bs-toggle="modal" data-bs-target="#modal1">
-                        </button>
-                        <button type="button" class="botao-implementacao" data-bs-toggle="modal"
-                            data-bs-target="#modal2">
-                        </button>
-                    </div>
-                    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Instalação</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <p>
-                                            Optou-se por utilizar<b> Node.js</b> na construção da camada de serviços,
-                                            pois ele
-                                            atende perfeitamente às necessidades de eficiência e escalabilidade. Sua
-                                            arquitetura leve e modular facilita a implementação de <b>APIs RESTful</b>,
-                                            essenciais
-                                            para oferecer flexibilidade e acompanhar o crescimento do sistema, conforme
-                                            já
-                                            abordado. O Node.js também se destaca pelo alto desempenho, pela ampla
-                                            comunidade de suporte e por seu ecossistema rico, fatores que contribuem
-                                            diretamente para o sucesso do projeto.
-                                        </p>
-                                        <p>
-                                            Para a criação dos <i>endpoints</i>, será utilizado o <b>Express.js</b>, um
-                                            <i>microframework</i> que
-                                            alia simplicidade e praticidade, sendo ideal tanto para iniciantes quanto
-                                            para
-                                            desenvolvedores experientes. O Express.js possibilita o desenvolvimento ágil
-                                            e
-                                            organizado, facilitando a estruturação da camada de serviços de maneira
-                                            clara e
-                                            eficiente.
-                                        </p>
-                                        <p>
-                                            O Express.js é um <i>framework</i> minimalista para aplicativos <i>web</i>
-                                            construído sobre o
-                                            Node.js, projetado para criar aplicativos escaláveis. Ele é uma escolha
-                                            ideal
-                                            para desenvolvedores que desejam controle total sobre a estrutura de seus
-                                            aplicativos, permitindo a criação eficiente de serviço <i>web</i>. Entre
-                                            seus
-                                            principais recursos estão o roteamento e a flexibilidade, que aprimoram
-                                            significativamente o desenvolvimento de <i>back-end</i>.
-                                        </p>
-                                        <p><b>Instalando o NPM e Node.js:</b></p>
-                                        <p>
-                                            Para começar a usar o Node.js e o Express.js, é necessário que você tenha
-                                            inicialmente instalado o <b>NPM</b> (Node Package Manager), que é um
-                                            gerenciador de
-                                            pacotes do Node.js.
-                                        </p>
-                                        <p>
-                                            Com o NPM, você pode gerenciar dependências do seu projeto, acessar o
-                                            repositório do NPM e ter acesso a diversas bibliotecas e <i>frameworks</i>
-                                            JavaScript,
-                                            permitindo que sejam instalados/desinstalados.
-                                        </p>
-                                        <div class="table-responsive table">
-                                            <table class="text-left align-middle" width="100%">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="larg-50">
-                                                            O NPM está incluído no Node.js. Prossiga estas etapas para
-                                                            instalar o NPM:
-                                                            <ul class="marcador-padrao">
-                                                                <li>Acesse o <i>site</i> oficial do Node.js.</li>
-                                                                <li>
-                                                                    Conforme mostra a figura, o <i>site</i> reconhece o
-                                                                    sistema
-                                                                    operacional automaticamente (Windows neste caso) e
-                                                                    sugere a versão para <i>download</i> (LTS neste
-                                                                    caso). Priorize
-                                                                    sempre o <i>download</i> de versões LTS, que são as
-                                                                    versões
-                                                                    mais estáveis com mais suporte.
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                        <td class="larg-50">
-                                                            <figure class="my-5 no-print">
-                                                                <img src=""
-                                                                    class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
-                                                                    alt="Imagem">
-                                                                <a href="" target="_blank"
-                                                                    class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                <div class="bloco1">
+                    <div class="container">
+                        <h2>Programação de serviços: implementação e instalação</h2>
+                        <p>
+                            A programação de serviços no <i>back-end</i> desempenha um papel essencial na arquitetura de
+                            sistemas,
+                            sendo responsável pela implementação da lógica de negócio de forma centralizada, organizada
+                            e
+                            reutilizável. Essa camada transforma os requisitos do projeto em funcionalidades concretas,
+                            integrando dados, regras de negócio e interações com outras camadas do sistema, como
+                            controladores e
+                            repositórios.
+                        </p>
+                        <p>
+                            O principal objetivo dessa camada é isolar a lógica de negócio de outras partes do sistema,
+                            como
+                            a
+                            de apresentação do <i>front-end</i> e a de persistência com banco de dados. As interações
+                            entre
+                            cliente e
+                            servidor ocorrem frequentemente seguindo o padrão de solicitação e resposta, o que reforça a
+                            importância de uma separação clara de responsabilidades. Conforme visto no material sobre
+                            protocolo
+                            HTTP e representação de dados, esse processo é realizado por meio de solicitações HTTP
+                            (<i>hypertext
+                                transfer protocol</i>), como <b>GET</b>, <b>POST</b>, <b>PUT</b> e <b>DELETE</b>,
+                            facilitando a manutenção, a escalabilidade e a
+                            evolução do sistema.
+                        </p>
+                        <p>
+                            Na criação de estruturas de código para serviços <i>web</i>, são utilizadas diferentes
+                            linguagens de
+                            <i>back-end</i>, como Java, Python, PHP e Node.js, dependendo da tecnologia mais apropriada
+                            para
+                            o projeto.
+                            Neste conteúdo, será dado enfoque à instalação do Node.js e do <i>framework</i> Express.js e
+                            à
+                            persistência
+                            de dados em arquivos JSON (<i>JavaScript object notation</i>). Além disso, será implementada
+                            uma
+                            API
+                            (<i>application programming interface</i>) de notícias que será utilizada no decorrer do
+                            curso.
+                        </p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="painel-inst no-print">
+                            <button type="button" class="botao-instalacao" data-bs-toggle="modal"
+                                data-bs-target="#modal1">
+                            </button>
+                            <button type="button" class="botao-implementacao" data-bs-toggle="modal"
+                                data-bs-target="#modal2">
+                            </button>
+                        </div>
+                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Instalação</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <p>
+                                                Optou-se por utilizar<b> Node.js</b> na construção da camada de
+                                                serviços,
+                                                pois ele
+                                                atende perfeitamente às necessidades de eficiência e escalabilidade. Sua
+                                                arquitetura leve e modular facilita a implementação de <b>APIs
+                                                    RESTful</b>,
+                                                essenciais
+                                                para oferecer flexibilidade e acompanhar o crescimento do sistema,
+                                                conforme
+                                                já
+                                                abordado. O Node.js também se destaca pelo alto desempenho, pela ampla
+                                                comunidade de suporte e por seu ecossistema rico, fatores que contribuem
+                                                diretamente para o sucesso do projeto.
+                                            </p>
+                                            <p>
+                                                Para a criação dos <i>endpoints</i>, será utilizado o <b>Express.js</b>,
+                                                um
+                                                <i>microframework</i> que
+                                                alia simplicidade e praticidade, sendo ideal tanto para iniciantes
+                                                quanto
+                                                para
+                                                desenvolvedores experientes. O Express.js possibilita o desenvolvimento
+                                                ágil
+                                                e
+                                                organizado, facilitando a estruturação da camada de serviços de maneira
+                                                clara e
+                                                eficiente.
+                                            </p>
+                                            <p>
+                                                O Express.js é um <i>framework</i> minimalista para aplicativos
+                                                <i>web</i>
+                                                construído sobre o
+                                                Node.js, projetado para criar aplicativos escaláveis. Ele é uma escolha
+                                                ideal
+                                                para desenvolvedores que desejam controle total sobre a estrutura de
+                                                seus
+                                                aplicativos, permitindo a criação eficiente de serviço <i>web</i>. Entre
+                                                seus
+                                                principais recursos estão o roteamento e a flexibilidade, que aprimoram
+                                                significativamente o desenvolvimento de <i>back-end</i>.
+                                            </p>
+                                            <p><b>Instalando o NPM e Node.js:</b></p>
+                                            <p>
+                                                Para começar a usar o Node.js e o Express.js, é necessário que você
+                                                tenha
+                                                inicialmente instalado o <b>NPM</b> (Node Package Manager), que é um
+                                                gerenciador de
+                                                pacotes do Node.js.
+                                            </p>
+                                            <p>
+                                                Com o NPM, você pode gerenciar dependências do seu projeto, acessar o
+                                                repositório do NPM e ter acesso a diversas bibliotecas e
+                                                <i>frameworks</i>
+                                                JavaScript,
+                                                permitindo que sejam instalados/desinstalados.
+                                            </p>
+                                            <div class="table-responsive table">
+                                                <table class="text-left align-middle" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="larg-50">
+                                                                O NPM está incluído no Node.js. Prossiga estas etapas
+                                                                para
+                                                                instalar o NPM:
+                                                                <ul class="marcador-padrao">
+                                                                    <li>Acesse o <i>site</i> oficial do Node.js.</li>
+                                                                    <li>
+                                                                        Conforme mostra a figura, o <i>site</i>
+                                                                        reconhece o
+                                                                        sistema
+                                                                        operacional automaticamente (Windows neste caso)
+                                                                        e
+                                                                        sugere a versão para <i>download</i> (LTS neste
+                                                                        caso). Priorize
+                                                                        sempre o <i>download</i> de versões LTS, que são
+                                                                        as
+                                                                        versões
+                                                                        mais estáveis com mais suporte.
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td class="larg-50">
+                                                                <figure class="my-5 no-print">
                                                                     <img src=""
-                                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
                                                                         alt="Imagem">
-                                                                </a>
-                                                                <figcaption class="figure-caption text-center">
-                                                                    Instalando NPM – Node.js <br>
-                                                                    Fonte: Senac EAD (2025)
-                                                                </figcaption>
-                                                            </figure>
-                                                            <div class="acessivel visually-hidden no-print">
-                                                                <p>
-                                                                    Imagem do navegador de internet que exibe ao lado
-                                                                    esquerdo da tela a opção para download na versão
-                                                                    LTS.
-                                                                </p>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <ul class="marcador-padrao">
-                                                                <li>
-                                                                    Após a instalação do Node.js, você pode verificar
-                                                                    tanto
-                                                                    a versão do Node.js quanto a versão do NPM instalada
-                                                                    e
-                                                                    executando os comandos <b>node -v</b> e <b>npm
-                                                                        -v</b>.
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                        <td>
-                                                            <pre class="largura">
+                                                                    <a href="" target="_blank"
+                                                                        class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                                                        <img src=""
+                                                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                                            alt="Imagem">
+                                                                    </a>
+                                                                    <figcaption class="figure-caption text-center">
+                                                                        Instalando NPM – Node.js <br>
+                                                                        Fonte: Senac EAD (2025)
+                                                                    </figcaption>
+                                                                </figure>
+                                                                <div class="acessivel visually-hidden no-print">
+                                                                    <p>
+                                                                        Imagem do navegador de internet que exibe ao
+                                                                        lado
+                                                                        esquerdo da tela a opção para download na versão
+                                                                        LTS.
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <ul class="marcador-padrao">
+                                                                    <li>
+                                                                        Após a instalação do Node.js, você pode
+                                                                        verificar
+                                                                        tanto
+                                                                        a versão do Node.js quanto a versão do NPM
+                                                                        instalada
+                                                                        e
+                                                                        executando os comandos <b>node -v</b> e <b>npm
+                                                                            -v</b>.
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <pre class="largura">
                                                                 <code class="hljs">
         node -v 
         v22.13.0 
@@ -224,123 +250,137 @@
         10.9.2 
                                                                 </code>
                                                             </pre>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="botao hvr-sweep-to-right"
-                                            data-bs-dismiss="modal">Fechar</button>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botao hvr-sweep-to-right"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Implementação</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <p>
-                                            Nesta seção, será abordada a implementação de um serviço <i>web</i> usando
-                                            Node.js e
-                                            Express.js, que gerencia notícias e as armazena em um arquivo
-                                            <b>noticias.json</b>.
-                                            Será criada uma <b>API de notícias</b> que permitirá <b>adicionar</b>,
-                                            <b>listar</b>, <b>atualizar</b> e
-                                            <b>remover</b> notícias, servindo de base para os demais conteúdos desta
-                                            unidade
-                                            curricular.
-                                        </p>
-                                        <p>
-                                            Além disso, para garantir que essa API possa ser acessada por aplicações
-                                            externas, será necessário implementar o <b>recurso de CORS (<i>cross-origin
-                                                    resource
-                                                    sharing</i>)</b>. Esse mecanismo permitirá que diferentes sistemas,
-                                            como aplicações
-                                            <i>front-end</i> e outros serviços, consumam os dados dessa API sem as
-                                            restrições de
-                                            mesma origem, garantindo maior flexibilidade e interoperabilidade.
-                                        </p>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 1</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 1:</b> crie uma pasta com nome api para o projeto. Abra o terminal
-                                            ou um
-                                            prompt de comando e inicialize com o comando:
-                                        </p>
-                                        <pre>
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Implementação</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <p>
+                                                Nesta seção, será abordada a implementação de um serviço <i>web</i>
+                                                usando
+                                                Node.js e
+                                                Express.js, que gerencia notícias e as armazena em um arquivo
+                                                <b>noticias.json</b>.
+                                                Será criada uma <b>API de notícias</b> que permitirá <b>adicionar</b>,
+                                                <b>listar</b>, <b>atualizar</b> e
+                                                <b>remover</b> notícias, servindo de base para os demais conteúdos desta
+                                                unidade
+                                                curricular.
+                                            </p>
+                                            <p>
+                                                Além disso, para garantir que essa API possa ser acessada por aplicações
+                                                externas, será necessário implementar o <b>recurso de CORS
+                                                    (<i>cross-origin
+                                                        resource
+                                                        sharing</i>)</b>. Esse mecanismo permitirá que diferentes
+                                                sistemas,
+                                                como aplicações
+                                                <i>front-end</i> e outros serviços, consumam os dados dessa API sem as
+                                                restrições de
+                                                mesma origem, garantindo maior flexibilidade e interoperabilidade.
+                                            </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 1</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 1:</b> crie uma pasta com nome api para o projeto. Abra o
+                                                terminal
+                                                ou um
+                                                prompt de comando e inicialize com o comando:
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 npm init -y 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Isso criará um arquivo <b>package.json</b> com as configurações básicas do
-                                            projeto,
-                                            como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do serviço
-                                            (<i>main</i>) e
-                                            dependências (<i>dependencies</i>).
-                                        </p>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 2</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 2:</b> instale a dependência do <i>framework</i> <b>Express.js</b>,
-                                            que será usado para
-                                            criar e gerenciar as rotas do servidor.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                Isso criará um arquivo <b>package.json</b> com as configurações básicas
+                                                do
+                                                projeto,
+                                                como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do
+                                                serviço
+                                                (<i>main</i>) e
+                                                dependências (<i>dependencies</i>).
+                                            </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 2</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 2:</b> instale a dependência do <i>framework</i>
+                                                <b>Express.js</b>,
+                                                que será usado para
+                                                criar e gerenciar as rotas do servidor.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 npm install express 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Observe que será criada a pasta <b>node_modules</b>, que é responsável por
-                                            armazenar
-                                            todas as dependências do aplicativo.
-                                        </p>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 3</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 3:</b> instale a dependência do CORS. Sua instalação simplifica a
-                                            configuração
-                                            de CORS no Express.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                Observe que será criada a pasta <b>node_modules</b>, que é responsável
+                                                por
+                                                armazenar
+                                                todas as dependências do aplicativo.
+                                            </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 3</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 3:</b> instale a dependência do CORS. Sua instalação simplifica
+                                                a
+                                                configuração
+                                                de CORS no Express.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 npm install cors 
                                             </code>
                                         </pre>
-                                        <p>
-                                            O CORS é um mecanismo de segurança dos navegadores que controla como
-                                            recursos de
-                                            uma aplicação podem ser acessados por domínios diferentes daquele onde o
-                                            recurso
-                                            está hospedado. Ele ajuda a proteger os usuários ao verificar se o servidor
-                                            autoriza essas interações.
-                                        </p>
-                                        <p>
-                                            Neste conteúdo, não serão aprofundadas as configurações avançadas, focando
-                                            apenas as soluções práticas para permitir requisições básicas de diferentes
-                                            origens.
-                                        </p>
-                                        <p>
-                                            Após a instalação das dependências Express e CORS, observe que ambas serão
-                                            adicionadas no arquivo <b>package.json</b> em <b>dependencies</b> com suas
-                                            respectivas
-                                            versões.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                O CORS é um mecanismo de segurança dos navegadores que controla como
+                                                recursos de
+                                                uma aplicação podem ser acessados por domínios diferentes daquele onde o
+                                                recurso
+                                                está hospedado. Ele ajuda a proteger os usuários ao verificar se o
+                                                servidor
+                                                autoriza essas interações.
+                                            </p>
+                                            <p>
+                                                Neste conteúdo, não serão aprofundadas as configurações avançadas,
+                                                focando
+                                                apenas as soluções práticas para permitir requisições básicas de
+                                                diferentes
+                                                origens.
+                                            </p>
+                                            <p>
+                                                Após a instalação das dependências Express e CORS, observe que ambas
+                                                serão
+                                                adicionadas no arquivo <b>package.json</b> em <b>dependencies</b> com
+                                                suas
+                                                respectivas
+                                                versões.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 { 
     <span class="hljs-code">"name"</span>: <span class="hljs-title">"api"</span>, 
@@ -361,19 +401,21 @@ npm install cors
 }
                                             </code>
                                         </pre>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 4</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 4:</b> crie o arquivo <b>noticias.json</b>, no qual as informações
-                                            das notícias serão
-                                            armazenas. Para este exemplo, serão considerados os campos: <b>id</b>,
-                                            <b>titulo</b> e
-                                            <b>conteudo</b>. Abra o projeto no Visual Studio Code e, depois de criar o
-                                            arquivo
-                                            <b>noticias.json</b>, edite com as seguintes informações:
-                                        </p>
-                                        <pre>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 4</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 4:</b> crie o arquivo <b>noticias.json</b>, no qual as
+                                                informações
+                                                das notícias serão
+                                                armazenas. Para este exemplo, serão considerados os campos: <b>id</b>,
+                                                <b>titulo</b> e
+                                                <b>conteudo</b>. Abra o projeto no Visual Studio Code e, depois de criar
+                                                o
+                                                arquivo
+                                                <b>noticias.json</b>, edite com as seguintes informações:
+                                            </p>
+                                            <pre>
                                         <code class="hljs">
 [ 
     { 
@@ -389,15 +431,15 @@ npm install cors
 ] 
                                         </code>
                                        </pre>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 5</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 5:</b> crie o arquivo <b>index.js</b> e configure o servidor do
-                                            Express com as
-                                            seguintes configurações:
-                                        </p>
-                                        <pre>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 5</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 5:</b> crie o arquivo <b>index.js</b> e configure o servidor do
+                                                Express com as
+                                                seguintes configurações:
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-symbol">// Importação dos módulos necessários</span> 
 <span class="hljs-code">const</span> <span class="hljs-type">express</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'express'</span>); 
@@ -418,56 +460,64 @@ npm install cors
 <span class="hljs-meta">app</span>.<span class="hljs-type">use</span>(<span class="hljs-type">express.json</span>());
                                             </code>
                                         </pre>
-                                        <p>Inicialmente, são importados três módulos: </p>
-                                        <ul class="marcador-padrao">
-                                            <li>
-                                                <b>Express</b>: fornece recursos para construir aplicações <i>web</i> e
-                                                APIs de forma
-                                                eficiente.
-                                            </li>
-                                            <li>
-                                                <b>fs</b>: é um módulo nativo do Node.js utilizado para operações com o
-                                                sistema de
-                                                arquivos, como leitura e gravação de arquivos.
-                                            </li>
-                                            <li><b>cors</b>: permite que o servidor aceite solicitações de diferentes
-                                                origens.</li>
-                                        </ul>
-                                        <p>
-                                            Em seguida, crie a aplicação com <b>express()</b> e a atribua à constante
-                                            <b>app</b>, que será
-                                            a instância principal para definir rotas e <i>middlewares</i>. Defina também
-                                            a
-                                            constante <b>PORT</b> com o valor 3000, indicando a porta na qual o servidor
-                                            será
-                                            executado e estará acessível localmente via <b>http://localhost:3000</b>.
-                                        </p>
-                                        <p>Além disso, aplique as seguintes configurações:</p>
-                                        <ul class="marcador-padrao">
-                                            <li>
-                                                <b>app.use(cors())</b>: habilita o CORS no servidor, permitindo que ele
-                                                aceite
-                                                requisições de origens diferentes.
-                                            </li>
-                                            <li>
-                                                <b>app.use(express.json())</b>: que permite ao servidor interpretar
-                                                dados enviados
-                                                no formato JSON em requisições HTTP, facilitando o processamento de
-                                                informações no corpo das requisições (<b>req.body</b>).
-                                            </li>
-                                        </ul>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 6</h4>
-                                        </div>
-                                        <p><b>Passo 6</b>: crie funções para ler e escrever no arquivo
-                                            <b>noticias.json</b>.
-                                        </p>
-                                        <p>
-                                            Para garantir a persistência dos dados no arquivo <b>noticias.json</b>,
-                                            utilize as
-                                            seguintes funções auxiliares:
-                                        </p>
-                                        <pre>
+                                            <p>Inicialmente, são importados três módulos: </p>
+                                            <ul class="marcador-padrao">
+                                                <li>
+                                                    <b>Express</b>: fornece recursos para construir aplicações
+                                                    <i>web</i> e
+                                                    APIs de forma
+                                                    eficiente.
+                                                </li>
+                                                <li>
+                                                    <b>fs</b>: é um módulo nativo do Node.js utilizado para operações
+                                                    com o
+                                                    sistema de
+                                                    arquivos, como leitura e gravação de arquivos.
+                                                </li>
+                                                <li><b>cors</b>: permite que o servidor aceite solicitações de
+                                                    diferentes
+                                                    origens.</li>
+                                            </ul>
+                                            <p>
+                                                Em seguida, crie a aplicação com <b>express()</b> e a atribua à
+                                                constante
+                                                <b>app</b>, que será
+                                                a instância principal para definir rotas e <i>middlewares</i>. Defina
+                                                também
+                                                a
+                                                constante <b>PORT</b> com o valor 3000, indicando a porta na qual o
+                                                servidor
+                                                será
+                                                executado e estará acessível localmente via
+                                                <b>http://localhost:3000</b>.
+                                            </p>
+                                            <p>Além disso, aplique as seguintes configurações:</p>
+                                            <ul class="marcador-padrao">
+                                                <li>
+                                                    <b>app.use(cors())</b>: habilita o CORS no servidor, permitindo que
+                                                    ele
+                                                    aceite
+                                                    requisições de origens diferentes.
+                                                </li>
+                                                <li>
+                                                    <b>app.use(express.json())</b>: que permite ao servidor interpretar
+                                                    dados enviados
+                                                    no formato JSON em requisições HTTP, facilitando o processamento de
+                                                    informações no corpo das requisições (<b>req.body</b>).
+                                                </li>
+                                            </ul>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 6</h4>
+                                            </div>
+                                            <p><b>Passo 6</b>: crie funções para ler e escrever no arquivo
+                                                <b>noticias.json</b>.
+                                            </p>
+                                            <p>
+                                                Para garantir a persistência dos dados no arquivo <b>noticias.json</b>,
+                                                utilize as
+                                                seguintes funções auxiliares:
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-code">const</span> <span class="hljs-meta">filePath</span> = <span class="hljs-title">'./noticias.json'</span>; 
 
@@ -494,42 +544,47 @@ npm install cors
 }; 
                                             </code>
                                         </pre>
-                                        <p>Essas funções abstraem a leitura e a escrita, facilitando a manipulação do
-                                            arquivo. </p>
-                                        <div class="divisoria">
-                                            <h4 class="titulo-div">passo 7</h4>
-                                        </div>
-                                        <p>
-                                            <b>Passo 7</b>: crie os <i>endpoints</i> na aplicação, pelos quais ela
-                                            recebe <i>requests</i> e
-                                            retorna <i>responses</i>.
-                                        </p>
-                                        <p>
-                                            Os <i>endpoints</i> são configurados para rodar sob rotas (<i>routes</i>).
-                                            As rotas podem ser
-                                            configuradas para receber parâmetros e tipos de métodos que elas aceitam,
-                                            tais
-                                            como <b>GET</b>, <b>POST</b>,<b> PUT</b> e <b>DELETE</b>. Esses métodos
-                                            representam a operação que os
-                                            <i>endpoints</i> realizarão.
-                                        </p>
-                                        <p>
-                                            Para criar <i>endpoints</i> com o Express, basta utilizar um dos seguintes
-                                            métodos que
-                                            ele disponibiliza de acordo com os verbos HTTP:
-                                        </p>
-                                        <ul>
-                                            <li><b>app.get()</b></li>
-                                            <li><b>app.post()</b></li>
-                                            <li><b>app.delete()</b></li>
-                                            <li><b>app.put()</b></li>
-                                        </ul>
-                                        <p>
-                                            <b>Rota para listar todas as notícias</b>: essa rota responde com todas as
-                                            notícias
-                                            armazenadas no arquivo <b>noticias.json</b>.
-                                        </p>
-                                        <pre>
+                                            <p>Essas funções abstraem a leitura e a escrita, facilitando a manipulação
+                                                do
+                                                arquivo. </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 7</h4>
+                                            </div>
+                                            <p>
+                                                <b>Passo 7</b>: crie os <i>endpoints</i> na aplicação, pelos quais ela
+                                                recebe <i>requests</i> e
+                                                retorna <i>responses</i>.
+                                            </p>
+                                            <p>
+                                                Os <i>endpoints</i> são configurados para rodar sob rotas
+                                                (<i>routes</i>).
+                                                As rotas podem ser
+                                                configuradas para receber parâmetros e tipos de métodos que elas
+                                                aceitam,
+                                                tais
+                                                como <b>GET</b>, <b>POST</b>,<b> PUT</b> e <b>DELETE</b>. Esses métodos
+                                                representam a operação que os
+                                                <i>endpoints</i> realizarão.
+                                            </p>
+                                            <p>
+                                                Para criar <i>endpoints</i> com o Express, basta utilizar um dos
+                                                seguintes
+                                                métodos que
+                                                ele disponibiliza de acordo com os verbos HTTP:
+                                            </p>
+                                            <ul>
+                                                <li><b>app.get()</b></li>
+                                                <li><b>app.post()</b></li>
+                                                <li><b>app.delete()</b></li>
+                                                <li><b>app.put()</b></li>
+                                            </ul>
+                                            <p>
+                                                <b>Rota para listar todas as notícias</b>: essa rota responde com todas
+                                                as
+                                                notícias
+                                                armazenadas no arquivo <b>noticias.json</b>.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-meta">app</span>.<span class="hljs-type">get</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
     <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
@@ -537,25 +592,27 @@ npm install cors
 }); 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Nesse bloco de código, foi definida uma rota HTTP do tipo <b>GET</b> no
-                                            caminho
-                                            <b>/noticias</b> utilizando o método <b>app.get</b>. Quando um cliente
-                                            acessa essa rota, a
-                                            função de <i>callback</i> é executada, recebendo os objetos <b>req</b>
-                                            (requisição) e <b>res</b>
-                                            (resposta). Dentro dessa função, o método <b>readData()</b> é chamado para
-                                            obter as
-                                            notícias, que são armazenadas na variável <b>noticias</b>. Por fim,
-                                            utiliza-se
-                                            <b> res.json(noticias)</b> para enviar as notícias como uma resposta em
-                                            formato JSON,
-                                            garantindo que o cliente receba os dados estruturados de forma adequada.
-                                        </p>
-                                        <p><b>Rota para buscar uma notícia pelo ID</b>: retorna uma única notícia pelo
-                                            <b>ID</b>.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                Nesse bloco de código, foi definida uma rota HTTP do tipo <b>GET</b> no
+                                                caminho
+                                                <b>/noticias</b> utilizando o método <b>app.get</b>. Quando um cliente
+                                                acessa essa rota, a
+                                                função de <i>callback</i> é executada, recebendo os objetos <b>req</b>
+                                                (requisição) e <b>res</b>
+                                                (resposta). Dentro dessa função, o método <b>readData()</b> é chamado
+                                                para
+                                                obter as
+                                                notícias, que são armazenadas na variável <b>noticias</b>. Por fim,
+                                                utiliza-se
+                                                <b> res.json(noticias)</b> para enviar as notícias como uma resposta em
+                                                formato JSON,
+                                                garantindo que o cliente receba os dados estruturados de forma adequada.
+                                            </p>
+                                            <p><b>Rota para buscar uma notícia pelo ID</b>: retorna uma única notícia
+                                                pelo
+                                                <b>ID</b>.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-meta">app</span><span class="hljs-type">.get</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
     <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req.params</span>; 
@@ -564,7 +621,7 @@ npm install cors
                                                     
                                                      
     <span class="hljs-roxo">if</span> (!<span class="hljs-meta">noticia</span>) { 
-        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</spa><span class="hljs-type">.status</span>(<span class="hljs-numero">404</span>)<span class="hljs-type">.json</span>({ <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia não encontrada.'</span> }); 
+        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span><span class="hljs-type">.status</span>(<span class="hljs-numero">404</span>)<span class="hljs-type">.json</span>({ <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia não encontrada.'</span> }); 
     } 
                                                     
                                                      
@@ -572,31 +629,34 @@ npm install cors
 }); 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Nesse bloco, foi definida uma rota HTTP do tipo <b>GET</b> no caminho
-                                            <b>/noticias/:id</b>,
-                                            que permite buscar uma notícia específica pelo seu identificador (ID). O
-                                            parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
-                                            seguida, chama-se a
-                                            função <b>readData()</b> para carregar a lista atual de notícias e
-                                            utiliza-se o método
-                                            <b>find</b> para localizar a notícia cujo ID corresponde ao valor fornecido
-                                            na URL.
-                                            Para garantir a correspondência, o ID da URL é convertido para um número
-                                            inteiro
-                                            com <b>parseInt</b>. Se nenhuma notícia for encontrada, retorna-se uma
-                                            resposta com
-                                            código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem informativa em
-                                            formato JSON.
-                                            Caso contrário, envia-se a notícia encontrada como resposta em formato JSON,
-                                            permitindo que o cliente visualize os detalhes da notícia solicitada.
-                                        </p>
-                                        <p>
-                                            <b>Rota para adicionar uma nova notícia:</b> permite adicionar uma nova
-                                            notícia
-                                            enviando os dados no corpo da requisição.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                Nesse bloco, foi definida uma rota HTTP do tipo <b>GET</b> no caminho
+                                                <b>/noticias/:id</b>,
+                                                que permite buscar uma notícia específica pelo seu identificador (ID). O
+                                                parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
+                                                seguida, chama-se a
+                                                função <b>readData()</b> para carregar a lista atual de notícias e
+                                                utiliza-se o método
+                                                <b>find</b> para localizar a notícia cujo ID corresponde ao valor
+                                                fornecido
+                                                na URL.
+                                                Para garantir a correspondência, o ID da URL é convertido para um número
+                                                inteiro
+                                                com <b>parseInt</b>. Se nenhuma notícia for encontrada, retorna-se uma
+                                                resposta com
+                                                código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem
+                                                informativa em
+                                                formato JSON.
+                                                Caso contrário, envia-se a notícia encontrada como resposta em formato
+                                                JSON,
+                                                permitindo que o cliente visualize os detalhes da notícia solicitada.
+                                            </p>
+                                            <p>
+                                                <b>Rota para adicionar uma nova notícia:</b> permite adicionar uma nova
+                                                notícia
+                                                enviando os dados no corpo da requisição.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-meta">app</span>.<span class="hljs-type">post</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
     <span class="hljs-code">const</span> { <span class="hljs-meta">titulo</span>, <span class="hljs-meta">conteudo</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">body</span>; 
@@ -621,40 +681,50 @@ npm install cors
 }); 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Nesse bloco de código, é definida uma rota HTTP do tipo <b>POST</b> no
-                                            caminho
-                                            <b>/noticias</b>, utilizada para adicionar novas notícias. Quando essa rota
-                                            é acessada,
-                                            o servidor executa a função de <i>callback</i>, que recebe os objetos
-                                            <b>req</b> (requisição)
-                                            e <b>res</b> (resposta). Primeiro, são extraídos os valores de <b>titulo</b>
-                                            e <b>conteudo</b> do
-                                            corpo da requisição (<b>req.body</b>). Em seguida, realizam-se validações
-                                            básicas para
-                                            garantir que ambos os campos sejam preenchidos. Caso algum deles esteja
-                                            ausente,
-                                            retorna-se uma resposta com código de status <b>400 (Bad Request)</b> e uma
-                                            mensagem
-                                            informativa em formato JSON. Se os dados forem válidos, chama-se a função
-                                            <b>readData()</b> para obter a lista atual de notícias e cria-se um objeto
-                                            <b>novaNoticia</b>
-                                            com um ID autoincremental, o título e o conteúdo fornecidos. Adiciona-se a
-                                            nova
-                                            notícia ao <b>array</b> existente e são persistidos os dados atualizados com
-                                            a função
-                                            <b>writeData()</b>. Por fim, responde-se com código de <i>status</i> <b>201
-                                                (Created)</b> e o objeto
-                                            da nova notícia em formato JSON, indicando que o recurso foi criado com
-                                            sucesso.
-                                        </p>
-                                        <p>
-                                            <b>Rota para atualizar uma notícia pelo ID:</b> a rota a seguir permite
-                                            atualizar o
-                                            título e/ou o conteúdo de uma notícia específica. Caso o ID informado não
-                                            exista, a rota retornará um erro.
-                                        </p>
-                                        <pre>
+                                            <p>
+                                                Nesse bloco de código, é definida uma rota HTTP do tipo <b>POST</b> no
+                                                caminho
+                                                <b>/noticias</b>, utilizada para adicionar novas notícias. Quando essa
+                                                rota
+                                                é acessada,
+                                                o servidor executa a função de <i>callback</i>, que recebe os objetos
+                                                <b>req</b> (requisição)
+                                                e <b>res</b> (resposta). Primeiro, são extraídos os valores de
+                                                <b>titulo</b>
+                                                e <b>conteudo</b> do
+                                                corpo da requisição (<b>req.body</b>). Em seguida, realizam-se
+                                                validações
+                                                básicas para
+                                                garantir que ambos os campos sejam preenchidos. Caso algum deles esteja
+                                                ausente,
+                                                retorna-se uma resposta com código de status <b>400 (Bad Request)</b> e
+                                                uma
+                                                mensagem
+                                                informativa em formato JSON. Se os dados forem válidos, chama-se a
+                                                função
+                                                <b>readData()</b> para obter a lista atual de notícias e cria-se um
+                                                objeto
+                                                <b>novaNoticia</b>
+                                                com um ID autoincremental, o título e o conteúdo fornecidos. Adiciona-se
+                                                a
+                                                nova
+                                                notícia ao <b>array</b> existente e são persistidos os dados atualizados
+                                                com
+                                                a função
+                                                <b>writeData()</b>. Por fim, responde-se com código de <i>status</i>
+                                                <b>201
+                                                    (Created)</b> e o objeto
+                                                da nova notícia em formato JSON, indicando que o recurso foi criado com
+                                                sucesso.
+                                            </p>
+                                            <p>
+                                                <b>Rota para atualizar uma notícia pelo ID:</b> a rota a seguir permite
+                                                atualizar o
+                                                título e/ou o conteúdo de uma notícia específica. Caso o ID informado
+                                                não
+                                                exista, a rota retornará um erro.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
 <span class="hljs-meta">app</span><span class="hljs-type">.put</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
     <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">params</span>; 
@@ -688,110 +758,207 @@ npm install cors
 }); 
                                             </code>
                                         </pre>
-                                        <p>
-                                            Nesse bloco de código, é definida uma rota HTTP do tipo <b>PUT</b> no
-                                            caminho
-                                            <b>/noticias/:id</b>, que permite atualizar uma notícia específica pelo seu
-                                            identificador (ID). O ID é extraído da URL utilizando <b>req.params</b>,
-                                            enquanto os
-                                            dados enviados para atualização (como <b>titulo</b> e <b>conteudo</b>) são
-                                            extraídos do corpo
-                                            da requisição (<b>req.body</b>).
-                                        </p>
-                                        <p>
-                                            Inicialmente, realiza-se uma validação para garantir que ao menos um dos
-                                            campos
-                                            (<b>titulo</b> ou <b>conteudo</b>) tenha sido fornecido. Caso contrário,
-                                            retorna-se uma
-                                            resposta com o código de <i>status</i> <b>400 (Bad Request)</b> e uma
-                                            mensagem informativa em
-                                            formato JSON.
-                                        </p>
-                                        <p>
-                                            Em seguida, chama-se a função <b>readData()</b> para obter a lista de
-                                            notícias e usa-se
-                                            <b>findIndex</b> para localizar o índice da notícia cujo ID corresponde ao
-                                            fornecido.
-                                            Se a notícia não for encontrada (índice -1), retorna-se uma resposta com o
-                                            código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem indicando que
-                                            a notícia não
-                                            existe.
-                                        </p>
-                                        <p>
-                                            Se a notícia for encontrada, atualizam-se apenas os campos fornecidos no
-                                            corpo
-                                            da requisição. Por exemplo, se apenas o <b>titulo</b> for enviado, apenas
-                                            esse campo
-                                            será atualizado. Após a atualização, são persistidas as alterações chamando
-                                            a
-                                            função <b>writeData()</b>.
-                                        </p>
-                                        <p><b>Rota para deletar uma notícia pelo ID:</b> remove uma notícia do arquivo.
-                                        </p>
-
-                                        <pre>
+                                            <p>
+                                                Nesse bloco de código, é definida uma rota HTTP do tipo <b>PUT</b> no
+                                                caminho
+                                                <b>/noticias/:id</b>, que permite atualizar uma notícia específica pelo
+                                                seu
+                                                identificador (ID). O ID é extraído da URL utilizando <b>req.params</b>,
+                                                enquanto os
+                                                dados enviados para atualização (como <b>titulo</b> e <b>conteudo</b>)
+                                                são
+                                                extraídos do corpo
+                                                da requisição (<b>req.body</b>).
+                                            </p>
+                                            <p>
+                                                Inicialmente, realiza-se uma validação para garantir que ao menos um dos
+                                                campos
+                                                (<b>titulo</b> ou <b>conteudo</b>) tenha sido fornecido. Caso contrário,
+                                                retorna-se uma
+                                                resposta com o código de <i>status</i> <b>400 (Bad Request)</b> e uma
+                                                mensagem informativa em
+                                                formato JSON.
+                                            </p>
+                                            <p>
+                                                Em seguida, chama-se a função <b>readData()</b> para obter a lista de
+                                                notícias e usa-se
+                                                <b>findIndex</b> para localizar o índice da notícia cujo ID corresponde
+                                                ao
+                                                fornecido.
+                                                Se a notícia não for encontrada (índice -1), retorna-se uma resposta com
+                                                o
+                                                código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem indicando
+                                                que
+                                                a notícia não
+                                                existe.
+                                            </p>
+                                            <p>
+                                                Se a notícia for encontrada, atualizam-se apenas os campos fornecidos no
+                                                corpo
+                                                da requisição. Por exemplo, se apenas o <b>titulo</b> for enviado,
+                                                apenas
+                                                esse campo
+                                                será atualizado. Após a atualização, são persistidas as alterações
+                                                chamando
+                                                a
+                                                função <b>writeData()</b>.
+                                            </p>
+                                            <p><b>Rota para deletar uma notícia pelo ID:</b> remove uma notícia do
+                                                arquivo.
+                                            </p>
+                                            <pre>
                                             <code class="hljs">
-app.delete('/noticias/:id', (req, res) => { 
-    const { id } = req.params; 
-    const noticias = readData(); 
-    const index = noticias.findIndex((n) => n.id === parseInt(id)); 
+<span class="hljs-meta">app</span>.<span class="hljs-type">delete</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-meta">=></span> { 
+    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">params</span>; 
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
+    <span class="hljs-code">const</span> <span class="hljs-meta">index</span> = <span class="hljs-meta">noticias</span>.<span class="hljs-type">findIndex</span>((<span class="hljs-azul">n</span>) <span class="hljs-code">=></span> <span class="hljs-azul">n</span>.<span class="hljs-azul">id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
                                                                                                    
-    if (index === -1) { 
-        return res.status(404).json({ message: 'Notícia não encontrada.' }); 
+    <span class="hljs-roxo">if </span>(<span class="hljs-meta">index</span> === -1) { 
+        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">404</span>).<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
     } 
                                                                                                     
-    noticias.splice(index, 1); // Remove a notícia pelo índice 
-    writeData(noticias); 
+    <span class="hljs-meta">noticias</span>.<span class="hljs-type">splice</span>(<span class="hljs-meta">index</span>, <span class="hljs-numero">1</span>); <span class="hljs-symbol">// Remove a notícia pelo índice</span> 
+    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
                                                     
-    res.json({ message: 'Notícia removida com sucesso.' }); 
+    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Notícia removida com sucesso.'</span> }); 
 }); 
                                             </code>
                                         </pre>
-pg 14
-
-
-
-
-
-
-
-
-
-
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="botao hvr-sweep-to-right"
-                                            data-bs-dismiss="modal">Fechar</button>
+                                            <p>
+                                                Nesse bloco, é definida uma rota HTTP do tipo <b>DELETE</b> no caminho
+                                                <b>/noticias/:id</b>,
+                                                que permite remover uma notícia específica pelo seu identificador (ID).
+                                                O
+                                                parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
+                                                seguida, a função
+                                                <b>readData()</b> é chamada para carregar a lista atual de notícias e o
+                                                método
+                                                <b>findIndex</b> é utilizado para localizar o índice da notícia cujo ID
+                                                corresponde ao
+                                                valor fornecido na URL. Para garantir a correspondência, o ID da URL é
+                                                convertido para número inteiro com <b>parseInt</b>. Se o índice for -1
+                                                (indicando que a
+                                                notícia não foi encontrada), responde-se com um código de <i>status</i>
+                                                <b>404 (Not Found)</b>
+                                                e uma mensagem informativa em JSON. Caso a notícia seja encontrada,
+                                                usa-se o
+                                                método <b>splice</b> para removê-la da lista com base no índice e são
+                                                persistidas as
+                                                alterações no armazenamento chamando a função <b>writeData()</b>. Por
+                                                fim,
+                                                retorna-se
+                                                uma resposta em formato JSON com uma mensagem indicando que a notícia
+                                                foi
+                                                removida com sucesso.
+                                            </p>
+                                            <p><b>Rota para iniciar o serviço:</b> adiciona o código para iniciar o
+                                                servidor.</p>
+                                            <pre>
+                                            <code class="hljs">
+<span class="hljs-meta">app</span><span class="hljs-type">.listen</span>(<span class="hljs-meta">PORT</span>, ()<span class="hljs-code"> =></span> { 
+    <span class="hljs-azul">console</span>.<span class="hljs-type">log</span>(<span class="hljs-title">`Servidor rodando em http://localhost:</span><span class="hljs-meta">${PORT}</span>`); 
+}); 
+                                            </code>
+                                        </pre>
+                                            <p>
+                                                Esse bloco de código inicia o servidor na porta previamente definida na
+                                                constante <b>PORT</b>. A função <b>app.listen</b> é usada para fazer o
+                                                aplicativo Express
+                                                começar a escutar conexões de entrada. O segundo parâmetro é uma função
+                                                de
+                                                <i>callback</i> que será executada assim que o servidor estiver ativo e
+                                                pronto para
+                                                receber requisições. No <i>callback</i>, utiliza-se o método
+                                                <b>console.log</b> para exibir
+                                                uma mensagem no terminal, indicando que o servidor está rodando e pode
+                                                ser
+                                                acessado no endereço <b>http://localhost:${PORT}</b>. Esse é um passo
+                                                essencial para
+                                                disponibilizar a aplicação e permitir que clientes interajam com as
+                                                rotas
+                                                definidas.
+                                            </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 8</h4>
+                                            </div>
+                                            <p><b>Passo 8:</b> inicie o serviço. No terminal, digite o seguinte comando:
+                                            </p>
+                                            <pre>
+                                            <code class="hljs">
+node index.js 
+                                            </code>
+                                        </pre>
+                                            <p>
+                                                Ao rodar esse comando, o serviço inicia e gera uma rota pela qual o
+                                                servidor
+                                                de
+                                                dados possa ser acessado, por meio da URL <b>http://localhost:3000</b>.
+                                                Nesse endereço,
+                                                deverão ser realizadas as solicitações de <b>GET</b> e <b>POST</b>.
+                                            </p>
+                                            <div class="divisoria">
+                                                <h4 class="titulo-div">passo 9</h4>
+                                            </div>
+                                            <p><b>Passo 9:</b> teste o serviço da API de notícias.</p>
+                                            <p>
+                                                Você pode testar se tudo está <i>ok</i> usando no <i>browser</i> a URL
+                                                <b>http://localhost:3000/noticias</b>.
+                                            </p>
+                                            <figure class="my-5 no-print">
+                                                <img src=""
+                                                    class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                                                    alt="Imagem">
+                                                <a href="" target="_blank"
+                                                    class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                                                    <img src=""
+                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                                                        alt="Imagem">
+                                                </a>
+                                                <figcaption class="figure-caption text-center">
+                                                    Acessando serviço de listagem de notícias <br>
+                                                    Fonte: Senac EAD (2025)
+                                                </figcaption>
+                                            </figure>
+                                            <div class="acessivel visually-hidden no-print">
+                                                <p>
+                                                    Imagem do navegador de internet que exibe dados de todas as notícias
+                                                    com
+                                                    título, conteúdo e id.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botao hvr-sweep-to-right"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-                <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
+                <div class="bloco2">
+                    <div class="container">
+                        <p class="no-print mt-5">Clique ou toque para assistir ao vídeo. </p>
+                        <div class="ratio ratio-16x9">
+                            <iframe src="" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <h3>Encerramento</h3>
+                        <p>
+                            Neste conteúdo, foi desenvolvido um serviço <i>web</i> no <i>back-end</i> utilizando Node.js
+                            e
+                            Express.js,
+                            possibilitando a construção de uma API de notícias robusta e eficiente. Essa API permite o
+                            processamento de requisições, facilitando a comunicação entre aplicações <i>front-end</i> e
+                            <i>back-end</i> de
+                            forma dinâmica e estruturada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
         </section>
         <!-- Paginação-->

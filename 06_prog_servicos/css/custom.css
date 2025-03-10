@@ -1,34 +1,29 @@
-body {
-    background:
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
-
-        url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
-        url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
-        url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
-
-        url('../img/bg_gradiente.png') no-repeat;
-
-    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-    /* 
-        url('../img/bg_elem3.png') no-repeat 100% 24%,
-        url('../img/BG_elem5.png') no-repeat 100% 65%,
-        url('../img/BG_elem4.png') no-repeat 0% 71%,
-        url('../img/BG_bottom.png') no-repeat bottom; 
-    background-size: 100%, 25%, 18%, 20%, 20%, auto;*/
+.bloco1 {
+    background: url('../img/destaque_bg_botões.png') no-repeat 4% 99%,
+        url('../img/bg1.png') no-repeat;
+    margin-top: 0%;
+    padding-top: 2%;
 }
+
+.bloco2 {
+    background: url('../img/destaque_bg_video.png') no-repeat 95% 40%,
+        url('../img/bg2.png') no-repeat;
+    margin-top: -0.05%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 
 .ilustracao {
     border-radius: 20px;
     filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}
+
+.modal-body {
+    background: url('../img/bg_passos.png');
+    background-color: #fff;
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 .painel-inst {
@@ -129,7 +124,7 @@ pre code.hljs {
     display: block;
     overflow-x: hidden !important;
     padding: 1em;
-    word-break:normal;
+    word-break: normal;
     white-space: pre-wrap;
 }
 
@@ -151,7 +146,7 @@ pre {
     color: #a39e9b;
 }
 
-.largura{
+.largura {
     max-width: 400px;
 }
 
@@ -221,6 +216,7 @@ pre {
 .hljs-symbol {
     color: #558b2f;
 }
+
 .hljs-numero {
     color: #a0d778;
 }
@@ -232,9 +228,11 @@ pre {
 .hljs-selector-tag {
     color: #96f;
 }
+
 .hljs-roxo {
     color: rgb(167, 132, 236);
 }
+
 .hljs-emphasis {
     font-style: italic;
 }
@@ -245,44 +243,48 @@ pre {
 
 @media screen and (max-width:1440px) {
 
-    body {
-        background:
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 1%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 7%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 17%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 27%,
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 37%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 47%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 57%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 67%,
-
-            url('../img/destaque1_bg_direita.png') no-repeat 2% 77%,
-            url('../img/destaque1_bg_esquerda.png') no-repeat 97% 87%,
-            url('../img/destaque2_bg_direita.png') no-repeat 5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: 15%, 15%, auto, 15%, 15%, 15%, auto, 15%, 15%, 15%, auto, cover;
-
+    .bloco1 {
+        background: url('../img/destaque_bg_botões.png') no-repeat 1% 99%,
+            url('../img/bg1.png') no-repeat;
+        margin-top: 0%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-size: 17%, cover;
     }
 
+    .bloco2 {
+        background: url('../img/destaque_bg_video.png') no-repeat 95% 40%,
+            url('../img/bg2.png') no-repeat;
+        margin-top: -0.25%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-size: 17%, cover;
+    }
 }
 
 @media screen and (max-width:1400px) {}
 
-@media screen and (max-width:1366px) {}
+@media screen and (max-width:1366px) {
+    .bloco1 {
+        background: url('../img/destaque_bg_botões.png') no-repeat 1% 99%,
+            url('../img/bg1.png') no-repeat;
+        margin-top: 0%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-size: 16%, cover;
+    }
+}
 
 @media screen and (max-width:1024px) {
+
     body {
-        background: none;
+        background: url('../img/bg_passos_1.png') repeat;
+        background-size: cover;
     }
 
-
-    body {
-        background: url('../img/bg_gradiente.png') no-repeat;
-        background-size: cover;
+    .bloco1,
+    .bloco2 {
+        background: none;
     }
 
     .divisoria {
@@ -328,10 +330,12 @@ pre {
         position: relative;
         margin-left: -14%;
     }
+
     .titulo-div {
         display: flex;
         justify-content: center;
-        padding-top: 3%;}
+        padding-top: 3%;
+    }
 
 
 }
@@ -351,6 +355,7 @@ pre {
         position: relative;
         margin-left: -14%;
     }
+
     p,
     li,
     th,
