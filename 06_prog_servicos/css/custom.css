@@ -66,12 +66,24 @@ table td {
     line-height: 25px;
 }
 
-.larg-50{
+.larg-50 {
     max-width: 50% !important;
 }
 
+.divisoria {
+    background: url('../img/div_passosv-menor-.png');
+    width: 1140px;
+    height: 99px;
+    position: relative;
+    margin-left: -13.5%;
+}
 
-
+.titulo-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    color: #462649;
+}
 
 
 
@@ -116,25 +128,26 @@ pre code.hljs {
     display: block;
     overflow-x: hidden !important;
     padding: 1em;
-    max-width: 400px;
 }
 
 code.hljs {
     padding: 3px 5px;
-    width: 400px;
 }
 
 pre {
     background-color: unset;
     border: unset;
     padding: unset;
-    width: 400px;
     overflow-x: hidden;
 }
 
 .hljs {
     background: #000;
     color: #a39e9b;
+}
+
+.largura{
+    max-width: 400px;
 }
 
 .hljs-attr,
@@ -258,6 +271,20 @@ pre {
         background-size: cover;
     }
 
+    .divisoria {
+        background: url(../img/div_passosv-menor-.png);
+        width: 801px;
+        height: 99px;
+        position: relative;
+        margin-left: -11.5%;
+    }
+
+    .titulo-div {
+        display: flex;
+        justify-content: center;
+        padding-top: 4%;
+        color: #462649;
+    }
 
 }
 
@@ -275,6 +302,18 @@ pre {
         font-size: .8em;
     }
 
+    .modal-dialog {
+        max-width: 670px;
+        margin: 1.75rem auto;
+    }
+
+    .divisoria {
+        background: url('../img/div_passosv-menor-800.png');
+        width: 667px;
+        height: 69px;
+        position: relative;
+        margin-left: -14%;
+    }
 
 
 
@@ -282,7 +321,20 @@ pre {
 
 
 
-@media screen and (max-width:768px) {}
+@media screen and (max-width:768px) {
+    .modal-dialog {
+        max-width: 670px;
+        margin: 1.75rem auto;
+    }
+
+    .divisoria {
+        background: url('../img/div_passosv-menor-800.png');
+        width: 667px;
+        height: 69px;
+        position: relative;
+        margin-left: -14%;
+    }
+}
 
 
 @media screen and (max-width:500px) {
@@ -293,9 +345,41 @@ pre {
         gap: 30px;
         flex-direction: column;
     }
+
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+
+    .divisoria {
+        background: url('../img/div_passosv-menor-400.png');
+        width: 450px;
+        height: 99px;
+        position: relative;
+        margin-left: -12%;
+    }
+
+    .titulo-div {
+        display: flex;
+        justify-content: center;
+        padding-top: 6%;
+        margin-left: -13%;
+    }
 }
 
 
 @media screen and (max-width:414px) {}
 
-@media screen and (max-width:375px) {}
+@media screen and (max-width:375px) {
+    .divisoria {
+        margin-left: -14%;
+    }
+
+
+    .titulo-div {
+        display: flex;
+        justify-content: center;
+        padding-top: 7%;
+        margin-left: -28%;
+    }
+}

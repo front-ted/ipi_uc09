@@ -215,8 +215,8 @@
                                                             </ul>
                                                         </td>
                                                         <td>
-                                                            <pre>
-                                                                <code class="hljs largura">
+                                                            <pre class="largura">
+                                                                <code class="hljs">
         node -v 
         v22.13.0 
          
@@ -229,18 +229,6 @@
                                                 </tbody>
                                             </table>
                                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="botao hvr-sweep-to-right"
@@ -261,39 +249,64 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="container">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
-                                            nisl,
-                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
-                                            ornare
-                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
-                                            Phasellus
-                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
-                                            sem
-                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
-                                            ultrices
-                                            ornare. Donec gravida pharetra odio et ultrices.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
-                                            nisl,
-                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
-                                            ornare
-                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
-                                            Phasellus
-                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
-                                            sem
-                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
-                                            ultrices
-                                            ornare. Donec gravida pharetra odio et ultrices.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
-                                            nisl,
-                                            tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
-                                            ornare
-                                            pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
-                                            Phasellus
-                                            non pharetra tortor. Proin dictum ultrices ligula in finibus. Suspendisse id
-                                            sem
-                                            consectetur, venenatis ex vel, consectetur arcu. Cras vulputate quam in
-                                            ultrices
-                                            ornare. Donec gravida pharetra odio et ultrices.</p>
+                                        <p>
+                                            Nesta seção, será abordada a implementação de um serviço <i>web</i> usando
+                                            Node.js e
+                                            Express.js, que gerencia notícias e as armazena em um arquivo
+                                            <b>noticias.json</b>.
+                                            Será criada uma <b>API de notícias</b> que permitirá <b>adicionar</b>,
+                                            <b>listar</b>, <b>atualizar</b> e
+                                            <b>remover</b> notícias, servindo de base para os demais conteúdos desta
+                                            unidade
+                                            curricular.
+                                        </p>
+                                        <p>
+                                            Além disso, para garantir que essa API possa ser acessada por aplicações
+                                            externas, será necessário implementar o <b>recurso de CORS (<i>cross-origin
+                                                    resource
+                                                    sharing</i>)</b>. Esse mecanismo permitirá que diferentes sistemas,
+                                            como aplicações
+                                            <i>front-end</i> e outros serviços, consumam os dados dessa API sem as
+                                            restrições de
+                                            mesma origem, garantindo maior flexibilidade e interoperabilidade.
+                                        </p>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 1</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 1:</b> crie uma pasta com nome api para o projeto. Abra o terminal
+                                            ou um
+                                            prompt de comando e inicialize com o comando:
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+npm init -y 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            Isso criará um arquivo <b>package.json</b> com as configurações básicas do projeto,
+                                            como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do serviço (<i>main</i>) e
+                                            dependências (<i>dependencies</i>).
+                                        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="botao hvr-sweep-to-right"
