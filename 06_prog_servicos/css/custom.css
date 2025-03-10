@@ -76,6 +76,7 @@ table td {
     height: 99px;
     position: relative;
     margin-left: -13.5%;
+    margin-bottom: 3%;
 }
 
 .titulo-div {
@@ -128,10 +129,14 @@ pre code.hljs {
     display: block;
     overflow-x: hidden !important;
     padding: 1em;
+    word-break:normal;
+    white-space: pre-wrap;
 }
 
 code.hljs {
     padding: 3px 5px;
+    word-break: break-all;
+    white-space: pre-wrap;
 }
 
 pre {
@@ -216,11 +221,20 @@ pre {
 .hljs-symbol {
     color: #558b2f;
 }
+.hljs-numero {
+    color: #a0d778;
+}
+
+.hljs-azul {
+    color: #9ad1fd;
+}
 
 .hljs-selector-tag {
     color: #96f;
 }
-
+.hljs-roxo {
+    color: rgb(167, 132, 236);
+}
 .hljs-emphasis {
     font-style: italic;
 }
@@ -314,7 +328,10 @@ pre {
         position: relative;
         margin-left: -14%;
     }
-
+    .titulo-div {
+        display: flex;
+        justify-content: center;
+        padding-top: 3%;}
 
 
 }
@@ -333,6 +350,18 @@ pre {
         height: 69px;
         position: relative;
         margin-left: -14%;
+    }
+    p,
+    li,
+    th,
+    td,
+    a,
+    .figure-caption,
+    .botao,
+    .tab-pane,
+    b {
+        font-size: initial;
+
     }
 }
 

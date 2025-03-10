@@ -284,14 +284,410 @@ npm init -y
                                             </code>
                                         </pre>
                                         <p>
-                                            Isso criará um arquivo <b>package.json</b> com as configurações básicas do projeto,
-                                            como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do serviço (<i>main</i>) e
+                                            Isso criará um arquivo <b>package.json</b> com as configurações básicas do
+                                            projeto,
+                                            como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do serviço
+                                            (<i>main</i>) e
                                             dependências (<i>dependencies</i>).
                                         </p>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 2</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 2:</b> instale a dependência do <i>framework</i> <b>Express.js</b>,
+                                            que será usado para
+                                            criar e gerenciar as rotas do servidor.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+npm install express 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            Observe que será criada a pasta <b>node_modules</b>, que é responsável por
+                                            armazenar
+                                            todas as dependências do aplicativo.
+                                        </p>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 3</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 3:</b> instale a dependência do CORS. Sua instalação simplifica a
+                                            configuração
+                                            de CORS no Express.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+npm install cors 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            O CORS é um mecanismo de segurança dos navegadores que controla como
+                                            recursos de
+                                            uma aplicação podem ser acessados por domínios diferentes daquele onde o
+                                            recurso
+                                            está hospedado. Ele ajuda a proteger os usuários ao verificar se o servidor
+                                            autoriza essas interações.
+                                        </p>
+                                        <p>
+                                            Neste conteúdo, não serão aprofundadas as configurações avançadas, focando
+                                            apenas as soluções práticas para permitir requisições básicas de diferentes
+                                            origens.
+                                        </p>
+                                        <p>
+                                            Após a instalação das dependências Express e CORS, observe que ambas serão
+                                            adicionadas no arquivo <b>package.json</b> em <b>dependencies</b> com suas
+                                            respectivas
+                                            versões.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+{ 
+    <span class="hljs-code">"name"</span>: <span class="hljs-title">"api"</span>, 
+    <span class="hljs-code">"version"</span>: <span class="hljs-title">"1.0.0"</span>, 
+    <span class="hljs-code">"main"</span>: <span class="hljs-title">"index.js"</span>, 
+    <span class="hljs-code">"scripts"</span>: { 
+        <span class="hljs-code">"test"</span>: <span class="hljs-title">"echo</span> <span class="hljs-type">\"</span><span class="hljs-title">Error: no test specified</span><span class="hljs-type">\"</span> <span class="hljs-title">&& exit 1" </span>
+                                                    
+    },                                                  
+    <span class="hljs-code">"keywords"</span>: [], 
+    <span class="hljs-code">"author"</span>:<span class="hljs-title"> ""</span>, 
+    <span class="hljs-code">"license"</span>: <span class="hljs-title">"ISC"</span>, 
+    <span class="hljs-code">"description"</span>: <span class="hljs-title">""</span>, 
+    <span class="hljs-code">"dependencies"</span>: { 
+        <span class="hljs-code">"cors"</span>: <span class="hljs-title">"^2.8.5"</span>, 
+        <span class="hljs-code">"express"</span>: <span class="hljs-title">"^4.21.2"</span>                                          
+    } 
+}
+                                            </code>
+                                        </pre>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 4</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 4:</b> crie o arquivo <b>noticias.json</b>, no qual as informações
+                                            das notícias serão
+                                            armazenas. Para este exemplo, serão considerados os campos: <b>id</b>,
+                                            <b>titulo</b> e
+                                            <b>conteudo</b>. Abra o projeto no Visual Studio Code e, depois de criar o
+                                            arquivo
+                                            <b>noticias.json</b>, edite com as seguintes informações:
+                                        </p>
+                                        <pre>
+                                        <code class="hljs">
+[ 
+    { 
+        <span class="hljs-code">"id"</span>: <span class="hljs-symbol">1</span>, 
+        <span class="hljs-code">"titulo"</span>: <span class="hljs-title">"Java Script"</span>, 
+        <span class="hljs-code">"conteudo"</span>: <span class="hljs-title">"Linguagem Java Script" </span>
+    }, 
+    { 
+        <span class="hljs-code">"id"</span>: <span class="hljs-symbol">2</span>, 
+        <span class="hljs-code">"titulo"</span>: <span class="hljs-title">"Express"</span>, 
+        <span class="hljs-code">"conteudo"</span>: <span class="hljs-title">"Utilizado para API"</span> 
+    } 
+] 
+                                        </code>
+                                       </pre>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 5</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 5:</b> crie o arquivo <b>index.js</b> e configure o servidor do
+                                            Express com as
+                                            seguintes configurações:
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-symbol">// Importação dos módulos necessários</span> 
+<span class="hljs-code">const</span> <span class="hljs-type">express</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'express'</span>); 
+<span class="hljs-code">const</span> <span class="hljs-quote">fs</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'fs'</span>); <span class="hljs-symbol">// Módulo para manipulação de arquivos </span>
+<span class="hljs-code">const</span> <span class="hljs-type">cors</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'cors'</span>); <span class="hljs-symbol">// Mecanismo de segurança para permitir CORS</span> 
+                                                
+                                                 
+<span class="hljs-symbol">// Criação da aplicação e configuração da porta</span> 
+<span class="hljs-code">const</span> <span class="hljs-meta">app</span> = <span class="hljs-type">express</span>(); 
+<span class="hljs-code">const</span> <span class="hljs-meta">PORT</span> = <span class="hljs-numero">3000</span>; 
+                                                
+                                                 
+<span class="hljs-symbol">// Permitir CORS</span> 
+<span class="hljs-meta">app</span>.<span class="hljs-type">use</span>(<span class="hljs-type">cors</span>()); 
+                                                
+                                                 
+<span class="hljs-symbol">// Middleware para interpretar JSON </span>
+<span class="hljs-meta">app</span>.<span class="hljs-type">use</span>(<span class="hljs-type">express.json</span>());
+                                            </code>
+                                        </pre>
+                                        <p>Inicialmente, são importados três módulos: </p>
+                                        <ul class="marcador-padrao">
+                                            <li>
+                                                <b>Express</b>: fornece recursos para construir aplicações <i>web</i> e
+                                                APIs de forma
+                                                eficiente.
+                                            </li>
+                                            <li>
+                                                <b>fs</b>: é um módulo nativo do Node.js utilizado para operações com o
+                                                sistema de
+                                                arquivos, como leitura e gravação de arquivos.
+                                            </li>
+                                            <li><b>cors</b>: permite que o servidor aceite solicitações de diferentes
+                                                origens.</li>
+                                        </ul>
+                                        <p>
+                                            Em seguida, crie a aplicação com <b>express()</b> e a atribua à constante
+                                            <b>app</b>, que será
+                                            a instância principal para definir rotas e <i>middlewares</i>. Defina também
+                                            a
+                                            constante <b>PORT</b> com o valor 3000, indicando a porta na qual o servidor
+                                            será
+                                            executado e estará acessível localmente via <b>http://localhost:3000</b>.
+                                        </p>
+                                        <p>Além disso, aplique as seguintes configurações:</p>
+                                        <ul class="marcador-padrao">
+                                            <li>
+                                                <b>app.use(cors())</b>: habilita o CORS no servidor, permitindo que ele
+                                                aceite
+                                                requisições de origens diferentes.
+                                            </li>
+                                            <li>
+                                                <b>app.use(express.json())</b>: que permite ao servidor interpretar
+                                                dados enviados
+                                                no formato JSON em requisições HTTP, facilitando o processamento de
+                                                informações no corpo das requisições (<b>req.body</b>).
+                                            </li>
+                                        </ul>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 6</h4>
+                                        </div>
+                                        <p><b>Passo 6</b>: crie funções para ler e escrever no arquivo
+                                            <b>noticias.json</b>.
+                                        </p>
+                                        <p>
+                                            Para garantir a persistência dos dados no arquivo <b>noticias.json</b>,
+                                            utilize as
+                                            seguintes funções auxiliares:
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-code">const</span> <span class="hljs-meta">filePath</span> = <span class="hljs-title">'./noticias.json'</span>; 
 
-
-
-
+ 
+<span class="hljs-symbol">// Lê os dados do arquivo JSON</span> 
+<span class="hljs-code">const</span> <span class="hljs-type">readData</span> = () <span class="hljs-code">=></span> { 
+    <span class="hljs-roxo">try</span> { 
+        <span class="hljs-code">const</span> <span class="hljs-meta">data</span> = <span class="hljs-quote">fs</span>.<span class="hljs-type">readFileSync</span>(<span class="hljs-meta">filePath</span>, <span class="hljs-title">'utf8'</span>); <span class="hljs-symbol">// Lê o conteúdo do arquivo</span> 
+        <span class="hljs-roxo">return</span> <span class="hljs-azul">JSON</span>.<span class="hljs-type">parse</span>(<span class="hljs-meta">data</span> || <span class="hljs-title">'[]'</span>); <span class="hljs-symbol">// Converte para objeto/array ou retorna um array vazio </span>
+      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">error</span>) { 
+        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao ler o arquivo:'</span>, <span class="hljs-azul">error</span>); 
+        <span class="hljs-roxo">return</span> []; 
+      } 
+}; 
+                                                
+                                                 
+<span class="hljs-symbol">// Grava os dados no arquivo JSON</span> 
+<span class="hljs-code">const</span> <span class="hljs-type">writeData</span> = (<span class="hljs-azul">data</span>) <span class="hljs-code">=></span> { 
+    <span class="hljs-roxo">try</span> { 
+        <span class="hljs-quote">fs</span>.<span class="hljs-type">writeFileSync</span>(<span class="hljs-meta">filePath</span>, <span class="hljs-azul">JSON</span>.<span class="hljs-type">stringify</span>(<span class="hljs-azul">data</span>, <span class="hljs-code">null</span>, <span class="hljs-numero">2</span>)); <span class="hljs-symbol">// Grava com formatação </span>
+      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">error</span>) { 
+        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao escrever no arquivo:'</span>, <span class="hljs-azul">error</span>); 
+      } 
+}; 
+                                            </code>
+                                        </pre>
+                                        <p>Essas funções abstraem a leitura e a escrita, facilitando a manipulação do
+                                            arquivo. </p>
+                                        <div class="divisoria">
+                                            <h4 class="titulo-div">passo 7</h4>
+                                        </div>
+                                        <p>
+                                            <b>Passo 7</b>: crie os <i>endpoints</i> na aplicação, pelos quais ela
+                                            recebe <i>requests</i> e
+                                            retorna <i>responses</i>.
+                                        </p>
+                                        <p>
+                                            Os <i>endpoints</i> são configurados para rodar sob rotas (<i>routes</i>).
+                                            As rotas podem ser
+                                            configuradas para receber parâmetros e tipos de métodos que elas aceitam,
+                                            tais
+                                            como <b>GET</b>, <b>POST</b>,<b> PUT</b> e <b>DELETE</b>. Esses métodos
+                                            representam a operação que os
+                                            <i>endpoints</i> realizarão.
+                                        </p>
+                                        <p>
+                                            Para criar <i>endpoints</i> com o Express, basta utilizar um dos seguintes
+                                            métodos que
+                                            ele disponibiliza de acordo com os verbos HTTP:
+                                        </p>
+                                        <ul>
+                                            <li><b>app.get()</b></li>
+                                            <li><b>app.post()</b></li>
+                                            <li><b>app.delete()</b></li>
+                                            <li><b>app.put()</b></li>
+                                        </ul>
+                                        <p>
+                                            <b>Rota para listar todas as notícias</b>: essa rota responde com todas as
+                                            notícias
+                                            armazenadas no arquivo <b>noticias.json</b>.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-meta">app</span>.<span class="hljs-type">get</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
+    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>(<span class="hljs-meta">noticias</span>); 
+}); 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            Nesse bloco de código, foi definida uma rota HTTP do tipo <b>GET</b> no
+                                            caminho
+                                            <b>/noticias</b> utilizando o método <b>app.get</b>. Quando um cliente
+                                            acessa essa rota, a
+                                            função de <i>callback</i> é executada, recebendo os objetos <b>req</b>
+                                            (requisição) e <b>res</b>
+                                            (resposta). Dentro dessa função, o método <b>readData()</b> é chamado para
+                                            obter as
+                                            notícias, que são armazenadas na variável <b>noticias</b>. Por fim,
+                                            utiliza-se
+                                            <b> res.json(noticias)</b> para enviar as notícias como uma resposta em
+                                            formato JSON,
+                                            garantindo que o cliente receba os dados estruturados de forma adequada.
+                                        </p>
+                                        <p><b>Rota para buscar uma notícia pelo ID</b>: retorna uma única notícia pelo
+                                            <b>ID</b>.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-meta">app</span><span class="hljs-type">.get</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
+    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req.params</span>; 
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticia</span> = <span class="hljs-meta">noticias</span><span class="hljs-type">.find</span>((<span class="hljs-azul">n</span>) => <span class="hljs-azul">n.id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
+                                                    
+                                                     
+    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">noticia</span>) { 
+        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</spa><span class="hljs-type">.status</span>(<span class="hljs-numero">404</span>)<span class="hljs-type">.json</span>({ <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia não encontrada.'</span> }); 
+    } 
+                                                    
+                                                     
+    <span class="hljs-azul">res</span><span class="hljs-type">.json</span>(<span class="hljs-meta">noticia</span>);                                          
+}); 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            Nesse bloco, foi definida uma rota HTTP do tipo <b>GET</b> no caminho
+                                            <b>/noticias/:id</b>,
+                                            que permite buscar uma notícia específica pelo seu identificador (ID). O
+                                            parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
+                                            seguida, chama-se a
+                                            função <b>readData()</b> para carregar a lista atual de notícias e
+                                            utiliza-se o método
+                                            <b>find</b> para localizar a notícia cujo ID corresponde ao valor fornecido
+                                            na URL.
+                                            Para garantir a correspondência, o ID da URL é convertido para um número
+                                            inteiro
+                                            com <b>parseInt</b>. Se nenhuma notícia for encontrada, retorna-se uma
+                                            resposta com
+                                            código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem informativa em
+                                            formato JSON.
+                                            Caso contrário, envia-se a notícia encontrada como resposta em formato JSON,
+                                            permitindo que o cliente visualize os detalhes da notícia solicitada.
+                                        </p>
+                                        <p>
+                                            <b>Rota para adicionar uma nova notícia:</b> permite adicionar uma nova
+                                            notícia
+                                            enviando os dados no corpo da requisição.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-meta">app</span>.<span class="hljs-type">post</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
+    <span class="hljs-code">const</span> { <span class="hljs-meta">titulo</span>, <span class="hljs-meta">conteudo</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">body</span>; 
+                                                    
+    <span class="hljs-symbol">// Validações básicas</span> 
+    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">titulo</span> || !<span class="hljs-meta">conteudo</span>) { 
+        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">400</span>).<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Título e conteúdo são obrigatórios.'</span> }); 
+   } 
+                                                    
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
+    <span class="hljs-code">const</span> <span class="hljs-meta">novaNoticia</span> = { 
+        <span class="hljs-azul">id</span>: <span class="hljs-meta">noticias</span>.<span class="hljs-azul">length</span> > <span class="hljs-numero">0</span> ? <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticias</span>.<span class="hljs-azul">length</span> - <span class="hljs-numero">1</span>].<span class="hljs-azul">id</span> + <span class="hljs-numero">1</span> : <span class="hljs-numero">1</span>, <span class="hljs-symbol">// ID autoincremental</span> 
+        <span class="hljs-azul">titulo</span>, 
+        <span class="hljs-azul">conteudo</span>, 
+   }; 
+                                                    
+    <span class="hljs-meta">noticias</span>.<span class="hljs-type">push</span>(<span class="hljs-meta">novaNoticia</span>); 
+    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
+                                                    
+    <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">201</span>).<span class="hljs-type">json</span>(<span class="hljs-meta">novaNoticia</span>); 
+                                                    
+}); 
+                                            </code>
+                                        </pre>
+                                        <p>
+                                            Nesse bloco de código, é definida uma rota HTTP do tipo <b>POST</b> no
+                                            caminho
+                                            <b>/noticias</b>, utilizada para adicionar novas notícias. Quando essa rota
+                                            é acessada,
+                                            o servidor executa a função de <i>callback</i>, que recebe os objetos
+                                            <b>req</b> (requisição)
+                                            e <b>res</b> (resposta). Primeiro, são extraídos os valores de <b>titulo</b>
+                                            e <b>conteudo</b> do
+                                            corpo da requisição (<b>req.body</b>). Em seguida, realizam-se validações
+                                            básicas para
+                                            garantir que ambos os campos sejam preenchidos. Caso algum deles esteja
+                                            ausente,
+                                            retorna-se uma resposta com código de status <b>400 (Bad Request)</b> e uma
+                                            mensagem
+                                            informativa em formato JSON. Se os dados forem válidos, chama-se a função
+                                            <b>readData()</b> para obter a lista atual de notícias e cria-se um objeto
+                                            <b>novaNoticia</b>
+                                            com um ID autoincremental, o título e o conteúdo fornecidos. Adiciona-se a
+                                            nova
+                                            notícia ao <b>array</b> existente e são persistidos os dados atualizados com
+                                            a função
+                                            <b>writeData()</b>. Por fim, responde-se com código de <i>status</i> <b>201
+                                                (Created)</b> e o objeto
+                                            da nova notícia em formato JSON, indicando que o recurso foi criado com
+                                            sucesso.
+                                        </p>
+                                        <p>
+                                            <b>Rota para atualizar uma notícia pelo ID:</b> a rota a seguir permite
+                                            atualizar o
+                                            título e/ou o conteúdo de uma notícia específica. Caso o ID informado não
+                                            exista, a rota retornará um erro.
+                                        </p>
+                                        <pre>
+                                            <code class="hljs">
+<span class="hljs-meta">app</span><span class="hljs-type">.put</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
+    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">params</span>; 
+    <span class="hljs-code">const</span> { <span class="hljs-meta">titulo</span>, <span class="hljs-meta">conteudo</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">body</span>; 
+                                                      
+    <span class="hljs-symbol">// Validações básicas </span>
+    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">titulo</span> && !<span class="hljs-meta">conteudo</span>) { 
+    <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(400).<span class="hljs-type">json</span c>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'É necessário informar o título ou o conteúdo para atualização.'</span> }); 
+    } 
+                                                      
+                                                    
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
+    <span class="hljs-code">const</span> <span class="hljs-meta">noticiaIndex</span> = <span class="hljs-meta">noticias</span>.<span class="hljs-type">findIndex</span>((<span class="hljs-azul">n</span>) => <span class="hljs-azul">n</span>.<span class="hljs-azul">id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
+                                                                                                  
+    <span class="hljs-roxo">if</span> (<span class="hljs-meta">noticiaIndex</span> === -1) { 
+      <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(404).<span class="hljs-type">json</span>({<span class="hljs-azul"> message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
+    } 
+                                                    
+                                                    
+    <span class="hljs-symbol">// Atualizar apenas os campos fornecidos</span> 
+    <span class="hljs-roxo">if</span> (<span class="hljs-meta">titulo</span>) <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>].<span class="hljs-azul">titulo</span> = <span class="hljs-meta">titulo</span>; 
+    <span class="hljs-roxo">if</span> (<span class="hljs-meta">conteudo</span>) <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>].<span class="hljs-azul">conteudo</span> = <span class="hljs-meta">conteudo</span>; 
+                                                                                                    
+    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
+                                                    
+    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>({ 
+      <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia atualizada com sucesso.'</span>, 
+      <span class="hljs-azul">noticia:</span> <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>], 
+                                                    
+    }); 
+}); 
+                                            </code>
+                                        </pre>
 
 
 
