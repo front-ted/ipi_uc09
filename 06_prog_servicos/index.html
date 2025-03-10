@@ -662,15 +662,15 @@ npm install cors
                                                       
     <span class="hljs-symbol">// Validações básicas </span>
     <span class="hljs-roxo">if</span> (!<span class="hljs-meta">titulo</span> && !<span class="hljs-meta">conteudo</span>) { 
-    <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(400).<span class="hljs-type">json</span c>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'É necessário informar o título ou o conteúdo para atualização.'</span> }); 
+    <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">400</span>).<span class="hljs-type">json</span c>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'É necessário informar o título ou o conteúdo para atualização.'</span> }); 
     } 
                                                       
                                                     
     <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
     <span class="hljs-code">const</span> <span class="hljs-meta">noticiaIndex</span> = <span class="hljs-meta">noticias</span>.<span class="hljs-type">findIndex</span>((<span class="hljs-azul">n</span>) => <span class="hljs-azul">n</span>.<span class="hljs-azul">id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
                                                                                                   
-    <span class="hljs-roxo">if</span> (<span class="hljs-meta">noticiaIndex</span> === -1) { 
-      <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(404).<span class="hljs-type">json</span>({<span class="hljs-azul"> message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
+    <span class="hljs-roxo">if</span> (<span class="hljs-meta">noticiaIndex</span> === -<span class="hljs-numero">1</span>) { 
+      <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">404</span>).<span class="hljs-type">json</span>({<span class="hljs-azul"> message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
     } 
                                                     
                                                     
@@ -688,10 +688,66 @@ npm install cors
 }); 
                                             </code>
                                         </pre>
+                                        <p>
+                                            Nesse bloco de código, é definida uma rota HTTP do tipo <b>PUT</b> no
+                                            caminho
+                                            <b>/noticias/:id</b>, que permite atualizar uma notícia específica pelo seu
+                                            identificador (ID). O ID é extraído da URL utilizando <b>req.params</b>,
+                                            enquanto os
+                                            dados enviados para atualização (como <b>titulo</b> e <b>conteudo</b>) são
+                                            extraídos do corpo
+                                            da requisição (<b>req.body</b>).
+                                        </p>
+                                        <p>
+                                            Inicialmente, realiza-se uma validação para garantir que ao menos um dos
+                                            campos
+                                            (<b>titulo</b> ou <b>conteudo</b>) tenha sido fornecido. Caso contrário,
+                                            retorna-se uma
+                                            resposta com o código de <i>status</i> <b>400 (Bad Request)</b> e uma
+                                            mensagem informativa em
+                                            formato JSON.
+                                        </p>
+                                        <p>
+                                            Em seguida, chama-se a função <b>readData()</b> para obter a lista de
+                                            notícias e usa-se
+                                            <b>findIndex</b> para localizar o índice da notícia cujo ID corresponde ao
+                                            fornecido.
+                                            Se a notícia não for encontrada (índice -1), retorna-se uma resposta com o
+                                            código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem indicando que
+                                            a notícia não
+                                            existe.
+                                        </p>
+                                        <p>
+                                            Se a notícia for encontrada, atualizam-se apenas os campos fornecidos no
+                                            corpo
+                                            da requisição. Por exemplo, se apenas o <b>titulo</b> for enviado, apenas
+                                            esse campo
+                                            será atualizado. Após a atualização, são persistidas as alterações chamando
+                                            a
+                                            função <b>writeData()</b>.
+                                        </p>
+                                        <p><b>Rota para deletar uma notícia pelo ID:</b> remove uma notícia do arquivo.
+                                        </p>
 
-
-
-
+                                        <pre>
+                                            <code class="hljs">
+app.delete('/noticias/:id', (req, res) => { 
+    const { id } = req.params; 
+    const noticias = readData(); 
+    const index = noticias.findIndex((n) => n.id === parseInt(id)); 
+                                                                                                   
+    if (index === -1) { 
+        return res.status(404).json({ message: 'Notícia não encontrada.' }); 
+    } 
+                                                                                                    
+    noticias.splice(index, 1); // Remove a notícia pelo índice 
+    writeData(noticias); 
+                                                    
+    res.json({ message: 'Notícia removida com sucesso.' }); 
+}); 
+                                            </code>
+                                        </pre>
+pg 14
 
 
 
