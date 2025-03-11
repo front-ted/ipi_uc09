@@ -334,25 +334,475 @@
                                     <p>Veja como ficou o código <b>index.html</b>:</p>
                                     <pre>
                                         <code class="hljs language-html">
-&lt;!DOCTYPE html> 
-&lt;html lang="en"> 
+&lt;!<span class="hljs-code">DOCTYPE</span> <span class="hljs-azul">html</span>> 
+&lt;<span class="hljs-code">html</span> <span class="hljs-azul">lang</span>=<span class="hljs-title">"en"</span>> 
                                             
                                              
-&lt;head> 
-    &lt;meta charset="UTF-8" /> 
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
-    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>
-    &lt;title>Noticias&lt;/title> 
-    &lt;/head> 
+&lt;<span class="hljs-code">head</span>> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">charset</span>=<span class="hljs-title">"UTF-8"</span> /> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"viewport"</span> <span class="hljs-azul">content</span>=<span class="hljs-title">"width=device-width, initial-scale=1.0"</span> /> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">http-equiv</span>=<span class="hljs-title">"X-UA-Compatible"</span> <span class="hljs-azul">content</span>=<span class="hljs-title">"ie=edge"</span> /> 
+    &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"https://code.jquery.com/jquery-3.4.1.js"</span>>&lt;/<span class="hljs-code">script</span>>
+    &lt;<span class="hljs-code">title</span>>Noticias&lt;/<span class="hljs-code">title</span>> 
+&lt;/<span class="hljs-code">head</span>> 
                                             
-    &lt;body> 
-        &lt;div id="news">&lt;/div> 
-        &lt;script src="js.js">&lt;/script> 
-    &lt;/body>                               
-&lt;/html> 
+    &lt;<span class="hljs-code">body</span>> 
+        &lt;<span class="hljs-code">div</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"news"</span>>&lt;/<span class="hljs-code">div</span>> 
+        &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"js.js"</span>>&lt;/<span class="hljs-code">script</span>> 
+    &lt;/<span class="hljs-code">body</span>>                               
+&lt;/<span class="hljs-code">html</span>> 
                                         </code>
                                     </pre>
+                                    <p>
+                                        No arquivo <b>js.js</b>, será implementada a funcionalidade para carregar
+                                        dinamicamente
+                                        notícias da API de notícias, utilizando o método <b>$.get()</b> da biblioteca
+                                        jQuery. Esse
+                                        método permite enviar uma solicitação <b>HTTP GET</b> para uma URL específica e
+                                        processar
+                                        os dados retornados, atualizando a página sem necessidade de recarregá-la.
+                                    </p>
+                                    <p>
+                                        A lógica está encapsulada na função <b>carregarNoticias</b>, que realiza a
+                                        solicitação <b>GET</b>
+                                        para a URL <b>http://localhost:3000/noticias</b>. Esse método recebe dois
+                                        parâmetros: a URL
+                                        de destino e uma função de <i>callback</i> que é executada quando a requisição é
+                                        bem-sucedida. Dentro dessa função de <i>callback</i>, os dados retornados pelo
+                                        servidor
+                                        (uma lista de notícias) são iterados com <b>forEach</b>. Para cada notícia,
+                                        elementos HTML
+                                        são criados dinamicamente, como <b>&lt;h3></b> para o título e<b> &lt;p></b>
+                                        para o conteúdo, e
+                                        adicionados ao elemento <b>&lt;div id="news"></b> na página por meio do método
+                                        <b>$('#news').append()</b>.
+                                    </p>
+                                    <p>
+                                        Antes de adicionar as notícias, o conteúdo preexistente de <b>&lt;div
+                                            id="news"></b> é
+                                        removido com <b>$('#news').empty()</b>, garantindo que a lista de notícias não
+                                        seja
+                                        duplicada caso a função seja chamada novamente. Essa função
+                                        <b>carregarNoticias</b> é
+                                        chamada automaticamente ao carregar a página, graças ao método
+                                        <b>$(document).ready()</b>.
+                                    </p>
+                                    <p>
+                                        Dessa forma, o código permite que as notícias sejam exibidas de forma dinâmica e
+                                        atualizadas sem recarregar toda a página, proporcionando uma experiência mais
+                                        fluida e interativa para o usuário.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs"> 
+<span class="hljs-type">$</span>(<span class="hljs-azul">document</span>).<span class="hljs-type">ready</span>(<span class="hljs-code">function</span> () { 
+
+ 
+        <span class="hljs-symbol">// Função para carregar as notícias</span> 
+        <span class="hljs-code">function</span> <span class="hljs-type">carregarNoticias</span>() { 
+            <span class="hljs-azul">$</span>.<span class="hljs-type">get</span>(<span class="hljs-title">"http://localhost:3000/noticias"</span>, <span class="hljs-code">function</span> (<span class="hljs-azul">data</span>, <span class="hljs-azul">status</span>) { 
+                <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">empty</span>(); 
+                <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">append</span>(<span class="hljs-title">'&lt;h1>Listagem de Notícias&lt;/h1>'</span>); 
+                <span class="hljs-azul">data</span>.<span class="hljs-type">forEach</span>(<span class="hljs-code">function</span> (<span class="hljs-azul">noticia</span>) { 
+                    <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">append</span>( 
+                        <span class="hljs-title">`&lt;div id="noticia-</span><span class="hljs-code">${</span><span class="hljs-azul">noticia.id</span><span class="hljs-code">}</span><span class="hljs-title">"></span> 
+                            <span class="hljs-title">&lt;h3></span><span class="hljs-code">${</span><span class="hljs-azul">noticia.titulo</span><span class="hljs-code">}</span><span class="hljs-title">&lt;/h3></span> 
+                            <span class="hljs-title">&lt;p></span><span class="hljs-code">${</span><span class="hljs-azul">noticia.conteudo</span><span class="hljs-code">}</span><span class="hljs-title">&lt;/p></span> 
+                        <span class="hljs-title">&lt;/div>`</span> 
+                    ); 
+                }); 
+            }); 
+        } 
+                                                
+       <span class="hljs-symbol"> // Carregar as notícias ao carregar a página</span> 
+        <span class="hljs-type">carregarNoticias</span>(); 
+}); 
+                                        </code>
+                                    </pre>
+                                    <p>Veja a lista de notícias exibidas na página <b>index.html</b>.</p>
+                                    <figure class="my-5">
+                                        <div class="figure-img mb-4">
+                                            <img class="img-fluid d-block borda-colorida mx-auto print" src="">
+                                        </div>
+                                        <figcaption class="figure-caption text-center">
+                                            Listando notícias – solicitação <b>GET</b> usando jQuery <br>
+                                            Fonte: Senac EAD (2025)
+                                        </figcaption>
+                                    </figure>
+                                    <div class="acessivel visually-hidden no-print">
+                                        <p>
+                                            Imagem do navegador de internet que exibe os dados em uma lista das notícias
+                                            pelo título e conteúdo.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Como enviar uma solicitação <b>POST</b>
+                                    para cadastrar uma nova notícia</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        Agora, você criará um arquivo chamado <b>cadastro.html</b>. Nele, haverá um
+                                        formulário de
+                                        cadastro de notícias com os campos <b>título</b> e <b>conteúdo</b> e a
+                                        <b>&lt;div id="result">&lt;/div></b>,
+                                        que receberá uma mensagem de confirmação de cadastro sem necessidade de
+                                        atualizar a
+                                        tela.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs"> 
+&lt;!<span class="hljs-code">DOCTYPE</span> <span class="hljs-azul">html</span>> 
+&lt;<span class="hljs-code">html</span> <span class="hljs-azul">lang</span>=<span class="hljs-title">"en"</span>> 
+                                            
+&lt;<span class="hljs-code">head</span>> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">charset</span>=<span class="hljs-title">"UTF-8"</span> /> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"viewport"</span> <span class="hljs-azul">content</span>=<span class="hljs-title">"width=device-width, initial-scale=1.0"</span> /> 
+    &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">http-equiv</span>=<span class="hljs-title">"X-UA-Compatible"</span> <span class="hljs-azul">content</span>=<span class="hljs-title">"ie=edge"</span> /> 
+    &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"https://code.jquery.com/jquery-3.4.1.js"</span>>&lt;/<span class="hljs-code">script</span>> 
+    &lt;<span class="hljs-code">title</span>>Notícias - Cadastrar&lt;/<span class="hljs-code">title</span>> 
+&lt;/<span class="hljs-code">head</span>> 
+                                            
+&lt;<span class="hljs-code">body</span>> 
+    &lt;<span class="hljs-code">h1</span>>Cadastro de notícias&lt;/<span class="hljs-code">h1</span>> 
+    &lt;<span class="hljs-code">form</span> <span class="hljs-azul">method</span>=<span class="hljs-title">"post"</span> <span class="hljs-azul">action</span>=<span class="hljs-title">""</span>> 
+        &lt;<span class="hljs-code">label</span>>Titulo: &lt;<span class="hljs-code">input</span> <span class="hljs-azul">type</span>=<span class="hljs-title">"text"</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"titulo"</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"titulo"</span>>&lt;/<span class="hljs-code">label</span>>&lt;<span class="hljs-code">br</span>>&lt;<span class="hljs-code">br</span>> 
+        &lt;<span class="hljs-code">label</span>>Conteúdo: &lt;<span class="hljs-code">textarea</span> <span class="hljs-azul">cols</span>=<span class="hljs-title">"50"</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"conteudo"</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"conteudo"</span>>&lt;/<span class="hljs-code">textarea</span>>&lt;/<span class="hljs-code">label</span>>&lt;<span class="hljs-code">br</span>>&lt;<span class="hljs-code">br</span>> 
+        &lt;<span class="hljs-code">input</span> <span class="hljs-azul">type</span>=<span class="hljs-title">"submit"</span> <span class="hljs-azul">value</span>=<span class="hljs-title">"Cadastrar"</span>> 
+    &lt;/<span class="hljs-code">form</span>> 
+    &lt;<span class="hljs-code">div</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"result"</span>>&lt;/<span class="hljs-code">div</span>> 
+    &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"js.js"</span>>&lt;/<span class="hljs-code">script</span>> 
+&lt;/<span class="hljs-code">body</span>> 
+                                            
+&lt;/<span class="hljs-code">html</span>> 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        Já no arquivo <b>js.js</b>, será adicionado dentro de <b>$(document).ready()</b>
+                                        o código do
+                                        método responsável por receber os dados do formulário de cadastro, enviar os
+                                        dados
+                                        via Ajax para um servidor <i>back-end</i> e tratar as respostas recebidas. O
+                                        objetivo é
+                                        evitar que a página seja recarregada e garantir uma comunicação dinâmica com o
+                                        servidor.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs"> 
+<span class="hljs-symbol">//cadastrar noticias </span>
+<span class="hljs-type">$</span>(<span class="hljs-title">"form"</span>).<span class="hljs-type">submit</span>(<span class="hljs-code">function</span> (<span class="hljs-azul">event</span>) { 
+                                                                               
+        <span class="hljs-symbol">// Impede o envio normal do formulário</span> 
+        <span class="hljs-azul">event</span>.<span class="hljs-type">preventDefault</span>(); 
+                                            
+        <span class="hljs-symbol">// Serializa os valores do formulário </span>
+        <span class="hljs-code">const</span> <span class="hljs-meta">formValues</span> = { 
+            <span class="hljs-azul">titulo</span>: <span class="hljs-type">$</span>(<span class="hljs-title">'#titulo'</span>).<span class="hljs-type">val</span>(), 
+            <span class="hljs-azul">conteudo</span>: <span class="hljs-type">$</span>(<span class="hljs-title">'#conteudo'</span>).<span class="hljs-type">val</span>() 
+        }; 
+                                            
+        <span class="hljs-azul">$</span>.<span class="hljs-type">ajax</span>({ 
+            <span class="hljs-azul">type:</span> <span class="hljs-title">'POST'</span>, 
+            <span class="hljs-azul">url: </span><span class="hljs-title">'http://localhost:3000/noticias'</span>, 
+            <span class="hljs-azul">data: JSON</span>.<span class="hljs-type">stringify</span>(<span class="hljs-meta">formValues</span>), 
+            <span class="hljs-azul">contentType:</span> <span class="hljs-title">'application/json' </span>
+        }) 
+        <span class="hljs-type">.done</span>(<span class="hljs-code">function</span> (<span class="hljs-azul">data</span>) { 
+            <span class="hljs-symbol">// enviar mensagem de registro salvo </span>
+            <span class="hljs-type">$</span>(<span class="hljs-title">'#result'</span>).<span class="hljs-type">append</span>(<span class="hljs-title">"Registro salvo!"</span>); 
+        }) 
+        .<span class="hljs-type">fail</span>(<span class="hljs-code">function</span> (<span class="hljs-azul">msg</span>) { 
+            <span class="hljs-symbol">// caso a solicitacao de POST tenha falhado </span>
+            <span class="hljs-type">alert</span>(<span class="hljs-title">"Falha no POST"</span>); 
+        }); 
+}) 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        Quando o formulário é enviado, o evento padrão de envio é impedido com
+                                        <b>event.preventDefault()</b>. Em seguida, os valores dos campos de entrada do
+                                        formulário
+                                        (<b>#titulo</b> e <b>#conteudo</b>) são coletados usando os métodos
+                                        <b>$('#titulo').val()</b> e
+                                        <b>$('#conteudo').val()</b>, formando um objeto JSON chamado <b>formValues</b>.
+                                        Esse objeto é
+                                        convertido para uma <i>string</i> JSON com <b>JSON.stringify()</b> e enviado ao
+                                        servidor por meio
+                                        de uma requisição <b>POST AJAX</b> para a URL especificada.
+                                    </p>
+                                    <p>
+                                        A resposta do servidor é tratada com os métodos <b>.done()</b> e <b>.fail()</b>.
+                                        Se a requisição
+                                        for bem-sucedida, uma mensagem é adicionada à página indicando que o registro
+                                        foi
+                                        salvo. Caso ocorra algum erro, uma mensagem de falha é exibida ao usuário,
+                                        alertando
+                                        sobre o problema na solicitação. Essa abordagem proporciona uma interação mais
+                                        fluida e moderna, sem a necessidade de recarregar a página inteira para cada
+                                        envio
+                                        de dados.
+                                    </p>
+                                    <p> Veja o exemplo de solicitação por <b>POST</b>:</p>
+                                    <figure class="my-5">
+                                        <div class="figure-img mb-4">
+                                            <img class="img-fluid d-block borda-colorida mx-auto print" src="">
+                                        </div>
+                                        <figcaption class="figure-caption text-center">
+                                            Formulário para cadastro de notícias <br>
+                                            Fonte: Senac EAD (2025)
+                                        </figcaption>
+                                    </figure>
+                                    <div class="acessivel visually-hidden no-print">
+                                        <p>
+                                            Imagem do navegador de internet que exibe um formulário de cadastro de
+                                            notícias
+                                            com o campo Título informando “JQuery com AJAX” e o campo Conteúdo com a
+                                            informação “Exemplo de requisição POST” seguido do botão “Cadastrar”. No
+                                            final
+                                            da tela é mostrado o texto “Registro salvo!” devido ao retorno de sucesso da
+                                            operação de cadastrar a notícia.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Implementando as funcionalidades de
+                                    alterar e excluir notícias</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        Para expandir o exemplo e implementar as funcionalidades de edição e exclusão,
+                                        completando assim as operações CRUD, será preciso seguir os seguintes passos:
+                                    </p>
+                                    <p>
+                                        <b>Passo 1</b>: no arquivo <b>js.js</b>, modifique a função
+                                        <b>carregarNoticias</b>, adicione os botões
+                                        de editar e excluir para cada notícia e implemente as funções correspondentes.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Adicione botões de editar e excluir, que chamam as funções
+                                            <b>editNews(id)</b> e
+                                            <b>deleteNews(id)</b>, respectivamente, passando o ID da notícia.
+                                        </li>
+                                        <li>Crie as funções <b>deleteNews</b> e <b>editNews</b>.</li>
+                                    </ul>
+                                    <pre>
+                                        <code class="hljs"> 
+<span class="hljs-type">$</span>(<span class="hljs-azul">document</span>).<span class="hljs-type">ready</span>(<span class="hljs-code">function</span> () { 
+
+        <span class="hljs-symbol">// Função para carregar as notícias </span>
+        <span class="hljs-code">function</span> <span class="hljs-type">carregarNoticias</span>() { 
+            <span class="hljs-azul">$</span>.<span class="hljs-type">get</span>(<span class="hljs-title">"http://localhost:3000/noticias"</span>, <span class="hljs-code">function</span> (<span class="hljs-azul">data</span>, <span class="hljs-azul">status</span>) { 
+                                                
+                <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">empty</span>(); 
+                <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">append</span>(<span class="hljs-title">'&lt;h1>Listagem de Notícias&lt;/h1>'</span>); 
+                <span class="hljs-azul">data</span>.<span class="hljs-type">forEach</span>(<span class="hljs-code">function</span> (<span class="hljs-azul">noticia</span>) { 
+                    <span class="hljs-type">$</span>(<span class="hljs-title">'#news'</span>).<span class="hljs-type">append</span>( 
+                        <span class="hljs-title">`&lt;div id="noticia-</span><span class="hljs-code">${</span><span class="hljs-azul">noticia.id</span><span class="hljs-code">}</span><span class="hljs-title">"></span> 
+                            <span class="hljs-title">&lt;h3></span><span class="hljs-code">${</span><span class="hljs-azul">noticia.titulo</span><span class="hljs-code">}</span><span class="hljs-title">&lt;/h3></span> 
+                            <span class="hljs-title">&lt;p></span><span class="hljs-code">${</span><span class="hljs-azul">noticia.conteudo</span><span class="hljs-code">}</span><span class="hljs-title">&lt;/p></span> 
+                            <span class="hljs-title">&lt;button onclick="editNews(</span><span class="hljs-code">${</span><span class="hljs-azul">noticia.id</span><span class="hljs-code">}</span><span class="hljs-title">)">Editar&lt;/button></span> 
+                            <span class="hljs-title">&lt;button onclick="deleteNews(</span><span class="hljs-code">${</span><span class="hljs-azul">noticia.id</span><span class="hljs-code">}</span><span class="hljs-title">)">Excluir&lt;/button></span> 
+                        <span class="hljs-title">&lt;/div>`</span> 
+                    ); 
+                }); 
+            }); 
+        } 
+                                                
+                                                 
+        <span class="hljs-symbol">// Função para excluir uma notícia </span>
+        <span class="hljs-azul">window</span>.<span class="hljs-type">deleteNews</span> = <span class="hljs-code">function</span> (<span class="hljs-azul">id</span>) { 
+            <span class="hljs-azul">$</span>.<span class="hljs-type">ajax</span>({ 
+                <span class="hljs-azul">url: </span><span class="hljs-title">`http://localhost:3000/noticias/</span><span class="hljs-code">${</span><span class="hljs-azul">id</span><span class="hljs-code">}</span><span class="hljs-title">`</span>, 
+                <span class="hljs-azul">type:</span> <span class="hljs-title">'DELETE'</span>, 
+                <span class="hljs-type">success</span>: <span class="hljs-code">function</span> (<span class="hljs-azul">result</span>) { 
+                    <span class="hljs-type">alert</span>(<span class="hljs-title">'Notícia excluída com sucesso!'</span>); 
+                    <span class="hljs-type">carregarNoticias</span>(); 
+                }, 
+                                                
+                <span class="hljs-type">error</span>: <span class="hljs-code">function</span> (<span class="hljs-azul">err</span>) { 
+                    <span class="hljs-type">alert</span>(<span class="hljs-title">'Erro ao excluir a notícia.'</span>); 
+                } 
+            }); 
+        } 
+                                                
+        <span class="hljs-symbol">// Função para redirecionar para a página de edição</span> 
+        <span class="hljs-azul">window</span>.<span class="hljs-type">editNews</span> = <span class="hljs-code">function</span> (<span class="hljs-azul">id</span>) { 
+            <span class="hljs-azul">window.location.href</span> = <span class="hljs-title">`editar.html?id=</span><span class="hljs-code">${</span><span class="hljs-azul">id</span><span class="hljs-code">}</span><span class="hljs-title">`</span>; 
+        } 
+                                                
+        <span class="hljs-symbol">// Carregar as notícias ao carregar a página </span>
+        <span class="hljs-title">carregarNoticias</span>(); 
+}); 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        Quando o botão <b>Excluir</b> é clicado, a função <b>deleteNew</b> é chamada com
+                                        o ID da notícia,
+                                        que realiza uma requisição do tipo <b>DELETE</b> para o <i>endpoint</i>
+                                        <b>http://localhost:3000/noticias/${id}</b>. Se a operação for bem-sucedida, é
+                                        exibido um
+                                        alerta de sucesso e recarrega a lista de notícias chamando a função
+                                        <b>carregarNoticias</b>. Caso ocorra algum erro, será exibido um alerta.
+                                    </p>
+                                    <p>
+                                        Quando o botão <b>Editar</b> é clicado, a função <b>editNews</b> é chamada com o
+                                        ID da notícia,
+                                        que redirecionará o usuário para a página <b>editar.html</b> com o ID
+                                        respectivo.
+                                    </p>
+                                    <p>Veja o exemplo de listagem de notícias com as opções de edição e exclusão:</p>
+                                    <figure class="my-5">
+                                        <div class="figure-img mb-4">
+                                            <img class="img-fluid d-block borda-colorida mx-auto" src="">
+                                        </div>
+                                        <figcaption class="figure-caption text-center">Listando notícias com opções para
+                                            editar e excluir <br>
+                                            Fonte: Senac EAD (2025) </figcaption>
+                                    </figure>
+                                    <div class="acessivel visually-hidden no-print">
+                                        <p>
+                                            Imagem do navegador de internet que exibe os dados em uma lista das notícias
+                                            pelo título e conteúdo e com botões para Editar e Excluir cada notícia.
+                                        </p>
+                                    </div>
+                                    <p>
+                                        <b> Passo 2:</b> crie o arquivo <b>editar.html</b> para permitir a edição das
+                                        notícias. O
+                                        formulário tem dois campos: título e conteúdo. Os IDs<b> #titulo</b> e
+                                        <b>#conteudo</b> serão
+                                        usados pelo JavaScript para preencher os dados da notícia e enviar ao servidor.
+                                        Já o
+                                        botão <b>Salvar</b> submeterá o formulário, enquanto a <b>&lt;div
+                                            id=”result”></b> exibe mensagens de
+                                        sucesso ou erro.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs"> 
+&lt;<span class="hljs-code">!DOCTYPE</span> <span class="hljs-azul">html</span>> 
+&lt;<span class="hljs-code">html</span> <span class="hljs-azul">lang</span>=<span class="hljs-title">"en"</span>> 
+&lt;<span class="hljs-code">head</span>> 
+        &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">charset</span>=<span class="hljs-title">"UTF-8"</span> /> 
+        &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"viewport"</span> <span class="hljs-azul">content</span>=<span class="hljs-title">"width=device-width, initial-scale=1.0"</span> /> 
+        &lt;<span class="hljs-code">meta</span> <span class="hljs-azul">http-equiv</span>=<span class="hljs-title">"X-UA-Compatible" content="ie=edge"</span> /> 
+        &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"https://code.jquery.com/jquery-3.4.1.js"</span>>&lt;/<span class="hljs-code">script</span>> 
+        &lt;<span class="hljs-code">title</span>>Editar Notícia&lt;/<span class="hljs-code">title</span>> 
+&lt;/<span class="hljs-code">head</span>> 
+&lt;<span class="hljs-code">body</span>> 
+    &lt;<span class="hljs-code">h1</span>>Editar Notícia&lt;/<span class="hljs-code">h1</span>> 
+    &lt;<span class="hljs-code">form</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"editForm"</span>> 
+        &lt;<span class="hljs-code">label</span>>Título: &lt;<span class="hljs-code">input</span> <span class="hljs-azul">type</span>=<span class="hljs-title">"text"</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"titulo"</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"titulo"</span>>&lt;/<span class="hljs-code">label</span>>&lt;<span class="hljs-code">br</span>>&lt;<span class="hljs-code">br</span>> 
+        &lt;<span class="hljs-code">label</span>>Conteúdo: &lt;<span class="hljs-code">textarea</span> <span class="hljs-azul">cols</span>=<span class="hljs-title">"50"</span> <span class="hljs-azul">name</span>=<span class="hljs-title">"conteudo"</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"conteudo"</span>>&lt;/<span class="hljs-code">textarea</span>>&lt;/<span class="hljs-code">label</span>>&lt;<span class="hljs-code">br</span>>&lt;<span class="hljs-code">br</span>> 
+        &lt;<span class="hljs-code">input</span> <span class="hljs-azul">type</span>=<span class="hljs-title">"submit"</span> <span class="hljs-azul">value</span>=<span class="hljs-title">"Salvar"</span>> 
+    &lt;/<span class="hljs-code">form</span>> 
+    &lt;<span class="hljs-code">div</span> <span class="hljs-azul">id</span>=<span class="hljs-title">"result"</span>>&lt;/<span class="hljs-code">div</span>> 
+    &lt;<span class="hljs-code">script</span> <span class="hljs-azul">src</span>=<span class="hljs-title">"editar.js"</span>>&lt;/<span class="hljs-code">script</span>> 
+&lt;/<span class="hljs-code">body</span>> 
+&lt;/<span class="hljs-code">html</span>> 
+                                        </code>
+                                    </pre>
+                                    <p>Veja o formulário de edição de notícias: </p>
+                                    <figure class="my-5">
+                                        <div class="figure-img mb-4">
+                                            <img class="img-fluid d-block borda-colorida mx-auto" src="">
+                                        </div>
+                                        <figcaption class="figure-caption text-center">
+                                            Formulário para editar uma notícia <br>
+                                            Fonte: Senac EAD (2025)
+                                        </figcaption>
+                                    </figure>
+                                    <div class="acessivel visually-hidden no-print">
+                                        <p>
+                                            Imagem do navegador de internet que exibe um formulário de editar notícia
+                                            com o
+                                            campo Título informando “Java Script” e o campo Conteúdo com a informação
+                                            “Linguagem Java Script” seguido do botão “Salvar”. No final da tela é
+                                            mostrado o
+                                            texto “Notícia atualizada com sucesso” devido ao retorno de sucesso da
+                                            operação.
+                                        </p>
+                                    </div>
+                                    <p>
+                                        <b>Passo 3:</b> crie o arquivo <b>editar.js</b> para gerenciar a lógica de edição. Nesse arquivo,
+                                        implemente o código para carregar os dados da notícia a ser editada e enviar as
+                                        alterações ao servidor.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs"> 
+$(document).ready(function() { 
+    // Obter o ID da notícia a partir da URL 
+    const urlParams = new URLSearchParams(window.location.search); 
+    const noticiaId = urlParams.get('id'); 
+                                                
+    // Carregar os dados da notícia 
+    $.get(`http://localhost:3000/noticias/${noticiaId}`, function(data, status) { 
+        $('#titulo').val(data.titulo); 
+        $('#conteudo').val(data.conteudo); 
+    }); 
+                                                                                             
+    // Submeter o formulário de edição 
+    $('#editForm').submit(function(event) { 
+                                                
+        // Impede o envio normal do formulário 
+        event.preventDefault(); 
+                                                
+        // Serializa os valores do formulário 
+        const formValues = { 
+            titulo: $('#titulo').val(), 
+            conteudo: $('#conteudo').val() 
+        }; 
+                                                
+        $.ajax({ 
+            url: `http://localhost:3000/noticias/${noticiaId}`, 
+            type: 'PUT', 
+            data: JSON.stringify(formValues), 
+            contentType: 'application/json', 
+            success: function(result) { 
+            $('#result').text('Notícia atualizada com sucesso!'); 
+        }, 
+        error: function(err) { 
+            alert('Erro ao atualizar a notícia.'); 
+            } 
+        }); 
+    }); 
+}); 
+                                                       
+                                        </code>
+                                    </pre>
+
+                                    pg 17 colorir code
+
+
+
 
 
 
@@ -371,6 +821,31 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
