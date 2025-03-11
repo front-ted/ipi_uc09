@@ -274,6 +274,9 @@ body {
     color: #fff;
 }
 
+.bg-escuro .modal-body .hljs{
+    color: inherit;
+}
 
 /* codigos */
 pre code.hljs {

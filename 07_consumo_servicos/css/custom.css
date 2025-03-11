@@ -1,22 +1,14 @@
 body {
-    /* background:
-        url('../img/destaque1_bg.png') no-repeat 5% 4%,
-        url('../img/destaque1_bg2.png') no-repeat 94% 12%,
-        url('../img/destaque2_bg.png') no-repeat 12% 24%,
-        url('../img/destaque1_bg.png') no-repeat 90% 27%,
-
-        url('../img/destaque3_bg.png') no-repeat 4% 37%,
-        url('../img/destaque2_bg.png') no-repeat 95% 49%,
-        url('../img/destaque1_bg.png') no-repeat 5% 57%,
-        url('../img/destaque1_bg2.png') no-repeat 97% 67%,
-
-        url('../img/destaque1_bg.png') no-repeat 2% 85%,
-        url('../img/destaque1_bg2.png') no-repeat 95% 87%,
-        url('../img/destaque3_bg.png') no-repeat 5% 97%,
+    background:
+        url('../img/bg_destaque_dir.png') no-repeat 5% 21%,
+        url('../img/bg_destaque_esq.png') no-repeat 95% 50%,
+        url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
+        url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
 
         url('../img/bg_gradiente.png') no-repeat;
 
-    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover; */
+
+    background-size: auto, auto, auto, auto, cover;
     overflow-x: hidden;
 }
 
@@ -129,6 +121,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 70px;
+    margin-bottom: 10%;
+    margin-top: 6%;
 }
 
 .botao-sinc {
@@ -179,6 +173,7 @@ body {
     color: #000;
 }
 
+
 .bg-escuro .texto1,
 .bg-escuro .texto2,
 .bg-escuro .texto3,
@@ -217,6 +212,47 @@ pre {
 .hljs {
     background: #000;
     color: #a39e9b;
+}
+
+.bg-escuro .hljs {
+    background: #000;
+    color: #a39e9b;
+}
+
+.bg-escuro .hljs-quote {
+    color: #396
+}
+
+.bg-escuro .hljs-meta {
+    color: #0087ff;
+}
+
+.bg-escuro .hljs-code {
+    color: #64b5f6;
+}
+
+.bg-escuro .hljs-title {
+    color: #ff8700;
+}
+
+.bg-escuro .hljs-type {
+    color: #ffd75f;
+}
+
+.bg-escuro .hljs-symbol {
+    color: #558b2f;
+}
+
+.bg-escuro .hljs-numero {
+    color: #a0d778;
+}
+
+.bg-escuro .hljs-azul {
+    color: #9ad1fd;
+}
+
+.bg-escuro .hljs-roxo {
+    color: rgb(167, 132, 236);
 }
 
 .hljs-attr,
@@ -310,15 +346,51 @@ pre {
     color: #9ad1fd;
 }
 
-@media screen and (max-width:1440px) {}
+@media screen and (max-width:1440px) {
+    body {
+        background:
+            url('../img/bg_destaque_dir.png') no-repeat 2% 21%,
+            url('../img/bg_destaque_esq.png') no-repeat 98% 50%,
+            url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
+            url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
+
+            url('../img/bg_gradiente.png') no-repeat;
+
+
+        background-size: 17%, 17%, auto, auto, cover;
+        overflow-x: hidden;
+    }
+}
 
 @media screen and (max-width:1400px) {}
 
 
-@media screen and (max-width:1366px) {}
+@media screen and (max-width:1366px) {
+    body {
+        background:
+            url('../img/bg_destaque_dir.png') no-repeat 2% 21%,
+            url('../img/bg_destaque_esq.png') no-repeat 98% 50%,
+            url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
+            url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
+
+            url('../img/bg_gradiente.png') no-repeat;
 
 
-@media screen and (max-width:1024px) {}
+        background-size: 15%, 15%, auto, auto, cover;
+        overflow-x: hidden;
+    }
+}
+
+
+@media screen and (max-width:1024px) {
+    body {
+        background:
+            url('../img/bg_gradiente.png') no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+}
 
 @media screen and (max-width:820px) {
 
@@ -344,12 +416,21 @@ pre {
         flex-direction: column;
     }
 
-    .painel-get-post, .painel-chamadas {
+    .painel-get-post {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 30px;
         flex-direction: column;
+    }
+
+    .painel-chamadas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-direction: column;
+        margin-bottom: 10%;
     }
 
     .bg-podcast::before {

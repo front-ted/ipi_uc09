@@ -68,11 +68,9 @@
                 <li><a href="#titulo2">Consumo de serviços <i>web</i></a></li>
                 <li><a href="#titulo3">Ferramentas de <i>back-end</i> e <i>front-end</i></a></li>
                 <li><a href="#titulo4">Chamadas síncronas e assíncronas </a></li>
-                <li><a href="#titulo5"> </a></li>
-                <li><a href="#titulo6"> </a></li>
-                <li><a href="#titulo7"> </a></li>
-                <li><a href="#titulo8"> </a></li>
-                <li><a href="#titulo9">Encerramento</a></li>
+                <li><a href="#titulo5">Envio de parâmetros</a></li>
+                <li><a href="#titulo6">Tratamento de respostas</a></li>
+                <li><a href="#titulo7">Encerramento</a></li>
             </ul>
         </nav>
     </div>
@@ -886,49 +884,52 @@
                                     </p>
                                     <pre>
                                         <code class="hljs">
-$(document).ready(function () { 
-    // URL do endpoint da API 
-    const url = 'http://localhost:3000/noticias'; 
+<span class="hljs-type">$</span>(<span class="hljs-azul">document</span>).<span class="hljs-type">ready</span>(<span class="hljs-code">function</span> () { 
+    <span class="hljs-symbol">// URL do endpoint da API </span>
+    <span class="hljs-code">const</span> <span class="hljs-meta">url</span> = <span class="hljs-title">'http://localhost:3000/noticias'</span>; 
                                                 
-    // Função para buscar notícias da API usando $.ajax com async/await 
-    async function noticiasAssinc() { 
-        try { 
-          // Enviar requisição GET para a API 
-          const noticias = await $.ajax({ 
-            url: url, 
-            method: 'GET', 
-            dataType: 'json', 
+    <span class="hljs-symbol">// Função para buscar notícias da API usando $.ajax com async/await </span>
+    <span class="hljs-code">async function</span> <span class="hljs-type">noticiasAssinc</span>() { 
+        <span class="hljs-roxo">try</span> { 
+          <span class="hljs-symbol">// Enviar requisição GET para a API </span>
+          <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-roxo">await</span> <span class="hljs-azul">$</span>.<span class="hljs-type">ajax</span>({ 
+            <span class="hljs-azul">url: url</span>, 
+            <span class="hljs-azul">method:</span> <span class="hljs-title">'GET'</span>, 
+            <span class="hljs-azul">dataType:</span> <span class="hljs-title">'json'</span>, 
         }); 
                                                 
-        console.log('Notícias carregadas:', noticias); 
+        <span class="hljs-meta">console</span>.<span class="hljs-type">log</span>(<span class="hljs-title">'Notícias carregadas:'</span>, <span class="hljs-meta">noticias</span>); 
                                                 
-      } catch (error) { 
-        console.error('Erro ao carregar as notícias:', error); 
+      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">error</span>) { 
+        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao carregar as notícias:'</span>, <span class="hljs-azul">error</span>); 
       } 
 } 
                                                 
-    // Chamar a função para carregar as notícias 
-    noticiasAssinc (); 
+    <span class="hljs-symbol">// Chamar a função para carregar as notícias </span>
+    <span class="hljs-type">noticiasAssinc</span> (); 
 }); 
                                         </code>
                                     </pre>
                                     <p> Retorno:</p>
                                     <pre>
                                         <code class="hljs">
-Notícias carregadas: 
-0: {titulo: 'Java Script', conteudo: 'Linguagem Java Script', id: 1} 
-1: {titulo: 'Express', conteudo: 'Utilizado para API', id: 2} 
-length: 2 
+<span class="hljs-meta">Notícias carregadas</span>: 
+<span class="hljs-numero">0</span>: {<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Java Script'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Linguagem Java Script'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">1</span>} 
+<span class="hljs-numero">1</span>: {<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Express'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Utilizado para API'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">2</span>} 
+<span class="hljs-meta">length</span>: 2 
                                         </code>
                                     </pre>
                                     <p>
-                                        O <b><i>async/await</i></b> simplifica o código ao lidar com operações assíncronas, como
-                                        requisições HTTP. Em vez de usar <i>callbacks</i> ou <i>promises</i> diretamente, essa abordagem
-                                        permite escrever o código de forma mais intuitiva e próxima ao estilo síncrono. Isso
-                                        melhora a legibilidade e facilita a manutenção, especialmente em aplicações modernas
+                                        O <b><i>async/await</i></b> simplifica o código ao lidar com operações
+                                        assíncronas, como
+                                        requisições HTTP. Em vez de usar <i>callbacks</i> ou <i>promises</i>
+                                        diretamente, essa abordagem
+                                        permite escrever o código de forma mais intuitiva e próxima ao estilo síncrono.
+                                        Isso
+                                        melhora a legibilidade e facilita a manutenção, especialmente em aplicações
+                                        modernas
                                         que frequentemente consomem APIs.
                                     </p>
-
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="botao hvr-sweep-to-right"
@@ -950,11 +951,64 @@ length: 2
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-
-
-
-
-
+                                    <p>
+                                        A configuração como síncrona faz com que o código bloqueie a execução até que a
+                                        resposta do servidor seja recebida ou ocorra um erro.
+                                    </p>
+                                    <p>
+                                        O código a seguir demonstra como realizar uma requisição síncrona em JavaScript
+                                        utilizando o objeto <b>XMLHttpRequest</b> (<i>false</i> no método <b>open</b>).
+                                        A URL do <i>endpoint</i> é
+                                        configurada e a requisição HTTP é enviada com o método <b>send</b>. Se a
+                                        resposta for
+                                        bem-sucedida (código HTTP 200), os dados retornados pelo servidor são
+                                        convertidos de
+                                        texto para um objeto JSON utilizando <b>JSON.parse</b>, permitindo o tratamento
+                                        posterior.
+                                        Caso contrário, mensagens de erro são exibidas no console para facilitar a
+                                        identificação de problemas.
+                                    </p>
+                                    <pre>
+                                    <code class="hljs">
+<span class="hljs-code">function</span> <span class="hljs-type">consumirNoticias</span>() { 
+    <span class="hljs-code">const</span> <span class="hljs-meta">url</span> = <span class="hljs-title">'http://localhost:3000/noticias'</span>;  <span class="hljs-symbol">// URL do seu endpoint</span> 
+                                            
+    <span class="hljs-code">const</span> <span class="hljs-meta">xhr</span> = <span class="hljs-code">new</span> <span class="hljs-quote">XMLHttpRequest</span>(); 
+    <span class="hljs-meta">xhr</span>.<span class="hljs-type">open</span>(<span class="hljs-title">'GET'</span>, <span class="hljs-meta">url</span>, <span class="hljs-code">false</span>); <span class="hljs-symbol">// 'false' faz a requisição síncrona </span>
+    <span class="hljs-roxo">try</span> { 
+        <span class="hljs-meta">xhr</span>.<span class="hljs-type">send</span>(); 
+        <span class="hljs-roxo">if</span> (<span class="hljs-meta">xhr.status</span> === <span class="hljs-numero">200</span>) { 
+            <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-azul">JSON</span>.<span class="hljs-type">parse</span>(<span class="hljs-meta">xhr.responseText</span>);  <span class="hljs-symbol">// Converte a resposta para JSON </span>
+            <span class="hljs-azul">console</span>.<span class="hljs-type">log</span>(<span class="hljs-title">'Noticias:'</span>, <span class="hljs-meta">noticias</span>); 
+          } <span class="hljs-roxo">else</span> { 
+            <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao buscar noticias:'</span>, <span class="hljs-meta">xhr.status</span>); 
+          } 
+      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">erro</span>) { 
+        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-azul">'Erro:', erro.message</span>); 
+      } 
+} 
+<span class="hljs-symbol">// Chama a função para executar </span>
+<span class="hljs-type">consumirNoticias</span>(); 
+                                    </code>
+                                   </pre>
+                                    <p>Retorno: </p>
+                                    <pre>
+                                    <code class="hljs">
+<span class="hljs-meta">Notícias carregadas</span>: 
+<span class="hljs-numero">0</span>: {<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Java Script'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Linguagem Java Script'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">1</span>} 
+<span class="hljs-numero">1</span>: {<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Express'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Utilizado para API'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">2</span>} 
+<span class="hljs-meta">length</span>: 2 
+                                    </code>
+                                   </pre>
+                                    <p>
+                                        Embora a abordagem seja funcional, ela não é recomendada para uso em aplicações
+                                        reais em razão do impacto na experiência do usuário, pois bloqueia o navegador
+                                        durante a execução da requisição. Para evitar esses problemas, é preferível
+                                        utilizar
+                                        chamadas assíncronas. Essas abordagens permitem que o código continue executando
+                                        outras tarefas enquanto aguarda a resposta do servidor, resultando em um
+                                        comportamento mais eficiente e responsivo.
+                                    </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="botao hvr-sweep-to-right"
@@ -964,36 +1018,259 @@ length: 2
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <div class="table-responsive table">
+                    <table class="text-left align-middle">
+                        <thead>
+                            <tr>
+                                <th class="w-25">Aspecto</th>
+                                <th class="w-25">Assíncrono</th>
+                                <th class="w-25">Síncrono </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Execução</td>
+                                <td>Continua enquanto aguarda a resposta</td>
+                                <td>Bloqueia até que a resposta chegue</td>
+                            </tr>
+                            <tr>
+                                <td>Desempenho</td>
+                                <td>Melhor em aplicações modernas</td>
+                                <td>Pode causar lentidão em sistemas de alta latência</td>
+                            </tr>
+                            <tr>
+                                <td>Uso comum</td>
+                                <td>Interfaces de usuário e sistemas escaláveis</td>
+                                <td><i>Scripts</i> simples e automações controladas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <figcaption class="figure-caption text-center">
+                    Comparação entre os tipos de chamada <br>
+                    Fonte: Senac EAD (2024)
+                </figcaption>
+                <p class="mt-5">
+                    O consumo de serviços <i>web</i> assíncrono é amplamente recomendado para aplicações modernas, pois
+                    melhora a
+                    responsividade e evita bloqueios. Já o consumo síncrono pode ser útil em casos específicos, como
+                    automações ou quando a execução ordenada é imprescindível. A escolha depende do contexto e dos
+                    requisitos da aplicação.
+                </p>
+                <h3 id="titulo5">Envio de parâmetros</h3>
+                <p>
+                    O envio de parâmetros ao consumir serviços <i>web</i> permite personalizar as requisições,
+                    garantindo que o
+                    servidor receba as informações necessárias para processar a solicitação adequadamente. Os parâmetros
+                    podem ser enviados de diferentes formas, dependendo do método HTTP utilizado:
+                </p>
+                <h4>Método <b>GET</b></h4>
+                <p>
+                    Os parâmetros são incluídos diretamente na URL da requisição como uma <i>query string</i>. Por
+                    exemplo, ao
+                    acessar <b>http://localhost:3000/noticias/2</b>, o parâmetro é enviado ao servidor. Essa abordagem é
+                    simples,
+                    mas limitada pela URL e pela falta de privacidade, pois os dados ficam expostos na barra de
+                    endereços.
+                </p>
+                <h4>Método <b>POST</b></h4>
+                <p>
+                    Os parâmetros são enviados no corpo da requisição, geralmente no formato JSON ou
+                    <b>application/x-www-form-urlencoded</b>. Por exemplo, veja uma requisição <b>POST</b> sendo
+                    realizada no Postman,
+                    para o <i>endpoint</i> <b>http://localhost:3000/noticias</b>, com o seguinte corpo: <b>{"titulo":
+                        "Java Script",
+                        "conteudo": "Linguagem Java Script"}</b>. Observe que esse método é mais seguro para transmitir
+                    dados
+                    sensíveis e permite o envio de informações maiores ou mais complexas:
+                </p>
+                <figure class="my-5 no-print">
+                    <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center">Requisição para cadastro de notícias em <b>POST</b>
+                        no
+                        Postman <br>
+                        Fonte: Senac EAD (2025) </figcaption>
+                </figure>
+                <div class="acessivel visually-hidden no-print">
+                    <p>
+                        Imagem no Postman mostrando uma requisição em POST com a URL http://localhost:3000/noticias, e,
+                        no
+                        Body, são enviadas as informações para cadastro, como título e conteúdo.
+                    </p>
+                </div>
+                <h3 id="titulo6">Tratamento de respostas</h3>
+                <p>
+                    Conforme visto no material Protocolo HTTP e representação de dados, o código de <i>status</i> de uma
+                    resposta
+                    indica o resultado da solicitação feita ao servidor.
+                </p>
+                <p>
+                    Por exemplo, um código <b>200</b> (ou qualquer código que comece com 2) significa que a solicitação
+                    foi
+                    bem-sucedida e aceita pelo servidor. Já um código <b>404</b> indica que o recurso solicitado não foi
+                    encontrado, geralmente porque a URL está incorreta ou o conteúdo não existe mais. Por outro lado, um
+                    código <b>503</b> (ou qualquer código que comece com 5) indica um erro do lado do servidor, como uma
+                    indisponibilidade temporária do serviço.
+                </p>
+                <h4>Como obter e analisar as respostas do servidor</h4>
+                <p>
+                    Para visualizar as respostas do servidor ao consumir um serviço <i>web</i>, é possível utilizar o
+                    próprio
+                    navegador Google Chrome. Ele oferece a ferramenta <b>DevTools</b> (ferramentas do desenvolvedor),
+                    que permite
+                    inspecionar requisições e respostas do servidor. Para acessá-la, basta pressionar <b>F12</b>
+                    enquanto navega na
+                    internet.
+                </p>
+                <p>
+                    Veja a análise do tratamento das respostas ao fazer requisições para a API de notícias, começando
+                    pelo
+                    método <b>GET</b> e, em seguida, pelo método <b>POST</b>.
+                </p>
+                <p><b>Requisições do tipo GET:</b></p>
+                <p>
+                    Veja um exemplo de requisição feita à API de notícias e a respectiva resposta do servidor para
+                    melhor
+                    compreensão. O método <b>GET</b>, por padrão, retorna uma lista com os dados requisitados.
+                </p>
+                <p>Envio:</p>
+                <pre>
+                    <code class="hljs">
+GET http://localhost:3000/noticias/  
+Content-Type: application/json  
+                    </code>
+                </pre>
+                <p>Retorno:</p>
+                <pre>
+                    <code class="hljs">
+{<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Java Script'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Linguagem Java Script'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">1</span>} 
+{<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Express'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Utilizado para API'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">2</span>} 
+                    </code>
+                </pre>
+                <p>
+                    Como a URL especificada contém apenas <b>/noticias</b>, todas as notícias foram retornadas. No
+                    entanto, é
+                    possível utilizar o <b>GET</b> para solicitar uma notícia específica, informando seu ID na URL.
+                </p>
+                <p>Envio:</p>
+                <pre>
+                    <code class="hljs">
+GET http://localhost:3000/noticias/2  
+Content-Type: application/json  
+                    </code>
+                </pre>
+                <p>Retorno:</p>
+                <pre>
+                    <code class="hljs">
+{<span class="hljs-meta">titulo</span>: <span class="hljs-title">'Express'</span>, <span class="hljs-meta">conteudo</span>: <span class="hljs-title">'Utilizado para API'</span>, <span class="hljs-meta">id</span>: <span class="hljs-numero">2</span>} 
+                    </code>
+                </pre>
+                <p>
+                    Agora, é possível analisar as respostas do servidor por meio do <b>DevTools</b> do Chrome. Na aba
+                    <b>Headers</b>, em
+                    <b>General</b>, o <i>status</i> <b>200</b> indica que a requisição foi bem-sucedida. Além disso, é
+                    possível observar várias
+                    informações úteis feita à API, como:
+                </p>
+                <ul class="marcador-padrao">
+                    <li><i>Request URL</i>: indica o endereço da requisição.</li>
+                    <li><i>Request Method</i>: mostra o método HTTP utilizado.</li>
+                    <li><i>Remote Address</i>: indica o servidor remoto.</li>
+                </ul>
+                <figure class="my-5 no-print">
+                    <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center">
+                        <i>Status</i> da solicitação pelo método <b>GET</b> <br>
+                        Fonte: Senac EAD (2025)
+                    </figcaption>
+                </figure>
+                <div class="acessivel visually-hidden no-print">
+                    <p>
+                        Imagem do DevToos do Chome na aba Headers, onde é mostrado o status da solicitação 200 com o
+                        método
+                        de requisição GET, além da URL de requisição.
+                    </p>
+                </div>
+                <p><b>Requisições do tipo POST:</b></p>
+                <p>
+                    No caso do <b>POST</b>, ele enviará novos valores à API de notícias, como os dados para título e
+                    conteúdo de
+                    uma nova notícia.
+                </p>
+                <p>Envio:</p>
+                <pre>
+                    <code class="hljs">
+POST http://localhost:3000/noticias/  
+Content-Type: application/json  
+{ 
+    "titulo": “JAVA”,  
+    "conteudo": "Java para WEB" 
+}
+                    </code>
+                </pre>
+                <p>Retorno: </p>
+                <pre>
+                    <code class="hljs">
+{ 
+    <span class="hljs-azul">"titulo"</span>: <span class="hljs-title">"JAVA"</span>, 
+    <span class="hljs-azul">"conteudo"</span>: <span class="hljs-title">"Java para WEB"</span>, 
+    <span class="hljs-azul">"id"</span>: <span class="hljs-numero">3</span> 
+} 
+                    </code>
+                </pre>
+                <p>
+                    Veja, agora, a análise da resposta da requisição ao servidor via <b>POST</b>, por meio do
+                    <b>DevTools</b> do Chrome.
+                    Na aba <b>General</b>, o <i>status</i> <b>201</b> indica que a notícia com <b>id=3</b> foi inserida
+                    com sucesso.
+                </p>
+                <figure class="my-5 no-print">
+                    <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
+                        alt="Imagem">
+                    <a href="" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                            alt="Imagem">
+                    </a>
+                    <figcaption class="figure-caption text-center">
+                        <i>Status</i> da solicitação pelo método <b>POST</b>
+                        Fonte: Senac EAD (2025)
+                    </figcaption>
+                </figure>
+                <div class="acessivel visually-hidden no-print">
+                    <p>
+                        Imagem do DevToos do Chome na aba Headers, onde é mostrado o status da solicitação 201 com o
+                        método
+                        de requisição POST, além da URL de requisição.
+                    </p>
+                </div>
+                <h3 id="titulo7">Encerramento</h3>
+                <p>
+                    Neste conteúdo, foram aprofundados os diversos aspectos das solicitações <b>GET</b>, <b>POST</b>, <b>PUT</b> e <b>DELETE</b>,
+                    utilizadas pelo <i>front-end</i> para requisitar e tratar as informações enviadas ao <i>back-end</i> por meio da
+                    API
+                    de notícias.
+                </p>
+                <p>
+                    Além disso, foi desenvolvida uma aplicação no <i>front-end</i> para consumir essa API, demonstrando como
+                    estruturar requisições e processar as respostas do servidor de forma eficiente. Como visto, a capacidade
+                    de interação entre o <i>front-end</i> e o <i>back-end</i> evoluiu ao longo dos anos, permitindo diferentes abordagens
+                    e maior praticidade, como o uso de bibliotecas como jQuery para simplificar as requisições.
+                </p>
+                <p>
+                    Essa combinação de tecnologias reflete uma abordagem moderna para o desenvolvimento de aplicações <i>web</i>,
+                    proporcionando melhor experiência para os usuários e facilitando o gerenciamento entre as camadas do
+                    sistema.
+                </p>
                 <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
         </section>
