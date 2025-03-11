@@ -67,7 +67,7 @@
                 <li><a href="#titulo1">Introdução</a></li>
                 <li><a href="#titulo2">Consumo de serviços <i>web</i></a></li>
                 <li><a href="#titulo3">Ferramentas de <i>back-end</i> e <i>front-end</i></a></li>
-                <li><a href="#titulo4"> </a></li>
+                <li><a href="#titulo4">Chamadas síncronas e assíncronas </a></li>
                 <li><a href="#titulo5"> </a></li>
                 <li><a href="#titulo6"> </a></li>
                 <li><a href="#titulo7"> </a></li>
@@ -162,7 +162,7 @@
                 </p>
                 <h3 id="titulo3">Ferramentas de <i>back-end</i> e <i>front-end</i></h3>
                 <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
-                <div class="painel-front-back">
+                <div class="painel-front-back no-print">
                     <button type="button" class="botao-back" data-bs-toggle="modal" data-bs-target="#modal1">
                     </button>
                     <button type="button" class="botao-front" data-bs-toggle="modal" data-bs-target="#modal2">
@@ -237,7 +237,7 @@
                         </div>
                     </div>
                 </div>
-                <p>
+                <p class="mt-5">
                     A seguir, acompanhe o <i>podcast</i> sobre os fundamentos essenciais para consumir serviços
                     <i>web</i> de forma
                     eficiente, as diferenças essenciais entre <i>front-end</i> e <i>back-end</i> e como escolher a
@@ -297,7 +297,7 @@
                     excluir notícias.
                 </p>
                 <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                <div class="painel-get-post">
+                <div class="painel-get-post no-print">
                     <button type="button" class="botao-get" data-bs-toggle="modal" data-bs-target="#modal3">
                     </button>
                     <button type="button" class="botao-post" data-bs-toggle="modal" data-bs-target="#modal4">
@@ -752,7 +752,8 @@
                                         </p>
                                     </div>
                                     <p>
-                                        <b>Passo 3:</b> crie o arquivo <b>editar.js</b> para gerenciar a lógica de edição. Nesse arquivo,
+                                        <b>Passo 3:</b> crie o arquivo <b>editar.js</b> para gerenciar a lógica de
+                                        edição. Nesse arquivo,
                                         implemente o código para carregar os dados da notícia a ser editada e enviar as
                                         alterações ao servidor.
                                     </p>
@@ -770,27 +771,27 @@
     }); 
                                                                                              
     <span class="hljs-symbol">// Submeter o formulário de edição</span> 
-    $('#editForm').submit(function(event) { 
+    <span class="hljs-type">$</span>(<span class="hljs-title">'#editForm'</span>).<span class="hljs-type">submit</span>(<span class="hljs-code">function</span>(<span class="hljs-azul">event</span>) { 
                                                 
         <span class="hljs-symbol">// Impede o envio normal do formulário </span>
-        event.preventDefault(); 
+        <span class="hljs-azul">event</span>.<span class="hljs-type">preventDefault</span>(); 
                                                 
         <span class="hljs-symbol">// Serializa os valores do formulário </span>
-        const formValues = { 
-            titulo: $('#titulo').val(), 
-            conteudo: $('#conteudo').val() 
+        <span class="hljs-code">const</span> <span class="hljs-meta">formValues</span> = { 
+            <span class="hljs-azul">titulo</span>: <span class="hljs-type">$</span>(<span class="hljs-title">'#titulo'</span>).<span class="hljs-type">val</span>(), 
+            <span class="hljs-azul">conteudo</span>: <span class="hljs-type">$</span>(<span class="hljs-title">'#conteudo'</span>).<span class="hljs-type">val</span>() 
         }; 
                                                 
-        $.ajax({ 
-            url: `http://localhost:3000/noticias/${noticiaId}`, 
-            type: 'PUT', 
-            data: JSON.stringify(formValues), 
-            contentType: 'application/json', 
-            success: function(result) { 
-            $('#result').text('Notícia atualizada com sucesso!'); 
+        <span class="hljs-azul">$</span>.<span class="hljs-type">ajax</span>({ 
+            <span class="hljs-azul">url:</span> <span class="hljs-title">`http://localhost:3000/noticias/</span><span class="hljs-code">${</span><span class="hljs-azul">noticiaId</span><span class="hljs-code">}</span><span class="hljs-title">`</span>, 
+            <span class="hljs-azul">type:</span> <span class="hljs-title">'PUT'</span>, 
+            <span class="hljs-azul">data: JSON</span>.<span class="hljs-type">stringify</span>(<span class="hljs-meta">formValues</span>), 
+            <span class="hljs-azul">contentType:</span> <span class="hljs-title">'application/json'</span>, 
+            <span class="hljs-type">success</span>: <span class="hljs-code">function</span>(<span class="hljs-azul">result</span>) { 
+            <span class="hljs-type">$</span>(<span class="hljs-title">'#result'</span>).<span class="hljs-type">text</span>(<span class="hljs-title">'Notícia atualizada com sucesso!'</span>); 
         }, 
-        error: function(err) { 
-            alert('Erro ao atualizar a notícia.'); 
+        <span class="hljs-type">error</span>: <span class="hljs-code">function</span>(<span class="hljs-azul">err</span>) { 
+            <span class="hljs-type">alert</span>(<span class="hljs-title">'Erro ao atualizar a notícia.'</span>); 
             } 
         }); 
     }); 
@@ -798,15 +799,157 @@
                                                        
                                         </code>
                                     </pre>
+                                    <p>
+                                        Uma estratégia interessante é usar o comando <b>URLSearchParams</b> para extrair
+                                        o ID da
+                                        URL (<b>editar.html?id=123</b>). O valor do ID será armazenado na variável
+                                        <b>noticiasId</b>. Na
+                                        sequência, uma requisição <b>GET</b> é realizada para buscar os dados da notícia
+                                        com o ID
+                                        obtido anteriormente. Os campos <b>titulo</b> e <b>conteudo</b> são retornados
+                                        em (<b>data.titulo</b> e
+                                        <b>data.conteudo</b>).
+                                    </p>
+                                    <p>
+                                        Quando a edição do formulário é enviada, o evento padrão de envio é impedido com
+                                        <b>event.preventDefault()</b>. Em seguida, os valores dos campos de entrada do
+                                        formulário
+                                        (<b>#titulo</b> e <b>#conteudo</b>) são coletados usando os métodos
+                                        <b>$('#titulo').val()</b> e
+                                        <b>$('#conteudo').val()</b>, formando um objeto JSON chamado <b>formValues</b>.
+                                        Esse objeto é
+                                        convertido para uma string JSON com <b>JSON.stringify()</b>.
+                                    </p>
+                                    <p>
+                                        O método <b>$.ajax()</b> tem os parâmetros <i>type</i>, que, neste exemplo, são
+                                        <b>PUT</b>, <b>URL</b>, que
+                                        especifica a URL do servidor, <b>data</b>, contendo todos os dados a serem
+                                        enviados, e
+                                        <b>contentType</b>, do tipo JSON. Em caso de sucesso, exibe uma mensagem de
+                                        sucesso no
+                                        <b>#result</b>. Caso contrário, exibe um alerta de erro.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="no-print mt-5">
+                    Clique ou toque para assistir ao vídeo sobre a criação de uma aplicação <i>web</i> que consuma o
+                    serviço de API
+                    de notícias.
+                </p>
+                <div class="ratio ratio-16x9"> video
+                    <iframe src="" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <h3 id="titulo4">Chamadas síncronas e assíncronas </h3>
+                <p>
+                    O consumo de serviços <i>web</i> é uma prática essencial no desenvolvimento de aplicações modernas.
+                    Esse
+                    processo pode ser realizado de maneira síncrona, na qual a execução aguarda a resposta da
+                    requisição, ou
+                    assíncrona, permitindo que o programa continue enquanto o servidor processa os dados.
+                </p>
+                <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
 
-                                    
+                <div class="painel-chamadas no-print">
+                    <button type="button" class="botao-assinc" data-bs-toggle="modal" data-bs-target="#modal6">
+                    </button>
+                    <button type="button" class="botao-sinc" data-bs-toggle="modal" data-bs-target="#modal7">
+                    </button>
+                </div>
+                <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Consumo assíncrono</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <p>
+                                        O exemplo a seguir demonstra como consumir de forma assíncrona o serviço de uma
+                                        API
+                                        que lista notícias, utilizando a biblioteca jQuery no <i>front-end</i>. Essa
+                                        abordagem
+                                        assíncrona garante que a execução do código não seja bloqueada, proporcionando
+                                        uma
+                                        melhor experiência para o usuário.
+                                    </p>
+                                    <pre>
+                                        <code class="hljs">
+$(document).ready(function () { 
+    // URL do endpoint da API 
+    const url = 'http://localhost:3000/noticias'; 
+                                                
+    // Função para buscar notícias da API usando $.ajax com async/await 
+    async function noticiasAssinc() { 
+        try { 
+          // Enviar requisição GET para a API 
+          const noticias = await $.ajax({ 
+            url: url, 
+            method: 'GET', 
+            dataType: 'json', 
+        }); 
+                                                
+        console.log('Notícias carregadas:', noticias); 
+                                                
+      } catch (error) { 
+        console.error('Erro ao carregar as notícias:', error); 
+      } 
+} 
+                                                
+    // Chamar a função para carregar as notícias 
+    noticiasAssinc (); 
+}); 
+                                        </code>
+                                    </pre>
+                                    <p> Retorno:</p>
+                                    <pre>
+                                        <code class="hljs">
+Notícias carregadas: 
+0: {titulo: 'Java Script', conteudo: 'Linguagem Java Script', id: 1} 
+1: {titulo: 'Express', conteudo: 'Utilizado para API', id: 2} 
+length: 2 
+                                        </code>
+                                    </pre>
+                                    <p>
+                                        O <b><i>async/await</i></b> simplifica o código ao lidar com operações assíncronas, como
+                                        requisições HTTP. Em vez de usar <i>callbacks</i> ou <i>promises</i> diretamente, essa abordagem
+                                        permite escrever o código de forma mais intuitiva e próxima ao estilo síncrono. Isso
+                                        melhora a legibilidade e facilita a manutenção, especialmente em aplicações modernas
+                                        que frequentemente consomem APIs.
+                                    </p>
 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="botao hvr-sweep-to-right"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
-
-
-
-
+                <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Título da modal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
 
 
 
@@ -851,21 +994,15 @@
 
 
 
-
-
-
-
-
-
                 <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>
         </section>
         <!-- Paginação-->
-        <footer class="text-center no-print d-flex justify-content-center mx-auto">
+        <!-- <footer class="text-center no-print d-flex justify-content-center mx-auto">
             <ul class="pagination">
 
             </ul>
-        </footer>
+        </footer> -->
     </section>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>

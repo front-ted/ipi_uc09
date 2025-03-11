@@ -1,5 +1,5 @@
 body {
-    background:
+    /* background:
         url('../img/destaque1_bg.png') no-repeat 5% 4%,
         url('../img/destaque1_bg2.png') no-repeat 94% 12%,
         url('../img/destaque2_bg.png') no-repeat 12% 24%,
@@ -16,16 +16,16 @@ body {
 
         url('../img/bg_gradiente.png') no-repeat;
 
-    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
+    background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover; */
+    overflow-x: hidden;
 }
 
-.pagina.container {
+/* .pagina.container {
     background: linear-gradient(to bottom, #e3d4f5, #fff, #d8edf8);
     margin-top: 0%;
     padding-top: 1%;
     padding-bottom: 4%;
-}
+} */
 
 .modal-body .container {
     background: unset;
@@ -124,11 +124,36 @@ body {
 }
 
 
+.painel-chamadas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
 
+.botao-sinc {
+    background: url('../img/bt_sinc.png');
+    width: 214px;
+    height: 138px;
+    border: none;
+}
 
+.botao-sinc:hover {
+    background: url('../img/bt_sinc_hv.png');
+    border: none;
+}
 
+.botao-assinc {
+    background: url('../img/bt_assinc.png');
+    width: 214px;
+    height: 138px;
+    border: none;
+}
 
-
+.botao-assinc:hover {
+    background: url('../img/bt_assinc_hv.png');
+    border: none;
+}
 
 
 
@@ -285,84 +310,12 @@ pre {
     color: #9ad1fd;
 }
 
-@media screen and (max-width:1440px) {
+@media screen and (max-width:1440px) {}
 
-    body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 3% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 12%,
-            url('../img/destaque2_bg.png') no-repeat 3% 24%,
-            url('../img/destaque1_bg.png') no-repeat 97% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 3% 37%,
-            url('../img/destaque2_bg.png') no-repeat 97% 49%,
-            url('../img/destaque1_bg.png') no-repeat 3% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 3% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 97% 87%,
-            url('../img/destaque3_bg.png') no-repeat 3% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
-    }
-
-}
-
-@media screen and (max-width:1400px) {
-
-    body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 0.5% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 12%,
-            url('../img/destaque2_bg.png') no-repeat 0.5% 24%,
-            url('../img/destaque1_bg.png') no-repeat 99.5% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 0.5% 37%,
-            url('../img/destaque2_bg.png') no-repeat 99.5% 49%,
-            url('../img/destaque1_bg.png') no-repeat 0.5% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 0.5% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 87%,
-            url('../img/destaque3_bg.png') no-repeat 0.5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
-    }
-
-}
+@media screen and (max-width:1400px) {}
 
 
-@media screen and (max-width:1366px) {
-
-    body {
-        background:
-            url('../img/destaque1_bg.png') no-repeat 0.5% 4%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 12%,
-            url('../img/destaque2_bg.png') no-repeat 0.5% 24%,
-            url('../img/destaque1_bg.png') no-repeat 99.5% 27%,
-
-            url('../img/destaque3_bg.png') no-repeat 0.5% 37%,
-            url('../img/destaque2_bg.png') no-repeat 99.5% 49%,
-            url('../img/destaque1_bg.png') no-repeat 0.5% 57%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 67%,
-
-            url('../img/destaque1_bg.png') no-repeat 0.5% 85%,
-            url('../img/destaque1_bg2.png') no-repeat 99.5% 87%,
-            url('../img/destaque3_bg.png') no-repeat 0.5% 97%,
-
-            url('../img/bg_gradiente.png') no-repeat;
-
-        background-size: auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, cover;
-
-    }
-
-}
+@media screen and (max-width:1366px) {}
 
 
 @media screen and (max-width:1024px) {}
@@ -373,6 +326,10 @@ pre {
         top: 62px !important;
     }
 
+    .bg-podcast::before {
+        background: unset;
+        right: unset;
+    }
 }
 
 
@@ -387,12 +344,23 @@ pre {
         flex-direction: column;
     }
 
-    .painel-get-post {
+    .painel-get-post, .painel-chamadas {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 30px;
         flex-direction: column;
     }
+
+    .bg-podcast::before {
+        background: unset;
+        right: unset;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+
 
 }
