@@ -758,24 +758,24 @@
                                     </p>
                                     <pre>
                                         <code class="hljs"> 
-$(document).ready(function() { 
-    // Obter o ID da notícia a partir da URL 
-    const urlParams = new URLSearchParams(window.location.search); 
-    const noticiaId = urlParams.get('id'); 
+<span class="hljs-type">$</span>(<span class="hljs-azul">document</span>).<span class="hljs-type">ready</span>(<span class="hljs-code">function</span>() { 
+   <span class="hljs-symbol"> // Obter o ID da notícia a partir da URL </span>
+    <span class="hljs-code">const</span> <span class="hljs-azul">urlParams</span> = <span class="hljs-code">new</span> <span class="hljs-quote">URLSearchParams</span>(<span class="hljs-azul">window.location.search</span>); 
+    <span class="hljs-code">const</span> <span class="hljs-azul">noticiaId</span> = <span class="hljs-azul">urlParams</span>.<span class="hljs-type">get</span>(<span class="hljs-title">'id'</span>); 
                                                 
-    // Carregar os dados da notícia 
-    $.get(`http://localhost:3000/noticias/${noticiaId}`, function(data, status) { 
-        $('#titulo').val(data.titulo); 
-        $('#conteudo').val(data.conteudo); 
+    <span class="hljs-symbol">// Carregar os dados da notícia </span>
+    <span class="hljs-azul">$</span>.<span class="hljs-type">get</span>(<span class="hljs-title">`http://localhost:3000/noticias/</span><span class="hljs-code">${</span><span class="hljs-azul">noticiaId</span><span class="hljs-code">}</span><span class="hljs-title">`</span>, <span class="hljs-code">function</span>(<span class="hljs-azul">data, status</span>) { 
+        <span class="hljs-type">$</span>(<span class="hljs-title">'#titulo'</span>).<span class="hljs-type">val</span>(<span class="hljs-azul">data.titulo</span>); 
+        <span class="hljs-type">$</span>(<span class="hljs-title">'#conteudo'</span>).<span class="hljs-type">val</span>(<span class="hljs-azul">data.conteudo</span>); 
     }); 
                                                                                              
-    // Submeter o formulário de edição 
+    <span class="hljs-symbol">// Submeter o formulário de edição</span> 
     $('#editForm').submit(function(event) { 
                                                 
-        // Impede o envio normal do formulário 
+        <span class="hljs-symbol">// Impede o envio normal do formulário </span>
         event.preventDefault(); 
                                                 
-        // Serializa os valores do formulário 
+        <span class="hljs-symbol">// Serializa os valores do formulário </span>
         const formValues = { 
             titulo: $('#titulo').val(), 
             conteudo: $('#conteudo').val() 
@@ -799,7 +799,7 @@ $(document).ready(function() {
                                         </code>
                                     </pre>
 
-                                    pg 17 colorir code
+                                    
 
 
 
