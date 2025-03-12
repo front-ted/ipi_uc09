@@ -73,15 +73,13 @@
                 -->
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="01_web_services"><i>Web services</i>:histórico e conceito</a></li>
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="02_programacao_orientada_servicos">Programação orientada a serviços</a></li>
-              <li><a class="dropdown-item imprimir" href="#" data-conteudo="03_05_protocolo_http">Protocolo HTTP</a></li>
-              <li><a class="dropdown-item imprimir" href="#" data-conteudo="04_padrao_rep">Padrão <i>representational state transfer</i> – REST</a></li>
+              <li><a class="dropdown-item imprimir" href="#" data-conteudo="03_05_protocolo_http">Protocolo HTTP representações de dados</a></li>
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="06_prog_servicos">Programação de serviços: implementação e instalação</a></li>
+              <li><a class="dropdown-item imprimir" href="#" data-conteudo="04_padrao_rep">Padrão <i>representational state transfer</i> – REST</a></li>
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="07_consumo_servicos">Consumo de serviços <i>web</i></a></li>
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="08_testes_unit">Testes unitários: conceitos e ferramentas</a></li>
               <li><a class="dropdown-item imprimir" href="#" data-conteudo="09_versionamento_cod">Versionamento de código: recuperação de histórico e resolução de conflitos</a></li>
-
-
-
+              <li><a class="dropdown-item imprimir" href="#" data-conteudo="10_seguranca_servicos">Segurança em serviços <i>web</i>: HTTPS, autenticação e melhores práticas</a></li>
               <!-- <li role="separator" class="divider"></li>
                 <li><h6 class="dropdown-header">Semana 2</h6></li>
                 <li><a class="dropdown-item" href="#">...</a></li> -->
@@ -178,13 +176,8 @@
           </li>
 
           <li class="drag-item fazer" data-item="link4" data-bs-toggle="tooltip" data-placement="top">
-            <a href="04_padrao_rep/index.html" target="_blank" class="link">Padrão <i>representational state
-                transfer</i> – REST: conceitos, tipos de requisições, interpretação
-              das
-              operações, parâmetros, processamento e resposta; ferramentas de linguagem de programação
-              <i>back-end</i> para
-              programação de serviços REST</a>
-            <button class="btPrint imprimir" title="Imprimir o conteúdo" data-conteudo="04_padrao_rep">Imprimir</button>
+            <a href="06_prog_servicos/index.html" target="_blank" class="link">Programação de serviços: implementação e instalação</a>
+            <button class="btPrint imprimir" title="Imprimir o conteúdo" data-conteudo="06_prog_servicos">Imprimir</button>
             <div class="dropdown dropdown-bubble">
               <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
                 aria-expanded="false">
@@ -200,10 +193,13 @@
           </li>
 
           <li class="drag-item fazer" data-item="link5" data-bs-toggle="tooltip" data-placement="top">
-            <a href="06_prog_servicos/index.html" target="_blank" class="link">Programação de serviços: implementação e
-              instalação</a>
+            <a href="04_padrao_rep/index.html" target="_blank" class="link">Padrão <i>representational state transfer</i> – REST: conceitos, tipos de requisições, interpretação
+              das
+              operações, parâmetros, processamento e resposta; ferramentas de linguagem de programação
+              <i>back-end</i> para
+              programação de serviços REST</a>
             <button class="btPrint imprimir" title="Imprimir o conteúdo"
-              data-conteudo="06_prog_servicos">Imprimir</button>
+              data-conteudo="04_padrao_rep">Imprimir</button>
             <div class="dropdown dropdown-bubble">
               <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
                 aria-expanded="false">
@@ -218,7 +214,79 @@
             </div>
           </li>
 
+          <li class="drag-item fazer" data-item="link6" data-bs-toggle="tooltip" data-placement="top">
+            <a href="07_consumo_servicos/index.html" target="_blank" class="link">Consumo de serviços <i>web</i>: tipos, ferramentas de <i>back-end</i> e <i>front-end</i>, chamadas
+              síncronas e
+              assíncronas, envio de parâmetros e tratamento de respostas</a>
+            <button class="btPrint imprimir" title="Imprimir o conteúdo"
+              data-conteudo="07_consumo_servicos">Imprimir</button>
+            <div class="dropdown dropdown-bubble">
+              <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
+                aria-expanded="false">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                Mover para:
+                <li class="mover-fazer">A fazer</li>
+                <li class="mover-fazendo">Sendo feito</li>
+                <li class="mover-feito">Feito</li>
+              </ul>
+            </div>
+          </li>
 
+          <li class="drag-item fazer" data-item="link7" data-bs-toggle="tooltip" data-placement="top">
+            <a href="08_testes_unit/index.html" target="_blank" class="link">Testes unitários: conceitos e ferramentas</a>
+            <button class="btPrint imprimir" title="Imprimir o conteúdo"
+              data-conteudo="08_testes_unit">Imprimir</button>
+            <div class="dropdown dropdown-bubble">
+              <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
+                aria-expanded="false">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                Mover para:
+                <li class="mover-fazer">A fazer</li>
+                <li class="mover-fazendo">Sendo feito</li>
+                <li class="mover-feito">Feito</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="drag-item fazer" data-item="link8" data-bs-toggle="tooltip" data-placement="top">
+            <a href="09_versionamento_cod/index.html" target="_blank" class="link">Versionamento de código: recuperação de histórico e resolução de conflitos</a>
+            <button class="btPrint imprimir" title="Imprimir o conteúdo"
+              data-conteudo="09_versionamento_cod">Imprimir</button>
+            <div class="dropdown dropdown-bubble">
+              <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
+                aria-expanded="false">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                Mover para:
+                <li class="mover-fazer">A fazer</li>
+                <li class="mover-fazendo">Sendo feito</li>
+                <li class="mover-feito">Feito</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="drag-item fazer" data-item="link9" data-bs-toggle="tooltip" data-placement="top">
+            <a href="10_seguranca_servicos/index.html" target="_blank" class="link">Segurança em serviços <i>web</i>: HTTPS, autenticação e melhores práticas</a>
+            <button class="btPrint imprimir" title="Imprimir o conteúdo"
+              data-conteudo="10_seguranca_servicos">Imprimir</button>
+            <div class="dropdown dropdown-bubble">
+              <a id="dLabel" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-display="static"
+                aria-expanded="false">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                Mover para:
+                <li class="mover-fazer">A fazer</li>
+                <li class="mover-fazendo">Sendo feito</li>
+                <li class="mover-feito">Feito</li>
+              </ul>
+            </div>
+          </li>
 
         </ul>
         <div class="mao">

@@ -3,7 +3,7 @@
 
 <head>
     <!-- Inserir o tíutlo do conhecimento na tag title -->
-    <title>Versionamento de código: recuperação de histórico e resolução de conflitos</title>
+    <title>Segurança em serviços <i>web</i>: HTTPS, autenticação e melhores práticas</title>
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -55,538 +55,521 @@
             <div class="pagina">
                 <div class="bloco1">
                     <div class="container">
-                        <h2>Versionamento de código: recuperação de histórico e resolução de conflitos</h2>
+                        <h2>Segurança em serviços <i>web</i>: HTTPS, autenticação e melhores práticas</h2>
                         <p>
-                            Sabe-se que os <i>softwares</i> estão em constante evolução, exigindo atualizações
-                            frequentes, como
-                            novas versões, correções de erros e outras modificações. Para realizar essas manutenções de
-                            forma eficiente, é fundamental utilizar ferramentas e métodos específicos de controle. Nesse
-                            contexto, os repositórios desempenham um papel essencial, permitindo monitorar e registrar
-                            todas
-                            as atividades ao longo do ciclo de vida do sistema ou <i>software</i>.
+                            Em um mundo cada vez mais conectado, a segurança dos serviços <i>web</i> tornou-se uma
+                            prioridade
+                            essencial. Garantir a proteção das informações dos usuários e manter a confidencialidade dos
+                            dados são desafios constantes para desenvolvedores e administradores de sistemas. Este
+                            conteúdo
+                            aborda fundamentos cruciais para a segurança em serviços <i>web</i>, incluindo HTTPS
+                            (<i>hypertext
+                                transfer protocol secure</i>), autenticação e melhores práticas de segurança.
                         </p>
-                        <div class="grafismo">
-                            <div class="destaque gradiente icone importante">
-                                <p>
-                                    A gerência de configuração de <i>software</i> é uma prática crucial para garantir a
-                                    rastreabilidade do processo, tornando-se indispensável para equipes de
-                                    desenvolvimento,
-                                    especialmente quando múltiplos colaboradores trabalham simultaneamente no mesmo
-                                    código.
-                                </p>
-                            </div>
+                        <p>
+                            Dominar esses conceitos não só protege os dados dos usuários, mas também fortalece a
+                            confiabilidade e a integridade dos serviços desenvolvidos. Isso é fundamental para qualquer
+                            desenvolvedor que deseja criar serviços <i>web</i> robustos e seguros.
+                        </p>
+                        <p>
+                            Além disso, é preciso sempre se lembrar da importância da atualização contínua e do
+                            monitoramento das práticas de segurança, pois o cenário das ameaças cibernéticas está em
+                            constante evolução. Estar bem-informado e preparado para essas ameaças é vital para garantir
+                            a
+                            segurança e a confiança dos usuários, bem como a reputação das aplicações desenvolvidas.
+                        </p>
+                        <p>
+                            Veja a figura que ilustra uma conexão segura entre um cliente e um servidor <i>web</i>
+                            usando o
+                            protocolo HTTPS:
+                        </p>
+                        <figure class="my-5">
+                            <img src="img/img1.png"
+                                class="img-fluid d-block mx-auto p-2 mb-3 ilustracao radius print"
+                                alt="Imagem">
+                            <figcaption class="figure-caption text-center">
+                                Conexão HTTPS <br>
+                                Fonte: Cyber3 Suprimentos (s. d.)
+                            </figcaption>
+                        </figure>
+                        <div class="acessivel visually-hidden no-print">
+                            <p>A imagem mostra um cadeado verde e um endereço de site com o prefixo https:// na cor
+                                verde, indicando uma conexão segura.</p>
                         </div>
-                        <p>
-                            Neste material, você verá como gerenciar o histórico de <i>commits</i> realizados e como
-                            solucionar
-                            possíveis problemas com as diferentes versões criadas.
-                        </p>
                     </div>
                 </div>
-                <div class="bloco-paralax1 no-print"></div>
+                <div class="divisoria" aria-hidden="true">
+                    <img src="img/div.png" class="img-fluid no-print">
+                </div>
                 <div class="bloco2">
                     <div class="container">
-                        <h3>Versionamento de código</h3>
+                        <h3>Conceitos e princípios de segurança em serviços <i>web</i></h3>
                         <p>
-                            No contexto do desenvolvimento de <i>software</i>, a organização e o controle das alterações
-                            realizadas
-                            em um projeto são fundamentais para garantir a eficiência e a colaboração entre os
-                            desenvolvedores. Para isso, são utilizadas ferramentas de versionamento, que permitem
-                            gerenciar
-                            as mudanças no código-fonte de forma estruturada e segura. Essas ferramentas operam por meio
+                            A segurança em serviços <i>web</i> é fundamental para prevenir ataques cibernéticos e
+                            assegurar que os
+                            dados trocados entre clientes e servidores permaneçam protegidos. Um dos conceitos centrais
+                            nesse contexto é o HTTPS, uma versão aprimorada e segura do protocolo HTTP (<i>hypertext
+                                transfer
+                                protocol</i>), projetada para garantir a proteção das informações transmitidas entre o
+                            navegador e o
+                            servidor. Além disso, a autenticação desempenha um papel essencial, assegurando que apenas
+                            usuários autorizados possam acessar os recursos protegidos. Para isso, são utilizados
+                            diversos
+                            métodos, como senhas, <i>tokens</i>, autenticação multifator (MFA) e certificados digitais.
+                            Por fim, a
+                            adoção de melhores práticas de segurança é indispensável para reduzir vulnerabilidades. Isso
+                            envolve o uso de certificados SSL/TLS (<i>secure sockets layer/ transport layer
+                                security</i>)
+                            atualizados, configurações seguras do servidor, atualizações regulares de <i>software</i>,
+                            monitoramento constante e conscientização dos usuários sobre a importância da segurança
+                            <i>on-line</i>.
+                        </p>
+                        <p> A seguir, serão aprofundados os principais conceitos.</p>
+                        <h3>HTTPS</h3>
+                        <p>
+                            HTTPS é a versão segura do HTTP, na qual a comunicação entre o navegador e o servidor é
+                            criptografada usando SSL/TLS. Isso impede que terceiros interceptem ou modifiquem os dados
+                            transmitidos. O HTTPS desempenha um papel crucial na proteção contra ataques de
+                            <i>phishing</i>.
+                            Quando
+                            um <i>site</i> utiliza HTTPS, a comunicação entre o navegador do usuário e o servidor
+                            <i>web</i> é
+                            criptografada. Isso não apenas garante a confidencialidade dos dados transmitidos, como
+                            também
+                            autentica a identidade do <i>site</i>, assegurando que o usuário está se conectando ao
+                            <i>site</i>
+                            legítimo, e
+                            não a um <i>site</i> malicioso disfarçado.
+                        </p>
+                        <p>
+                            <i>Phishers</i> frequentemente criam <i>sites</i> falsos que se parecem com <i>sites</i>
+                            genuínos para enganar os
+                            usuários e roubar informações sensíveis. Muitos desses ataques criam <i>sites</i> de bancos
+                            falsos
+                            para
+                            enganar o usuário, fazendo-o fornecer informações sensíveis. No entanto, esses <i>sites</i>
+                            falsos
+                            geralmente não conseguem obter certificados SSL/TLS válidos e, como resultado, não exibem o
+                            ícone de cadeado verde que indica uma conexão segura. Portanto, a presença de HTTPS ajuda os
+                            usuários a identificar <i>sites</i> autênticos e evitar fornecer informações pessoais a
+                            <i>sites</i>
+                            fraudulentos.
+                        </p>
+                        <p>
+                            Mas o que é um ataque <i>phishing</i>? É uma tentativa fraudulenta de obter informações
+                            sensíveis, como
+                            nomes de usuário, senhas e detalhes de cartão de crédito, passando-se por uma entidade
+                            confiável
+                            em uma comunicação digital. Esses ataques geralmente ocorrem por meio de <i>e-mails</i>,
+                            mensagens de
+                            texto ou <i>sites</i> falsos que parecem legítimos.
+                        </p>
+                        <p>
+                            Os atacantes de phishing criam mensagens e páginas da <i>web</i> que imitam as comunicações
                             de
-                            repositórios, que funcionam como bases centralizadas para armazenar e compartilhar o
-                            progresso
-                            do projeto.
-                        </p>
-                        <div class="grafismo">
-                            <div class="destaque gradiente icone importante">
-                                <p>
-                                    Explicando de uma forma mais clara, um repositório é uma “pasta” onde são
-                                    disponibilizados os arquivos de um projeto, incluindo-se o versionamento. Um
-                                    repositório
-                                    pode ser criado ou baixado com base em alguma hospedagem, de onde são baixados os
-                                    projetos para uma máquina local, ou, ainda, para onde são enviadas as alterações
-                                    realizadas. Assim, o desenvolvimento ocorre de forma descentralizada, em que cada
-                                    desenvolvedor tem uma versão total do repositório em sua máquina local e envia
-                                    somente
-                                    os “pedaços” alterados para que todos possam pegar do repositório.
-                                </p>
-                            </div>
-                        </div>
-                        <p>
-                            Quando os arquivos são baixados e somente o que foi implementado é enviado, você está
-                            trabalhando com versões. Logo, você faz o versionamento do que foi alterado para que se
-                            possa
-                            manter o controle e a manutenção dos repositórios, evitando que ocorram sobrescritas ou
-                            perdas
-                            de arquivos.
+                            instituições confiáveis, como bancos, redes sociais ou provedores de serviços
+                            <i>on-line</i>. Eles usam
+                            táticas como urgência (“Sua conta será suspensa se você não agir agora!”) ou ofertas
+                            atraentes
+                            (“Você ganhou um prêmio! Clique aqui para reclamar”) para enganar as vítimas, fazendo-as
+                            fornecer suas informações pessoais.
                         </p>
                         <p>
-                            Ao enviar uma alteração e gerar uma nova versão, é criado um <i>commit</i>, que guardará uma
-                            fotografia
-                            das últimas versões enviadas ao repositório. No entanto, nesse formato, podem ocorrer
-                            situações
-                            que gerem conflitos com alterações realizadas por outros desenvolvedores que também
-                            realizaram o
-                            mesmo processo. Dessa forma, por vezes, uma funcionalidade pode implicar o funcionamento de
-                            outra, e isso pode acarretar a geração de conflitos e o mau funcionamento das novas versões
-                            do
-                            <i>software</i>.
+                            Por exemplo, um <i>e-mail</i> de <i>phishing</i> pode parecer um aviso de segurança de um
+                            banco, pedindo ao
+                            destinatário que clique em um <i>link</i> para verificar sua conta. Esse <i>link</i> leva a
+                            um <i>site</i> falso que
+                            coleta as credenciais de <i>login</i> inseridas pela vítima. Uma vez que os atacantes obtêm
+                            essas
+                            informações, eles podem usá-las para roubar dinheiro, cometer fraudes ou acessar outras
+                            contas
+                            associadas à mesma senha.
                         </p>
                         <p>
-                            Sendo assim, é importante conhecer os comandos para consultar o histórico de versões
-                            anteriores
-                            e solucionar possíveis conflitos que possam existir entre elas.
+                            Por isso, é essencial estar sempre atento a sinais de <i>phishing</i>, como <i>links</i>
+                            suspeitos, erros
+                            gramaticais ou pedidos incomuns de informações confidenciais. E, claro, utilizar HTTPS é uma
+                            camada adicional de proteção contra esses ataques, como mencionado anteriormente.
                         </p>
                     </div>
                 </div>
-                <div class="bloco-paralax1 no-print"></div>
+                <div class="divisoria" aria-hidden="true">
+                    <img src="img/div.png" class="img-fluid no-print">
+                </div>
                 <div class="bloco3">
                     <div class="container">
-                        <h3>Recuperação de histórico</h3>
+                        <h3>Autenticação: garantindo o acesso seguro</h3>
                         <p>
-                            Existem algumas plataformas de repositórios que podem ser citadas, por exemplo: GitHub,
-                            BitBucket e GitLab. O GitHub foi um dos primeiros utilizados em hospedagem de repositórios,
-                            e
-                            qualquer pessoa que tenha cadastro na plataforma pode colaborar com projetos <i>open
-                                source</i> ou
-                            privados.
+                            A autenticação é crucial para garantir o acesso seguro a recursos protegidos, pois ela
+                            verifica
+                            a identidade dos usuários, protegendo contra acessos não autorizados, mantendo a integridade
+                            dos
+                            dados, permitindo a responsabilização das ações dentro do sistema, aumentando a confiança
+                            dos
+                            usuários e prevenindo fraudes, sendo essencial para a construção de um ambiente digital
+                            seguro e
+                            confiável.
                         </p>
-                        <p>
-                            Ao iniciar um novo repositório e realizar atualizações nele, em determinado momento pode ser
-                            necessário visualizar o histórico de <i>commits</i> realizados. Essa informação é útil para
-                            analisar o
-                            que já foi feito e acompanhar, no projeto, quando foi feito e por quem foi feito.
-                        </p>
-                        <p>
-                            Para isso, basta usar o comando <b>git log</b> em um repositório válido. Esse comando, ao
-                            ser aplicado
-                            sem argumentos ou filtros, exibe do <i>commit</i> mais recente ao primeiro, trazendo as
-                            seguintes
-                            informações: SHA-1 do <i>commit</i>, nome e <i>e-mail</i>, data e hora de realização e
-                            comentário criado para
-                            o <i>commit</i>.
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img1.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img1.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img1.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                <b>Git log</b> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando git log sendo executado.</p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="painel-acessos no-print">
+                            <button type="button" class="botao-senha" data-bs-toggle="modal" data-bs-target="#modal1">
+                            </button>
+                            <button type="button" class="botao-token" data-bs-toggle="modal" data-bs-target="#modal2">
+                            </button>
+                            <button type="button" class="botao-mfa" data-bs-toggle="modal" data-bs-target="#modal3">
+                            </button>
+                            <button type="button" class="botao-certif" data-bs-toggle="modal" data-bs-target="#modal4">
+                            </button>
                         </div>
-                        <p>
-                            Essas informações podem ser úteis e tornam-se um recurso interessante quando uma atualização
-                            causar um problema no código, pois é possível criar uma rastreabilidade para realizar uma
-                            reversão de <i>commit</i>. O comando <b>log</b> pode ser aplicado com argumentos que
-                            detalham mais o
-                            histórico, como o comando <b>git log -p</b>.
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img2.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img2.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img2.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Comando <b>git log -p</b> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando git log -p sendo executado.</p>
+                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Senhas </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Embora amplamente usadas, as senhas devem ser fortes e únicas para evitar
+                                            ataques de força bruta. O uso de gerenciadores de senhas é recomendado.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            Aplicando o comando, será exibido o que foi realizado de alterações entre um <i>commit</i> e
-                            outro,
-                            sendo possível aplicar ainda o parâmetro -2, que filtrará para as duas últimas alterações
-                            apenas, ficando desta forma: <b>git log -p -2</b>.
-                        </p>
-                        <p>
-                            O argumento <b>--stat</b> elencará informações resumidas sobre estatísticas do
-                            <i>commit</i>, por meio do
-                            comando <b>git log --stat</b>, como lista dos arquivos modificados, quantos arquivos foram
-                            alterados e
-                            total de linhas inseridas e excluídas.
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img3.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img3.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img3.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                <b>Git log --stat</b> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p> Captura de tela com o comando git log --stat sendo executado. </p>
+                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><i>Tokens</i> de acesso </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><i>Tokens</i> JWT (<i>JSON web tokens</i>) são usados para autenticação sem
+                                            estado,
+                                            permitindo que os usuários mantenham a sessão sem a necessidade de
+                                            autenticação contínua. </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            É possível alterar o formato de exibição das informações, combinando argumentos para
-                            realizar
-                            exibição em outro formato. Para isso, é possível combinar o comando <b>git log</b> com o
-                            argumento
-                            <b>--pretty</b> e alguns filtros, como o <b>oneline</b>, ficando, desta forma, <b>git log
-                                --pretty=oneline</b>,
-                            exibindo as informações de um <i>commit</i> em uma única linha.
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img4.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img4.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img4.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                <b>Git log --pretty=oneline</b> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando git log --pretty=oneline sendo executado. </p>
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Autenticação multifator (MFA)
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>MFA adiciona uma camada extra de segurança ao exigir dois ou mais fatores de
+                                            autenticação, como senha e um código enviado ao celular do usuário. Veja a
+                                            figura que ilustra o processo de MFA: </p>
+                                        <figure class="my-5">
+                                            <div class="figure-img mb-4">
+                                                <img class="img-fluid d-block borda-colorida mx-auto"
+                                                    src="img/img2.png">
+                                            </div>
+                                            <figcaption class="figure-caption text-center">Processo de MFA <br>
+                                                Fonte: Manuais de TI (s. d.) </figcaption>
+                                        </figure>
+                                        <div class="acessivel visually-hidden no-print">
+                                            <p>
+                                                A imagem mostra o processo de autenticação multifator com dois fatores:
+                                                senha e código enviado ao celular.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            O argumento <b>format</b> possibilita que seja gerada uma formatação própria para a exibição
-                            das
-                            informações, aplicando filtros possíveis de visualizar com o comando <b>git log
-                                --format</b>.
-                        </p>
-                        <p>
-                            Também é possível utilizar o comando <b>--since</b>, que possibilita que uma determinada
-                            data seja
-                            usada como parâmetro ou informar um período de dias, meses e anos, por exemplo:
-                            <b>git log --since=24.weeks</b>, que limitará os <i>commits</i> das últimas quatro semanas.
-                        </p>
-                        <p>
-                            Ainda é possível filtrar a lista de <i>commits</i> com base em critérios específicos de
-                            busca. Por
-                            exemplo, a opção <b>--author</b> permite filtrar por um autor específico, enquanto a opção
-                            <b>--grep</b> ajuda
-                            a localizar <i>commits</i> que contenham determinadas palavras-chave em suas mensagens. Vale
-                            lembrar
-                            que, caso você queira usar as opções <b>--author</b> e <b>--grep</b> juntas, será necessário
-                            adicionar o
-                            parâmetro <b>--all-match</b>; caso contrário, o comando retornará resultados que atendam a
-                            qualquer uma
-                            das condições.
-                        </p>
-                        <p>
-                            Outra opção de filtro extremamente útil é <b>-S</b>, que aceita um conjunto de caracteres e
-                            retorna
-                            apenas os <i>commits</i> que introduzem alterações no código no qual esse conjunto foi
-                            adicionado ou
-                            removido. Por exemplo, se você deseja encontrar o último <i>commit</i> que eliminou ou
-                            adicionou uma
-                            referência a uma função específica, pode utilizar o seguinte comando: <b>git log
-                                -Sfunction_name</b>.
-                        </p>
-                        <p>
-                            Além disso, uma última opção bastante prática para filtrar resultados no <b>git log</b> é
-                            especificar
-                            um caminho. Informando um diretório ou o nome de um arquivo, o comando limita os registros
-                            aos
-                            <i>commits</i> que alteraram especificamente esses arquivos. Normalmente, o caminho é
-                            precedido por
-                            dois traços (--) para separar os caminhos das demais opções do comando.
-                        </p>
+                        <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Certificados digitais </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Utilizados em ambientes corporativos, os certificados digitais oferecem uma
+                                            forma segura de autenticação baseada em chave pública e privada. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="divisoria" aria-hidden="true">
+                    <img src="img/div.png" class="img-fluid no-print">
                 </div>
                 <div class="bloco4">
                     <div class="container">
-                        <h3>Resolução de conflitos</h3>
+                        <h3>Melhores práticas de segurança</h3>
                         <p>
-                            É comum que diferentes desenvolvedores atuem em um mesmo projeto. Sendo assim, para a
-                            organização do versionamento de código, é utilizado o recurso de <i>branches</i>, que é um
-                            método de
-                            criação de ramificações, para facilitar a organização do código, com a finalidade de separar
-                            os
-                            <i>commits</i>, podendo utilizar uma ou mais ramificações para códigos em desenvolvimento e
-                            uma
-                            ramificação para o projeto estável.
+                            Além de implementar HTTPS e autenticação, seguir as melhores práticas de segurança é
+                            fundamental
+                            para assegurar a proteção e a integridade dos serviços <i>web</i>. Essas práticas incluem
+                            medidas como
+                            a proteção contra ataques de injeção, a validação de entradas, a utilização de criptografia
+                            forte e a adoção de políticas de segurança rigorosas. Ao seguir essas recomendações, os
+                            desenvolvedores podem prevenir vulnerabilidades comuns que poderiam ser exploradas por
+                            atacantes, proteger dados sensíveis contra acessos não autorizados e garantir a continuidade
+                            dos
+                            serviços.
                         </p>
+                        <p>Veja algumas recomendações:</p>
                         <p>
-                            Contudo, ao possibilitar uma ou mais linhas de desenvolvimento em um repositório e estar
-                            trabalhando em um time de desenvolvimento, podem existir discrepâncias entre os
-                            <i>commits</i>
-                            realizados. Uma situação muito corriqueira de acontecer é a do seguinte exemplo:
+                            Em um ambiente digital onde as ameaças estão em constante evolução, adotar essas práticas de
+                            segurança não é apenas uma questão de conformidade, mas uma necessidade para preservar a
+                            confiança dos usuários e a reputação da organização. Estar atento e atualizado sobre as
+                            melhores
+                            práticas garante que os desenvolvedores estejam preparados para enfrentar desafios de
+                            segurança
+                            emergentes e possam oferecer serviços web resilientes e confiáveis.
                         </p>
-                        <p>
-                            João, em sua rotina de trabalho, ao iniciar seu turno, faz um <i>pull</i> para atualizar as
-                            últimas
-                            alterações realizadas no projeto. Entre outros arquivos, ele faz uma alteração de uma
-                            funcionalidade no arquivo <b>cadastroCompetidor</b> do projeto. Antes de fazer uma
-                            interrupção para o
-                            seu intervalo, ele faz um <i>commit</i> com suas alterações, deixando o versionamento
-                            organizado.
-                        </p>
-                        <p>
-                            No entanto, nesse mesmo projeto, Antônio iniciou sua rotina de trabalho no mesmo momento que
-                            João, também realizando um <i>pull</i> e, por uma necessidade, uma alteração no arquivo
-                            <b>cadastroCompetidor</b>. Assim como João, antes de fazer uma interrupção para o almoço,
-                            Antônio faz
-                            um <i>commit</i> com suas alterações. Contudo, ao realizar seu <i>push</i>, este foi
-                            rejeitado com uma
-                            mensagem de erro: <i>error: failed to push some refs to 'origin/main'</i>.
-                        </p>
-                        <p>
-                            Essa situação ocorreu porque Antônio tentou enviar seu <i>commit</i> sem as alterações
-                            realizadas por
-                            João, gerando um conflito entre as versões. Para solucionar essa situação, Antônio precisa
-                            sincronizar o repositório remoto com o seu repositório local, fazendo um novo <i>pull</i>.
-                        </p>
-                        <p>
-                            Ao realizar o novo <i>pull</i>, se não houver conflito entre as versões de arquivos, o
-                            repositório é
-                            atualizado automaticamente, possibilitando a realização de um novo <i>push</i>. Porém, nesse
-                            caso,
-                            existe um conflito entre as alterações no arquivo <b>cadastroCompetidor</b>, sendo exibido o
-                            arquivo na
-                            tela com marcações indicando quais são as alterações feitas localmente e quais são as
-                            alterações
-                            que estão no repositório remoto, em que:
-                        </p>
-                        <ul class="marcador-padrao">
-                            <li>O conteúdo entre <b>
-                                    <<<<<<< HEAD e=======</b> expressa as alterações locais.</li>
-                            <li>O conteúdo entre <b>======= e >>>>>>> f1a2b3c</b> (ID de um <i>commit</i>) expressa as
-                                alterações remotas.</li>
-                        </ul>
-                        <p>Nesta situação, é necessário escolher uma das três possibilidades:</p>
-                        <ul class="marcador-padrao">
-                            <li>Manter as alterações locais </li>
-                            <li>Manter as alterações remotas </li>
-                            <li>Combinar ambas as alterações </li>
-                        </ul>
-                        <p>
-                            O indicado é combinar as alterações, realizando um <i>merge</i> entre as versões diferentes,
-                            cuidando
-                            para que nenhuma alteração seja perdida. Dessa forma, é necessário ter atenção às
-                            confirmações
-                            que serão realizadas.
-                        </p>
-                        <p>
-                            Após a solução do conflito, um novo <i>commit</i> é realizado. Como boa prática,
-                            recomenda-se adicionar
-                            uma mensagem com um comentário explicando a situação e a solução tomada.
-                        </p>
-                        <p>
-                            Outra boa prática nesse caso seria criar <i>branches</i> para trabalhar de forma separada e,
-                            posteriormente, realizar um <i>merge</i> entre as ramificações. Por padrão, ao iniciar um
-                            novo
-                            repositório, automaticamente é criado uma <i>branch master</i>, sendo a <i>branch</i> padrão
-                            do projeto.
-                        </p>
-                        <p>
-                            Para exemplificar o indicado, será criado um repositório na plataforma GitHub, chamado
-                            <b>ExemploBoaPratica</b> (aqui, você deve escolher um novo nome que esteja disponível na
-                            plataforma),
-                            criando o arquivo <b>readme</b> padrão.
-                        </p>
-                        <p>
-                            O próximo passo é clonar seu repositório <i>on-line</i> em uma pasta de seu uso pessoal. Em
-                            sua
-                            máquina, use o Git Bash, com o comando <b>git clone</b>:
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img5.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img5.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img5.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Clonagem do repositório <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando para clonar repositório sendo executado. </p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Manter <span class="espaco">software</span> atualizado
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Sempre aplicar <i>patches</i> e atualizações para sistemas operacionais,
+                                            servidores <i>web</i> e <i>frameworks</i> utilizados. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Configurar permissões de arquivos e diretórios
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Limitar o acesso apenas aos usuários necessários para reduzir o risco de
+                                            acesso não autorizado. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Utilizar <span class="espaco">firewalls</span> e sistemas de detecção de
+                                        intrusões (IDS)
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Implementar <i>firewalls</i> para proteger contra acessos indesejados e
+                                            utilizar IDS para monitorar e alertar sobre atividades suspeitas. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        Realizar auditorias de segurança
+                                    </button>
+                                </h2>
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Avaliar regularmente a segurança do sistema por meio de auditorias para
+                                            identificar e corrigir vulnerabilidades. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                        Educar usuários e funcionários
+                                    </button>
+                                </h2>
+                                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Promover a conscientização sobre segurança cibernética entre os usuários e os
+                                            funcionários para evitar práticas inseguras, como <i>phishing</i> e uso de
+                                            senhas
+                                            fracas. </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            Acesse a pasta criada por meio do clone e abra novamente o Git Bash. Dessa forma, será
-                            possível
-                            criar uma nova <i>branch</i>. A sintaxe é <b>git checkout -b nome_da_branch</b>. Execute o
-                            comando
-                            <b>git checkout</b> com o parâmetro <b>-b</b> e o nome da <i>branch</i> que será criada e
-                            utilizada. Veja o exemplo
-                            prático:
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img6.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img6.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img6.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Criação de nova <i>branch</i> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando para clonar repositório sendo executado.</p>
-                        </div>
-                        <p>
-                            Abra o arquivo <b>README.md</b> e adicione o seguinte texto: “Este repositório contém
-                            exemplos de uso
-                            do Git”. Salve e feche.
-                        </p>
-                        <p>Agora, realize um novo <i>commit</i>, conforme a figura:</p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img7.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img7.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img7.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Realização de novo <i>commit</i> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p> Captura de tela com o comando para realizar um novo commit na brachNova sendo executado.
-                            </p>
-                        </div>
-                        <p>
-                            O próximo passo será trocar de uma <i>branch</i> para outra. Execute o comando da seguinte
-                            forma:
-                            <b>git checkout nome_da_branch</b>, conforme a figura:
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img8.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img8.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img8.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Trocando de <i>branch</i> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p> Captura de tela com o comando para realizar a troca de branch sendo executado.</p>
-                        </div>
-                        <p>
-                            Além de ser utilizado para trocar de <i>branch</i>, o comando <b>git checkout</b> também
-                            pode ser usado para
-                            reverter o seu código para uma versão anterior, se utilizar, em vez do nome da
-                            <i>branch</i>, o <i>hash</i>
-                            (id) de um <i>commit</i> antigo.
-                        </p>
-                        <p>
-                            Abra novamente o arquivo <b>README.md</b> e adicione uma nova linha com texto: “Gerando
-                            conflito”.
-                            Feche e salve.
-                        </p>
-                        <p>Agora, realize um novo <i>commit</i>, conforme a figura:</p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img9.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img9.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img9.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Novo <i>commit</i> com alterações <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando para realizar um novo commit sendo executado.</p>
-                        </div>
-                        <p>
-                            Neste momento, existem duas <i>branches</i>, cada uma com uma versão do <b>README.md</b>. É
-                            preciso unir as
-                            duas para formar o histórico ideal. Para que isso ocorra, é necessário executar o comando
-                            <b>git merge nome_da_outra_branch</b>. Veja a figura:
-                        </p>
-                        <figure class="my-5 no-print">
-                            <img src="img/img10.jpg"
-                                class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius"
-                                alt="Imagem">
-                            <a href="img/img10.jpg" target="_blank"
-                                class="img-zoom d-sm-block d-md-none d-lg-none no-print ilustracao">
-                                <img src="img/img10.jpg"
-                                    class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                    alt="Imagem">
-                            </a>
-                            <figcaption class="figure-caption text-center">
-                                Realização de <i>merge</i> <br>
-                                Fonte: Senac EAD (2025)
-                            </figcaption>
-                        </figure>
-                        <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando para realizar um merge entre as branches sendo executado.
-                            </p>
-                        </div>
-                        <p>Com o <i>merge</i>, automaticamente o arquivo <b>README.md</b> foi atualizado e unificado.
-                        </p>
-                        <p>
-                            No entanto, outro problema que pode ocorrer é realizar um <i>commit</i> defeituoso. Nesse
-                            caso, é
-                            possível usar o comando <b>git revert</b>, que reverterá as alterações realizadas no último
-                            <i>commit</i>, ou
-                            outro especificado.
-                        </p>
                     </div>
+                </div>
+                <div class="divisoria" aria-hidden="true">
+                    <img src="img/div.png" class="img-fluid no-print">
                 </div>
                 <div class="bloco5">
                     <div class="container">
-                        <h3>Encerramento</h3>
+                        <h3>Exemplos comparativos de empresas que implementam segurança em serviços <i>web</i></h3>
                         <p>
-                            Neste conteúdo, foi possível não apenas acompanhar os comandos essenciais para a consulta do
-                            histórico de alterações em um repositório, mas também compreender como as estatísticas geradas
-                            pelo Git podem contribuir para uma análise mais detalhada do desenvolvimento ao longo do tempo.
+                            As empresas globais, reconhecendo a importância da segurança digital, implementam medidas
+                            rigorosas para proteger dados sensíveis e garantir a confiabilidade de suas plataformas.
+                            Analisar as práticas de segurança adotadas por gigantes da tecnologia, como Google,
+                            Facebook,
+                            Amazon, Microsoft e outras, não só oferece <i>insights</i> valiosos sobre as estratégias de
+                            proteção
+                            utilizadas, mas também inspira e orienta o desenvolvimento de serviços <i>web</i> seguros.
+                            Essas
+                            organizações estabelecem padrões elevados de segurança, empregando técnicas como HTTPS, MFA,
+                            criptografia avançada e programas contínuos de monitoramento e auditoria.
                         </p>
                         <p>
-                            Além disso, foram exploradas diferentes abordagens para a resolução de problemas, utilizando os
-                            diversos recursos e comandos que o Git oferece. Esse aprendizado reforça a importância de boas
-                            práticas no controle de versões, tornando o processo de desenvolvimento mais organizado,
-                            colaborativo e eficiente.
+                            Ao explorar esses exemplos, você poderá compreender melhor a aplicação prática dessas
+                            medidas e
+                            a importância de manter a integridade e a confiança em seus próprios serviços <i>web</i>.
+                        </p>
+                        <p class="no-print">Clique ou toque no serviço <i>web</i> para saber qual é a sua aplicação.</p>
+                        <!-- <div class="d-flex flex-wrap justify-content-around no-print" aria-hidden="true">
+                            <div class="flip-card">
+                                <div class="flip-card-inner radius">
+                                    <div class="flip-card-front">
+                                        <img src="img/fig_google.png">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>Google: <br>
+                                            Utiliza HTTPS em todos os seus serviços, utiliza MFA para acesso seguro dos
+                                            funcionários e implementa práticas rigorosas de segurança interna. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner radius">
+                                    <div class="flip-card-front">
+                                        <p>FRENTE</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>VERSO</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner radius">
+                                    <div class="flip-card-front">
+                                        <p>FRENTE</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <p>VERSO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <figure class="my-5">
+                            <div class="figure-img mb-4">
+                                <img class="img-fluid d-block borda-colorida mx-auto" src="img/img3.png">
+                            </div>
+                            <figcaption class="figure-caption text-center">Segurança em serviços <i>web</i> na Amazon
+                                <br>
+                                Fonte: Malik (2023)
+                            </figcaption>
+                        </figure>
+                        <div class="acessivel visually-hidden no-print">
+                            <p>
+                                A imagem mostra o logotipo da AWS com ícones de cadeados, representando a segurança em
+                                seus
+                                serviços de nuvem.
+                            </p>
+                        </div>
+                        <p>Agora, clique ou toque para ouvir o <i>podcast</i> e descobrir como tornar sua página
+                            <i>web</i> mais
+                            segura.
+                        </p>
+                        <div class="bg-podcast no-print">
+                            <div class="d-flex justify-content-center flex-column align-items-center">
+                                <p>Ouça o <i>podcast</i> a seguir.</p>
+                                <div class="audio-player no-print">
+                                    <audio>
+                                        <source src="podcast/podcast.mp3" type="audio/mpeg">
+                                    </audio>
+                                    <div class="row">
+                                        <div class="timestamp">00:00 | 00:00</div>
+                                        <div class="barra">
+                                            <input type="range" value="0" max="4140" step="any">
+                                        </div>
+                                        <div class="botoes">
+                                            <button title="Tocar" class="btn-play btn-player"></button>
+                                            <button title="Pause" class="btn-pause btn-player"></button>
+                                            <button title="Transcrição" data-bs-toggle="modal"
+                                                data-bs-target="#modal-transcricao-audio1"
+                                                class="btn-transcricao btn-player"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade no-print transcricao" id="modal-transcricao-audio1" tabindex="-1"
+                            aria-labelledby="modal-transcricao-audio1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Transcrição</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
+                                            nisl, tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
+                                            ornare pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
+                                            Phasellus non pharetra tortor. Proin dictum ultrices ligula in finibus.
+                                            Suspendisse id sem consectetur, venenatis ex vel, consectetur arcu. Cras
+                                            vulputate quam in ultrices ornare. Donec gravida pharetra odio et ultrices.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divisoria" aria-hidden="true">
+                    <img src="img/div.png" class="img-fluid no-print">
+                </div>
+                <div class="bloco6">
+                    <div class="container">
+                        <h3>Encerramento</h3>
+                        <p>
+                            A segurança em serviços <i>web</i> é um componente crítico na era digital. Implementar HTTPS e
+                            autenticação robusta e seguir as melhores práticas de segurança são medidas essenciais para
+                            proteger dados e manter a confiança dos usuários. Empresas que adotam essas medidas estão mais
+                            bem equipadas para lidar com ameaças cibernéticas e garantir a integridade de suas plataformas
+                            <i>on-line</i>.
+                        </p>
+                        <p>
+                            Em resumo, é crucial manter-se atualizado sobre as últimas tendências e práticas de segurança em
+                            serviços <i>web</i>, uma vez que a área de segurança cibernética está em constante evolução. Cultivar
+                            hábitos como participar de cursos e <i>workshops</i>, ler artigos especializados e acompanhar as
+                            atualizações das principais ferramentas de segurança é essencial. A segurança não é um projeto
+                            único, mas uma responsabilidade contínua. O compromisso com o aprendizado e a adaptação
+                            constante garante que seus serviços web sejam seguros hoje e resilientes contra ameaças no
+                            futuro.
                         </p>
                     </div>
                 </div>
+
             </div>
             <a href="#" class="voltar-topo no-print" aria-hidden="true"><img src="../assets/images/bt_topo.svg"></a>
             </div>

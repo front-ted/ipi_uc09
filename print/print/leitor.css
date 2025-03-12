@@ -757,4 +757,19 @@ table.text-left.align-middle td {
 .figure-caption{
   margin-top: 10px;
 }
+
 /* código para tabela não desconfigurar na versão impressa */
+
+pre code.hljs {
+  display: block;
+  overflow-x: hidden !important;
+  padding: 1em;
+  word-break: normal;
+  white-space: pre-wrap;
+}
+
+code.hljs {
+  padding: 3px 5px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
