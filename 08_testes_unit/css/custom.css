@@ -1,6 +1,6 @@
 .bloco-roxo {
     background: url('../img/bg1.png') no-repeat;
-    margin-top: -1%;
+    margin-top: 0%;
     padding-top: 5%;
     background-size: cover;
     padding-bottom: 15%;
@@ -373,10 +373,6 @@ pre {
 @media screen and (max-width:1366px) {}
 
 @media screen and (max-width:1024px) {
-    body {
-        background: url('../img/bg_passos_1.png') repeat;
-        background-size: cover;
-    }
 
     .bloco-roxo2 {
         padding-bottom: 55%;
