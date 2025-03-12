@@ -27,7 +27,7 @@ body {
     padding-bottom: 4%;
 }
 
-.modal-body .container{
+.modal-body .container {
     background: unset;
 }
 
@@ -274,7 +274,7 @@ body {
     color: #fff;
 }
 
-.bg-escuro .modal-body .hljs{
+.bg-escuro .modal-body .hljs {
     color: inherit;
 }
 
@@ -477,6 +477,11 @@ pre {
     .img-inicio {
         margin-top: 8%;
     }
+
+    .modal-dialog {
+        max-width: 645px;
+        margin: 1.75rem auto;
+    }
 }
 
 
@@ -516,5 +521,10 @@ pre {
 
     .img-inicio {
         display: none;
+    }
+
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
     }
 }

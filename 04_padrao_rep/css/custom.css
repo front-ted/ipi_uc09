@@ -49,15 +49,15 @@ body {
     color: #fff;
 }
 
-.bg-escuro .modal-body .hljs{
+.bg-escuro .modal-body .hljs {
     color: inherit;
 }
 
 .bg-escuro .destaque .hljs-regexp {
     color: #d700ff;
-} 
+}
 
-.bg-escuro .accordion-body li{
+.bg-escuro .accordion-body li {
     color: inherit;
 }
 
@@ -187,6 +187,9 @@ pre {
 
 
 @media screen and (max-width:1024px) {
+    body {
+        background: unset;
+    }
 
     .img-inicio {
         margin-top: 3%;
