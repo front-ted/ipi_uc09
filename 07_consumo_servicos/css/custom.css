@@ -150,12 +150,9 @@ body {
 }
 
 
-
-
 .bg-escuro .container {
     background: transparent;
 }
-
 
 .bg-escuro .accordion-body p {
     color: #000;
@@ -172,7 +169,6 @@ body {
 .bg-escuro .modal-body * {
     color: #000;
 }
-
 
 .bg-escuro .texto1,
 .bg-escuro .texto2,

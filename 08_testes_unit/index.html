@@ -3,7 +3,7 @@
 
 <head>
     <!-- Inserir o tíutlo do conhecimento na tag title -->
-    <title>Programação de serviços: implementação e instalação</title>
+    <title>Testes unitários: conceitos e ferramentas</title>
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,57 +53,56 @@
         <!-- Section .paginas OBRIGATÓRIA para funcionamento da paginação e do print -->
         <section class="paginas">
             <div class="pagina">
-                <div class="bloco1">
+                <div class="bloco1 bloco-roxo">
                     <div class="container">
-                        <h2>Programação de serviços: implementação e instalação</h2>
+                        <h2>Testes unitários: conceitos e ferramentas</h2>
                         <p>
-                            A programação de serviços no <i>back-end</i> desempenha um papel essencial na arquitetura de
-                            sistemas,
-                            sendo responsável pela implementação da lógica de negócio de forma centralizada, organizada
-                            e
-                            reutilizável. Essa camada transforma os requisitos do projeto em funcionalidades concretas,
-                            integrando dados, regras de negócio e interações com outras camadas do sistema, como
-                            controladores e
-                            repositórios.
+                            Em desenvolvimento de <i>software</i>, muito se fala sobre a importância de escrever códigos
+                            de qualidade,
+                            mas nem sempre os testes unitários recebem a atenção devida. Afinal, o que são testes
+                            unitários e
+                            por que eles são tão essenciais?
                         </p>
                         <p>
-                            O principal objetivo dessa camada é isolar a lógica de negócio de outras partes do sistema,
-                            como
-                            a
-                            de apresentação do <i>front-end</i> e a de persistência com banco de dados. As interações
-                            entre
-                            cliente e
-                            servidor ocorrem frequentemente seguindo o padrão de solicitação e resposta, o que reforça a
-                            importância de uma separação clara de responsabilidades. Conforme visto no material sobre
-                            protocolo
-                            HTTP e representação de dados, esse processo é realizado por meio de solicitações HTTP
-                            (<i>hypertext
-                                transfer protocol</i>), como <b>GET</b>, <b>POST</b>, <b>PUT</b> e <b>DELETE</b>,
-                            facilitando a manutenção, a escalabilidade e a
-                            evolução do sistema.
+                            De maneira simples, testes unitários são uma forma de verificar se pequenas partes do código
+                            – as
+                            unidades – funcionam conforme o esperado. Eles são como “minitestes” que validam o
+                            comportamento de
+                            funções, métodos ou classes de forma isolada. Mas, na prática, como isso se aplica?
                         </p>
                         <p>
-                            Na criação de estruturas de código para serviços <i>web</i>, são utilizadas diferentes
-                            linguagens de
-                            <i>back-end</i>, como Java, Python, PHP e Node.js, dependendo da tecnologia mais apropriada
-                            para
-                            o projeto.
-                            Neste conteúdo, será dado enfoque à instalação do Node.js e do <i>framework</i> Express.js e
-                            à
-                            persistência
-                            de dados em arquivos JSON (<i>JavaScript object notation</i>). Além disso, será implementada
-                            uma
-                            API
-                            (<i>application programming interface</i>) de notícias que será utilizada no decorrer do
-                            curso.
+                            Realizar testes unitários significa executar trechos específicos do código visando
+                            identificar
+                            falhas ou comportamentos inesperados. O foco é garantir que cada parte do sistema funcione
+                            corretamente antes que essas partes sejam integradas. Isso não apenas ajuda a detectar
+                            defeitos
+                            precocemente, mas também facilita a manutenção e a evolução do <i>software</i>.
                         </p>
-                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
-                        <div class="painel-inst no-print">
-                            <button type="button" class="botao-instalacao" data-bs-toggle="modal"
-                                data-bs-target="#modal1">
-                            </button>
-                            <button type="button" class="botao-implementacao" data-bs-toggle="modal"
-                                data-bs-target="#modal2">
+                        <p>
+                            Neste conteúdo, serão explorados os conceitos, os benefícios e as boas práticas dos testes
+                            unitários, destacando seu papel fundamental no desenvolvimento de <i>software</i> robusto e
+                            confiável.
+                        </p>
+                    </div>
+                </div>
+                <div class="bloco2 bloco-azul">
+                    <div class="container">
+                        <h3>Testes unitários</h3>
+                        <p>
+                            A realização de testes é uma etapa importante para assegurar a qualidade de um
+                            <i>software</i>,
+                            portanto é necessária a realização de gerenciamento e organização. A abordagem preventiva
+                            considera a participação da equipe de teste desde o momento em que o projeto é iniciado,
+                            minimizando, dessa forma, os custos, pois, ao especificar casos de teste e aplicá-los,
+                            possíveis
+                            falhas são encontradas com antecedência no processo. Assim, evita-se que ocorra retrabalho
+                            pela
+                            equipe de desenvolvimento, otimizando o tempo para o desenvolvimento de tarefas essenciais.
+                        </p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                        <div class="painel-exemplo no-print">
+                            <img src="img/fig_exemplo.png" class="img-fluid no-print img-boneca">
+                            <button type="button" class="botao-exemplo" data-bs-toggle="modal" data-bs-target="#modal1">
                             </button>
                         </div>
                         <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -111,150 +110,216 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Instalação</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Escrevendo um teste para a classe
+                                            <b>Calculadora</b>
+                                        </h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="container">
                                             <p>
-                                                Optou-se por utilizar<b> Node.js</b> na construção da camada de
-                                                serviços,
-                                                pois ele
-                                                atende perfeitamente às necessidades de eficiência e escalabilidade. Sua
-                                                arquitetura leve e modular facilita a implementação de <b>APIs
-                                                    RESTful</b>,
-                                                essenciais
-                                                para oferecer flexibilidade e acompanhar o crescimento do sistema,
-                                                conforme
-                                                já
-                                                abordado. O Node.js também se destaca pelo alto desempenho, pela ampla
-                                                comunidade de suporte e por seu ecossistema rico, fatores que contribuem
-                                                diretamente para o sucesso do projeto.
+                                                No código-fonte a seguir, em Java, pode-se observar que a classe
+                                                <b>Calculadora</b>
+                                                tem quatro métodos: <b>somar</b>, <b>subtrair</b>, <b>multiplicar</b> e
+                                                <b>dividir</b>. Todos eles
+                                                recebem como entrada dois números inteiros, realizam operações
+                                                aritméticas
+                                                correspondentes e retornam o resultado.
+                                            </p>
+                                            <pre>
+                                                <code class="hljs">
+<span class="hljs-meta">public class</span> <span class="hljs-quote">Calculadora</span> { 
+    <span class="hljs-meta">public</span> <span class="hljs-quote">int</span> <span class="hljs-type">somar</span>(<span class="hljs-quote">int</span> <span class="hljs-azul">n1</span>, <span class="hljs-quote">int</span> <span class="hljs-azul">n2</span>) { 
+        <span class="hljs-roxo">return</span> n1 + n2; 
+    } 
+                                                                                                      
+   <span class="hljs-meta"> public</span> <span class="hljs-quote">int</span> <span class="hljs-type">subtrair</span>(<span class="hljs-quote">int</span> <span class="hljs-azul">n1</span>, <span class="hljs-quote">int</span> <span class="hljs-azul">n2</span>) { 
+        <span class="hljs-roxo">return</span> n1 - n2; 
+    } 
+                                                    
+    <span class="hljs-meta">public</span> <span class="hljs-quote">int</span> <span class="hljs-type">multiplicar</span>(<span class="hljs-quote">int</span> <span class="hljs-azul">n1</span>, <span class="hljs-quote">int</span> <span class="hljs-azul">n2</span>) { 
+        <span class="hljs-roxo">return</span> n1 * n2; 
+    } 
+                                                    
+    <span class="hljs-meta">public</span> <span class="hljs-quote">int</span><span class="hljs-type"> dividir</span>(<span class="hljs-quote">int</span> <span class="hljs-azul">n1</span>, <span class="hljs-quote">int</span> <span class="hljs-azul">n2</span>) { 
+        <span class="hljs-roxo">return</span>  n1 / n2; 
+    } 
+} 
+                                                </code>
+                                            </pre>
+                                            <p>
+                                                Observe que, no método <b>dividir</b>, há um problema proposital. Não se
+                                                está
+                                                validando a possibilidade de uma divisão por zero, ou seja, da forma
+                                                apresentada, sem esse tratamento, ocorrerá erro.
+                                            </p>
+                                            <p>Veja como criar a classe <b>MinhaCalculadora</b> com o método
+                                                <b>main</b>.
+                                            </p>
+                                            <p>Neste exemplo, você tem v1 = 4 e v2 = 2.</p>
+                                            <pre>
+                                                <code class="hljs">
+<span class="hljs-meta">public class</span> <span class="hljs-quote">MinhaCalculadora</span> { 
+
+    <span class="hljs-meta">public static</span> <span class="hljs-quote">void</span> <span class="hljs-type">main</span>(<span class="hljs-quote">String</span>[] <span class="hljs-azul">args</span>) { 
+                                                    
+    <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>(); 
+    <span class="hljs-quote">int</span> <span class="hljs-azul">v1</span>, <span class="hljs-azul">v2</span>; 
+    v1 = <span class="hljs-numero">4</span>; 
+    v2 = <span class="hljs-numero">2</span>; 
+                                                    
+    <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"Soma: " </span>+ <span class="hljs-azul">calc</span>.<span class="hljs-type">somar</span>(v1, v2) ); 
+    <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"Subtração: "</span> + <span class="hljs-azul">calc</span>.<span class="hljs-type">subtrair</span>(v1, v2) ); 
+    <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"Multiplicação: "</span> + <span class="hljs-azul">calc</span>.<span class="hljs-type">multiplicar</span>(v1, v2) ); 
+    <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"Divisão: "</span> + <span class="hljs-azul">calc</span>.<span class="hljs-type">dividir</span>(v1, v2) ); 
+    } 
+}     
+                                                </code>
+                                            </pre>
+                                            <p> Resultado: </p>
+                                            <pre>
+                                            <code class="hljs">
+    run: 
+    Soma: 6 
+    Subtração: 2 
+    Multiplicação: 8 
+    Divisão: 2 
+    BUILD SUCCESSFUL (total time: 0 seconds) 
+                                            </code>
+                                           </pre>
+                                            <p> Agora, veja como criar a classe <b>TesteCalculadora</b> para testar a
+                                                classe <b>Calculadora</b>.</p>
+                                            <p>
+                                                Na classe <b>TesteCalculadora</b>, serão criados os métodos de teste
+                                                <b>testaSoma()</b>,
+                                                <b>testaSubtracao()</b>, <b>testaMultiplicacao()</b> e
+                                                <b>testaDivisao()</b>, que realizarão suas
+                                                respectivas operações com os valores 3 e 2.
                                             </p>
                                             <p>
-                                                Para a criação dos <i>endpoints</i>, será utilizado o <b>Express.js</b>,
-                                                um
-                                                <i>microframework</i> que
-                                                alia simplicidade e praticidade, sendo ideal tanto para iniciantes
-                                                quanto
-                                                para
-                                                desenvolvedores experientes. O Express.js possibilita o desenvolvimento
-                                                ágil
-                                                e
-                                                organizado, facilitando a estruturação da camada de serviços de maneira
-                                                clara e
-                                                eficiente.
+                                                Desse modo, o resultado deverá ser 5 para operação de soma, 1 para
+                                                operação
+                                                de subtração, 6 para multiplicação e 1 para divisão. Caso o resultado de
+                                                cada operação esteja correto, será exibido “OK”; caso contrário,
+                                                aparecerá
+                                                “ERRO”.
+                                            </p>
+                                            <p>O método <b>main()</b> é responsável apenas por realizar a chamada de
+                                                cada método.</p>
+                                            <pre>
+                                                <code class="hljs">
+<span class="hljs-meta">public class</span> <span class="hljs-quote">TesteCalculadora</span> { 
+
+    <span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaSoma</span>(){                                     
+        <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>(); 
+        <span class="hljs-quote">int</span> <span class="hljs-azul">resultado</span> = <span class="hljs-azul">calc</span>.<span class="hljs-type">somar</span>(<span class="hljs-numero">3</span>, <span class="hljs-numero">2</span>); 
+        <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"testaSoma: "</span> + (resultado==<span class="hljs-numero">5</span> <span class="hljs-roxo">?</span> <span class="hljs-title">"OK" : "ERRO"</span>)); 
+    } 
+                                                    
+    <span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaSubtracao</span>(){              
+        <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>();
+        <span class="hljs-quote">int</span> <span class="hljs-azul">resultado</span> = <span class="hljs-azul">calc</span>.<span class="hljs-type">subtrair</span>(<span class="hljs-numero">3</span>, <span class="hljs-numero">2</span>); 
+        <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"testaSub: "</span> + (resultado==<span class="hljs-numero">1</span> <span class="hljs-roxo">?</span> "<span class="hljs-title">OK" : "ERRO"</span>)); 
+    }     
+                                                    
+    <span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaMultiplicacao</span>(){ 
+        <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>(); 
+        <span class="hljs-quote">int</span> <span class="hljs-azul">resultado</span> = <span class="hljs-azul">calc</span>.<span class="hljs-type">multiplicar</span>(<span class="hljs-numero">3</span>, <span class="hljs-numero">2</span>); 
+        <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"testaMult: "</span> + (resultado==<span class="hljs-numero">6</span> <span class="hljs-roxo">?</span> <span class="hljs-title">"OK" : "ERRO"</span>)); 
+    }     
+                                                    
+    <span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaDivisao</span>(){ 
+        <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>();
+        <span class="hljs-quote">int</span> <span class="hljs-azul">resultado</span> = <span class="hljs-azul">calc</span>.<span class="hljs-type">dividir</span>(<span class="hljs-numero">3</span>, <span class="hljs-numero">2</span>); 
+        <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"testaDiv: "</span> + (resultado==<span class="hljs-numero">1</span> <span class="hljs-roxo">?</span> <span class="hljs-title">"OK" : "ERRO"</span>)); 
+    }       
+                                                    
+   <span class="hljs-meta"> public static</span> <span class="hljs-quote">void</span> <span class="hljs-type">main</span>(<span class="hljs-quote">String</span>[] <span class="hljs-azul">args</span>) { 
+        <span class="hljs-roxo">new</span> <span class="hljs-type">TesteCalculadora</span>().<span class="hljs-type">testaSoma</span>(); 
+        <span class="hljs-roxo">new</span> <span class="hljs-type">TesteCalculadora</span>().<span class="hljs-type">testaSubtracao</span>(); 
+        <span class="hljs-roxo">new</span> <span class="hljs-type">TesteCalculadora</span>().<span class="hljs-type">testaMultiplicacao</span>(); 
+        <span class="hljs-roxo">new</span> <span class="hljs-type">TesteCalculadora</span>().<span class="hljs-type">testaDivisao</span>(); 
+    } 
+} 
+                                                </code>
+                                            </pre>
+                                            <p>Resultado: </p>
+                                            <pre>
+                                                <code class="hljs">
+    run: 
+    testaSoma: OK  
+    testaSub: OK  
+    testaMult: OK  
+    testaDiv: OK 
+    BUILD SUCCESSFUL (total time: 0 seconds)
+                                                </code>
+                                            </pre>
+                                            <p>
+                                                O que se pode observar nesse exemplo é que não ocorreram erros, pois os
+                                                dados validados correspondem ao resultado esperado. Porém, caso
+                                                futuramente
+                                                ocorram alterações dentro de algum método da classe <b>Calculadora</b>,
+                                                no momento
+                                                da execução dos testes na classe <b>TestaCalculadora</b>, a mensagem de
+                                                erro será
+                                                exibida. Esse é o objetivo principal dos testes unitários, testar cada
+                                                parte
+                                                do código, conforme os testes forem definidos.
                                             </p>
                                             <p>
-                                                O Express.js é um <i>framework</i> minimalista para aplicativos
-                                                <i>web</i>
-                                                construído sobre o
-                                                Node.js, projetado para criar aplicativos escaláveis. Ele é uma escolha
-                                                ideal
-                                                para desenvolvedores que desejam controle total sobre a estrutura de
-                                                seus
-                                                aplicativos, permitindo a criação eficiente de serviço <i>web</i>. Entre
-                                                seus
-                                                principais recursos estão o roteamento e a flexibilidade, que aprimoram
-                                                significativamente o desenvolvimento de <i>back-end</i>.
+                                                Você pode estar se questionando agora se essa classe de teste está
+                                                pronta.
+                                                Você se lembra do método de divisão que não trata a divisão por zero?
+                                                Então,
+                                                caso sejam informados, no método <b>testaDivisao</b>, os valores 3 e 0
+                                                em vez de 3
+                                                e 2, veja o que correrá:
                                             </p>
-                                            <p><b>Instalando o NPM e Node.js:</b></p>
+                                            <pre>
+                                                <code class="hljs">
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaDivisao</span>(){ 
+    <span class="hljs-quote">Calculadora</span> <span class="hljs-azul">calc</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Calculadora</span>(); 
+    <span class="hljs-quote">int</span> <span class="hljs-azul">resultado</span> = <span class="hljs-azul">calc</span>.<span class="hljs-type">dividir</span>(<span class="hljs-quote">3</span>, <span class="hljs-quote">0</span>); 
+        <span class="hljs-azul">System.out</span>.<span class="hljs-type">println</span>(<span class="hljs-title">"testaDiv: " </span>+ (resultado==<span class="hljs-numero">1</span> <span class="hljs-roxo">?</span> <span class="hljs-title">"OK" : "ERRO"</span>)); 
+}
+                                                </code>
+                                            </pre>
+                                            <p>Resultado:</p>
+                                            <pre>
+                                                <code class="hljs">
+    run: 
+    testaSoma: OK 
+    testaSub: OK 
+    testaMult: OK 
+    Exception in thread "main" java.lang.ArithmeticException: / by zero  
+    at calculadora.Calculadora.dividir(Calculadora.java:18)  
+    at calculadora.TesteCalculadora.testaDivisao(TesteCalculadora.java:25)   
+    at calculadora.TesteCalculadora.main(TesteCalculadora.java:33)  
+    BUILD FAILED (total time: 0 seconds) 
+                                                </code>
+                                            </pre>
                                             <p>
-                                                Para começar a usar o Node.js e o Express.js, é necessário que você
-                                                tenha
-                                                inicialmente instalado o <b>NPM</b> (Node Package Manager), que é um
-                                                gerenciador de
-                                                pacotes do Node.js.
+                                                Conforme o resultado apresentado, foi gerada uma exceção e não houve um
+                                                resultado do teste. Para ter certeza de que o seu código não tem erro, é
+                                                preciso testar todas as possíveis entradas de um método. Para esse caso,
+                                                é
+                                                possível testar alguns valores-chave que representam as possíveis
+                                                entradas:
+                                                -1000, -1, 0, <i>null</i>, +1, +1000.
                                             </p>
                                             <p>
-                                                Com o NPM, você pode gerenciar dependências do seu projeto, acessar o
-                                                repositório do NPM e ter acesso a diversas bibliotecas e
-                                                <i>frameworks</i>
-                                                JavaScript,
-                                                permitindo que sejam instalados/desinstalados.
+                                                Portanto, a classe <b>TesteCalculadora</b> é funcional, mas, para a boa
+                                                prática de
+                                                programação, erros devem ser tratados com exceções (blocos <i>try
+                                                    catch</i>), e não
+                                                com simples avaliações condicionais (<i>if</i> e <i>else</i>). Criar
+                                                testes dessa maneira,
+                                                com controle de exceções, além de poluir o código com blocos <i>try
+                                                    catch</i>, é
+                                                muito trabalhoso. É nesse momento que se mostra útil a utilização de um
+                                                <i>framework</i> para automatização de testes.
                                             </p>
-                                            <div class="table-responsive table">
-                                                <table class="text-left align-middle" width="100%">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="larg-50">
-                                                                O NPM está incluído no Node.js. Prossiga estas etapas
-                                                                para
-                                                                instalar o NPM:
-                                                                <ul class="marcador-padrao">
-                                                                    <li>Acesse o <i>site</i> oficial do Node.js.</li>
-                                                                    <li>
-                                                                        Conforme mostra a figura, o <i>site</i>
-                                                                        reconhece o
-                                                                        sistema
-                                                                        operacional automaticamente (Windows neste caso)
-                                                                        e
-                                                                        sugere a versão para <i>download</i> (LTS neste
-                                                                        caso). Priorize
-                                                                        sempre o <i>download</i> de versões LTS, que são
-                                                                        as
-                                                                        versões
-                                                                        mais estáveis com mais suporte.
-                                                                    </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td class="larg-50">
-                                                                <figure class="my-5 no-print">
-                                                                    <img src=""
-                                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
-                                                                        alt="Imagem">
-                                                                    <a href="" target="_blank"
-                                                                        class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                                                                        <img src=""
-                                                                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                                                            alt="Imagem">
-                                                                    </a>
-                                                                    <figcaption class="figure-caption text-center">
-                                                                        Instalando NPM – Node.js <br>
-                                                                        Fonte: Senac EAD (2025)
-                                                                    </figcaption>
-                                                                </figure>
-                                                                <div class="acessivel visually-hidden no-print">
-                                                                    <p>
-                                                                        Imagem do navegador de internet que exibe ao
-                                                                        lado
-                                                                        esquerdo da tela a opção para download na versão
-                                                                        LTS.
-                                                                    </p>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <ul class="marcador-padrao">
-                                                                    <li>
-                                                                        Após a instalação do Node.js, você pode
-                                                                        verificar
-                                                                        tanto
-                                                                        a versão do Node.js quanto a versão do NPM
-                                                                        instalada
-                                                                        e
-                                                                        executando os comandos <b>node -v</b> e <b>npm
-                                                                            -v</b>.
-                                                                    </li>
-                                                                </ul>
-                                                            </td>
-                                                            <td>
-                                                                <pre class="largura">
-                                                                <code class="hljs">
-        node -v 
-        v22.13.0 
-         
-        npm -v 
-        10.9.2 
-                                                                </code>
-                                                            </pre>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="botao hvr-sweep-to-right"
@@ -264,696 +329,625 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Implementação</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                        <p>
+                            O mercado oferece uma variedade de ferramentas automatizadas para auxiliar a execução de
+                            testes
+                            unitários, como JTest, JUnit e PHPUnit. Dentre essas ferramentas, o JUnit se destaca como um
+                            dos
+                            <i>frameworks</i> mais conhecidos e utilizados, especialmente para projetos em Java. Ele
+                            facilita a
+                            criação e execução de testes por meio de asserções que ajudam a verificar o comportamento
+                            dos
+                            métodos testados.
+                        </p>
+                        <p>
+                            O teste de unidade é um importante método de teste usado pelas equipes de controle de
+                            qualidade
+                            para garantir que um produto de software esteja livre de erros e atenda a todos os
+                            requisitos
+                            essenciais.
+                        </p>
+                    </div>
+                </div>
+                <div class="bloco3 bloco-roxo2">
+                    <div class="container">
+                        <h3> Conceitos</h3>
+                        <p>
+                            Atualmente, o teste de unidade tornou-se indiscutível no ciclo de teste de software para
+                            garantir que cada unidade desse produto seja completamente funcional e opere conforme foi
+                            planejada. No teste de unidade, os testadores validam cada parte testável de um sistema para
+                            garantir que cada unidade do código funcione conforme o esperado. Ele é executado nos
+                            estágios
+                            iniciais de desenvolvimento de software por desenvolvedores ou testadores.
+                        </p>
+                        <div class="grafismo">
+                            <div class="destaque gradiente icone importante">
+                                <p>
+                                    O teste de unidade é essencial para o desenvolvimento de <i>software</i> rápido e
+                                    ágil. Também
+                                    pode ajudar as equipes de desenvolvimento e controle de qualidade a obter vários
+                                    benefícios de curto e longo prazos, principalmente em relação à melhoria geral da
+                                    qualidade do sistema e à satisfação do cliente.
+                                </p>
+                            </div>
+                        </div>
+                        <p>
+                            Em um <i>software</i>, a menor parte de um código que pode ser testada é chamada de unidade
+                            de código.
+                            O teste de unidade é um método de teste usado no ciclo de desenvolvimento de <i>software</i>
+                            para
+                            validar se uma unidade de código se comportará como pretendido e se o código testado
+                            produzirá o
+                            mesmo resultado toda vez que o teste for executado. O teste de unidade está incluído no
+                            teste de
+                            caixa-branca e geralmente é feito escrevendo casos de teste que exercitam funções, métodos e
+                            classes individuais.
+                        </p>
+                        <p>Veja as etapas importantes usadas para executar testes de unidade:</p>
+                        <div class="infografico no-print" aria-hidden="true">
+                            <div class="image-infografico">
+                                <img src="img/fig_infog.png" alt="Boneco" class="boneco-info">
+                                <img src="img/fig3_infog_tracado.png" alt="Linha" class="line">
+                            </div>
+                            <div class="content">
+                                <div class="item">
+                                    <img src="img/fig2_infog_check.png" alt="Check" class="check1">
+                                    <p> <b>Escrever casos de teste</b> <br>
+                                        Desenvolver vários casos de teste de componente do software. </p>
+                                </div>
+                                <div class="item">
+                                    <img src="img/fig2_infog_check.png" alt="Check" class="check1">
+                                    <p><b>Revisar e editar</b> <br>
+                                        Verificar os casos de teste escritos e editá-los se houver algum erro.
+                                    </p>
+                                </div>
+                                <div class="item">
+                                    <img src="img/fig2_infog_check.png" alt="Check" class="check1">
+                                    <p><b>Executar</b> <br>
+                                        Executar casos de teste para identificar possíveis erros. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acessivel visually-hidden print">
+                            <p>
+                                <b> Escrever casos de teste</b> <br>
+                                Desenvolver vários casos de teste de componente do software.
+                            </p>
+                            <p>
+                                <b> Revisar e editar</b> <br>
+                                Verificar os casos de teste escritos e editá-los se houver algum erro.
+                            </p>
+                            <p>
+                                <b> Executar</b> <br>
+                                Executar casos de teste para identificar possíveis erros.
+                            </p>
+                        </div>
+                        <p>
+                            Os casos dos testes de unidade são simples e claros para serem fáceis de ler e entender,
+                            mesmo
+                            que tenham lógica complexa e muitas variáveis.
+                        </p>
+                        <p>
+                            O teste de unidade é crucial para os desenvolvedores durante o desenvolvimento de
+                            <i>software</i>,
+                            pois, quando feito de maneira adequada no estágio inicial do desenvolvimento, pode ajudá-los
+                            a
+                            economizar tempo e dinheiro. Os programadores geralmente executam esse teste no ambiente de
+                            desenvolvimento antes de combinar o código com outros módulos funcionais de código
+                            existentes.
+                            Há uma alta probabilidade de o código ser defeituoso quando o teste de unidade do
+                            <i>software</i> não
+                            for executado.
+                        </p>
+                        <p>
+                            Veja as principais razões pelas quais os testadores consideram o teste de unidade uma parte
+                            importante do ciclo de teste de software:
+                        </p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Identificar <span class="espaco"><i>bugs</i></span> ou erros nos estágios
+                                        iniciais
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Executando testes de unidade, possíveis erros e <i>bugs</i> podem ser
+                                            detectados no
+                                            início do ciclo de desenvolvimento, antes que se tornem generalizados. </p>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <p>
-                                                Nesta seção, será abordada a implementação de um serviço <i>web</i>
-                                                usando
-                                                Node.js e
-                                                Express.js, que gerencia notícias e as armazena em um arquivo
-                                                <b>noticias.json</b>.
-                                                Será criada uma <b>API de notícias</b> que permitirá <b>adicionar</b>,
-                                                <b>listar</b>, <b>atualizar</b> e
-                                                <b>remover</b> notícias, servindo de base para os demais conteúdos desta
-                                                unidade
-                                                curricular.
-                                            </p>
-                                            <p>
-                                                Além disso, para garantir que essa API possa ser acessada por aplicações
-                                                externas, será necessário implementar o <b>recurso de CORS
-                                                    (<i>cross-origin
-                                                        resource
-                                                        sharing</i>)</b>. Esse mecanismo permitirá que diferentes
-                                                sistemas,
-                                                como aplicações
-                                                <i>front-end</i> e outros serviços, consumam os dados dessa API sem as
-                                                restrições de
-                                                mesma origem, garantindo maior flexibilidade e interoperabilidade.
-                                            </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 1</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 1:</b> crie uma pasta com nome api para o projeto. Abra o
-                                                terminal
-                                                ou um
-                                                prompt de comando e inicialize com o comando:
-                                            </p>
-                                            <pre>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Isolar uma unidade de código e verificar se ela funciona corretamente
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>O teste de unidade ajuda os especialistas em controle de qualidade a tornar o
+                                            código mais fácil de manter, permitindo que eles o modifiquem sem alterar
+                                            outras partes do aplicativo. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Testar a funcionalidade do aplicativo de <span class="espaco"><i>software
+                                            </i></span>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Com a ajuda do teste de unidade, os testadores podem validar cada unidade de
+                                            módulo antes de integrá-la a um aplicativo de <i>software</i>. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        Reduzir custos e economizar tempo
+                                    </button>
+                                </h2>
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Como o teste unitário é o primeiro a ser executado no ciclo de testes, as
+                                            equipes de controle de qualidade podem economizar muito tempo e reduzir
+                                            drasticamente o custo geral. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            Fazendo isso ao detectar e corrigir falhas nos estágios iniciais, não apenas se economiza
+                            tempo
+                            e recursos, mas também contribui para a construção de um software mais robusto e confiável.
+                        </p>
+                    </div>
+                </div>
+                <div class="bloco4 bloco-azul4">
+                    <div class="container">
+                        <h3>Ferramentas</h3>
+                        <p>
+                            Existem muitas ferramentas automatizadas disponíveis no mercado para dar suporte a testes
+                            unitários. Algumas delas são JTest, JUnit e PHPUnit. O <i>framework</i> JUnit é a ferramenta
+                            de teste
+                            automatizado mais popular, baseada na linguagem Java. Ele fornece asserções para identificar
+                            vários métodos de teste.
+                        </p>
+                        <h4>JUnit</h4>
+                        <p>
+                            É um <i>framework</i> de testes em Java que facilita a escrita de testes confiáveis e
+                            eficientes. Ele
+                            pode ser usado para <i>softwares</i> feitos na maioria das linguagens, mas é particularmente
+                            adequado
+                            para testar aplicativos Java.
+                        </p>
+                        <!-- imagem JUnit -->
+                        <img src="" class="img-fluid d-block mx-auto no-print">
+                        <p>
+                            A estrutura JUnit oferece vários recursos que facilitam a escrita de testes, incluindo
+                            suporte
+                            para vários casos de teste, asserções e executores de teste. Ele permite que você crie e
+                            execute
+                            testes com eficiência e tornou-se uma das estruturas de teste Java mais populares e
+                            amplamente
+                            utilizadas. O JUnit é usado principalmente para testes de unidade, mas também pode ser usado
+                            para outros, como testes funcionais e de integração.
+                        </p>
+                        <p>Os seguintes tópicos apresentam um resumo das principais anotações do JUnit 4:</p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="accordion" id="accordionExample2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                        @Test
+                                    </button>
+                                </h2>
+                                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Indica que o método ao qual está anexado pode ser executado como um caso de
+                                            teste. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                        @Before
+                                    </button>
+                                </h2>
+                                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Indica que esse método deve ser executado antes de cada teste da classe, de
+                                            forma a executar algumas pré-condições necessárias para o teste. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading7">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                        @BeforeClass
+                                    </button>
+                                </h2>
+                                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Indica que o método estático ao qual está anexado deve ser executado uma vez
+                                            e antes de todos os testes da classe. Isso acontece quando os métodos de
+                                            teste compartilham configuração computacionalmente cara (por exemplo,
+                                            conectar ao banco de dados). </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading8">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                        @After
+                                    </button>
+                                </h2>
+                                <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Indica que esse método é executado após a execução de cada teste (por
+                                            exemplo, redefinir algumas variáveis após a execução de cada teste, excluir
+                                            variáveis temporárias etc.). </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading9">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                        @AfterClass
+                                    </button>
+                                </h2>
+                                <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Pode ser usada quando um método precisa ser executado após a execução de
+                                            todos os testes em uma classe de teste com JUnit. Por exemplo: limpar a
+                                            configuração; desconectar de um banco de dados. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading10">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                        @Ignore
+                                    </button>
+                                </h2>
+                                <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Pode ser utilizada quando se deseja desabilitar temporariamente a execução de
+                                            um teste específico. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Todas essas anotações podem ser usadas nos métodos de teste. </p>
+                        <p>
+                            Existem também as <i>assertions</i>, uma parte fundamental nos testes unitários. Elas
+                            permitem
+                            verificar o comportamento esperado de um sistema. O JUnit fornece um conjunto de métodos de
+                            asserção para você verificar se uma condição testada é verdadeira e, além disso, apresenta
+                            os
+                            resultados de um teste. Isso ajuda a evitar <i>bugs</i> e falhas no seu código. Todas as<i>
+                                assertions</i>
+                            estão na classe <b>Assert</b>.
+                        </p>
+                        <p>Os tópicos a seguir detalham algumas delas:</p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo.</p>
+                        <div class="accordion" id="accordionExample3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading12">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                                        assertEquals
+                                    </button>
+                                </h2>
+                                <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Verifica se dois valores são iguais. </p>
+                                        <pre>
                                             <code class="hljs">
-npm init -y 
+@<span class="hljs-quote">Test</span> 
+<span class="hljs-meta">public</span><span class="hljs-quote"> void</span> <span class="hljs-type">testaStringsIguais</span>() {                                                
+    <span class="hljs-quote">String</span> <span class="hljs-azul">expectativa</span> = <span class="hljs-title">"SENAC"</span>; 
+    <span class="hljs-quote">String</span> <span class="hljs-azul">atual</span> = <span class="hljs-title">"SENAC"</span>; 
+    <span class="hljs-type">assertEquals</span>(expectativa, atual); 
+} 
                                             </code>
                                         </pre>
-                                            <p>
-                                                Isso criará um arquivo <b>package.json</b> com as configurações básicas
-                                                do
-                                                projeto,
-                                                como nome (<i>name</i>), versão(<i>version</i>), arquivo inicial do
-                                                serviço
-                                                (<i>main</i>) e
-                                                dependências (<i>dependencies</i>).
-                                            </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 2</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 2:</b> instale a dependência do <i>framework</i>
-                                                <b>Express.js</b>,
-                                                que será usado para
-                                                criar e gerenciar as rotas do servidor.
-                                            </p>
-                                            <pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading13">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                                        assertArrayEquals
+                                    </button>
+                                </h2>
+                                <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Afirma que dois arrays são iguais. </p>
+                                        <pre>
                                             <code class="hljs">
-npm install express 
+@<span class="hljs-quote">Test</span> 
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaArrayIguais</span>() { 
+    <span class="hljs-quote">char</span>[] <span class="hljs-azul">expectativa</span> = {<span class="hljs-title">'J'</span>, <span class="hljs-title">'u'</span>, <span class="hljs-title">'n'</span>, <span class="hljs-title">'i'</span>, <span class="hljs-title">'t'</span>};                                           
+    <span class="hljs-quote">char</span>[] <span class="hljs-azul">atual</span> = <span class="hljs-title">"Junit"</span>.<span class="hljs-type">toCharArray</span>(); 
+    <span class="hljs-type">assertArrayEquals</span>(expectativa, atual); 
+} 
                                             </code>
                                         </pre>
-                                            <p>
-                                                Observe que será criada a pasta <b>node_modules</b>, que é responsável
-                                                por
-                                                armazenar
-                                                todas as dependências do aplicativo.
-                                            </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 3</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 3:</b> instale a dependência do CORS. Sua instalação simplifica
-                                                a
-                                                configuração
-                                                de CORS no Express.
-                                            </p>
-                                            <pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading14">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                                        assertNull
+                                    </button>
+                                </h2>
+                                <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Verifica se um objeto, ou uma variável, é nulo. </p>
+                                        <pre>
                                             <code class="hljs">
-npm install cors 
+@<span class="hljs-quote">Test</span> 
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaEhNullo</span>() { 
+    <span class="hljs-quote">String</span> <span class="hljs-azul">nome</span> = <span class="hljs-meta">null</span>; 
+    <span class="hljs-type">assertNull</span>(<span class="hljs-title">"Variável é nula"</span>, nome); 
+} 
                                             </code>
                                         </pre>
-                                            <p>
-                                                O CORS é um mecanismo de segurança dos navegadores que controla como
-                                                recursos de
-                                                uma aplicação podem ser acessados por domínios diferentes daquele onde o
-                                                recurso
-                                                está hospedado. Ele ajuda a proteger os usuários ao verificar se o
-                                                servidor
-                                                autoriza essas interações.
-                                            </p>
-                                            <p>
-                                                Neste conteúdo, não serão aprofundadas as configurações avançadas,
-                                                focando
-                                                apenas as soluções práticas para permitir requisições básicas de
-                                                diferentes
-                                                origens.
-                                            </p>
-                                            <p>
-                                                Após a instalação das dependências Express e CORS, observe que ambas
-                                                serão
-                                                adicionadas no arquivo <b>package.json</b> em <b>dependencies</b> com
-                                                suas
-                                                respectivas
-                                                versões.
-                                            </p>
-                                            <pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading15">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                                        assertNotNull
+                                    </button>
+                                </h2>
+                                <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Verifica se um objeto, ou uma variável, não pode ser nulo.</p>
+                                        <pre>
                                             <code class="hljs">
-{ 
-    <span class="hljs-code">"name"</span>: <span class="hljs-title">"api"</span>, 
-    <span class="hljs-code">"version"</span>: <span class="hljs-title">"1.0.0"</span>, 
-    <span class="hljs-code">"main"</span>: <span class="hljs-title">"index.js"</span>, 
-    <span class="hljs-code">"scripts"</span>: { 
-        <span class="hljs-code">"test"</span>: <span class="hljs-title">"echo</span> <span class="hljs-type">\"</span><span class="hljs-title">Error: no test specified</span><span class="hljs-type">\"</span> <span class="hljs-title">&& exit 1" </span>
-                                                    
-    },                                                  
-    <span class="hljs-code">"keywords"</span>: [], 
-    <span class="hljs-code">"author"</span>:<span class="hljs-title"> ""</span>, 
-    <span class="hljs-code">"license"</span>: <span class="hljs-title">"ISC"</span>, 
-    <span class="hljs-code">"description"</span>: <span class="hljs-title">""</span>, 
-    <span class="hljs-code">"dependencies"</span>: { 
-        <span class="hljs-code">"cors"</span>: <span class="hljs-title">"^2.8.5"</span>, 
-        <span class="hljs-code">"express"</span>: <span class="hljs-title">"^4.21.2"</span>                                          
-    } 
-}
+@<span class="hljs-quote">Test</span> 
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaNaoNullo</span>() { 
+    <span class="hljs-quote">String</span> <span class="hljs-azul">nome</span> = <span class="hljs-title">"SENAC"</span>; 
+    <span class="hljs-type">assertNotNull</span>(<span class="hljs-title">"Variável não é nula"</span>, nome); 
+} 
                                             </code>
                                         </pre>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 4</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 4:</b> crie o arquivo <b>noticias.json</b>, no qual as
-                                                informações
-                                                das notícias serão
-                                                armazenas. Para este exemplo, serão considerados os campos: <b>id</b>,
-                                                <b>titulo</b> e
-                                                <b>conteudo</b>. Abra o projeto no Visual Studio Code e, depois de criar
-                                                o
-                                                arquivo
-                                                <b>noticias.json</b>, edite com as seguintes informações:
-                                            </p>
-                                            <pre>
-                                        <code class="hljs">
-[ 
-    { 
-        <span class="hljs-code">"id"</span>: <span class="hljs-symbol">1</span>, 
-        <span class="hljs-code">"titulo"</span>: <span class="hljs-title">"Java Script"</span>, 
-        <span class="hljs-code">"conteudo"</span>: <span class="hljs-title">"Linguagem Java Script" </span>
-    }, 
-    { 
-        <span class="hljs-code">"id"</span>: <span class="hljs-symbol">2</span>, 
-        <span class="hljs-code">"titulo"</span>: <span class="hljs-title">"Express"</span>, 
-        <span class="hljs-code">"conteudo"</span>: <span class="hljs-title">"Utilizado para API"</span> 
-    } 
-] 
-                                        </code>
-                                       </pre>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 5</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 5:</b> crie o arquivo <b>index.js</b> e configure o servidor do
-                                                Express com as
-                                                seguintes configurações:
-                                            </p>
-                                            <pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading16">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                                        assertNotSame e assertSame
+                                    </button>
+                                </h2>
+                                <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p><b>assertNotSame</b> verifica se duas variáveis não se referem ao mesmo
+                                            objeto. Já
+                                        <p>assertSame</p> verifica se duas variáveis se referem ao mesmo objeto. </p>
+                                        <pre>
+                                                <code class="hljs">
+@<span class="hljs-quote">Test</span> 
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testaObjetosDiferentes</span>() { 
+    <span class="hljs-quote">Object</span> <span class="hljs-azul">gato</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Object</span>(); 
+    <span class="hljs-quote">Object</span> <span class="hljs-azul">cachorro</span> = <span class="hljs-roxo">new</span> <span class="hljs-type">Object</span>(); 
+     <span class="hljs-type">assertNotSame</span>(cachorro, gato); 
+} 
+                                                </code>
+                                            </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading17">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                                        assertTrue e assertFalse
+                                    </button>
+                                </h2>
+                                <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Verificam se determinada condição é verdadeira ou falsa (usar,
+                                            respectivamente, assertTrue ou assertFalse). </p>
+                                        <pre>
+                                                <code class="hljs">
+@<span class="hljs-quote">Test </span>
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testeCondicaoVerdadeFalse</span>() { 
+    <span class="hljs-type">assertTrue</span>(<span class="hljs-title">"5 é maior que 4"</span>, <span class="hljs-numero">5</span> > <span class="hljs-numero">4</span>); 
+    <span class="hljs-type">assertFalse</span>(<span class="hljs-title">"5 não é maior que 6"</span>, <span class="hljs-numero">5</span> > <span class="hljs-numero">6</span>); 
+}                                          
+                                                </code>
+                                            </pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading18">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                                        assertThat
+                                    </button>
+                                </h2>
+                                <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18"
+                                    data-bs-parent="#accordionExample3">
+                                    <div class="accordion-body">
+                                        <p>Verifica se um <i>array</i> contém valores específicos. </p>
+                                        <pre>
                                             <code class="hljs">
-<span class="hljs-symbol">// Importação dos módulos necessários</span> 
-<span class="hljs-code">const</span> <span class="hljs-type">express</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'express'</span>); 
-<span class="hljs-code">const</span> <span class="hljs-quote">fs</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'fs'</span>); <span class="hljs-symbol">// Módulo para manipulação de arquivos </span>
-<span class="hljs-code">const</span> <span class="hljs-type">cors</span> = <span class="hljs-type">require</span>(<span class="hljs-title">'cors'</span>); <span class="hljs-symbol">// Mecanismo de segurança para permitir CORS</span> 
-                                                
-                                                 
-<span class="hljs-symbol">// Criação da aplicação e configuração da porta</span> 
-<span class="hljs-code">const</span> <span class="hljs-meta">app</span> = <span class="hljs-type">express</span>(); 
-<span class="hljs-code">const</span> <span class="hljs-meta">PORT</span> = <span class="hljs-numero">3000</span>; 
-                                                
-                                                 
-<span class="hljs-symbol">// Permitir CORS</span> 
-<span class="hljs-meta">app</span>.<span class="hljs-type">use</span>(<span class="hljs-type">cors</span>()); 
-                                                
-                                                 
-<span class="hljs-symbol">// Middleware para interpretar JSON </span>
-<span class="hljs-meta">app</span>.<span class="hljs-type">use</span>(<span class="hljs-type">express.json</span>());
+@<span class="hljs-quote">Test </span>
+<span class="hljs-meta">public</span> <span class="hljs-quote">void</span> <span class="hljs-type">testAssertThatHasItems</span>() { 
+    <span class="hljs-type">assertThat</span>( 
+   <span class="hljs-azul"> Arrays</span>.<span class="hljs-type">asList</span>(<span class="hljs-title">"Java"</span>, <span class="hljs-title">"JUnit"</span>, <span class="hljs-title">"Test"</span>), 
+    <span class="hljs-type">hasItems</span>(<span class="hljs-title">"Java"</span>, <span class="hljs-title">"SENAC"</span>)); 
+}  
                                             </code>
                                         </pre>
-                                            <p>Inicialmente, são importados três módulos: </p>
-                                            <ul class="marcador-padrao">
-                                                <li>
-                                                    <b>Express</b>: fornece recursos para construir aplicações
-                                                    <i>web</i> e
-                                                    APIs de forma
-                                                    eficiente.
-                                                </li>
-                                                <li>
-                                                    <b>fs</b>: é um módulo nativo do Node.js utilizado para operações
-                                                    com o
-                                                    sistema de
-                                                    arquivos, como leitura e gravação de arquivos.
-                                                </li>
-                                                <li><b>cors</b>: permite que o servidor aceite solicitações de
-                                                    diferentes
-                                                    origens.</li>
-                                            </ul>
-                                            <p>
-                                                Em seguida, crie a aplicação com <b>express()</b> e a atribua à
-                                                constante
-                                                <b>app</b>, que será
-                                                a instância principal para definir rotas e <i>middlewares</i>. Defina
-                                                também
-                                                a
-                                                constante <b>PORT</b> com o valor 3000, indicando a porta na qual o
-                                                servidor
-                                                será
-                                                executado e estará acessível localmente via
-                                                <b>http://localhost:3000</b>.
-                                            </p>
-                                            <p>Além disso, aplique as seguintes configurações:</p>
-                                            <ul class="marcador-padrao">
-                                                <li>
-                                                    <b>app.use(cors())</b>: habilita o CORS no servidor, permitindo que
-                                                    ele
-                                                    aceite
-                                                    requisições de origens diferentes.
-                                                </li>
-                                                <li>
-                                                    <b>app.use(express.json())</b>: que permite ao servidor interpretar
-                                                    dados enviados
-                                                    no formato JSON em requisições HTTP, facilitando o processamento de
-                                                    informações no corpo das requisições (<b>req.body</b>).
-                                                </li>
-                                            </ul>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 6</h4>
-                                            </div>
-                                            <p><b>Passo 6</b>: crie funções para ler e escrever no arquivo
-                                                <b>noticias.json</b>.
-                                            </p>
-                                            <p>
-                                                Para garantir a persistência dos dados no arquivo <b>noticias.json</b>,
-                                                utilize as
-                                                seguintes funções auxiliares:
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-code">const</span> <span class="hljs-meta">filePath</span> = <span class="hljs-title">'./noticias.json'</span>; 
-
- 
-<span class="hljs-symbol">// Lê os dados do arquivo JSON</span> 
-<span class="hljs-code">const</span> <span class="hljs-type">readData</span> = () <span class="hljs-code">=></span> { 
-    <span class="hljs-roxo">try</span> { 
-        <span class="hljs-code">const</span> <span class="hljs-meta">data</span> = <span class="hljs-quote">fs</span>.<span class="hljs-type">readFileSync</span>(<span class="hljs-meta">filePath</span>, <span class="hljs-title">'utf8'</span>); <span class="hljs-symbol">// Lê o conteúdo do arquivo</span> 
-        <span class="hljs-roxo">return</span> <span class="hljs-azul">JSON</span>.<span class="hljs-type">parse</span>(<span class="hljs-meta">data</span> || <span class="hljs-title">'[]'</span>); <span class="hljs-symbol">// Converte para objeto/array ou retorna um array vazio </span>
-      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">error</span>) { 
-        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao ler o arquivo:'</span>, <span class="hljs-azul">error</span>); 
-        <span class="hljs-roxo">return</span> []; 
-      } 
-}; 
-                                                
-                                                 
-<span class="hljs-symbol">// Grava os dados no arquivo JSON</span> 
-<span class="hljs-code">const</span> <span class="hljs-type">writeData</span> = (<span class="hljs-azul">data</span>) <span class="hljs-code">=></span> { 
-    <span class="hljs-roxo">try</span> { 
-        <span class="hljs-quote">fs</span>.<span class="hljs-type">writeFileSync</span>(<span class="hljs-meta">filePath</span>, <span class="hljs-azul">JSON</span>.<span class="hljs-type">stringify</span>(<span class="hljs-azul">data</span>, <span class="hljs-code">null</span>, <span class="hljs-numero">2</span>)); <span class="hljs-symbol">// Grava com formatação </span>
-      } <span class="hljs-roxo">catch</span> (<span class="hljs-azul">error</span>) { 
-        <span class="hljs-azul">console</span>.<span class="hljs-type">error</span>(<span class="hljs-title">'Erro ao escrever no arquivo:'</span>, <span class="hljs-azul">error</span>); 
-      } 
-}; 
-                                            </code>
-                                        </pre>
-                                            <p>Essas funções abstraem a leitura e a escrita, facilitando a manipulação
-                                                do
-                                                arquivo. </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 7</h4>
-                                            </div>
-                                            <p>
-                                                <b>Passo 7</b>: crie os <i>endpoints</i> na aplicação, pelos quais ela
-                                                recebe <i>requests</i> e
-                                                retorna <i>responses</i>.
-                                            </p>
-                                            <p>
-                                                Os <i>endpoints</i> são configurados para rodar sob rotas
-                                                (<i>routes</i>).
-                                                As rotas podem ser
-                                                configuradas para receber parâmetros e tipos de métodos que elas
-                                                aceitam,
-                                                tais
-                                                como <b>GET</b>, <b>POST</b>,<b> PUT</b> e <b>DELETE</b>. Esses métodos
-                                                representam a operação que os
-                                                <i>endpoints</i> realizarão.
-                                            </p>
-                                            <p>
-                                                Para criar <i>endpoints</i> com o Express, basta utilizar um dos
-                                                seguintes
-                                                métodos que
-                                                ele disponibiliza de acordo com os verbos HTTP:
-                                            </p>
-                                            <ul>
-                                                <li><b>app.get()</b></li>
-                                                <li><b>app.post()</b></li>
-                                                <li><b>app.delete()</b></li>
-                                                <li><b>app.put()</b></li>
-                                            </ul>
-                                            <p>
-                                                <b>Rota para listar todas as notícias</b>: essa rota responde com todas
-                                                as
-                                                notícias
-                                                armazenadas no arquivo <b>noticias.json</b>.
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span>.<span class="hljs-type">get</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
-    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>(<span class="hljs-meta">noticias</span>); 
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Nesse bloco de código, foi definida uma rota HTTP do tipo <b>GET</b> no
-                                                caminho
-                                                <b>/noticias</b> utilizando o método <b>app.get</b>. Quando um cliente
-                                                acessa essa rota, a
-                                                função de <i>callback</i> é executada, recebendo os objetos <b>req</b>
-                                                (requisição) e <b>res</b>
-                                                (resposta). Dentro dessa função, o método <b>readData()</b> é chamado
-                                                para
-                                                obter as
-                                                notícias, que são armazenadas na variável <b>noticias</b>. Por fim,
-                                                utiliza-se
-                                                <b> res.json(noticias)</b> para enviar as notícias como uma resposta em
-                                                formato JSON,
-                                                garantindo que o cliente receba os dados estruturados de forma adequada.
-                                            </p>
-                                            <p><b>Rota para buscar uma notícia pelo ID</b>: retorna uma única notícia
-                                                pelo
-                                                <b>ID</b>.
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span><span class="hljs-type">.get</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
-    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req.params</span>; 
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticia</span> = <span class="hljs-meta">noticias</span><span class="hljs-type">.find</span>((<span class="hljs-azul">n</span>) => <span class="hljs-azul">n.id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
-                                                    
-                                                     
-    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">noticia</span>) { 
-        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span><span class="hljs-type">.status</span>(<span class="hljs-numero">404</span>)<span class="hljs-type">.json</span>({ <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia não encontrada.'</span> }); 
-    } 
-                                                    
-                                                     
-    <span class="hljs-azul">res</span><span class="hljs-type">.json</span>(<span class="hljs-meta">noticia</span>);                                          
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Nesse bloco, foi definida uma rota HTTP do tipo <b>GET</b> no caminho
-                                                <b>/noticias/:id</b>,
-                                                que permite buscar uma notícia específica pelo seu identificador (ID). O
-                                                parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
-                                                seguida, chama-se a
-                                                função <b>readData()</b> para carregar a lista atual de notícias e
-                                                utiliza-se o método
-                                                <b>find</b> para localizar a notícia cujo ID corresponde ao valor
-                                                fornecido
-                                                na URL.
-                                                Para garantir a correspondência, o ID da URL é convertido para um número
-                                                inteiro
-                                                com <b>parseInt</b>. Se nenhuma notícia for encontrada, retorna-se uma
-                                                resposta com
-                                                código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem
-                                                informativa em
-                                                formato JSON.
-                                                Caso contrário, envia-se a notícia encontrada como resposta em formato
-                                                JSON,
-                                                permitindo que o cliente visualize os detalhes da notícia solicitada.
-                                            </p>
-                                            <p>
-                                                <b>Rota para adicionar uma nova notícia:</b> permite adicionar uma nova
-                                                notícia
-                                                enviando os dados no corpo da requisição.
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span>.<span class="hljs-type">post</span>(<span class="hljs-title">'/noticias'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
-    <span class="hljs-code">const</span> { <span class="hljs-meta">titulo</span>, <span class="hljs-meta">conteudo</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">body</span>; 
-                                                    
-    <span class="hljs-symbol">// Validações básicas</span> 
-    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">titulo</span> || !<span class="hljs-meta">conteudo</span>) { 
-        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">400</span>).<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Título e conteúdo são obrigatórios.'</span> }); 
-   } 
-                                                    
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
-    <span class="hljs-code">const</span> <span class="hljs-meta">novaNoticia</span> = { 
-        <span class="hljs-azul">id</span>: <span class="hljs-meta">noticias</span>.<span class="hljs-azul">length</span> > <span class="hljs-numero">0</span> ? <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticias</span>.<span class="hljs-azul">length</span> - <span class="hljs-numero">1</span>].<span class="hljs-azul">id</span> + <span class="hljs-numero">1</span> : <span class="hljs-numero">1</span>, <span class="hljs-symbol">// ID autoincremental</span> 
-        <span class="hljs-azul">titulo</span>, 
-        <span class="hljs-azul">conteudo</span>, 
-   }; 
-                                                    
-    <span class="hljs-meta">noticias</span>.<span class="hljs-type">push</span>(<span class="hljs-meta">novaNoticia</span>); 
-    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
-                                                    
-    <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">201</span>).<span class="hljs-type">json</span>(<span class="hljs-meta">novaNoticia</span>); 
-                                                    
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Nesse bloco de código, é definida uma rota HTTP do tipo <b>POST</b> no
-                                                caminho
-                                                <b>/noticias</b>, utilizada para adicionar novas notícias. Quando essa
-                                                rota
-                                                é acessada,
-                                                o servidor executa a função de <i>callback</i>, que recebe os objetos
-                                                <b>req</b> (requisição)
-                                                e <b>res</b> (resposta). Primeiro, são extraídos os valores de
-                                                <b>titulo</b>
-                                                e <b>conteudo</b> do
-                                                corpo da requisição (<b>req.body</b>). Em seguida, realizam-se
-                                                validações
-                                                básicas para
-                                                garantir que ambos os campos sejam preenchidos. Caso algum deles esteja
-                                                ausente,
-                                                retorna-se uma resposta com código de status <b>400 (Bad Request)</b> e
-                                                uma
-                                                mensagem
-                                                informativa em formato JSON. Se os dados forem válidos, chama-se a
-                                                função
-                                                <b>readData()</b> para obter a lista atual de notícias e cria-se um
-                                                objeto
-                                                <b>novaNoticia</b>
-                                                com um ID autoincremental, o título e o conteúdo fornecidos. Adiciona-se
-                                                a
-                                                nova
-                                                notícia ao <b>array</b> existente e são persistidos os dados atualizados
-                                                com
-                                                a função
-                                                <b>writeData()</b>. Por fim, responde-se com código de <i>status</i>
-                                                <b>201
-                                                    (Created)</b> e o objeto
-                                                da nova notícia em formato JSON, indicando que o recurso foi criado com
-                                                sucesso.
-                                            </p>
-                                            <p>
-                                                <b>Rota para atualizar uma notícia pelo ID:</b> a rota a seguir permite
-                                                atualizar o
-                                                título e/ou o conteúdo de uma notícia específica. Caso o ID informado
-                                                não
-                                                exista, a rota retornará um erro.
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span><span class="hljs-type">.put</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-code">=></span> { 
-    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">params</span>; 
-    <span class="hljs-code">const</span> { <span class="hljs-meta">titulo</span>, <span class="hljs-meta">conteudo</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">body</span>; 
-                                                      
-    <span class="hljs-symbol">// Validações básicas </span>
-    <span class="hljs-roxo">if</span> (!<span class="hljs-meta">titulo</span> && !<span class="hljs-meta">conteudo</span>) { 
-    <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">400</span>).<span class="hljs-type">json</span c>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'É necessário informar o título ou o conteúdo para atualização.'</span> }); 
-    } 
-                                                      
-                                                    
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticiaIndex</span> = <span class="hljs-meta">noticias</span>.<span class="hljs-type">findIndex</span>((<span class="hljs-azul">n</span>) => <span class="hljs-azul">n</span>.<span class="hljs-azul">id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
-                                                                                                  
-    <span class="hljs-roxo">if</span> (<span class="hljs-meta">noticiaIndex</span> === -<span class="hljs-numero">1</span>) { 
-      <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">404</span>).<span class="hljs-type">json</span>({<span class="hljs-azul"> message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
-    } 
-                                                    
-                                                    
-    <span class="hljs-symbol">// Atualizar apenas os campos fornecidos</span> 
-    <span class="hljs-roxo">if</span> (<span class="hljs-meta">titulo</span>) <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>].<span class="hljs-azul">titulo</span> = <span class="hljs-meta">titulo</span>; 
-    <span class="hljs-roxo">if</span> (<span class="hljs-meta">conteudo</span>) <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>].<span class="hljs-azul">conteudo</span> = <span class="hljs-meta">conteudo</span>; 
-                                                                                                    
-    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
-                                                    
-    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>({ 
-      <span class="hljs-azul">message:</span> <span class="hljs-title">'Notícia atualizada com sucesso.'</span>, 
-      <span class="hljs-azul">noticia:</span> <span class="hljs-meta">noticias</span>[<span class="hljs-meta">noticiaIndex</span>], 
-                                                    
-    }); 
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Nesse bloco de código, é definida uma rota HTTP do tipo <b>PUT</b> no
-                                                caminho
-                                                <b>/noticias/:id</b>, que permite atualizar uma notícia específica pelo
-                                                seu
-                                                identificador (ID). O ID é extraído da URL utilizando <b>req.params</b>,
-                                                enquanto os
-                                                dados enviados para atualização (como <b>titulo</b> e <b>conteudo</b>)
-                                                são
-                                                extraídos do corpo
-                                                da requisição (<b>req.body</b>).
-                                            </p>
-                                            <p>
-                                                Inicialmente, realiza-se uma validação para garantir que ao menos um dos
-                                                campos
-                                                (<b>titulo</b> ou <b>conteudo</b>) tenha sido fornecido. Caso contrário,
-                                                retorna-se uma
-                                                resposta com o código de <i>status</i> <b>400 (Bad Request)</b> e uma
-                                                mensagem informativa em
-                                                formato JSON.
-                                            </p>
-                                            <p>
-                                                Em seguida, chama-se a função <b>readData()</b> para obter a lista de
-                                                notícias e usa-se
-                                                <b>findIndex</b> para localizar o índice da notícia cujo ID corresponde
-                                                ao
-                                                fornecido.
-                                                Se a notícia não for encontrada (índice -1), retorna-se uma resposta com
-                                                o
-                                                código de <i>status</i> <b>404 (Not Found)</b> e uma mensagem indicando
-                                                que
-                                                a notícia não
-                                                existe.
-                                            </p>
-                                            <p>
-                                                Se a notícia for encontrada, atualizam-se apenas os campos fornecidos no
-                                                corpo
-                                                da requisição. Por exemplo, se apenas o <b>titulo</b> for enviado,
-                                                apenas
-                                                esse campo
-                                                será atualizado. Após a atualização, são persistidas as alterações
-                                                chamando
-                                                a
-                                                função <b>writeData()</b>.
-                                            </p>
-                                            <p><b>Rota para deletar uma notícia pelo ID:</b> remove uma notícia do
-                                                arquivo.
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span>.<span class="hljs-type">delete</span>(<span class="hljs-title">'/noticias/:id'</span>, (<span class="hljs-azul">req</span>, <span class="hljs-azul">res</span>) <span class="hljs-meta">=></span> { 
-    <span class="hljs-code">const</span> { <span class="hljs-meta">id</span> } = <span class="hljs-azul">req</span>.<span class="hljs-azul">params</span>; 
-    <span class="hljs-code">const</span> <span class="hljs-meta">noticias</span> = <span class="hljs-type">readData</span>(); 
-    <span class="hljs-code">const</span> <span class="hljs-meta">index</span> = <span class="hljs-meta">noticias</span>.<span class="hljs-type">findIndex</span>((<span class="hljs-azul">n</span>) <span class="hljs-code">=></span> <span class="hljs-azul">n</span>.<span class="hljs-azul">id</span> === <span class="hljs-type">parseInt</span>(<span class="hljs-meta">id</span>)); 
-                                                                                                   
-    <span class="hljs-roxo">if </span>(<span class="hljs-meta">index</span> === -1) { 
-        <span class="hljs-roxo">return</span> <span class="hljs-azul">res</span>.<span class="hljs-type">status</span>(<span class="hljs-numero">404</span>).<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Notícia não encontrada.'</span> }); 
-    } 
-                                                                                                    
-    <span class="hljs-meta">noticias</span>.<span class="hljs-type">splice</span>(<span class="hljs-meta">index</span>, <span class="hljs-numero">1</span>); <span class="hljs-symbol">// Remove a notícia pelo índice</span> 
-    <span class="hljs-type">writeData</span>(<span class="hljs-meta">noticias</span>); 
-                                                    
-    <span class="hljs-azul">res</span>.<span class="hljs-type">json</span>({ <span class="hljs-azul">message</span>: <span class="hljs-title">'Notícia removida com sucesso.'</span> }); 
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Nesse bloco, é definida uma rota HTTP do tipo <b>DELETE</b> no caminho
-                                                <b>/noticias/:id</b>,
-                                                que permite remover uma notícia específica pelo seu identificador (ID).
-                                                O
-                                                parâmetro <b>:id</b> é extraído da URL por meio de <b>req.params</b>. Em
-                                                seguida, a função
-                                                <b>readData()</b> é chamada para carregar a lista atual de notícias e o
-                                                método
-                                                <b>findIndex</b> é utilizado para localizar o índice da notícia cujo ID
-                                                corresponde ao
-                                                valor fornecido na URL. Para garantir a correspondência, o ID da URL é
-                                                convertido para número inteiro com <b>parseInt</b>. Se o índice for -1
-                                                (indicando que a
-                                                notícia não foi encontrada), responde-se com um código de <i>status</i>
-                                                <b>404 (Not Found)</b>
-                                                e uma mensagem informativa em JSON. Caso a notícia seja encontrada,
-                                                usa-se o
-                                                método <b>splice</b> para removê-la da lista com base no índice e são
-                                                persistidas as
-                                                alterações no armazenamento chamando a função <b>writeData()</b>. Por
-                                                fim,
-                                                retorna-se
-                                                uma resposta em formato JSON com uma mensagem indicando que a notícia
-                                                foi
-                                                removida com sucesso.
-                                            </p>
-                                            <p><b>Rota para iniciar o serviço:</b> adiciona o código para iniciar o
-                                                servidor.</p>
-                                            <pre>
-                                            <code class="hljs">
-<span class="hljs-meta">app</span><span class="hljs-type">.listen</span>(<span class="hljs-meta">PORT</span>, ()<span class="hljs-code"> =></span> { 
-    <span class="hljs-azul">console</span>.<span class="hljs-type">log</span>(<span class="hljs-title">`Servidor rodando em http://localhost:</span><span class="hljs-meta">${PORT}</span>`); 
-}); 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Esse bloco de código inicia o servidor na porta previamente definida na
-                                                constante <b>PORT</b>. A função <b>app.listen</b> é usada para fazer o
-                                                aplicativo Express
-                                                começar a escutar conexões de entrada. O segundo parâmetro é uma função
-                                                de
-                                                <i>callback</i> que será executada assim que o servidor estiver ativo e
-                                                pronto para
-                                                receber requisições. No <i>callback</i>, utiliza-se o método
-                                                <b>console.log</b> para exibir
-                                                uma mensagem no terminal, indicando que o servidor está rodando e pode
-                                                ser
-                                                acessado no endereço <b>http://localhost:${PORT}</b>. Esse é um passo
-                                                essencial para
-                                                disponibilizar a aplicação e permitir que clientes interajam com as
-                                                rotas
-                                                definidas.
-                                            </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 8</h4>
-                                            </div>
-                                            <p><b>Passo 8:</b> inicie o serviço. No terminal, digite o seguinte comando:
-                                            </p>
-                                            <pre>
-                                            <code class="hljs">
-node index.js 
-                                            </code>
-                                        </pre>
-                                            <p>
-                                                Ao rodar esse comando, o serviço inicia e gera uma rota pela qual o
-                                                servidor
-                                                de
-                                                dados possa ser acessado, por meio da URL <b>http://localhost:3000</b>.
-                                                Nesse endereço,
-                                                deverão ser realizadas as solicitações de <b>GET</b> e <b>POST</b>.
-                                            </p>
-                                            <div class="divisoria no-print">
-                                                <h4 class="titulo-div">passo 9</h4>
-                                            </div>
-                                            <p><b>Passo 9:</b> teste o serviço da API de notícias.</p>
-                                            <p>
-                                                Você pode testar se tudo está <i>ok</i> usando no <i>browser</i> a URL
-                                                <b>http://localhost:3000/noticias</b>.
-                                            </p>
-                                            <figure class="my-5 no-print">
-                                                <img src=""
-                                                    class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius"
-                                                    alt="Imagem">
-                                                <a href="" target="_blank"
-                                                    class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                                                    <img src=""
-                                                        class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
-                                                        alt="Imagem">
-                                                </a>
-                                                <figcaption class="figure-caption text-center">
-                                                    Acessando serviço de listagem de notícias <br>
-                                                    Fonte: Senac EAD (2025)
-                                                </figcaption>
-                                            </figure>
-                                            <div class="acessivel visually-hidden no-print">
-                                                <p>
-                                                    Imagem do navegador de internet que exibe dados de todas as notícias
-                                                    com
-                                                    título, conteúdo e id.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="botao hvr-sweep-to-right"
-                                                data-bs-dismiss="modal">Fechar</button>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-5">
+                            Com as <i>assertions</i>, é possível realizar testes parametrizados, que permitem que um
+                            teste seja
+                            executado diversas vezes usando valores diferentes. Isso ajuda o desenvolvedor a economizar
+                            tempo na execução de um mesmo teste, que varia apenas em suas entradas e seus resultados
+                            esperados.
+                        </p>
+                    </div>
+                </div>
+                <div class="bloco5 bloco-roxo5">
+                    <div class="container">
+                        <h3>Mockito</h3>
+                        <p>
+                            O termo “<i>mock</i>” é utilizado em testes para descrever um caso especial de objetos que
+                            imitam
+                            objetos reais do sistema. São normalmente criados para testar o comportamento de outros
+                            objetos.
+                            Em outras palavras, os objetos <i>mock</i> são objetos “falsos” que simulam o comportamento
+                            de uma
+                            classe ou objeto “real” para que seja possível focar o teste na unidade a ser testada.
+                        </p>
+                        <!-- imagem mockito -->
+                        <img src="" class="img-fluid d-block mx-auto no-print">
+                        <p>
+                            Mockito é um <i>framework</i> em Java usado em conjunto com o JUnit. Ele permite criar e
+                            configurar
+                            objetos fictícios nos testes unitários. O uso do Mockito simplifica significativamente o
+                            desenvolvimento de testes para classes com dependências externas.
+                        </p>
+                        <p>
+                            Antes de usar a técnica <i>mock</i>, você deve saber quais são as principais vantagens dela.
+                            Se você
+                            quer testar um componente que depende de outro, mas está em desenvolvimento, pode usar essa
+                            técnica. Geralmente é usada quando se trabalha em equipe e as atividades são divididas entre
+                            vários colegas. Nesse caso, o uso de <i>mock</i> desempenha um papel essencial no teste
+                            desse
+                            componente, criando objetos que simulam o comportamento do que ainda está sendo
+                            desenvolvido.
+                            Sem <i>mock</i>, é preciso aguardar a conclusão dos elementos necessários para o teste.
+                        </p>
+                        <p>
+                            Se os componentes reais executam operações lentas ao manipular com conexões de banco de
+                            dados ou
+                            outra operação complexa de leitura/gravação, você pode usar <i>mock</i>. Às vezes, as
+                            consultas ao
+                            banco de dados podem levar 10, 20 ou mais segundos para serem executadas. Nesses casos, você
+                            pode utilizar objetos fictícios para realizar testes que apenas retornam dados para teste,
+                            mas
+                            que os criam e retornam direto da memória, em vez de buscá-los no banco de dados.
+                        </p>
+                        <p> Os seguintes tópicos apresentam as principais anotações:</p>
+                        <p class="no-print">Clique ou toque para visualizar o conteúdo. </p>
+                        <div class="accordion" id="accordionExample4">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading20">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                                        @Mock
+                                    </button>
+                                </h2>
+                                <div id="collapse20" class="accordion-collapse collapse" aria-labelledby="heading20"
+                                    data-bs-parent="#accordionExample4">
+                                    <div class="accordion-body">
+                                        <p>Cria uma instância de uma classe, porém “mocada”. Se você chamar um método,
+                                            ele não chamará o método real. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading21">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                                        @InjectMocks
+                                    </button>
+                                </h2>
+                                <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21"
+                                    data-bs-parent="#accordionExample4">
+                                    <div class="accordion-body">
+                                        <p>Cria uma instância e injeta as dependências necessárias que estão anotadas
+                                            com <b>@Mock</b>. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading22">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+                                        @RunWith
+                                    </button>
+                                </h2>
+                                <div id="collapse22" class="accordion-collapse collapse" aria-labelledby="heading22"
+                                    data-bs-parent="#accordionExample4">
+                                    <div class="accordion-body">
+                                        <p>É responsável por garantir que todas as anotações do Mockito funcionem. Essa
+                                            anotação deverá ficar anexada em cima do nome da classe que será testada:
+                                            <b> @RunWith(MockitoJUnitRunner.class)</b>.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="bloco2">
+                <div class="bloco6 bloco-azul5">
                     <div class="container">
-                        <p class="no-print mt-5">Clique ou toque para assistir ao vídeo. </p>
-                        <div class="ratio ratio-16x9">
-                            <iframe src="" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                        </div>
                         <h3>Encerramento</h3>
                         <p>
-                            Neste conteúdo, foi desenvolvido um serviço <i>web</i> no <i>back-end</i> utilizando Node.js
-                            e
-                            Express.js,
-                            possibilitando a construção de uma API de notícias robusta e eficiente. Essa API permite o
-                            processamento de requisições, facilitando a comunicação entre aplicações <i>front-end</i> e
-                            <i>back-end</i> de
-                            forma dinâmica e estruturada.
+                            Em resumo, o teste de unidade é uma prática indispensável no desenvolvimento de <i>software</i>
+                            moderno, atuando como a primeira linha de defesa contra erros e <i>bugs</i>. Ao validar cada unidade de
+                            código de forma isolada, ele garante que o <i>software</i> funcione conforme o esperado desde os
+                            estágios iniciais do desenvolvimento.
+                        </p>
+                        <p>
+                            Além de identificar falhas precocemente, o teste de unidade contribui para a manutenção do
+                            código, a redução de custos e a aceleração do ciclo de entrega. Sua execução adequada não apenas
+                            melhora a qualidade do produto final, mas também fortalece a confiança da equipe e a satisfação
+                            do cliente. Portanto, adotar testes unitários de forma consistente e estratégica é um
+                            investimento essencial para o sucesso de qualquer projeto de <i>software</i>.
                         </p>
                     </div>
                 </div>
