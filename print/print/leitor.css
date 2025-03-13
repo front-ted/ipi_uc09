@@ -25,6 +25,7 @@
   border: 2px solid black;
 }
 
+
 /* SUPER RESET */
 .pagina *{
   all: unset;
@@ -185,7 +186,7 @@
 }
 .pagina img	{
   display: inline-block;
-  max-width: 60% !important;
+  max-width: 95% !important;
 }
 .pagina legend{
   display: block;

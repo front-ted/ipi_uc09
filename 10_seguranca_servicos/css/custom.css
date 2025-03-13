@@ -3,7 +3,7 @@
         url('../img/bg_destaque_direita.png') no-repeat 97% 7% fixed,
         url('../img/bg.png') no-repeat;
     background-size: auto, auto, cover;
-    margin-top: -1%;
+    margin-top: 0%;
     padding-top: 3%;
     padding-bottom: 8%;
     color: #fff;
