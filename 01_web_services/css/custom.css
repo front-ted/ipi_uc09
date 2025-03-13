@@ -31,6 +31,9 @@ body {
     filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
 }
 
+.logo-aws {
+    margin-top: 37%;
+}
 
 .painel-web {
     background: url('../img/infog1.png');
@@ -401,6 +404,7 @@ body {
     .botao-8:hover {
         margin-left: 32%;
     }
+
     .topo-logo {
         background-size: auto, 12%;
     }
@@ -476,13 +480,19 @@ body {
     .texto-erp {
         margin-top: 12%;
     }
-    .texto-intro{
+
+    .texto-intro {
         margin-top: 5%;
     }
-    .margem-top{
+
+    .margem-top {
         margin-top: 10%;
     }
 
+    .logo-aws {
+        margin-top: 6%;
+        margin-bottom: 5%;
+    }
 }
 
 
