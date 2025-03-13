@@ -359,7 +359,13 @@ pre {
         padding-bottom: 18%;
     }
 
-
+    .bloco-azul {
+        background: url(../img/bg2.png) no-repeat;
+        margin-top: -4%;
+        padding-top: 1%;
+        padding-bottom: 17%;
+        background-size: cover;
+    }
 
 
 }
@@ -454,7 +460,7 @@ pre {
 
     .bloco-azul {
         margin-top: -29%;
-        padding-bottom: 20%;
+        padding-bottom: 25%;
     }
 
     .bloco-roxo2 {
