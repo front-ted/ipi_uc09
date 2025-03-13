@@ -545,6 +545,10 @@ pre {
         display: unset;
     }
 
+    .texto-mob{
+        margin-top: 5%;
+    }
+
 }
 
 
