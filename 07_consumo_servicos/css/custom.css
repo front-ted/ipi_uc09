@@ -5,7 +5,7 @@ body {
         url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
         url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
 
-        url('../img/bg_gradiente.png') no-repeat;
+        url('../img/bg_gradiente.png') no-repeat fixed;
 
 
     background-size: auto, auto, auto, auto, cover;
@@ -350,7 +350,7 @@ pre {
             url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
             url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
 
-            url('../img/bg_gradiente.png') no-repeat;
+            url('../img/bg_gradiente.png') no-repeat fixed;
 
 
         background-size: 17%, 17%, auto, auto, cover;
@@ -369,7 +369,7 @@ pre {
             url('../img/bg_elementos-esq.png') no-repeat 0% 2%,
             url('../img/bg_elementos-dir.png') no-repeat 100% 2%,
 
-            url('../img/bg_gradiente.png') no-repeat;
+            url('../img/bg_gradiente.png') no-repeat fixed;
 
 
         background-size: 15%, 15%, auto, auto, cover;
@@ -381,7 +381,7 @@ pre {
 @media screen and (max-width:1024px) {
     body {
         background:
-            url('../img/bg_gradiente.png') no-repeat;
+            url('../img/bg_gradiente.png') no-repeat fixed;
         background-size: cover;
         overflow-x: hidden;
     }
@@ -397,6 +397,10 @@ pre {
     .bg-podcast::before {
         background: unset;
         right: unset;
+    }
+    .modal-dialog {
+        max-width: 670px;
+        margin: 1.75rem auto;
     }
 }
 

@@ -37,6 +37,10 @@ body {
     color: #000;
 }
 
+.bg-escuro .figure-caption {
+    color: #6c757d;
+}
+
 .bg-escuro .texto1,
 .bg-escuro .texto2,
 .bg-escuro .texto3,
@@ -193,6 +197,16 @@ pre {
 
     .img-inicio {
         margin-top: 3%;
+    }
+
+    .btn-tema_pagina {
+        bottom: 70px;
+        right: 15px;
+    }
+
+    .voltar-topo {
+        bottom: 20px;
+        right: 15px;
     }
 }
 
