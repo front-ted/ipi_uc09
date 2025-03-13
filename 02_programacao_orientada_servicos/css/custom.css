@@ -204,7 +204,7 @@ body {
     border: none;
 }
 
-.painel-modelo{
+.painel-modelo {
     background: url('../img/bg_painel_2.png');
     width: 532px;
     height: 424px;
@@ -221,38 +221,38 @@ body {
     margin-bottom: 5%;
 }
 
-.botao-descoberta-serv{
+.botao-descoberta-serv {
     background: url('../img/bt_find.png') no-repeat;
     width: 323px;
     height: 66px;
     border: none;
 }
 
-.botao-descoberta-serv:hover{
+.botao-descoberta-serv:hover {
     background: url('../img/bt_find_hv.png') no-repeat;
     border: none;
 }
 
-.botao-vinculacao-serv{
+.botao-vinculacao-serv {
     background: url('../img/bt_bind.png') no-repeat;
     width: 323px;
     height: 66px;
     border: none;
 }
 
-.botao-vinculacao-serv:hover{
+.botao-vinculacao-serv:hover {
     background: url('../img/bt_bind_hv.png') no-repeat;
     border: none;
 }
 
-.botao-consumo-serv{
+.botao-consumo-serv {
     background: url('../img/bt_execute.png') no-repeat;
     width: 323px;
     height: 66px;
     border: none;
 }
 
-.botao-consumo-serv:hover{
+.botao-consumo-serv:hover {
     background: url('../img/bt_execute_hv.png') no-repeat;
     border: none;
 }
@@ -304,11 +304,11 @@ body {
 }
 
 @media screen and (max-width:1440px) {
-    body{
+    body {
         background:
-        url('../img/destaque_bg_esq.png') no-repeat 2% 44%,
-        url('../img/destaque_bg_dir.png') no-repeat 98% 44%,
-        linear-gradient(to right, #b6bfcd, #a89dad);
+            url('../img/destaque_bg_esq.png') no-repeat 2% 44%,
+            url('../img/destaque_bg_dir.png') no-repeat 98% 44%,
+            linear-gradient(to right, #b6bfcd, #a89dad);
         background-attachment: fixed, fixed, fixed;
         background-size: 14%, 14%, cover;
     }
@@ -320,14 +320,14 @@ body {
 @media screen and (max-width:1366px) {}
 
 @media screen and (max-width:1024px) {
-
-
-    body {
-        background: url('../img/bg_gradiente.png') no-repeat;
-        background-size: cover;
+    .pagina .container {
+        background-color: unset;
     }
 
-
+body{
+    background: unset;
+    background-color: #f1ecf9;
+}
 }
 
 
@@ -349,11 +349,11 @@ body {
         margin: 1.75rem auto;
     }
 
-    .painel-modelo{
+    .painel-modelo {
         padding-left: 24%;
     }
 
-    .painel-soa{
+    .painel-soa {
         padding-left: 25%;
     }
 
@@ -382,7 +382,9 @@ body {
 
 
 @media screen and (max-width:500px) {
-    .painel-soa, .painel-modelo{
+
+    .painel-soa,
+    .painel-modelo {
         background: unset;
         grid-template-columns: 1fr;
         width: auto;
