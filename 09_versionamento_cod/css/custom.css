@@ -10,13 +10,14 @@
 .bloco-paralax1 {
     width: 100%;
     height: 400px;
-    background: url('');
+    background: url('../img/parallax.png');
+    background-position: right center;
     background-size: cover;
     background-attachment: fixed !important;
 }
 
 .bloco2, .bloco4 {
-    background: url('../img/bg1_1.png') no-repeat;
+    background: url('../img/bg2.png') no-repeat;
     background-size: cover;
     margin-top: 0%;
     padding-top: 3%;

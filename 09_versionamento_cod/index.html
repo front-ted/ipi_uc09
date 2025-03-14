@@ -88,12 +88,14 @@
                     <div class="container">
                         <h3>Versionamento de código</h3>
                         <p>
-                            No contexto do desenvolvimento de <i>software</i>, a organização e o controle das alterações
+                            No contexto do desenvolvimento de <i>software</i>, a organização e o controle das
+                            alterações
                             realizadas
                             em um projeto são fundamentais para garantir a eficiência e a colaboração entre os
                             desenvolvedores. Para isso, são utilizadas ferramentas de versionamento, que permitem
                             gerenciar
-                            as mudanças no código-fonte de forma estruturada e segura. Essas ferramentas operam por meio
+                            as mudanças no código-fonte de forma estruturada e segura. Essas ferramentas operam por
+                            meio
                             de
                             repositórios, que funcionam como bases centralizadas para armazenar e compartilhar o
                             progresso
@@ -105,9 +107,11 @@
                                     Explicando de uma forma mais clara, um repositório é uma “pasta” onde são
                                     disponibilizados os arquivos de um projeto, incluindo-se o versionamento. Um
                                     repositório
-                                    pode ser criado ou baixado com base em alguma hospedagem, de onde são baixados os
+                                    pode ser criado ou baixado com base em alguma hospedagem, de onde são baixados
+                                    os
                                     projetos para uma máquina local, ou, ainda, para onde são enviadas as alterações
-                                    realizadas. Assim, o desenvolvimento ocorre de forma descentralizada, em que cada
+                                    realizadas. Assim, o desenvolvimento ocorre de forma descentralizada, em que
+                                    cada
                                     desenvolvedor tem uma versão total do repositório em sua máquina local e envia
                                     somente
                                     os “pedaços” alterados para que todos possam pegar do repositório.
@@ -123,14 +127,17 @@
                             de arquivos.
                         </p>
                         <p>
-                            Ao enviar uma alteração e gerar uma nova versão, é criado um <i>commit</i>, que guardará uma
+                            Ao enviar uma alteração e gerar uma nova versão, é criado um <i>commit</i>, que guardará
+                            uma
                             fotografia
                             das últimas versões enviadas ao repositório. No entanto, nesse formato, podem ocorrer
                             situações
                             que gerem conflitos com alterações realizadas por outros desenvolvedores que também
                             realizaram o
-                            mesmo processo. Dessa forma, por vezes, uma funcionalidade pode implicar o funcionamento de
-                            outra, e isso pode acarretar a geração de conflitos e o mau funcionamento das novas versões
+                            mesmo processo. Dessa forma, por vezes, uma funcionalidade pode implicar o funcionamento
+                            de
+                            outra, e isso pode acarretar a geração de conflitos e o mau funcionamento das novas
+                            versões
                             do
                             <i>software</i>.
                         </p>
@@ -147,20 +154,24 @@
                         <h3>Recuperação de histórico</h3>
                         <p>
                             Existem algumas plataformas de repositórios que podem ser citadas, por exemplo: GitHub,
-                            BitBucket e GitLab. O GitHub foi um dos primeiros utilizados em hospedagem de repositórios,
+                            BitBucket e GitLab. O GitHub foi um dos primeiros utilizados em hospedagem de
+                            repositórios,
                             e
                             qualquer pessoa que tenha cadastro na plataforma pode colaborar com projetos <i>open
                                 source</i> ou
                             privados.
                         </p>
                         <p>
-                            Ao iniciar um novo repositório e realizar atualizações nele, em determinado momento pode ser
-                            necessário visualizar o histórico de <i>commits</i> realizados. Essa informação é útil para
+                            Ao iniciar um novo repositório e realizar atualizações nele, em determinado momento pode
+                            ser
+                            necessário visualizar o histórico de <i>commits</i> realizados. Essa informação é útil
+                            para
                             analisar o
                             que já foi feito e acompanhar, no projeto, quando foi feito e por quem foi feito.
                         </p>
                         <p>
-                            Para isso, basta usar o comando <b>git log</b> em um repositório válido. Esse comando, ao
+                            Para isso, basta usar o comando <b>git log</b> em um repositório válido. Esse comando,
+                            ao
                             ser aplicado
                             sem argumentos ou filtros, exibe do <i>commit</i> mais recente ao primeiro, trazendo as
                             seguintes
@@ -187,8 +198,10 @@
                             <p>Captura de tela com o comando git log sendo executado.</p>
                         </div>
                         <p>
-                            Essas informações podem ser úteis e tornam-se um recurso interessante quando uma atualização
-                            causar um problema no código, pois é possível criar uma rastreabilidade para realizar uma
+                            Essas informações podem ser úteis e tornam-se um recurso interessante quando uma
+                            atualização
+                            causar um problema no código, pois é possível criar uma rastreabilidade para realizar
+                            uma
                             reversão de <i>commit</i>. O comando <b>log</b> pode ser aplicado com argumentos que
                             detalham mais o
                             histórico, como o comando <b>git log -p</b>.
@@ -212,15 +225,18 @@
                             <p>Captura de tela com o comando git log -p sendo executado.</p>
                         </div>
                         <p>
-                            Aplicando o comando, será exibido o que foi realizado de alterações entre um <i>commit</i> e
+                            Aplicando o comando, será exibido o que foi realizado de alterações entre um
+                            <i>commit</i> e
                             outro,
-                            sendo possível aplicar ainda o parâmetro -2, que filtrará para as duas últimas alterações
+                            sendo possível aplicar ainda o parâmetro -2, que filtrará para as duas últimas
+                            alterações
                             apenas, ficando desta forma: <b>git log -p -2</b>.
                         </p>
                         <p>
                             O argumento <b>--stat</b> elencará informações resumidas sobre estatísticas do
                             <i>commit</i>, por meio do
-                            comando <b>git log --stat</b>, como lista dos arquivos modificados, quantos arquivos foram
+                            comando <b>git log --stat</b>, como lista dos arquivos modificados, quantos arquivos
+                            foram
                             alterados e
                             total de linhas inseridas e excluídas.
                         </p>
@@ -247,7 +263,8 @@
                             realizar
                             exibição em outro formato. Para isso, é possível combinar o comando <b>git log</b> com o
                             argumento
-                            <b>--pretty</b> e alguns filtros, como o <b>oneline</b>, ficando, desta forma, <b>git log
+                            <b>--pretty</b> e alguns filtros, como o <b>oneline</b>, ficando, desta forma, <b>git
+                                log
                                 --pretty=oneline</b>,
                             exibindo as informações de um <i>commit</i> em uma única linha.
                         </p>
@@ -270,7 +287,8 @@
                             <p>Captura de tela com o comando git log --pretty=oneline sendo executado. </p>
                         </div>
                         <p>
-                            O argumento <b>format</b> possibilita que seja gerada uma formatação própria para a exibição
+                            O argumento <b>format</b> possibilita que seja gerada uma formatação própria para a
+                            exibição
                             das
                             informações, aplicando filtros possíveis de visualizar com o comando <b>git log
                                 --format</b>.
@@ -279,23 +297,29 @@
                             Também é possível utilizar o comando <b>--since</b>, que possibilita que uma determinada
                             data seja
                             usada como parâmetro ou informar um período de dias, meses e anos, por exemplo:
-                            <b>git log --since=24.weeks</b>, que limitará os <i>commits</i> das últimas quatro semanas.
+                            <b>git log --since=24.weeks</b>, que limitará os <i>commits</i> das últimas quatro
+                            semanas.
                         </p>
                         <p>
                             Ainda é possível filtrar a lista de <i>commits</i> com base em critérios específicos de
                             busca. Por
-                            exemplo, a opção <b>--author</b> permite filtrar por um autor específico, enquanto a opção
+                            exemplo, a opção <b>--author</b> permite filtrar por um autor específico, enquanto a
+                            opção
                             <b>--grep</b> ajuda
-                            a localizar <i>commits</i> que contenham determinadas palavras-chave em suas mensagens. Vale
+                            a localizar <i>commits</i> que contenham determinadas palavras-chave em suas mensagens.
+                            Vale
                             lembrar
-                            que, caso você queira usar as opções <b>--author</b> e <b>--grep</b> juntas, será necessário
+                            que, caso você queira usar as opções <b>--author</b> e <b>--grep</b> juntas, será
+                            necessário
                             adicionar o
-                            parâmetro <b>--all-match</b>; caso contrário, o comando retornará resultados que atendam a
+                            parâmetro <b>--all-match</b>; caso contrário, o comando retornará resultados que atendam
+                            a
                             qualquer uma
                             das condições.
                         </p>
                         <p>
-                            Outra opção de filtro extremamente útil é <b>-S</b>, que aceita um conjunto de caracteres e
+                            Outra opção de filtro extremamente útil é <b>-S</b>, que aceita um conjunto de
+                            caracteres e
                             retorna
                             apenas os <i>commits</i> que introduzem alterações no código no qual esse conjunto foi
                             adicionado ou
@@ -305,9 +329,11 @@
                                 -Sfunction_name</b>.
                         </p>
                         <p>
-                            Além disso, uma última opção bastante prática para filtrar resultados no <b>git log</b> é
+                            Além disso, uma última opção bastante prática para filtrar resultados no <b>git log</b>
+                            é
                             especificar
-                            um caminho. Informando um diretório ou o nome de um arquivo, o comando limita os registros
+                            um caminho. Informando um diretório ou o nome de um arquivo, o comando limita os
+                            registros
                             aos
                             <i>commits</i> que alteraram especificamente esses arquivos. Normalmente, o caminho é
                             precedido por
@@ -315,16 +341,20 @@
                         </p>
                     </div>
                 </div>
+                <div class="bloco-paralax1 no-print"></div>
                 <div class="bloco4">
                     <div class="container">
                         <h3>Resolução de conflitos</h3>
                         <p>
                             É comum que diferentes desenvolvedores atuem em um mesmo projeto. Sendo assim, para a
-                            organização do versionamento de código, é utilizado o recurso de <i>branches</i>, que é um
+                            organização do versionamento de código, é utilizado o recurso de <i>branches</i>, que é
+                            um
                             método de
-                            criação de ramificações, para facilitar a organização do código, com a finalidade de separar
+                            criação de ramificações, para facilitar a organização do código, com a finalidade de
+                            separar
                             os
-                            <i>commits</i>, podendo utilizar uma ou mais ramificações para códigos em desenvolvimento e
+                            <i>commits</i>, podendo utilizar uma ou mais ramificações para códigos em
+                            desenvolvimento e
                             uma
                             ramificação para o projeto estável.
                         </p>
@@ -335,7 +365,8 @@
                             realizados. Uma situação muito corriqueira de acontecer é a do seguinte exemplo:
                         </p>
                         <p>
-                            João, em sua rotina de trabalho, ao iniciar seu turno, faz um <i>pull</i> para atualizar as
+                            João, em sua rotina de trabalho, ao iniciar seu turno, faz um <i>pull</i> para atualizar
+                            as
                             últimas
                             alterações realizadas no projeto. Entre outros arquivos, ele faz uma alteração de uma
                             funcionalidade no arquivo <b>cadastroCompetidor</b> do projeto. Antes de fazer uma
@@ -344,9 +375,11 @@
                             organizado.
                         </p>
                         <p>
-                            No entanto, nesse mesmo projeto, Antônio iniciou sua rotina de trabalho no mesmo momento que
+                            No entanto, nesse mesmo projeto, Antônio iniciou sua rotina de trabalho no mesmo momento
+                            que
                             João, também realizando um <i>pull</i> e, por uma necessidade, uma alteração no arquivo
-                            <b>cadastroCompetidor</b>. Assim como João, antes de fazer uma interrupção para o almoço,
+                            <b>cadastroCompetidor</b>. Assim como João, antes de fazer uma interrupção para o
+                            almoço,
                             Antônio faz
                             um <i>commit</i> com suas alterações. Contudo, ao realizar seu <i>push</i>, este foi
                             rejeitado com uma
@@ -355,15 +388,19 @@
                         <p>
                             Essa situação ocorreu porque Antônio tentou enviar seu <i>commit</i> sem as alterações
                             realizadas por
-                            João, gerando um conflito entre as versões. Para solucionar essa situação, Antônio precisa
-                            sincronizar o repositório remoto com o seu repositório local, fazendo um novo <i>pull</i>.
+                            João, gerando um conflito entre as versões. Para solucionar essa situação, Antônio
+                            precisa
+                            sincronizar o repositório remoto com o seu repositório local, fazendo um novo
+                            <i>pull</i>.
                         </p>
                         <p>
                             Ao realizar o novo <i>pull</i>, se não houver conflito entre as versões de arquivos, o
                             repositório é
-                            atualizado automaticamente, possibilitando a realização de um novo <i>push</i>. Porém, nesse
+                            atualizado automaticamente, possibilitando a realização de um novo <i>push</i>. Porém,
+                            nesse
                             caso,
-                            existe um conflito entre as alterações no arquivo <b>cadastroCompetidor</b>, sendo exibido o
+                            existe um conflito entre as alterações no arquivo <b>cadastroCompetidor</b>, sendo
+                            exibido o
                             arquivo na
                             tela com marcações indicando quais são as alterações feitas localmente e quais são as
                             alterações
@@ -372,7 +409,8 @@
                         <ul class="marcador-padrao">
                             <li>O conteúdo entre <b>
                                     <<<<<<< HEAD e=======</b> expressa as alterações locais.</li>
-                            <li>O conteúdo entre <b>======= e >>>>>>> f1a2b3c</b> (ID de um <i>commit</i>) expressa as
+                            <li>O conteúdo entre <b>======= e >>>>>>> f1a2b3c</b> (ID de um <i>commit</i>) expressa
+                                as
                                 alterações remotas.</li>
                         </ul>
                         <p>Nesta situação, é necessário escolher uma das três possibilidades:</p>
@@ -382,7 +420,8 @@
                             <li>Combinar ambas as alterações </li>
                         </ul>
                         <p>
-                            O indicado é combinar as alterações, realizando um <i>merge</i> entre as versões diferentes,
+                            O indicado é combinar as alterações, realizando um <i>merge</i> entre as versões
+                            diferentes,
                             cuidando
                             para que nenhuma alteração seja perdida. Dessa forma, é necessário ter atenção às
                             confirmações
@@ -394,10 +433,13 @@
                             uma mensagem com um comentário explicando a situação e a solução tomada.
                         </p>
                         <p>
-                            Outra boa prática nesse caso seria criar <i>branches</i> para trabalhar de forma separada e,
-                            posteriormente, realizar um <i>merge</i> entre as ramificações. Por padrão, ao iniciar um
+                            Outra boa prática nesse caso seria criar <i>branches</i> para trabalhar de forma
+                            separada e,
+                            posteriormente, realizar um <i>merge</i> entre as ramificações. Por padrão, ao iniciar
+                            um
                             novo
-                            repositório, automaticamente é criado uma <i>branch master</i>, sendo a <i>branch</i> padrão
+                            repositório, automaticamente é criado uma <i>branch master</i>, sendo a <i>branch</i>
+                            padrão
                             do projeto.
                         </p>
                         <p>
@@ -407,7 +449,8 @@
                             criando o arquivo <b>readme</b> padrão.
                         </p>
                         <p>
-                            O próximo passo é clonar seu repositório <i>on-line</i> em uma pasta de seu uso pessoal. Em
+                            O próximo passo é clonar seu repositório <i>on-line</i> em uma pasta de seu uso pessoal.
+                            Em
                             sua
                             máquina, use o Git Bash, com o comando <b>git clone</b>:
                         </p>
@@ -432,9 +475,11 @@
                         <p>
                             Acesse a pasta criada por meio do clone e abra novamente o Git Bash. Dessa forma, será
                             possível
-                            criar uma nova <i>branch</i>. A sintaxe é <b>git checkout -b nome_da_branch</b>. Execute o
+                            criar uma nova <i>branch</i>. A sintaxe é <b>git checkout -b nome_da_branch</b>. Execute
+                            o
                             comando
-                            <b>git checkout</b> com o parâmetro <b>-b</b> e o nome da <i>branch</i> que será criada e
+                            <b>git checkout</b> com o parâmetro <b>-b</b> e o nome da <i>branch</i> que será criada
+                            e
                             utilizada. Veja o exemplo
                             prático:
                         </p>
@@ -478,11 +523,13 @@
                             </figcaption>
                         </figure>
                         <div class="acessivel visually-hidden no-print">
-                            <p> Captura de tela com o comando para realizar um novo commit na brachNova sendo executado.
+                            <p> Captura de tela com o comando para realizar um novo commit na brachNova sendo
+                                executado.
                             </p>
                         </div>
                         <p>
-                            O próximo passo será trocar de uma <i>branch</i> para outra. Execute o comando da seguinte
+                            O próximo passo será trocar de uma <i>branch</i> para outra. Execute o comando da
+                            seguinte
                             forma:
                             <b>git checkout nome_da_branch</b>, conforme a figura:
                         </p>
@@ -536,9 +583,11 @@
                             <p>Captura de tela com o comando para realizar um novo commit sendo executado.</p>
                         </div>
                         <p>
-                            Neste momento, existem duas <i>branches</i>, cada uma com uma versão do <b>README.md</b>. É
+                            Neste momento, existem duas <i>branches</i>, cada uma com uma versão do
+                            <b>README.md</b>. É
                             preciso unir as
-                            duas para formar o histórico ideal. Para que isso ocorra, é necessário executar o comando
+                            duas para formar o histórico ideal. Para que isso ocorra, é necessário executar o
+                            comando
                             <b>git merge nome_da_outra_branch</b>. Veja a figura:
                         </p>
                         <figure class="my-5">
@@ -557,31 +606,41 @@
                             </figcaption>
                         </figure>
                         <div class="acessivel visually-hidden no-print">
-                            <p>Captura de tela com o comando para realizar um merge entre as branches sendo executado.
+                            <p>Captura de tela com o comando para realizar um merge entre as branches sendo
+                                executado.
                             </p>
                         </div>
-                        <p>Com o <i>merge</i>, automaticamente o arquivo <b>README.md</b> foi atualizado e unificado.
+                        <p>Com o <i>merge</i>, automaticamente o arquivo <b>README.md</b> foi atualizado e
+                            unificado.
                         </p>
                         <p>
-                            No entanto, outro problema que pode ocorrer é realizar um <i>commit</i> defeituoso. Nesse
+                            No entanto, outro problema que pode ocorrer é realizar um <i>commit</i> defeituoso.
+                            Nesse
                             caso, é
-                            possível usar o comando <b>git revert</b>, que reverterá as alterações realizadas no último
+                            possível usar o comando <b>git revert</b>, que reverterá as alterações realizadas no
+                            último
                             <i>commit</i>, ou
                             outro especificado.
                         </p>
                     </div>
                 </div>
+                <div class="bloco-paralax1 no-print"></div>
                 <div class="bloco5">
                     <div class="container">
                         <h3>Encerramento</h3>
                         <p>
-                            Neste conteúdo, foi possível não apenas acompanhar os comandos essenciais para a consulta do
-                            histórico de alterações em um repositório, mas também compreender como as estatísticas geradas
-                            pelo Git podem contribuir para uma análise mais detalhada do desenvolvimento ao longo do tempo.
+                            Neste conteúdo, foi possível não apenas acompanhar os comandos essenciais para a
+                            consulta do
+                            histórico de alterações em um repositório, mas também compreender como as estatísticas
+                            geradas
+                            pelo Git podem contribuir para uma análise mais detalhada do desenvolvimento ao longo do
+                            tempo.
                         </p>
                         <p>
-                            Além disso, foram exploradas diferentes abordagens para a resolução de problemas, utilizando os
-                            diversos recursos e comandos que o Git oferece. Esse aprendizado reforça a importância de boas
+                            Além disso, foram exploradas diferentes abordagens para a resolução de problemas,
+                            utilizando os
+                            diversos recursos e comandos que o Git oferece. Esse aprendizado reforça a importância
+                            de boas
                             práticas no controle de versões, tornando o processo de desenvolvimento mais organizado,
                             colaborativo e eficiente.
                         </p>
