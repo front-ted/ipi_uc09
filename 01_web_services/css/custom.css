@@ -242,6 +242,9 @@ body {
     margin-top: 5%;
 }
 
+.texto-erp {
+    margin-top: 2%;
+}
 
 
 .bg-escuro .accordion-body p {
@@ -270,6 +273,16 @@ body {
 
 .bg-escuro .texto-botao {
     color: #fff;
+}
+
+.bg-escuro .img-escuro{
+    background-color: #fff;
+    border-radius: 25px;
+}
+
+.bg-escuro .imagem-vs-escuro{
+    background-color: #fff;
+    border-radius: 50px;
 }
 
 @media screen and (max-width:1440px) {

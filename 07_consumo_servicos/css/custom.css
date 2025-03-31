@@ -10,6 +10,7 @@ body {
 
     background-size: auto, auto, auto, auto, cover;
     overflow-x: hidden;
+    padding-bottom: 3%;
 }
 
 /* .pagina.container {

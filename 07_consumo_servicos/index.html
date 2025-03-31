@@ -119,7 +119,7 @@
                     “lado do cliente”, permitindo a interação do usuário. Já o <i>back-end</i> trabalha no “lado do
                     servidor”,
                     gerenciando serviços e garantindo que os elementos do <i>front-end</i> funcionem corretamente, como
-                    em sites de
+                    em <i>sites</i> de
                     mídia social que armazenam informações de usuários em banco de dados, como Oracle, SQL Server,
                     MySQL,
                     entre outros.
@@ -235,7 +235,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-5">
+                <p class="mt-5 no-print">
                     A seguir, acompanhe o <i>podcast</i> sobre os fundamentos essenciais para consumir serviços
                     <i>web</i> de forma
                     eficiente, as diferenças essenciais entre <i>front-end</i> e <i>back-end</i> e como escolher a
@@ -266,28 +266,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade no-print transcricao" id="modal-transcricao-audio1" tabindex="-1"
-                    aria-labelledby="modal-transcricao-audio1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Transcrição</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
-                                    nisl, tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
-                                    ornare pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
-                                    Phasellus non pharetra tortor. Proin dictum ultrices ligula in finibus.
-                                    Suspendisse id sem consectetur, venenatis ex vel, consectetur arcu. Cras
-                                    vulputate quam in ultrices ornare. Donec gravida pharetra odio et ultrices.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <div class="no-print">
+                    <div class="modal fade no-print transcricao" id="modal-transcricao-audio1" tabindex="-1"
+                        aria-labelledby="modal-transcricao-audio1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Transcrição</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis
+                                        nisl, tristique et dui ac, convallis ullamcorper arcu. Ut finibus, elit eget
+                                        ornare pharetra, dolor erat finibus nulla, nec efficitur sem nisi at nulla.
+                                        Phasellus non pharetra tortor. Proin dictum ultrices ligula in finibus.
+                                        Suspendisse id sem consectetur, venenatis ex vel, consectetur arcu. Cras
+                                        vulputate quam in ultrices ornare. Donec gravida pharetra odio et ultrices.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="print visually-hidden" aria-hidden="true">
+                    <p>
+                        Atenção: o texto a seguir é uma transcrição. Para uma melhor experiência, acesse o conteúdo em
+                        áudio/vídeo no material digital.
+                    </p>
+                    <div class="texto-borda">
+
+                        <!-- transcricao aqui -->
+
+
+
+
+
+
+
+
                     </div>
                 </div>
                 <p>
@@ -820,7 +842,7 @@
                                         <b>$('#titulo').val()</b> e
                                         <b>$('#conteudo').val()</b>, formando um objeto JSON chamado <b>formValues</b>.
                                         Esse objeto é
-                                        convertido para uma string JSON com <b>JSON.stringify()</b>.
+                                        convertido para uma <i>string</i> JSON com <b>JSON.stringify()</b>.
                                     </p>
                                     <p>
                                         O método <b>$.ajax()</b> tem os parâmetros <i>type</i>, que, neste exemplo, são
@@ -949,7 +971,7 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Título da modal</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Consumo síncrono</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -1022,6 +1044,7 @@
                         </div>
                     </div>
                 </div>
+                <p><b>Comparação prática entre esses dois tipos de chamada:</b></p>
                 <div class="table-responsive table">
                     <table class="text-left align-middle">
                         <thead>
@@ -1089,10 +1112,13 @@
                     sensíveis e permite o envio de informações maiores ou mais complexas:
                 </p>
                 <figure class="my-5">
-                    <img src="img/post-gravar-v2.png" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius print"
+                    <img src="img/post-gravar-v2.png"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius print"
                         alt="Imagem">
-                    <a href="img/post-gravar-v2.png" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                        <img src="img/post-gravar-v2.png" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                    <a href="img/post-gravar-v2.png" target="_blank"
+                        class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/post-gravar-v2.png"
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
                             alt="Imagem">
                     </a>
                     <figcaption class="figure-caption text-center">Requisição para cadastro de notícias em <b>POST</b>
@@ -1187,10 +1213,13 @@ Content-Type: application/json
                     <li><i>Remote Address</i>: indica o servidor remoto.</li>
                 </ul>
                 <figure class="my-5">
-                    <img src="img/get-noticias.png" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius ilustracao print"
+                    <img src="img/get-noticias.png"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block ilustracao radius ilustracao print"
                         alt="Imagem">
-                    <a href="img/get-noticias.png" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                        <img src="img/get-noticias.png" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                    <a href="img/get-noticias.png" target="_blank"
+                        class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/get-noticias.png"
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
                             alt="Imagem">
                     </a>
                     <figcaption class="figure-caption text-center">
@@ -1238,15 +1267,18 @@ Content-Type: application/json
                     Na aba <b>General</b>, o <i>status</i> <b>201</b> indica que a notícia com <b>id=3</b> foi inserida
                     com sucesso.
                 </p>
-                <figure class="my-5 no-print">
-                    <img src="img/post-noticias.png" class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius ilustracao print"
+                <figure class="my-5 print">
+                    <img src="img/post-noticias.png"
+                        class="img-fluid d-block mx-auto p-2 mb-3 d-none d-sm-none d-md-block d-lg-block radius ilustracao print"
                         alt="Imagem">
-                    <a href="img/post-noticias.png" target="_blank" class="img-zoom d-sm-block d-md-none d-lg-none no-print">
-                        <img src="img/post-noticias.png" class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
+                    <a href="img/post-noticias.png" target="_blank"
+                        class="img-zoom d-sm-block d-md-none d-lg-none no-print">
+                        <img src="img/post-noticias.png"
+                            class="img-fluid d-block mx-auto p-2 mb-3 d-sm-block d-md-none d-lg-none radius"
                             alt="Imagem">
                     </a>
                     <figcaption class="figure-caption text-center">
-                        <i>Status</i> da solicitação pelo método <b>POST</b>
+                        <i>Status</i> da solicitação pelo método <b>POST</b> <br>
                         Fonte: Senac EAD (2025)
                     </figcaption>
                 </figure>
